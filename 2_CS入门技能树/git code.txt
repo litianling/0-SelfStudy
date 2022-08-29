@@ -1,0 +1,107 @@
+#---------------------------git安装---------------------------
+linux安装github								apt install git-all
+#---------------------------创建密钥---------------------------
+创建密钥	(在/root/.ssh/id_rsa.pub)			ssh-keygen -t rsa -C "2467280868@qq.com"
+在github点头像选择settings,点击SSH and GPG keys,选择ssh keys 右边的NEW SSH key。出现下面绿色框的内容，填写标题，并将自己刚才复制的密钥粘贴到key中。最后点击add ssh key.
+
+
+
+#---------------------------常用命令---------------------------
+创建一个空文件夹作存放代码仓库(以后就不用了)	mkdir /home/ltl/Documents/CS_learn/Git/Store_Share
+设置全局用户名----默认用户名(以后就不用了)	git config user.name litianling
+设置全局邮箱----默认邮箱(以后就不用了)		git config user.email 2467280868@qq.com
+查看设置好的选项(以后也会用)					git config --list
+克隆原有的代码仓库(网页创建，以后不经常用)		git clone https://github.com/litianling/Ls1b	[远程]
+查看git状态(以后经常用)						git status									[本地]
+修改本地代码仓库中的文件						......
+把修改过的文件添加到暂存区(包括删除的文件)		git add Linux_test							[本地]注：git add .是添加所有文件
+将暂存区里的文件提交到当前分支				git commit -m "add Linux_test"				[本地]注：引号里面添加本次修改的描述
+将本地当前分支推送到与其同名的远程分支上		git push origin main						[远程]
+
+
+
+#---------------------------其他命令---------------------------
+将空文件夹初始化为代码仓库					git init
+添加github上的仓库地址						git remote add origin https://github.com/litianling/Ls1b
+上一步出错执行清理命令						git remote rm origin
+将远程指定分支拉取到本地当前分支上			git pull origin main						[远程]
+比较变动										git diff readme.txt
+查看所有日志									git log										注：如果嫌输出信息太多，可以试试加上--pretty=oneline参数,按下q退出
+查看日志时间线								git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+配置别名(用git lg代替后面的命令)				git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+#---------------------------撤销操作---------------------------
+取消对README.md文件的修改					git checkout --README.md
+取消暂存文件xuigai.txt						git reset HEAD xiugai.txt
+修补上次提交到分支的文件和日志				git commit --amend
+删除多余文件先用rm -rf删除本文件夹中的文件	git rm xiugai.txt	再git commit -m提交		注：删除文件时，git rm和git add作用是一样的
+#---------------------------版本管理---------------------------
+回退到上一个版本								git reset --hard HEAD^
+查找版本ID									git reflog
+重置到指定版本								git reset --hard 1b5a233					注：最后参数是版本ID
+查看隐藏文件以及文件夹						ls -ah
+#---------------------------基础分支管理---------------------------
+查看分支										git branch
+创建dev分支									git branch dev
+切换到dev分支								git checkout dev							注：开发过程中未提交并且没暂存就切换分支，工作状态会自动带到下一个分支
+合并指定dev分支到当前分支						git merge dev								注：合并分支的时候存在冲突，修改对应冲突文件，重新保存上传(add/connit)即可完成合并
+禁用快速合并(Fast forward)的合并分支			git merge --no-ff -m "merge with no-ff" dev	注：不使用快速直接方式的分支合并才会将分支合并具体过程记录在日志(git log查看)
+删除指定dev分支								git branch -d dev
+强制删除没有合并的废弃分支dev					git branch -D dev
+创建并切换到dev分支							git branch -b dev							[当前版本不能用]
+切换到dev分支								git switch dev								[新新版才支持，当前不支持]
+创建并切换到dev分支							git switch -c dev							[最新版才支持，当前不支持]
+#---------------------------高级分支管理---------------------------
+暂存当前未提交的工作状态						git stash									可以先去干别的工作，回来之后继续开发
+查看已经暂存的工作状态						git stash list
+加载之前的工作状态							git stash apply
+删除之前的状态缓存							git stash drop
+加载并删除之前的工作状态						git stash pop
+加载到指定版本的工作状态(先用list查看)		git stash apply stash@{0}					注：最后一个数字对应stash版本号
+复制特定提交到当前分支(先用git reflog查看)	git cherry-pick 9538b8a						注：最后的参数是某次提交对应的编号
+合并文件的时候存在冲突：打开存在冲突的文件会看到Git的标注，<<<<<<<，=======，>>>>>>>标记出不同分支的内容，修改对应冲突文件，重新保存上传(add/connit)即可完成合并
+#---------------------------多人远程协作---------------------------
+查看远程仓库									git remote
+查看远程库详细信息							git remote -v
+推送分支										git push origin main						将本地main分支所有提交推送到远程仓库origin对应的main分支上
+拉取(别人)最后一次上传的分支					git pull									注：需要推送的分支和最后一次上传有冲突时使用，一般出现在共同开发代码冲突
+指定本地dev分支与远程origin/dev分支的链接		git branch --set-upstream-to=origin/dev dev	注：一般用于get pull拉取远程分支的时候，电脑不知道存放在本地哪个地方
+上述过程执行完毕之后，(gedit)手动解决冲突，然后添加保存(add/commit)，最后push即可
+把本地未push的分叉提交历史整理成直线			git rebase									注：自己合并出的分支整理不了，仅用于解决他人率先提交而不得以形成的分支
+#---------------------------Git标签---------------------------
+在对应的branch给最后一次commit创建标签		git tag <tagname>								tagname是标签名字
+给指定的某次commit创建标签					git tag <tagname> <commit id>					commit id是某次commit对应的编号
+创建带有说明性文字的标签						git tag -a <tagname> -m <"massgges"> <commit id>
+可以创建一个带gpg签名的标签					git tag -s <tagname> -m <"messages"> <commit id>
+查看所有存在的标签(按照字母排序)				git tag
+查看指定标签的具体内容						git show <tagname>
+删除指定标签									git tag -d <tagname>
+将指定标签推送到远程							git push origin <tagname>
+一次性将所有未被推送的本地标签全部推送到远程	git push origin --tags
+可以删除一个远程标签							git push origin :refs/tags/<tagname>
+#---------------------------git cherry-pick 详解---------------------------
+命令写法是git cherry-pick <commitHash>，将某个分支对应commit哈希值的提交应用到当前分支。其参数commitHash可以用分支名代替，表示移该分支最新的commit应用到当前分支。
+Cherry pick 支持一次转移多个提交。git cherry-pick <HashA> <HashB>命令表示将A和B两个commit应用到当前分支，这会在当前分支生成两个对应的新commit。
+如果想要转移一系列的连续提交，可以使用git cherry-pick A..B该命令可以转移从A到B的所有commit。注意commit的顺序：commitA 必须早于commitB，否则命令将失败，但不会报错。
+注意，使用上面的命令，commitA将不会包含在Cherry pick中。如果要包含commitA，可以使用git cherry-pick A^..B命令。其参数配置见git cherry-pick --help
+如果操作过程中发生代码冲突，cherry pick会停下来，让用户决定如何继续操作。
+	（0）不加参数，冲突后直接修改冲突文件，然后add/commit即可。[本质上和方式1相同]
+	（1）--continue，用户解决代码冲突后，将修改的文件重新加入暂存区，然后使用git cherry-pick --continue <Hash>命令，让cherry pick过程继续执行。
+	（2）--abort发生代码冲突后，放弃合并，回到操作前的样子。
+	（3）--quit发生代码冲突后，退出cherry pick，但是不回到操作前的样子。
+cherry pick 也支持转移另一个代码库的提交。方法是先用git remote add target git://gitUrl链接到一个名为target的远程仓库。然后，用git fetch target将远程代码仓库抓取到本地。接着，用git log target/main查看远程仓库对应commit的哈希值。最后，使用git cherry-pick <commitHash>命令转移commit。
+cherry pick 也支持转移另一个代码库的提交。方法是先用git remote add target git://gitUrl链接到一个名为target的远程仓库。然后，用git fetch target将远程代码仓库抓取到本地。接着，用git log target/main查看远程仓库对应commit的哈希值。最后，使用git cherry-pick <commitHash>命令转移commit。
+#---------------------------文本编辑---------------------------
+^G Get Help      ^O Write Out     ^W Where Is      ^K Cut Text      ^J Justify       ^C Cur Pos       ^Y Prev Page     M-\ First Line   M-W WhereIs Next
+^X Exit          ^R Read File     ^\ Replace       ^U Uncut Text    ^T To Spell      ^_ Go To Line    ^V Next Page     M-/ Last Line    M-] To Bracket
+上面是我文本编辑器中的操作提示，其中有两个键需要注意一下'^'和'M-'。'^'对应的就是ctrl键。'M-'对应的是alt键。
+
+
+
+#---------------------------访问令牌---------------------------
+#遇到问题remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+在github网站点头像选择settings,选择左下方的Developer settings,点击 Personal access tokens,点击 Generate new token,设置令牌信息(全选)，点击 Generate token 生成令牌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,输入命令git remote set-url origin  https://<your_token>@github.com/<USERNAME>/<REPO>.git修改现有的url,将<your_token>换成你自己得到的令牌，<USERNAME>是你自己github的用户名，<REPO>是你的项目名称。修改远程仓库的URL地址具体命令如下：
+git remote set-url origin  https://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@github.com/litianling/Ls1b.git之后可以重新pull和push
+#---------------------------创建方式---------------------------
+[推测]创建仓库的两种方法：1用git init创建一个新的仓库，用git remote add origin https://添加远程仓库地址来关联到远程仓库。2可以用git clone直接克隆已经存在的远程仓库。
+
+

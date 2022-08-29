@@ -1,0 +1,16 @@
+CSDN自学网
+√	C语言技能树	https://edu.csdn.net/skill/c
+√	CS入门技能树	https://edu.csdn.net/skill/gml		CS是计算机科学，gml编译性程序设计语言
+√		Git技能树		https://edu.csdn.net/skill/git
+√		MarkDown技能树	https://edu.csdn.net/skill/markdown
+√		Linux技能树	https://edu.csdn.net/skill/linux
+
+	Python技能树	https://edu.csdn.net/skill/python
+	Python进阶技能树	https://edu.csdn.net/skill/python02
+
+菜鸟教程
+	C语言教程		https://www.runoob.com/cprogramming/c-tutorial.html
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+C语言学习资料（隐藏）https://edu.csdn.net/skill/c/c-f9e454c8bac54e17a358aa3537f80f2b?category=114&typeId=18341
