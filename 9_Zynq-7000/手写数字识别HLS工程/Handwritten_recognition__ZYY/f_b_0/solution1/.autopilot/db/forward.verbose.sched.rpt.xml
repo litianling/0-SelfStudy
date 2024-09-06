@@ -1,0 +1,62 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'forward'" level="0">
+<item name = "Date">Wed Oct 26 23:36:07 2022
+</item>
+<item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
+<item name = "Project">f_b_0</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xczu3eg-sbva484-1-e</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 8.750, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- memcpy.mnist_data.gep.input_matrix">901, 901, 3, 1, 1, 900, yes</column>
+<column name="- memcpy.conv_kernel1.gep.conv1">10, 10, 3, 1, 1, 9, yes</column>
+<column name="- memcpy.conv_kernel2.gep.conv2">10, 10, 3, 1, 1, 9, yes</column>
+<column name="- memcpy.conv_kernel3.gep.conv3">10, 10, 3, 1, 1, 9, yes</column>
+<column name="- memcpy.fc_hidden_layer1.gep.fc1">103681, 103681, 3, 1, 1, 103680, yes</column>
+<column name="- memcpy.fc_hidden_layer2.gep.fc2">8101, 8101, 3, 1, 1, 8100, yes</column>
+<column name="- memcpy.fc_hidden_layer3.gep.fc3">451, 451, 3, 1, 1, 450, yes</column>
+<column name="- Loop 8">1200, 1200, 50, -, -, 24, no</column>
+<column name=" + Loop 8.1">48, 48, 2, -, -, 24, no</column>
+<column name="- Loop 9">933480, 933480, 5186, -, -, 180, no</column>
+<column name=" + Loop 9.1">5184, 5184, 9, -, -, 576, no</column>
+<column name="- Relu1_label0">1980, 1980, 11, -, -, 180, no</column>
+<column name="- Loop 11">72990, 72990, 1622, -, -, 45, no</column>
+<column name=" + Loop 11.1">1620, 1620, 9, -, -, 180, no</column>
+<column name="- Relu2_label1">495, 495, 11, -, -, 45, no</column>
+<column name="- Loop 13">4070, 4070, 407, -, -, 10, no</column>
+<column name=" + Loop 13.1">405, 405, 9, -, -, 45, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Nov  3 16:30:57 2022
+# Process ID: 15684
+# Current directory: C:/Users/LTL/Desktop/Handwritten_digit_recognition__ZYY_FPGA/forw_back/forw_back.runs/impl_1
+# Command line: vivado.exe -log forw_back_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source forw_back_wrapper.tcl -notrace
+# Log file: C:/Users/LTL/Desktop/Handwritten_digit_recognition__ZYY_FPGA/forw_back/forw_back.runs/impl_1/forw_back_wrapper.vdi
+# Journal file: C:/Users/LTL/Desktop/Handwritten_digit_recognition__ZYY_FPGA/forw_back/forw_back.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source forw_back_wrapper.tcl -notrace

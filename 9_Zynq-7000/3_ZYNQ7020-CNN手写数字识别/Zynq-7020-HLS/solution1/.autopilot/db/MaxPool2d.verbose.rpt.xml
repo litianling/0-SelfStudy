@@ -1,0 +1,192 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'MaxPool2d'" level="0">
+<item name = "Date">Thu May 11 11:34:57 2023
+</item>
+<item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
+<item name = "Project">Zynq-7020-HLS</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 8.685, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop 1">?, ?, ?, -, -, 6, no</column>
+<column name=" + Loop 1.1">?, ?, ?, -, -, 6, no</column>
+<column name="  ++ Loop 1.1.1">?, ?, ?, -, -, ?, no</column>
+<column name="   +++ Loop 1.1.1.1">?, ?, 9 ~ 14, -, -, ?, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 814, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, 0, 406, 793, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 210, -</column>
+<column name="Register">-, -, 451, -, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, 3, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="forw_back_fcmp_32eOg_U21">forw_back_fcmp_32eOg, 0, 0, 66, 239, 0</column>
+<column name="forw_back_sitofp_dEe_U20">forw_back_sitofp_dEe, 0, 0, 340, 554, 0</column>
+</table>
+</item>
+<item name = "DSP48E"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="add_ln339_fu_459_p2">+, 0, 0, 15, 9, 8</column>
+<column name="add_ln41_fu_229_p2">+, 0, 0, 13, 4, 2</column>
+<column name="add_ln42_fu_285_p2">+, 0, 0, 13, 4, 2</column>
+<column name="add_ln43_fu_344_p2">+, 0, 0, 39, 32, 32</column>
+<column name="add_ln45_fu_295_p2">+, 0, 0, 15, 7, 7</column>
+<column name="col_2_fu_338_p2">+, 0, 0, 39, 32, 1</column>
+<column name="i_fu_207_p2">+, 0, 0, 12, 3, 1</column>
+<column name="j_fu_267_p2">+, 0, 0, 12, 3, 1</column>
+<column name="row_2_fu_556_p2">+, 0, 0, 39, 32, 1</column>
+<column name="result_V_2_fu_544_p2">-, 0, 0, 39, 1, 32</column>
+<column name="sub_ln1311_fu_473_p2">-, 0, 0, 15, 7, 8</column>
+<column name="sub_ln43_fu_327_p2">-, 0, 0, 39, 32, 32</column>
+<column name="sub_ln45_fu_251_p2">-, 0, 0, 15, 7, 7</column>
+<column name="and_ln43_2_fu_429_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln43_fu_423_p2">and, 0, 0, 2, 1, 1</column>
+<column name="icmp_ln38_fu_201_p2">icmp, 0, 0, 9, 3, 3</column>
+<column name="icmp_ln39_fu_261_p2">icmp, 0, 0, 9, 3, 3</column>
+<column name="icmp_ln41_fu_310_p2">icmp, 0, 0, 18, 32, 32</column>
+<column name="icmp_ln42_fu_333_p2">icmp, 0, 0, 18, 32, 32</column>
+<column name="icmp_ln43_4_fu_407_p2">icmp, 0, 0, 18, 23, 1</column>
+<column name="icmp_ln43_5_fu_372_p2">icmp, 0, 0, 11, 8, 2</column>
+<column name="icmp_ln43_6_fu_378_p2">icmp, 0, 0, 18, 23, 1</column>
+<column name="icmp_ln43_fu_401_p2">icmp, 0, 0, 11, 8, 2</column>
+<column name="r_V_fu_502_p2">lshr, 0, 0, 73, 25, 25</column>
+<column name="or_ln43_2_fu_419_p2">or, 0, 0, 2, 1, 1</column>
+<column name="or_ln43_fu_413_p2">or, 0, 0, 2, 1, 1</column>
+<column name="p_Val2_11_fu_536_p3">select, 0, 0, 32, 1, 32</column>
+<column name="p_Val2_12_fu_549_p3">select, 0, 0, 32, 1, 32</column>
+<column name="ush_fu_482_p3">select, 0, 0, 9, 1, 9</column>
+<column name="r_V_2_fu_508_p2">shl, 0, 0, 243, 79, 79</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">117, 25, 1, 25</column>
+<column name="ap_phi_mux_max_num_2_phi_fu_177_p4">9, 2, 32, 64</column>
+<column name="col_0_reg_141">9, 2, 32, 64</column>
+<column name="grp_fu_185_p0">21, 4, 32, 128</column>
+<column name="i_0_reg_107">9, 2, 3, 6</column>
+<column name="j_0_reg_118">9, 2, 3, 6</column>
+<column name="max_num_0_reg_129">9, 2, 32, 64</column>
+<column name="max_num_1_reg_151">9, 2, 32, 64</column>
+<column name="max_num_2_reg_173">9, 2, 32, 64</column>
+<column name="row_0_reg_163">9, 2, 32, 64</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="add_ln43_reg_629">32, 0, 32, 0</column>
+<column name="and_ln43_2_reg_666">1, 0, 1, 0</column>
+<column name="ap_CS_fsm">24, 0, 24, 0</column>
+<column name="col_0_reg_141">32, 0, 32, 0</column>
+<column name="conv_out_2_load_reg_639">32, 0, 32, 0</column>
+<column name="i_0_reg_107">3, 0, 3, 0</column>
+<column name="i_reg_565">3, 0, 3, 0</column>
+<column name="icmp_ln43_5_reg_645">1, 0, 1, 0</column>
+<column name="icmp_ln43_6_reg_650">1, 0, 1, 0</column>
+<column name="j_0_reg_118">3, 0, 3, 0</column>
+<column name="j_reg_588">3, 0, 3, 0</column>
+<column name="locate_matrix_addr_reg_608">6, 0, 6, 0</column>
+<column name="max_num_0_reg_129">32, 0, 32, 0</column>
+<column name="max_num_1_reg_151">32, 0, 32, 0</column>
+<column name="max_num_2_reg_173">32, 0, 32, 0</column>
+<column name="output_matrix_addr_reg_603">6, 0, 6, 0</column>
+<column name="p_Result_s_reg_670">1, 0, 1, 0</column>
+<column name="p_Val2_11_reg_675">32, 0, 32, 0</column>
+<column name="reg_195">32, 0, 32, 0</column>
+<column name="row_0_reg_163">32, 0, 32, 0</column>
+<column name="sub_ln43_reg_616">30, 0, 32, 2</column>
+<column name="sub_ln45_reg_580">6, 0, 7, 1</column>
+<column name="tmp_7_reg_681">32, 0, 32, 0</column>
+<column name="tmp_V_2_reg_661">23, 0, 23, 0</column>
+<column name="tmp_V_reg_655">8, 0, 8, 0</column>
+<column name="zext_ln41_4_reg_575">3, 0, 32, 29</column>
+<column name="zext_ln41_reg_570">3, 0, 32, 29</column>
+<column name="zext_ln42_2_reg_598">3, 0, 32, 29</column>
+<column name="zext_ln42_reg_593">3, 0, 32, 29</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, MaxPool2d, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, MaxPool2d, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, MaxPool2d, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, MaxPool2d, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, MaxPool2d, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, MaxPool2d, return value</column>
+<column name="output_matrix_address0">out, 6, ap_memory, output_matrix, array</column>
+<column name="output_matrix_ce0">out, 1, ap_memory, output_matrix, array</column>
+<column name="output_matrix_we0">out, 1, ap_memory, output_matrix, array</column>
+<column name="output_matrix_d0">out, 32, ap_memory, output_matrix, array</column>
+<column name="locate_matrix_address0">out, 6, ap_memory, locate_matrix, array</column>
+<column name="locate_matrix_ce0">out, 1, ap_memory, locate_matrix, array</column>
+<column name="locate_matrix_we0">out, 1, ap_memory, locate_matrix, array</column>
+<column name="locate_matrix_d0">out, 32, ap_memory, locate_matrix, array</column>
+<column name="conv_out_2_address0">out, 8, ap_memory, conv_out_2, array</column>
+<column name="conv_out_2_ce0">out, 1, ap_memory, conv_out_2, array</column>
+<column name="conv_out_2_q0">in, 32, ap_memory, conv_out_2, array</column>
+</table>
+</item>
+</section>
+</profile>

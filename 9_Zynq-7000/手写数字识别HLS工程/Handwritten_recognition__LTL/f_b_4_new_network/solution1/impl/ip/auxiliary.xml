@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="forw_back" xd:componentRef="forw_back" xd:initiationInterval="x" xd:clockPeriod="10.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_ctrl" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
+  <xd:arg xd:name="*(in)" xd:originalName="in" xd:direction="inout" xd:interfaceRef="m_axi_data" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="31:0" xd:arraySize="32" xd:dataWidth="32" xd:bufferDirection="in"/>
+  <xd:arg xd:name="*(conv1)" xd:originalName="conv1" xd:direction="inout" xd:interfaceRef="m_axi_data" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="31:0" xd:arraySize="32" xd:dataWidth="32" xd:bufferDirection="inout"/>
+  <xd:arg xd:name="*(conv2)" xd:originalName="conv2" xd:direction="inout" xd:interfaceRef="m_axi_data" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="31:0" xd:arraySize="32" xd:dataWidth="32" xd:bufferDirection="inout"/>
+  <xd:arg xd:name="*(fc1)" xd:originalName="fc1" xd:direction="inout" xd:interfaceRef="m_axi_data" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="31:0" xd:arraySize="32" xd:dataWidth="32" xd:bufferDirection="inout"/>
+  <xd:arg xd:name="*(fc2)" xd:originalName="fc2" xd:direction="inout" xd:interfaceRef="m_axi_data" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="31:0" xd:arraySize="32" xd:dataWidth="32" xd:bufferDirection="inout"/>
+  <xd:arg xd:name="*(out)" xd:originalName="out" xd:direction="inout" xd:interfaceRef="m_axi_data" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="31:0" xd:arraySize="32" xd:dataWidth="32" xd:bufferDirection="out"/>
+  <xd:arg xd:name="*(lr)" xd:originalName="lr" xd:direction="inout" xd:interfaceRef="m_axi_data" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="31:0" xd:arraySize="32" xd:dataWidth="32" xd:bufferDirection="in"/>
+  <xd:arg xd:name="flag" xd:originalName="flag" xd:direction="in" xd:interfaceRef="s_axi_ctrl" xd:busTypeRef="axilite" xd:offset="0x10" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="in_r" xd:originalName="in_r" xd:direction="in" xd:interfaceRef="s_axi_ctrl" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_data" xd:dataWidth="32" xd:offset="0x18" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="conv1" xd:originalName="conv1" xd:direction="in" xd:interfaceRef="s_axi_ctrl" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_data" xd:dataWidth="32" xd:offset="0x20" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="conv2" xd:originalName="conv2" xd:direction="in" xd:interfaceRef="s_axi_ctrl" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_data" xd:dataWidth="32" xd:offset="0x28" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="fc1" xd:originalName="fc1" xd:direction="in" xd:interfaceRef="s_axi_ctrl" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_data" xd:dataWidth="32" xd:offset="0x30" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="fc2" xd:originalName="fc2" xd:direction="in" xd:interfaceRef="s_axi_ctrl" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_data" xd:dataWidth="32" xd:offset="0x38" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="out_r" xd:originalName="out_r" xd:direction="in" xd:interfaceRef="s_axi_ctrl" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_data" xd:dataWidth="32" xd:offset="0x40" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="label" xd:originalName="label" xd:direction="in" xd:interfaceRef="s_axi_ctrl" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0x48" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="lr" xd:originalName="lr" xd:direction="in" xd:interfaceRef="s_axi_ctrl" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_data" xd:dataWidth="32" xd:offset="0x50" xd:handshakeRef="ap_none"/>
+  <xd:latencyEstimates xd:best-case="undef" xd:worst-case="undef" xd:average-case="undef"/>
+  <xd:resourceEstimates xd:LUT="28787" xd:FF="17443" xd:BRAM="27" xd:DSP="103"/>
+</xd:acceleratorMap>

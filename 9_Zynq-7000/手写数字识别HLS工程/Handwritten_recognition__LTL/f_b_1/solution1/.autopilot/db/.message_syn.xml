@@ -1,0 +1,833 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_631" tag="SCHEDULE" content="Option &apos;relax_ii_for_timing&apos; is enabled, will increase II to preserve clock frequency constraints."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;f_b_1/forw_back_LTL.c&apos; ..."/>
+	<Message severity="WARNING" prefix="[HLS 200-40]" key="HLS_40_1378" tag="" content="In file included from f_b_1/forw_back_LTL.c:1:
+f_b_1/forw_back_LTL.c:106:20: warning: incompatible pointer types passing &apos;float [30][30]&apos; to parameter of type &apos;float *&apos; [-Wincompatible-pointer-types]
+    Conv2d(30,30,3,mnist_data,conv_kernel_1,conv_out_1);
+                   ^~~~~~~~~~
+f_b_1/forw_back_LTL.c:30:38: note: passing argument to parameter &apos;input_matrix&apos; here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                     ^
+f_b_1/forw_back_LTL.c:106:31: warning: incompatible pointer types passing &apos;float [3][3]&apos; to parameter of type &apos;float *&apos; [-Wincompatible-pointer-types]
+    Conv2d(30,30,3,mnist_data,conv_kernel_1,conv_out_1);
+                              ^~~~~~~~~~~~~
+f_b_1/forw_back_LTL.c:30:58: note: passing argument to parameter &apos;kernel&apos; here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                                         ^
+f_b_1/forw_back_LTL.c:106:45: warning: incompatible pointer types passing &apos;float [28][28]&apos; to parameter of type &apos;float *&apos; [-Wincompatible-pointer-types]
+    Conv2d(30,30,3,mnist_data,conv_kernel_1,conv_out_1);
+                                            ^~~~~~~~~~
+f_b_1/forw_back_LTL.c:30:72: note: passing argument to parameter &apos;out_matrix&apos; here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                                                       ^
+f_b_1/forw_back_LTL.c:107:20: warning: incompatible pointer types passing &apos;float [28][28]&apos; to parameter of type &apos;float *&apos; [-Wincompatible-pointer-types]
+    Conv2d(28,28,3,conv_out_1,conv_kernel_2,conv_out_2);
+                   ^~~~~~~~~~
+f_b_1/forw_back_LTL.c:30:38: note: passing argument to parameter &apos;input_matrix&apos; here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                     ^
+f_b_1/forw_back_LTL.c:107:31: warning: incompatible pointer types passing &apos;float [3][3]&apos; to parameter of type &apos;float *&apos; [-Wincompatible-pointer-types]
+    Conv2d(28,28,3,conv_out_1,conv_kernel_2,conv_out_2);
+                              ^~~~~~~~~~~~~
+f_b_1/forw_back_LTL.c:30:58: note: passing argument to parameter &apos;kernel&apos; here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                                         ^
+f_b_1/forw_back_LTL.c:107:45: warning: incompatible pointer types passing &apos;float [26][26]&apos; to parameter of type &apos;float *&apos; [-Wincompatible-pointer-types]
+    Conv2d(28,28,3,conv_out_1,conv_kernel_2,conv_out_2);
+                                            ^~~~~~~~~~
+f_b_1/forw_back_LTL.c:30:72: note: passing argument to parameter &apos;out_matrix&apos; here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                                                       ^
+f_b_1/forw_back_LTL.c:108:20: warning: incompatible pointer types passing &apos;float [26][26]&apos; to parameter of type &apos;float *&apos; [-Wincompatible-pointer-types]
+    Conv2d(26,26,3,conv_out_2,conv_kernel_3,conv_out_3);
+                   ^~~~~~~~~~
+f_b_1/forw_back_LTL.c:30:38: note: passing argument to parameter &apos;input_matrix&apos; here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                     ^
+f_b_1/forw_back_LTL.c:108:31: warning: incompatible pointer types passing &apos;float [3][3]&apos; to parameter of type &apos;float *&apos; [-Wincompatible-pointer-types]
+    Conv2d(26,26,3,conv_out_2,conv_kernel_3,conv_out_3);
+                              ^~~~~~~~~~~~~
+f_b_1/forw_back_LTL.c:30:58: note: passing argument to parameter &apos;kernel&apos; here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                                         ^
+f_b_1/forw_back_LTL.c:108:45: warning: incompatible pointer types passing &apos;float [24][24]&apos; to parameter of type &apos;float *&apos; [-Wincompatible-pointer-types]
+    Conv2d(26,26,3,conv_out_2,conv_kernel_3,conv_out_3);
+                                            ^~~~~~~~~~
+f_b_1/forw_back_LTL.c:30:72: note: passing argument to parameter &apos;out_matrix&apos; here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                                                       ^
+f_b_1/forw_back_LTL.c:110:35: warning: incompatible pointer types passing &apos;float [24][24]&apos; to parameter of type &apos;float *&apos; [-Wincompatible-pointer-types]
+    MatrixExtensionImproved(24,24,conv_out_3,fc_in_1);
+                                  ^~~~~~~~~~
+f_b_1/forw_back_LTL.c:40:49: note: passing argument to parameter &apos;input_matrix1&apos; here
+void MatrixExtensionImproved(int w,int h,float *input_matrix1,float *output_matrix){
+                                                ^
+f_b_1/forw_back_LTL.c:110:46: warning: incompatible pointer types passing &apos;float [1][576]&apos; to parameter of type &apos;float *&apos; [-Wincompatible-pointer-types]
+    MatrixExtensionImproved(24,24,conv_out_3,fc_in_1);
+                                             ^~~~~~~
+f_b_1/forw_back_LTL.c:40:70: note: passing argument to parameter &apos;output_matrix&apos; here
+void MatrixExtensionImproved(int w,int h,float *input_matrix1,float *output_matrix){
+                                                                     ^
+f_b_1/forw_back_LTL.c:111:28: warning: incompatible pointer types passing &apos;float [1][576]&apos; to parameter of type &apos;float *&apos; [-Wincompatible-pointer-types]
+    MatrixMultiply(576,180,fc_in_1,fc_hidden_layer1,fc_out_1);
+                           ^~~~~~~
+f_b_1/forw_back_LTL.c:46:44: note: passing argument to parameter &apos;input_matrix&apos; here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                           ^
+f_b_1/forw_back_LTL.c:111:36: warning: incompatible pointer types passing &apos;float [576][180]&apos; to parameter of type &apos;float *&apos; [-Wincompatible-pointer-types]
+    MatrixMultiply(576,180,fc_in_1,fc_hidden_layer1,fc_out_1);
+                                   ^~~~~~~~~~~~~~~~
+f_b_1/forw_back_LTL.c:46:64: note: passing argument to parameter &apos;para_layer&apos; here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                                               ^
+f_b_1/forw_back_LTL.c:111:53: warning: incompatible pointer types passing &apos;float [1][180]&apos; to parameter of type &apos;float *&apos; [-Wincompatible-pointer-types]
+    MatrixMultiply(576,180,fc_in_1,fc_hidden_layer1,fc_out_1);
+                                                    ^~~~~~~~
+f_b_1/forw_back_LTL.c:46:81: note: passing argument to parameter &apos;output_matrix&apos; here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                                                                ^
+f_b_1/forw_back_LTL.c:112:14: warning: incompatible pointer types passing &apos;float [1][180]&apos; to parameter of type &apos;float *&apos; [-Wincompatible-pointer-types]
+    Relu(180,fc_out_1,fc_in_2_relu1);
+             ^~~~~~~~
+f_b_1/forw_back_LTL.c:54:24: note: passing argument to parameter &apos;input_matrix&apos; here
+void Relu(int h,float *input_matrix,float *output_matrix){
+                       ^
+f_b_1/forw_back_LTL.c:112:23: warning: incompatible pointer types passing &apos;float [1][180]&apos; to parameter of type &apos;float *&apos; [-Wincompatible-pointer-types]
+    Relu(180,fc_out_1,fc_in_2_relu1);
+                      ^~~~~~~~~~~~~
+f_b_1/forw_back_LTL.c:54:44: note: passing argument to parameter &apos;output_matrix&apos; here
+void Relu(int h,float *input_matrix,float *output_matrix){
+                                           ^
+f_b_1/forw_back_LTL.c:113:27: warning: incompatible pointer types passing &apos;float [1][180]&apos; to parameter of type &apos;float *&apos; [-Wincompatible-pointer-types]
+    MatrixMultiply(180,45,fc_in_2_relu1,fc_hidden_layer2,fc_out_2);
+                          ^~~~~~~~~~~~~
+f_b_1/forw_back_LTL.c:46:44: note: passing argument to parameter &apos;input_matrix&apos; here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                           ^
+f_b_1/forw_back_LTL.c:113:41: warning: incompatible pointer types passing &apos;float [180][45]&apos; to parameter of type &apos;float *&apos; [-Wincompatible-pointer-types]
+    MatrixMultiply(180,45,fc_in_2_relu1,fc_hidden_layer2,fc_out_2);
+                                        ^~~~~~~~~~~~~~~~
+f_b_1/forw_back_LTL.c:46:64: note: passing argument to parameter &apos;para_layer&apos; here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                                               ^
+f_b_1/forw_back_LTL.c:113:58: warning: incompatible pointer types passing &apos;float [1][45]&apos; to parameter of type &apos;float *&apos; [-Wincompatible-pointer-types]
+    MatrixMultiply(180,45,fc_in_2_relu1,fc_hidden_layer2,fc_out_2);
+                                                         ^~~~~~~~
+f_b_1/forw_back_LTL.c:46:81: note: passing argument to parameter &apos;output_matrix&apos; here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                                                                ^
+f_b_1/forw_back_LTL.c:114:13: warning: incompatible pointer types passing &apos;float [1][45]&apos; to parameter of type &apos;float *&apos; [-Wincompatible-pointer-types]
+    Relu(45,fc_out_2,fc_in_3_relu2);
+            ^~~~~~~~
+f_b_1/forw_back_LTL.c:54:24: note: passing argument to parameter &apos;input_matrix&apos; here
+void Relu(int h,float *input_matrix,float *output_matrix){
+                       ^
+f_b_1/forw_back_LTL.c:54:44: note: passing argument to parameter &apos;output_matrix&apos; here
+void Relu(int h,float *input_matrix,float *output_matrix){
+                                           ^
+f_b_1/forw_back_LTL.c:46:44: note: passing argument to parameter &apos;input_matrix&apos; here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                           ^
+f_b_1/forw_back_LTL.c:46:64: note: passing argument to parameter &apos;para_layer&apos; here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                                               ^
+f_b_1/forw_back_LTL.c:46:81: note: passing argument to parameter &apos;output_matrix&apos; here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                                                                ^
+f_b_1/forw_back_LTL.c:60:55: note: passing argument to parameter &apos;input_matrix&apos; here
+void MatrixBackPropagationMultiply(int w,int h,float *input_matrix,float *grad,float *rgrad){
+                                                      ^
+f_b_1/forw_back_LTL.c:66:45: note: passing argument to parameter &apos;input_matrix&apos; here
+void CalculateMatrixGrad(int w,int h,float *input_matrix,float *grad,float *output_matrix){
+                                            ^
+f_b_1/forw_back_LTL.c:74:39: note: passing argument to parameter &apos;input_matrix&apos; here
+void ReluBackPropagation(int w,float *input_matrix,float *grad,float *output_matrix){
+                                      ^
+f_b_1/forw_back_LTL.c:60:55: note: passing argument to parameter &apos;input_matrix&apos; here
+void MatrixBackPropagationMultiply(int w,int h,float *input_matrix,float *grad,float *rgrad){
+                                                      ^
+f_b_1/forw_back_LTL.c:66:45: note: passing argument to parameter &apos;input_matrix&apos; here
+void CalculateMatrixGrad(int w,int h,float *input_matrix,float *grad,float *output_matrix){
+                                            ^
+f_b_1/forw_back_LTL.c:74:39: note: passing argument to parameter &apos;input_matrix&apos; here
+void ReluBackPropagation(int w,float *input_matrix,float *grad,float *output_matrix){
+                                      ^
+f_b_1/forw_back_LTL.c:60:55: note: passing argument to parameter &apos;input_matrix&apos; here
+void MatrixBackPropagationMultiply(int w,int h,float *input_matrix,float *grad,float *rgrad){
+                                                      ^
+f_b_1/forw_back_LTL.c:66:45: note: passing argument to parameter &apos;input_matrix&apos; here
+void CalculateMatrixGrad(int w,int h,float *input_matrix,float *grad,float *output_matrix){
+                                            ^
+f_b_1/forw_back_LTL.c:30:38: note: passing argument to parameter &apos;input_matrix&apos; here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                     ^
+f_b_1/forw_back_LTL.c:82:34: note: passing argument to parameter &apos;input_matrix&apos; here
+void OverturnKernel(int k,float *input_matrix,float *output_matrix){
+                                 ^
+f_b_1/forw_back_LTL.c:30:38: note: passing argument to parameter &apos;input_matrix&apos; here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                     ^
+f_b_1/forw_back_LTL.c:82:34: note: passing argument to parameter &apos;input_matrix&apos; here
+void OverturnKernel(int k,float *input_matrix,float *output_matrix){
+                                 ^
+f_b_1/forw_back_LTL.c:30:38: note: passing argument to parameter &apos;input_matrix&apos; here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                     ^
+f_b_1/forw_back_LTL.c:98:67: note: passing argument to parameter &apos;output_matrix&apos; here
+void MatrixBackPropagation(int w,int h,float *input_matrix,float *output_matrix,float lr){
+                                                                  ^
+f_b_1/forw_back_LTL.c:98:67: note: passing argument to parameter &apos;output_matrix&apos; here
+f_b_1/forw_back_LTL.c:98:67: note: passing argument to parameter &apos;output_matrix&apos; here
+f_b_1/forw_back_LTL.c:98:67: note: passing argument to parameter &apos;output_matrix&apos; here
+f_b_1/forw_back_LTL.c:98:67: note: passing argument to parameter &apos;output_matrix&apos; here
+f_b_1/forw_back_LTL.c:98:67: note: passing argument to parameter &apos;output_matrix&apos; here
+20 warnings generated."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Linking Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 185.230 ; gain = 93.629"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Pragmas Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 185.230 ; gain = 93.629"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1467" tag="" content="Starting code transformations ..."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Standard Transforms Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 185.230 ; gain = 93.629"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1472" tag="" content="Checking synthesizability ..."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;max&apos; into &apos;Relu.1&apos; (f_b_1/forw_back_LTL.c:56) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;max&apos; into &apos;Relu&apos; (f_b_1/forw_back_LTL.c:56) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;MatrixExtensionImproved&apos; into &apos;forward&apos; (f_b_1/forw_back_LTL.c:110) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;Relu.1&apos; into &apos;forward&apos; (f_b_1/forw_back_LTL.c:112) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;Relu&apos; into &apos;forward&apos; (f_b_1/forw_back_LTL.c:114) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;MatrixBackPropagationMultiply.2&apos; into &apos;backward&apos; (f_b_1/forw_back_LTL.c:134) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;CalculateMatrixGrad.2&apos; into &apos;backward&apos; (f_b_1/forw_back_LTL.c:137) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;ReluBackPropagation.1&apos; into &apos;backward&apos; (f_b_1/forw_back_LTL.c:139) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;MatrixBackPropagationMultiply.1&apos; into &apos;backward&apos; (f_b_1/forw_back_LTL.c:141) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;CalculateMatrixGrad.1&apos; into &apos;backward&apos; (f_b_1/forw_back_LTL.c:144) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;ReluBackPropagation&apos; into &apos;backward&apos; (f_b_1/forw_back_LTL.c:146) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;MatrixBackPropagationMultiply&apos; into &apos;backward&apos; (f_b_1/forw_back_LTL.c:148) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;CalculateMatrixGrad&apos; into &apos;backward&apos; (f_b_1/forw_back_LTL.c:151) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;MatrixBackPropagation.2&apos; into &apos;backward&apos; (f_b_1/forw_back_LTL.c:179) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;MatrixBackPropagation.1&apos; into &apos;backward&apos; (f_b_1/forw_back_LTL.c:180) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;MatrixBackPropagation&apos; into &apos;backward&apos; (f_b_1/forw_back_LTL.c:181) automatically."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Synthesizability Time (s): cpu = 00:00:03 ; elapsed = 00:00:10 . Memory (MB): peak = 185.230 ; gain = 93.629"/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;Padding_label5&apos; (f_b_1/forw_back_LTL.c:90) in function &apos;Padding&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;Padding_label5&apos; (f_b_1/forw_back_LTL.c:90) in function &apos;Padding.1&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;Conv2d_label0&apos; (f_b_1/forw_back_LTL.c:35) in function &apos;Conv2d.1&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;Conv2d_label0&apos; (f_b_1/forw_back_LTL.c:35) in function &apos;Conv2d.3&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;Conv2d_label0&apos; (f_b_1/forw_back_LTL.c:35) in function &apos;Conv2d&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;Conv2d_label0&apos; (f_b_1/forw_back_LTL.c:35) in function &apos;Conv2d.2&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;Conv2d_label0&apos; (f_b_1/forw_back_LTL.c:35) in function &apos;Conv2d.4&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;MatrixBackPropagationMultiply_label2&apos; (f_b_1/forw_back_LTL.c:62) in function &apos;MatrixBackPropagationMultiply&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;MatrixBackPropagationMultiply_label2&apos; (f_b_1/forw_back_LTL.c:62) in function &apos;MatrixBackPropagationMultiply.1&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;MatrixBackPropagationMultiply_label2&apos; (f_b_1/forw_back_LTL.c:62) in function &apos;MatrixBackPropagationMultiply.2&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;Conv2d_label0&apos; (f_b_1/forw_back_LTL.c:35) in function &apos;Conv2d.5&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;Conv2d_label0&apos; (f_b_1/forw_back_LTL.c:35) in function &apos;Conv2d.6&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;Conv2d_label0&apos; (f_b_1/forw_back_LTL.c:35) in function &apos;Conv2d.7&apos; for pipelining."/>
+	<Message severity="WARNING" prefix="[XFORM 203-503]" key="XFORM_UNROLL_INVALID_321" tag="LOOP,SDX_LOOP" content="Cannot unroll loop &apos;Loop-1.1&apos; (f_b_1/forw_back_LTL.c:90) in function &apos;Padding&apos;: cannot completely unroll a loop with a variable trip count."/>
+	<Message severity="WARNING" prefix="[XFORM 203-503]" key="XFORM_UNROLL_INVALID_321" tag="LOOP,SDX_LOOP" content="Cannot unroll loop &apos;Loop-1.1&apos; (f_b_1/forw_back_LTL.c:90) in function &apos;Padding.1&apos;: cannot completely unroll a loop with a variable trip count."/>
+	<Message severity="WARNING" prefix="[XFORM 203-503]" key="XFORM_UNROLL_INVALID_314" tag="LOOP,SDX_LOOP" content="Cannot unroll loop &apos;Loop-1.1.1.1&apos; (f_b_1/forw_back_LTL.c:35) in function &apos;Conv2d.1&apos; completely: variable loop bound."/>
+	<Message severity="WARNING" prefix="[XFORM 203-503]" key="XFORM_UNROLL_INVALID_314" tag="LOOP,SDX_LOOP" content="Cannot unroll loop &apos;Loop-1.1.1.1&apos; (f_b_1/forw_back_LTL.c:35) in function &apos;Conv2d.3&apos; completely: variable loop bound."/>
+	<Message severity="WARNING" prefix="[XFORM 203-503]" key="XFORM_UNROLL_INVALID_314" tag="LOOP,SDX_LOOP" content="Cannot unroll loop &apos;Loop-1.1.1.1&apos; (f_b_1/forw_back_LTL.c:35) in function &apos;Conv2d&apos; completely: variable loop bound."/>
+	<Message severity="WARNING" prefix="[XFORM 203-503]" key="XFORM_UNROLL_INVALID_314" tag="LOOP,SDX_LOOP" content="Cannot unroll loop &apos;Loop-1.1.1.1&apos; (f_b_1/forw_back_LTL.c:35) in function &apos;Conv2d.2&apos; completely: variable loop bound."/>
+	<Message severity="WARNING" prefix="[XFORM 203-503]" key="XFORM_UNROLL_INVALID_314" tag="LOOP,SDX_LOOP" content="Cannot unroll loop &apos;Loop-1.1.1.1&apos; (f_b_1/forw_back_LTL.c:35) in function &apos;Conv2d.4&apos; completely: variable loop bound."/>
+	<Message severity="WARNING" prefix="[XFORM 203-503]" key="XFORM_UNROLL_INVALID_321" tag="LOOP,SDX_LOOP" content="Cannot unroll loop &apos;Loop-1.1&apos; (f_b_1/forw_back_LTL.c:62) in function &apos;MatrixBackPropagationMultiply&apos;: cannot completely unroll a loop with a variable trip count."/>
+	<Message severity="WARNING" prefix="[XFORM 203-503]" key="XFORM_UNROLL_INVALID_321" tag="LOOP,SDX_LOOP" content="Cannot unroll loop &apos;Loop-1.1&apos; (f_b_1/forw_back_LTL.c:62) in function &apos;MatrixBackPropagationMultiply.1&apos;: cannot completely unroll a loop with a variable trip count."/>
+	<Message severity="WARNING" prefix="[XFORM 203-503]" key="XFORM_UNROLL_INVALID_321" tag="LOOP,SDX_LOOP" content="Cannot unroll loop &apos;Loop-1.1&apos; (f_b_1/forw_back_LTL.c:62) in function &apos;MatrixBackPropagationMultiply.2&apos;: cannot completely unroll a loop with a variable trip count."/>
+	<Message severity="WARNING" prefix="[XFORM 203-503]" key="XFORM_UNROLL_INVALID_314" tag="LOOP,SDX_LOOP" content="Cannot unroll loop &apos;Loop-1.1.1.1&apos; (f_b_1/forw_back_LTL.c:35) in function &apos;Conv2d.5&apos; completely: variable loop bound."/>
+	<Message severity="WARNING" prefix="[XFORM 203-503]" key="XFORM_UNROLL_INVALID_314" tag="LOOP,SDX_LOOP" content="Cannot unroll loop &apos;Loop-1.1.1.1&apos; (f_b_1/forw_back_LTL.c:35) in function &apos;Conv2d.6&apos; completely: variable loop bound."/>
+	<Message severity="WARNING" prefix="[XFORM 203-503]" key="XFORM_UNROLL_INVALID_314" tag="LOOP,SDX_LOOP" content="Cannot unroll loop &apos;Loop-1.1.1.1&apos; (f_b_1/forw_back_LTL.c:35) in function &apos;Conv2d.7&apos; completely: variable loop bound."/>
+	<Message severity="INFO" prefix="[XFORM 203-102]" key="XFORM_AUTO_PARTITION_STATUS_121" tag="" content="Partitioning array &apos;fc_out_3&apos; in dimension 1 automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-102]" key="XFORM_AUTO_PARTITION_STATUS_121" tag="" content="Partitioning array &apos;fc_out_2&apos; in dimension 1 automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-102]" key="XFORM_AUTO_PARTITION_STATUS_121" tag="" content="Partitioning array &apos;fc_out_1&apos; in dimension 1 automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-102]" key="XFORM_AUTO_PARTITION_STATUS_121" tag="" content="Partitioning array &apos;fc_in_3_relu2&apos; in dimension 1 automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-102]" key="XFORM_AUTO_PARTITION_STATUS_121" tag="" content="Partitioning array &apos;fc_in_2_relu1&apos; in dimension 1 automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-102]" key="XFORM_AUTO_PARTITION_STATUS_121" tag="" content="Partitioning array &apos;fc_in_1&apos; in dimension 1 automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;max&apos; into &apos;Relu.1&apos; (f_b_1/forw_back_LTL.c:56) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;max&apos; into &apos;Relu&apos; (f_b_1/forw_back_LTL.c:56) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;MatrixExtensionImproved&apos; into &apos;forward&apos; (f_b_1/forw_back_LTL.c:110) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;MatrixMultiply.2&apos; into &apos;forward&apos; (f_b_1/forw_back_LTL.c:111) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;Relu.1&apos; into &apos;forward&apos; (f_b_1/forw_back_LTL.c:112) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;MatrixMultiply.1&apos; into &apos;forward&apos; (f_b_1/forw_back_LTL.c:113) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;Relu&apos; into &apos;forward&apos; (f_b_1/forw_back_LTL.c:114) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;MatrixMultiply&apos; into &apos;forward&apos; (f_b_1/forw_back_LTL.c:115) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;MatrixBackPropagationMultiply.2&apos; into &apos;backward&apos; (f_b_1/forw_back_LTL.c:134) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;CalculateMatrixGrad.2&apos; into &apos;backward&apos; (f_b_1/forw_back_LTL.c:137) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;ReluBackPropagation.1&apos; into &apos;backward&apos; (f_b_1/forw_back_LTL.c:139) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;MatrixBackPropagationMultiply.1&apos; into &apos;backward&apos; (f_b_1/forw_back_LTL.c:141) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;CalculateMatrixGrad.1&apos; into &apos;backward&apos; (f_b_1/forw_back_LTL.c:144) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;ReluBackPropagation&apos; into &apos;backward&apos; (f_b_1/forw_back_LTL.c:146) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;MatrixBackPropagationMultiply&apos; into &apos;backward&apos; (f_b_1/forw_back_LTL.c:148) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;CalculateMatrixGrad&apos; into &apos;backward&apos; (f_b_1/forw_back_LTL.c:151) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;MatrixBackPropagation.2&apos; into &apos;backward&apos; (f_b_1/forw_back_LTL.c:179) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;MatrixBackPropagation.1&apos; into &apos;backward&apos; (f_b_1/forw_back_LTL.c:180) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;MatrixBackPropagation&apos; into &apos;backward&apos; (f_b_1/forw_back_LTL.c:181) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-11]" key="XFORM_EXPR_BALANCE_STATUS_178" tag="" content="Balancing expressions in function &apos;Padding.1&apos; (f_b_1/forw_back_LTL.c:89:34)...3 expression(s) balanced."/>
+	<Message severity="INFO" prefix="[XFORM 203-11]" key="XFORM_EXPR_BALANCE_STATUS_178" tag="" content="Balancing expressions in function &apos;Padding&apos; (f_b_1/forw_back_LTL.c:88)...3 expression(s) balanced."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Pre-synthesis Time (s): cpu = 00:00:07 ; elapsed = 00:00:15 . Memory (MB): peak = 185.230 ; gain = 93.629"/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;MatrixBackPropagationMultiply_label2&apos; (f_b_1/forw_back_LTL.c:62:10) in function &apos;backward&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;MatrixBackPropagationMultiply_label2&apos; (f_b_1/forw_back_LTL.c:62:10) in function &apos;backward&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;MatrixBackPropagationMultiply_label2&apos; (f_b_1/forw_back_LTL.c:62:10) in function &apos;backward&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;Padding_label5&apos; (f_b_1/forw_back_LTL.c:90:10) in function &apos;Padding.1&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;Padding_label5&apos; (f_b_1/forw_back_LTL.c:90:10) in function &apos;Padding&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;Conv2d_label0&apos; (f_b_1/forw_back_LTL.c:35:18) in function &apos;Conv2d.7&apos;."/>
+	<Message severity="WARNING" prefix="[XFORM 203-542]" key="XFORM_LOOPFLAT_INVALID_219" tag="LOOP,SDX_LOOP" content="Cannot flatten a loop nest &apos;Loop-1.1&apos; (f_b_1/forw_back_LTL.c:32:20) in function &apos;Conv2d.7&apos; : 
+
+the outer loop is not a perfect loop."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;Loop-1&apos; (f_b_1/forw_back_LTL.c:31:16) in function &apos;Conv2d.7&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;Conv2d_label0&apos; (f_b_1/forw_back_LTL.c:35:18) in function &apos;Conv2d.6&apos;."/>
+	<Message severity="WARNING" prefix="[XFORM 203-542]" key="XFORM_LOOPFLAT_INVALID_219" tag="LOOP,SDX_LOOP" content="Cannot flatten a loop nest &apos;Loop-1.1&apos; (f_b_1/forw_back_LTL.c:32:20) in function &apos;Conv2d.6&apos; : 
+
+the outer loop is not a perfect loop."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;Loop-1&apos; (f_b_1/forw_back_LTL.c:31:16) in function &apos;Conv2d.6&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;Conv2d_label0&apos; (f_b_1/forw_back_LTL.c:35:18) in function &apos;Conv2d.5&apos;."/>
+	<Message severity="WARNING" prefix="[XFORM 203-542]" key="XFORM_LOOPFLAT_INVALID_219" tag="LOOP,SDX_LOOP" content="Cannot flatten a loop nest &apos;Loop-1.1&apos; (f_b_1/forw_back_LTL.c:32:20) in function &apos;Conv2d.5&apos; : 
+
+the outer loop is not a perfect loop."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;Loop-1&apos; (f_b_1/forw_back_LTL.c:31:16) in function &apos;Conv2d.5&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;Conv2d_label0&apos; (f_b_1/forw_back_LTL.c:35:18) in function &apos;Conv2d.4&apos;."/>
+	<Message severity="WARNING" prefix="[XFORM 203-542]" key="XFORM_LOOPFLAT_INVALID_219" tag="LOOP,SDX_LOOP" content="Cannot flatten a loop nest &apos;Loop-1.1&apos; (f_b_1/forw_back_LTL.c:32:20) in function &apos;Conv2d.4&apos; : 
+
+the outer loop is not a perfect loop."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;Loop-1&apos; (f_b_1/forw_back_LTL.c:31:16) in function &apos;Conv2d.4&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;Conv2d_label0&apos; (f_b_1/forw_back_LTL.c:35:18) in function &apos;Conv2d.3&apos;."/>
+	<Message severity="WARNING" prefix="[XFORM 203-542]" key="XFORM_LOOPFLAT_INVALID_219" tag="LOOP,SDX_LOOP" content="Cannot flatten a loop nest &apos;Loop-1.1&apos; (f_b_1/forw_back_LTL.c:32:20) in function &apos;Conv2d.3&apos; : 
+
+the outer loop is not a perfect loop."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;Loop-1&apos; (f_b_1/forw_back_LTL.c:31:16) in function &apos;Conv2d.3&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;Conv2d_label0&apos; (f_b_1/forw_back_LTL.c:35:18) in function &apos;Conv2d.2&apos;."/>
+	<Message severity="WARNING" prefix="[XFORM 203-542]" key="XFORM_LOOPFLAT_INVALID_219" tag="LOOP,SDX_LOOP" content="Cannot flatten a loop nest &apos;Loop-1.1&apos; (f_b_1/forw_back_LTL.c:32:20) in function &apos;Conv2d.2&apos; : 
+
+the outer loop is not a perfect loop."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;Loop-1&apos; (f_b_1/forw_back_LTL.c:31:16) in function &apos;Conv2d.2&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;Conv2d_label0&apos; (f_b_1/forw_back_LTL.c:35:18) in function &apos;Conv2d.1&apos;."/>
+	<Message severity="WARNING" prefix="[XFORM 203-542]" key="XFORM_LOOPFLAT_INVALID_219" tag="LOOP,SDX_LOOP" content="Cannot flatten a loop nest &apos;Loop-1.1&apos; (f_b_1/forw_back_LTL.c:32:20) in function &apos;Conv2d.1&apos; : 
+
+the outer loop is not a perfect loop."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;Loop-1&apos; (f_b_1/forw_back_LTL.c:31:16) in function &apos;Conv2d.1&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;Conv2d_label0&apos; (f_b_1/forw_back_LTL.c:35:18) in function &apos;Conv2d&apos;."/>
+	<Message severity="WARNING" prefix="[XFORM 203-542]" key="XFORM_LOOPFLAT_INVALID_219" tag="LOOP,SDX_LOOP" content="Cannot flatten a loop nest &apos;Loop-1.1&apos; (f_b_1/forw_back_LTL.c:32:20) in function &apos;Conv2d&apos; : 
+
+the outer loop is not a perfect loop."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;Loop-1&apos; (f_b_1/forw_back_LTL.c:31:16) in function &apos;Conv2d&apos;."/>
+	<Message severity="WARNING" prefix="[XFORM 203-631]" key="XFORM_FRN_STATUS_336" tag="" content="Renaming function &apos;MatrixBackPropagation.3&apos; to &apos;MatrixBackPropagatio.1&apos; (f_b_1/forw_back_LTL.c:99:25)"/>
+	<Message severity="INFO" prefix="[HLS 200-444]" key="HLS 200-444" tag="AXI,SDX_AXI" content="Inferring multiple bus burst read of a total cumulative length 103680 on port &apos;data&apos; (f_b_1/forw_back_LTL.c:211:5). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings."/>
+	<Message severity="INFO" prefix="[HLS 200-444]" key="HLS 200-444" tag="AXI,SDX_AXI" content="Inferring multiple bus burst read of a total cumulative length 450 on port &apos;data&apos; (f_b_1/forw_back_LTL.c:213:5). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings."/>
+	<Message severity="INFO" prefix="[HLS 200-444]" key="HLS 200-444" tag="AXI,SDX_AXI" content="Inferring multiple bus burst read of a total cumulative length 8100 on port &apos;data&apos; (f_b_1/forw_back_LTL.c:212:5). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings."/>
+	<Message severity="INFO" prefix="[HLS 200-444]" key="HLS 200-444" tag="AXI,SDX_AXI" content="Inferring multiple bus burst read of a total cumulative length 9 on port &apos;data&apos; (f_b_1/forw_back_LTL.c:208:5). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings."/>
+	<Message severity="INFO" prefix="[HLS 200-444]" key="HLS 200-444" tag="AXI,SDX_AXI" content="Inferring multiple bus burst read of a total cumulative length 9 on port &apos;data&apos; (f_b_1/forw_back_LTL.c:209:5). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings."/>
+	<Message severity="INFO" prefix="[HLS 200-444]" key="HLS 200-444" tag="AXI,SDX_AXI" content="Inferring multiple bus burst read of a total cumulative length 9 on port &apos;data&apos; (f_b_1/forw_back_LTL.c:210:5). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings."/>
+	<Message severity="INFO" prefix="[HLS 200-444]" key="HLS 200-444" tag="AXI,SDX_AXI" content="Inferring multiple bus burst read of a total cumulative length 900 on port &apos;data&apos; (f_b_1/forw_back_LTL.c:207:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings."/>
+	<Message severity="INFO" prefix="[HLS 200-444]" key="HLS 200-444" tag="AXI,SDX_AXI" content="Inferring multiple bus burst write of a total cumulative length 10 on port &apos;data&apos; (f_b_1/forw_back_LTL.c:217:9). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings."/>
+	<Message severity="INFO" prefix="[HLS 200-444]" key="HLS 200-444" tag="AXI,SDX_AXI" content="Inferring multiple bus burst write of a total cumulative length 10 on port &apos;data&apos; (f_b_1/forw_back_LTL.c:222:9). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings."/>
+	<Message severity="INFO" prefix="[HLS 200-444]" key="HLS 200-444" tag="AXI,SDX_AXI" content="Inferring multiple bus burst write of a total cumulative length 103680 on port &apos;data&apos; (f_b_1/forw_back_LTL.c:227:9). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings."/>
+	<Message severity="INFO" prefix="[HLS 200-444]" key="HLS 200-444" tag="AXI,SDX_AXI" content="Inferring multiple bus burst write of a total cumulative length 450 on port &apos;data&apos; (f_b_1/forw_back_LTL.c:229:9). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings."/>
+	<Message severity="INFO" prefix="[HLS 200-444]" key="HLS 200-444" tag="AXI,SDX_AXI" content="Inferring multiple bus burst write of a total cumulative length 8100 on port &apos;data&apos; (f_b_1/forw_back_LTL.c:228:9). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings."/>
+	<Message severity="INFO" prefix="[HLS 200-444]" key="HLS 200-444" tag="AXI,SDX_AXI" content="Inferring multiple bus burst write of a total cumulative length 9 on port &apos;data&apos; (f_b_1/forw_back_LTL.c:224:9). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings."/>
+	<Message severity="INFO" prefix="[HLS 200-444]" key="HLS 200-444" tag="AXI,SDX_AXI" content="Inferring multiple bus burst write of a total cumulative length 9 on port &apos;data&apos; (f_b_1/forw_back_LTL.c:225:9). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings."/>
+	<Message severity="INFO" prefix="[HLS 200-444]" key="HLS 200-444" tag="AXI,SDX_AXI" content="Inferring multiple bus burst write of a total cumulative length 9 on port &apos;data&apos; (f_b_1/forw_back_LTL.c:226:9). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Architecture Synthesis Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 307.516 ; gain = 215.914"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1317" tag="" content="Starting hardware synthesis ..."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1385" tag="" content="Synthesizing &apos;forw_back&apos; ..."/>
+	<Message severity="WARNING" prefix="[SYN 201-103]" key="SYN_MODULE_NAME_ILLEGAL_445" tag="" content="Legalizing function name &apos;Conv2d.7&apos; to &apos;Conv2d_7&apos;."/>
+	<Message severity="WARNING" prefix="[SYN 201-103]" key="SYN_MODULE_NAME_ILLEGAL_445" tag="" content="Legalizing function name &apos;Conv2d.6&apos; to &apos;Conv2d_6&apos;."/>
+	<Message severity="WARNING" prefix="[SYN 201-103]" key="SYN_MODULE_NAME_ILLEGAL_445" tag="" content="Legalizing function name &apos;Conv2d.5&apos; to &apos;Conv2d_5&apos;."/>
+	<Message severity="WARNING" prefix="[SYN 201-103]" key="SYN_MODULE_NAME_ILLEGAL_445" tag="" content="Legalizing function name &apos;Conv2d.4&apos; to &apos;Conv2d_4&apos;."/>
+	<Message severity="WARNING" prefix="[SYN 201-103]" key="SYN_MODULE_NAME_ILLEGAL_445" tag="" content="Legalizing function name &apos;Padding.1&apos; to &apos;Padding_1&apos;."/>
+	<Message severity="WARNING" prefix="[SYN 201-103]" key="SYN_MODULE_NAME_ILLEGAL_445" tag="" content="Legalizing function name &apos;Conv2d.3&apos; to &apos;Conv2d_3&apos;."/>
+	<Message severity="WARNING" prefix="[SYN 201-103]" key="SYN_MODULE_NAME_ILLEGAL_445" tag="" content="Legalizing function name &apos;Conv2d.2&apos; to &apos;Conv2d_2&apos;."/>
+	<Message severity="WARNING" prefix="[SYN 201-103]" key="SYN_MODULE_NAME_ILLEGAL_445" tag="" content="Legalizing function name &apos;Conv2d.1&apos; to &apos;Conv2d_1&apos;."/>
+	<Message severity="WARNING" prefix="[SYN 201-103]" key="SYN_MODULE_NAME_ILLEGAL_445" tag="" content="Legalizing function name &apos;MatrixBackPropagatio.1&apos; to &apos;MatrixBackPropagatio_1&apos;."/>
+	<Message severity="WARNING" prefix="[SYN 201-303]" key="PREPROC_CORE_ASSIGN_ILLEGAL_433" tag="" content="Cannot apply memory assignment of &apos;RAM_2P_LUTRAM&apos; (f_b_1/forw_back_LTL.c:31): &apos;fc_hidden_layer2&apos; does not exist or is optimized away."/>
+	<Message severity="WARNING" prefix="[SYN 201-303]" key="PREPROC_CORE_ASSIGN_ILLEGAL_433" tag="" content="Cannot apply memory assignment of &apos;RAM_2P_LUTRAM&apos; (f_b_1/forw_back_LTL.c:31): &apos;fc_hidden_layer2&apos; does not exist or is optimized away."/>
+	<Message severity="WARNING" prefix="[SYN 201-303]" key="PREPROC_CORE_ASSIGN_ILLEGAL_433" tag="" content="Cannot apply memory assignment of &apos;RAM_2P_LUTRAM&apos; (f_b_1/forw_back_LTL.c:31): &apos;fc_hidden_layer2&apos; does not exist or is optimized away."/>
+	<Message severity="WARNING" prefix="[SYN 201-303]" key="PREPROC_CORE_ASSIGN_ILLEGAL_433" tag="" content="Cannot apply memory assignment of &apos;RAM_2P_LUTRAM&apos; (f_b_1/forw_back_LTL.c:31): &apos;fc_hidden_layer2&apos; does not exist or is optimized away."/>
+	<Message severity="WARNING" prefix="[SYN 201-303]" key="PREPROC_CORE_ASSIGN_ILLEGAL_433" tag="" content="Cannot apply memory assignment of &apos;RAM_2P_LUTRAM&apos; (f_b_1/forw_back_LTL.c:83): &apos;fc_hidden_layer2&apos; does not exist or is optimized away."/>
+	<Message severity="WARNING" prefix="[SYN 201-303]" key="PREPROC_CORE_ASSIGN_ILLEGAL_433" tag="" content="Cannot apply memory assignment of &apos;RAM_2P_LUTRAM&apos; (f_b_1/forw_back_LTL.c:89): &apos;fc_hidden_layer2&apos; does not exist or is optimized away."/>
+	<Message severity="WARNING" prefix="[SYN 201-303]" key="PREPROC_CORE_ASSIGN_ILLEGAL_433" tag="" content="Cannot apply memory assignment of &apos;RAM_2P_LUTRAM&apos; (f_b_1/forw_back_LTL.c:31): &apos;fc_hidden_layer2&apos; does not exist or is optimized away."/>
+	<Message severity="WARNING" prefix="[SYN 201-303]" key="PREPROC_CORE_ASSIGN_ILLEGAL_433" tag="" content="Cannot apply memory assignment of &apos;RAM_2P_LUTRAM&apos; (f_b_1/forw_back_LTL.c:31): &apos;fc_hidden_layer2&apos; does not exist or is optimized away."/>
+	<Message severity="WARNING" prefix="[SYN 201-303]" key="PREPROC_CORE_ASSIGN_ILLEGAL_433" tag="" content="Cannot apply memory assignment of &apos;RAM_2P_LUTRAM&apos; (f_b_1/forw_back_LTL.c:89): &apos;fc_hidden_layer2&apos; does not exist or is optimized away."/>
+	<Message severity="WARNING" prefix="[SYN 201-303]" key="PREPROC_CORE_ASSIGN_ILLEGAL_433" tag="" content="Cannot apply memory assignment of &apos;RAM_2P_LUTRAM&apos; (f_b_1/forw_back_LTL.c:31): &apos;fc_hidden_layer2&apos; does not exist or is optimized away."/>
+	<Message severity="WARNING" prefix="[SYN 201-303]" key="PREPROC_CORE_ASSIGN_ILLEGAL_433" tag="" content="Cannot apply memory assignment of &apos;RAM_2P_LUTRAM&apos; (f_b_1/forw_back_LTL.c:31): &apos;fc_hidden_layer2&apos; does not exist or is optimized away."/>
+	<Message severity="WARNING" prefix="[SYN 201-303]" key="PREPROC_CORE_ASSIGN_ILLEGAL_433" tag="" content="Cannot apply memory assignment of &apos;RAM_2P_LUTRAM&apos; (f_b_1/forw_back_LTL.c:99): &apos;fc_hidden_layer2&apos; does not exist or is optimized away."/>
+	<Message severity="WARNING" prefix="[SYN 201-303]" key="PREPROC_CORE_ASSIGN_ILLEGAL_433" tag="" content="Cannot apply memory assignment of &apos;RAM_2P_LUTRAM&apos; (f_b_1/forw_back_LTL.c:186): &apos;return&apos; does not exist or is optimized away."/>
+	<Message severity="WARNING" prefix="[SYN 201-107]" key="SYN_PORT_NAME_ILLEGAL_593" tag="" content="Renaming port name &apos;forw_back/in&apos; to &apos;forw_back/in_r&apos; to avoid the conflict with HDL keywords or other object names."/>
+	<Message severity="WARNING" prefix="[SYN 201-107]" key="SYN_PORT_NAME_ILLEGAL_593" tag="" content="Renaming port name &apos;forw_back/out&apos; to &apos;forw_back/out_r&apos; to avoid the conflict with HDL keywords or other object names."/>
+	<Message severity="WARNING" prefix="[SYN 201-107]" key="SYN_PORT_NAME_ILLEGAL_593" tag="" content="Renaming port name &apos;forw_back/label&apos; to &apos;forw_back/label_r&apos; to avoid the conflict with HDL keywords or other object names."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;Conv2d_7&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;Conv2d_label0_L&apos;."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_34" tag="LOOP,SDX_LOOP,SCHEDULE" content="Unable to enforce a carried constraint (II = 1)
+   between &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36) and &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_34" tag="LOOP,SDX_LOOP,SCHEDULE" content="Unable to enforce a carried constraint (II = 2)
+   between &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36) and &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_34" tag="LOOP,SDX_LOOP,SCHEDULE" content="Unable to enforce a carried constraint (II = 3)
+   between &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36) and &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36)."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 4, Depth = 10."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 26.911 seconds; current allocated memory: 253.973 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-434]" key="HLS 200-434" tag="SDX" content="Only 1 loops out of a total 2 loops have been pipelined in this design."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.171 seconds; current allocated memory: 254.376 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;Conv2d_6&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;Conv2d_label0_L&apos;."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_34" tag="LOOP,SDX_LOOP,SCHEDULE" content="Unable to enforce a carried constraint (II = 1)
+   between &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36) and &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_34" tag="LOOP,SDX_LOOP,SCHEDULE" content="Unable to enforce a carried constraint (II = 2)
+   between &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36) and &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_34" tag="LOOP,SDX_LOOP,SCHEDULE" content="Unable to enforce a carried constraint (II = 3)
+   between &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36) and &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36)."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 4, Depth = 10."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.332 seconds; current allocated memory: 254.783 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.225 seconds; current allocated memory: 255.155 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;Conv2d_5&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;Conv2d_label0_L&apos;."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_34" tag="LOOP,SDX_LOOP,SCHEDULE" content="Unable to enforce a carried constraint (II = 1)
+   between &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36) and &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_34" tag="LOOP,SDX_LOOP,SCHEDULE" content="Unable to enforce a carried constraint (II = 2)
+   between &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36) and &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_34" tag="LOOP,SDX_LOOP,SCHEDULE" content="Unable to enforce a carried constraint (II = 3)
+   between &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36) and &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36)."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 4, Depth = 10."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.314 seconds; current allocated memory: 255.468 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.171 seconds; current allocated memory: 255.886 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;forward&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.335 seconds; current allocated memory: 256.703 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.501 seconds; current allocated memory: 257.815 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;Conv2d_4&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;Conv2d_label0_L&apos;."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_34" tag="LOOP,SDX_LOOP,SCHEDULE" content="Unable to enforce a carried constraint (II = 1)
+   between &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36) and &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_34" tag="LOOP,SDX_LOOP,SCHEDULE" content="Unable to enforce a carried constraint (II = 2)
+   between &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36) and &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_34" tag="LOOP,SDX_LOOP,SCHEDULE" content="Unable to enforce a carried constraint (II = 3)
+   between &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36) and &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36)."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 4, Depth = 9."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.625 seconds; current allocated memory: 258.274 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.163 seconds; current allocated memory: 258.575 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;OverturnKernel&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.194 seconds; current allocated memory: 258.693 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.115 seconds; current allocated memory: 258.822 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;Padding_1&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;Padding_label5_L&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 2."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.194 seconds; current allocated memory: 259.049 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.235 seconds; current allocated memory: 259.292 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;Conv2d_3&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;Conv2d_label0_L&apos;."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_34" tag="LOOP,SDX_LOOP,SCHEDULE" content="Unable to enforce a carried constraint (II = 1)
+   between &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36) and &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_34" tag="LOOP,SDX_LOOP,SCHEDULE" content="Unable to enforce a carried constraint (II = 2)
+   between &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36) and &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_34" tag="LOOP,SDX_LOOP,SCHEDULE" content="Unable to enforce a carried constraint (II = 3)
+   between &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36) and &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36)."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 4, Depth = 10."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.303 seconds; current allocated memory: 259.584 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.172 seconds; current allocated memory: 259.956 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;Conv2d_2&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;Conv2d_label0_L&apos;."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_34" tag="LOOP,SDX_LOOP,SCHEDULE" content="Unable to enforce a carried constraint (II = 1)
+   between &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36) and &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_34" tag="LOOP,SDX_LOOP,SCHEDULE" content="Unable to enforce a carried constraint (II = 2)
+   between &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36) and &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_34" tag="LOOP,SDX_LOOP,SCHEDULE" content="Unable to enforce a carried constraint (II = 3)
+   between &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36) and &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36)."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 4, Depth = 9."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.387 seconds; current allocated memory: 260.243 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.155 seconds; current allocated memory: 260.580 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;Padding&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;Padding_label5_L&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 2."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.236 seconds; current allocated memory: 260.750 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.143 seconds; current allocated memory: 261.005 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;Conv2d_1&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;Conv2d_label0_L&apos;."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_34" tag="LOOP,SDX_LOOP,SCHEDULE" content="Unable to enforce a carried constraint (II = 1)
+   between &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36) and &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_34" tag="LOOP,SDX_LOOP,SCHEDULE" content="Unable to enforce a carried constraint (II = 2)
+   between &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36) and &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_34" tag="LOOP,SDX_LOOP,SCHEDULE" content="Unable to enforce a carried constraint (II = 3)
+   between &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36) and &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36)."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 4, Depth = 10."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.313 seconds; current allocated memory: 261.347 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.174 seconds; current allocated memory: 261.743 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;Conv2d&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;Conv2d_label0_L&apos;."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_34" tag="LOOP,SDX_LOOP,SCHEDULE" content="Unable to enforce a carried constraint (II = 1)
+   between &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36) and &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_34" tag="LOOP,SDX_LOOP,SCHEDULE" content="Unable to enforce a carried constraint (II = 2)
+   between &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36) and &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_34" tag="LOOP,SDX_LOOP,SCHEDULE" content="Unable to enforce a carried constraint (II = 3)
+   between &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36) and &apos;fadd&apos; operation (&apos;tmp_s&apos;, f_b_1/forw_back_LTL.c:36)."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 4, Depth = 9."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.333 seconds; current allocated memory: 262.029 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.165 seconds; current allocated memory: 262.358 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;MatrixBackPropagatio_1&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.212 seconds; current allocated memory: 262.513 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.138 seconds; current allocated memory: 262.640 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;backward&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;MatrixBackPropagationMultiply_label2_L&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 6."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;MatrixBackPropagationMultiply_label2_L&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 6."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;MatrixBackPropagationMultiply_label2_L&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 6."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.572 seconds; current allocated memory: 263.875 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_705" tag="" content="After resource sharing, estimated clock period (10.1173ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns)."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_707" tag="" content="The critical path consists of the following:
+	&apos;load&apos; operation (&apos;fc_hidden_layer2_loa_1&apos;, f_b_1/forw_back_LTL.c:101-&gt;f_b_1/forw_back_LTL.c:180) on array &apos;fc_hidden_layer2&apos; (0.99 ns)
+	&apos;fsub&apos; operation (&apos;tmp_i1_65&apos;, f_b_1/forw_back_LTL.c:101-&gt;f_b_1/forw_back_LTL.c:180) (9.13 ns)"/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 1.409 seconds; current allocated memory: 266.073 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;forw_back&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;memcpy.mnist_data.in&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 3."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;memcpy.conv_kernel_1.conv1&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 3."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;memcpy.conv_kernel_2.conv2&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 3."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;memcpy.conv_kernel_3.conv3&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 3."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;memcpy.fc_hidden_layer1.fc1&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 3."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;memcpy.fc_hidden_layer2.fc2&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 3."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;memcpy.fc_hidden_layer3.fc3&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 3."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;memcpy.out.probability_result.gep&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 3."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;memcpy.conv1.conv_kernel_1.gep&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 3."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;memcpy.conv2.conv_kernel_2.gep&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 3."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;memcpy.conv3.conv_kernel_3.gep&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 3."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;memcpy.fc1.fc_hidden_layer1.gep&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 3."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;memcpy.fc2.fc_hidden_layer2.gep&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 3."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;memcpy.fc3.fc_hidden_layer3.gep&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 3."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;memcpy.out.probability_result.gep1&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 3."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 1.444 seconds; current allocated memory: 267.370 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 1.314 seconds; current allocated memory: 269.280 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;Conv2d_7&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_fadd_32ns_32ns_32_4_full_dsp_1&apos; to &apos;forw_back_fadd_32bkb&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_fmul_32ns_32ns_32_3_max_dsp_1&apos; to &apos;forw_back_fmul_32cud&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_fadd_32bkb&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_fmul_32cud&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;Conv2d_7&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 1.162 seconds; current allocated memory: 270.725 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;Conv2d_6&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_mac_muladd_5ns_6ns_5ns_10_1_1&apos; to &apos;forw_back_mac_muldEe&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_fadd_32bkb&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_fmul_32cud&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_mac_muldEe&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;Conv2d_6&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.637 seconds; current allocated memory: 271.831 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;Conv2d_5&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_fadd_32bkb&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_fmul_32cud&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;Conv2d_5&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.557 seconds; current allocated memory: 272.857 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;forward&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_fptrunc_64ns_32_2_1&apos; to &apos;forw_back_fptrunceOg&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_fpext_32ns_64_2_1&apos; to &apos;forw_back_fpext_3fYi&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_fcmp_32ns_32ns_1_2_1&apos; to &apos;forw_back_fcmp_32g8j&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_dadd_64ns_64ns_64_5_full_dsp_1&apos; to &apos;forw_back_dadd_64hbi&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_dmul_64ns_64ns_64_5_max_dsp_1&apos; to &apos;forw_back_dmul_64ibs&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_ddiv_64ns_64ns_64_22_1&apos; to &apos;forw_back_ddiv_64jbC&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_dexp_64ns_64ns_64_13_full_dsp_1&apos; to &apos;forw_back_dexp_64kbM&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_dadd_64hbi&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_ddiv_64jbC&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_dexp_64kbM&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_dmul_64ibs&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_fadd_32bkb&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_fcmp_32g8j&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_fmul_32cud&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_fpext_3fYi&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_fptrunceOg&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;forward&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.839 seconds; current allocated memory: 275.261 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;Conv2d_4&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_mac_muladd_3ns_6ns_3ns_7_1_1&apos; to &apos;forw_back_mac_mullbW&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_fadd_32bkb&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_fmul_32cud&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_mac_mullbW&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;Conv2d_4&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 1.193 seconds; current allocated memory: 276.400 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;OverturnKernel&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;OverturnKernel&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.497 seconds; current allocated memory: 276.779 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;Padding_1&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;Padding_1&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.295 seconds; current allocated memory: 277.290 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;Conv2d_3&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_fadd_32bkb&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_fmul_32cud&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_mac_muldEe&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;Conv2d_3&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.491 seconds; current allocated memory: 278.219 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;Conv2d_2&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_mac_mul_sub_4s_6ns_2ns_8_1_1&apos; to &apos;forw_back_mac_mulmb6&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_fadd_32bkb&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_fmul_32cud&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_mac_mulmb6&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;Conv2d_2&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.617 seconds; current allocated memory: 279.084 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;Padding&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;Padding&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.477 seconds; current allocated memory: 279.710 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;Conv2d_1&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_fadd_32bkb&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_fmul_32cud&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;Conv2d_1&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.477 seconds; current allocated memory: 280.623 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;Conv2d&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_fadd_32bkb&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_fmul_32cud&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;Conv2d&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.711 seconds; current allocated memory: 281.571 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;MatrixBackPropagatio_1&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_fsub_32ns_32ns_32_4_full_dsp_1&apos; to &apos;forw_back_fsub_32ncg&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_fmul_32cud&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_fsub_32ncg&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;MatrixBackPropagatio_1&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.63 seconds; current allocated memory: 282.017 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;backward&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;backward_kernel_grad_3&apos; to &apos;backward_kernel_gocq&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;backward_conv_grad_2&apos; to &apos;backward_conv_grapcA&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;backward_kernel_grad_3_overtu&apos; to &apos;backward_kernel_gqcK&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;backward_conv_grad_3_padding&apos; to &apos;backward_conv_grarcU&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;backward_kernel_grad_2&apos; to &apos;backward_kernel_gsc4&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;backward_conv_grad_1&apos; to &apos;backward_conv_gratde&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;backward_kernel_grad_2_overtu&apos; to &apos;backward_kernel_gudo&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;backward_conv_grad_2_padding&apos; to &apos;backward_conv_gravdy&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;backward_kernel_grad_1&apos; to &apos;backward_kernel_gwdI&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_faddfsub_32ns_32ns_32_4_full_dsp_1&apos; to &apos;forw_back_faddfsuxdS&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_mac_muladd_8ns_7ns_6ns_13_1_1&apos; to &apos;forw_back_mac_mulyd2&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_mac_muladd_10ns_9ns_8ns_17_1_1&apos; to &apos;forw_back_mac_mulzec&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_dmul_64ibs&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_faddfsuxdS&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_fcmp_32g8j&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_fmul_32cud&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_fpext_3fYi&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_fptrunceOg&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_mac_mulyd2&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;forw_back_mac_mulzec&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;backward&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.794 seconds; current allocated memory: 285.681 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;forw_back&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;forw_back/data&apos; to &apos;m_axi&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;forw_back/flag&apos; to &apos;s_axilite &amp; ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;forw_back/in_r&apos; to &apos;s_axilite &amp; ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;forw_back/conv1&apos; to &apos;s_axilite &amp; ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;forw_back/conv2&apos; to &apos;s_axilite &amp; ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;forw_back/conv3&apos; to &apos;s_axilite &amp; ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;forw_back/fc1&apos; to &apos;s_axilite &amp; ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;forw_back/fc2&apos; to &apos;s_axilite &amp; ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;forw_back/fc3&apos; to &apos;s_axilite &amp; ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;forw_back/out_r&apos; to &apos;s_axilite &amp; ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;forw_back/label_r&apos; to &apos;s_axilite &amp; ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;forw_back/lr&apos; to &apos;s_axilite &amp; ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on function &apos;forw_back&apos; to &apos;s_axilite &amp; ap_ctrl_hs&apos;."/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_mnist_data&apos; to &apos;forw_back_mnist_dAem&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_conv_kernel_1&apos; to &apos;forw_back_conv_keBew&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_conv_kernel_2&apos; to &apos;forw_back_conv_keCeG&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_conv_kernel_3&apos; to &apos;forw_back_conv_keDeQ&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_fc_hidden_layer1&apos; to &apos;forw_back_fc_hiddEe0&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_fc_hidden_layer2&apos; to &apos;forw_back_fc_hiddFfa&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_fc_hidden_layer3&apos; to &apos;forw_back_fc_hiddGfk&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_conv_out_1&apos; to &apos;forw_back_conv_ouHfu&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_conv_out_2&apos; to &apos;forw_back_conv_ouIfE&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_fc_out_1_0&apos; to &apos;forw_back_fc_out_JfO&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_fc_in_2_relu1_0&apos; to &apos;forw_back_fc_in_2KfY&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_fc_out_2_0&apos; to &apos;forw_back_fc_out_Lf8&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_fc_in_3_relu2_0&apos; to &apos;forw_back_fc_in_3Mgi&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;forw_back_probability_result&apos; to &apos;forw_back_probabiNgs&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_851" tag="" content="Bundling port &apos;return&apos;, &apos;flag&apos;, &apos;in_r&apos;, &apos;conv1&apos;, &apos;conv2&apos;, &apos;conv3&apos;, &apos;fc1&apos;, &apos;fc2&apos;, &apos;fc3&apos;, &apos;out_r&apos;, &apos;label_r&apos; and &apos;lr&apos; to AXI-Lite port ctrl."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;forw_back&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 2.657 seconds; current allocated memory: 290.294 MB."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1792" tag="" content="Implementing memory &apos;forward_conv_out_3_ram (RAM)&apos; using block RAMs with power-on initialization."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1792" tag="" content="Implementing memory &apos;forward_fc_out_3_0_ram (RAM)&apos; using distributed RAMs with power-on initialization."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1790" tag="" content="Implementing memory &apos;backward_grad_3_ram (RAM)&apos; using distributed RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1790" tag="" content="Implementing memory &apos;backward_wgrad_3_ram (RAM)&apos; using block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1790" tag="" content="Implementing memory &apos;backward_rgrad_2_ram (RAM)&apos; using block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1790" tag="" content="Implementing memory &apos;backward_grad_2_ram (RAM)&apos; using block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1790" tag="" content="Implementing memory &apos;backward_wgrad_2_ram (RAM)&apos; using block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1790" tag="" content="Implementing memory &apos;backward_wgrad_1_ram (RAM)&apos; using block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1790" tag="" content="Implementing memory &apos;backward_grad_0_ram (RAM)&apos; using block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1790" tag="" content="Implementing memory &apos;backward_kernel_gocq_ram (RAM)&apos; using distributed RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1790" tag="" content="Implementing memory &apos;backward_conv_grapcA_ram (RAM)&apos; using block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1790" tag="" content="Implementing memory &apos;backward_conv_grarcU_ram (RAM)&apos; using block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1790" tag="" content="Implementing memory &apos;backward_conv_gratde_ram (RAM)&apos; using block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1790" tag="" content="Implementing memory &apos;backward_conv_gravdy_ram (RAM)&apos; using block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1792" tag="" content="Implementing memory &apos;forw_back_mnist_dAem_ram (RAM)&apos; using block RAMs with power-on initialization."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1792" tag="" content="Implementing memory &apos;forw_back_conv_keBew_ram (RAM)&apos; using distributed RAMs with power-on initialization."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1792" tag="" content="Implementing memory &apos;forw_back_fc_hiddEe0_ram (RAM)&apos; using block RAMs with power-on initialization."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1792" tag="" content="Implementing memory &apos;forw_back_fc_hiddFfa_ram (RAM_2P_LUTRAM)&apos; using distributed RAMs with power-on initialization."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1792" tag="" content="Implementing memory &apos;forw_back_fc_hiddGfk_ram (RAM)&apos; using block RAMs with power-on initialization."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1792" tag="" content="Implementing memory &apos;forw_back_conv_ouHfu_ram (RAM)&apos; using block RAMs with power-on initialization."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1792" tag="" content="Implementing memory &apos;forw_back_conv_ouIfE_ram (RAM)&apos; using block RAMs with power-on initialization."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1792" tag="" content="Implementing memory &apos;forw_back_fc_out_JfO_ram (RAM)&apos; using block RAMs with power-on initialization."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1792" tag="" content="Implementing memory &apos;forw_back_fc_out_Lf8_ram (RAM)&apos; using block RAMs with power-on initialization."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished generating all RTL models Time (s): cpu = 00:00:47 ; elapsed = 00:01:01 . Memory (MB): peak = 397.477 ; gain = 305.875"/>
+	<Message severity="INFO" prefix="[VHDL 208-304]" key="VHDL_304_1066" tag="" content="Generating VHDL RTL for forw_back."/>
+	<Message severity="INFO" prefix="[VLOG 209-307]" key="VLOG_307_1067" tag="" content="Generating Verilog RTL for forw_back."/>
+</Messages>

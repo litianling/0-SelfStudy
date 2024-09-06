@@ -1,0 +1,751 @@
+INFO: [HLS 200-10] Running 'D:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user 'LTL' on host 'zero' (Windows NT_amd64 version 6.2) on Wed Oct 26 23:35:41 +0800 2022
+INFO: [HLS 200-10] In directory 'C:/Users/LTL/Desktop/Handwritten_digit_recognition__ZYY_FPGA'
+Sourcing Tcl script 'C:/Users/LTL/Desktop/Handwritten_digit_recognition__ZYY_FPGA/f_b_0/solution1/csynth.tcl'
+INFO: [HLS 200-10] Opening project 'C:/Users/LTL/Desktop/Handwritten_digit_recognition__ZYY_FPGA/f_b_0'.
+INFO: [HLS 200-10] Adding design file 'f_b_0/forw_back.c' to the project
+INFO: [HLS 200-10] Adding test bench file 'f_b_0/main.c' to the project
+INFO: [HLS 200-10] Opening solution 'C:/Users/LTL/Desktop/Handwritten_digit_recognition__ZYY_FPGA/f_b_0/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xczu3eg-sbva484-1-e'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'f_b_0/forw_back.c' ... 
+WARNING: [HLS 200-40] In file included from f_b_0/forw_back.c:1:
+f_b_0/forw_back.c:236:36: warning: incompatible pointer types passing 'float [1][45]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixBackPropagationMultiply1(second_relu,out_grad,out_wgrad);
+                                   ^~~~~~~~~~~
+f_b_0/forw_back.c:147:44: note: passing argument to parameter 'para' here
+void MatrixBackPropagationMultiply1(float *para,float *grad,float *rgrad){
+                                           ^
+f_b_0/forw_back.c:239:26: warning: incompatible pointer types passing 'float [45][10]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    CalculateMatrixGrad1(fc_hidden_layer3,out_grad,second_rgrad);
+                         ^~~~~~~~~~~~~~~~
+f_b_0/forw_back.c:168:34: note: passing argument to parameter 'input_matrix' here
+void CalculateMatrixGrad1(float *input_matrix,float *grad,float *output_matrix){
+                                 ^
+f_b_0/forw_back.c:241:26: warning: incompatible pointer types passing 'float [1][45]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    ReluBackPropagation1(second_fc,second_rgrad,second_grad);
+                         ^~~~~~~~~
+f_b_0/forw_back.c:193:34: note: passing argument to parameter 'input_matrix' here
+void ReluBackPropagation1(float *input_matrix,float *grad,float *output_matrix){
+                                 ^
+f_b_0/forw_back.c:243:36: warning: incompatible pointer types passing 'float [1][180]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixBackPropagationMultiply2(first_relu,second_grad,second_wgrad);
+                                   ^~~~~~~~~~
+f_b_0/forw_back.c:154:44: note: passing argument to parameter 'para' here
+void MatrixBackPropagationMultiply2(float *para,float *grad,float *rgrad){
+                                           ^
+f_b_0/forw_back.c:247:26: warning: incompatible pointer types passing 'float [180][45]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    CalculateMatrixGrad2(fc_hidden_layer2,second_grad,first_rgrad);
+                         ^~~~~~~~~~~~~~~~
+f_b_0/forw_back.c:176:34: note: passing argument to parameter 'input_matrix' here
+void CalculateMatrixGrad2(float *input_matrix,float *grad,float *output_matrix){
+                                 ^
+f_b_0/forw_back.c:249:26: warning: incompatible pointer types passing 'float [1][180]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    ReluBackPropagation2(first_fc,first_rgrad,first_grad);
+                         ^~~~~~~~
+f_b_0/forw_back.c:199:34: note: passing argument to parameter 'input_matrix' here
+void ReluBackPropagation2(float *input_matrix,float *grad,float *output_matrix){
+                                 ^
+f_b_0/forw_back.c:251:36: warning: incompatible pointer types passing 'float [1][576]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixBackPropagationMultiply3(flatten_conv,first_grad,first_wgrad);
+                                   ^~~~~~~~~~~~
+f_b_0/forw_back.c:161:44: note: passing argument to parameter 'para' here
+void MatrixBackPropagationMultiply3(float *para,float *grad,float *rgrad){
+                                           ^
+f_b_0/forw_back.c:253:26: warning: incompatible pointer types passing 'float [576][180]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    CalculateMatrixGrad3(fc_hidden_layer1,first_grad,third_conv_grad1);
+                         ^~~~~~~~~~~~~~~~
+f_b_0/forw_back.c:184:34: note: passing argument to parameter 'input_matrix' here
+void CalculateMatrixGrad3(float *input_matrix,float *grad,float *output_matrix){
+                                 ^
+f_b_0/forw_back.c:256:15: warning: incompatible pointer types passing 'float [26][26]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Conv2d_b1(sencond_conv1,third_conv_grad1,third_kernel_grad);
+              ^~~~~~~~~~~~~
+f_b_0/forw_back.c:101:23: note: passing argument to parameter 'input_matrix' here
+void Conv2d_b1(float *input_matrix,float *kernel,float *out_matrix){
+                      ^
+f_b_0/forw_back.c:259:20: warning: incompatible pointer types passing 'float [3][3]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    OverturnKernel(conv_kernel3,third_kernel_overturn);
+                   ^~~~~~~~~~~~
+f_b_0/forw_back.c:217:28: note: passing argument to parameter 'input_matrix' here
+void OverturnKernel(float *input_matrix,float *output_matrix){
+                           ^
+f_b_0/forw_back.c:264:15: warning: incompatible pointer types passing 'float [28][28]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Conv2d_b3(first_conv1,second_conv_grad1,second_kernel_grad);
+              ^~~~~~~~~~~
+f_b_0/forw_back.c:119:23: note: passing argument to parameter 'input_matrix' here
+void Conv2d_b3(float *input_matrix,float *kernel,float *out_matrix){
+                      ^
+f_b_0/forw_back.c:267:20: warning: incompatible pointer types passing 'float [3][3]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    OverturnKernel(conv_kernel2,second_kernel_overturn);
+                   ^~~~~~~~~~~~
+f_b_0/forw_back.c:217:28: note: passing argument to parameter 'input_matrix' here
+void OverturnKernel(float *input_matrix,float *output_matrix){
+                           ^
+f_b_0/forw_back.c:272:15: warning: incompatible pointer types passing 'float [30][30]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Conv2d_b5(mnist_data,first_conv_grad,first_kernel_grad);
+              ^~~~~~~~~~
+f_b_0/forw_back.c:137:23: note: passing argument to parameter 'input_matrix' here
+void Conv2d_b5(float *input_matrix,float *kernel,float *out_matrix){
+                      ^
+f_b_0/forw_back.c:275:5: warning: implicitly declaring library function 'memcpy' with type 'void *(void *, const void *, unsigned long long)'
+    memcpy(lr, lr_in, sizeof(float));
+    ^
+f_b_0/forw_back.c:275:5: note: please include the header <string.h> or explicitly provide a declaration for 'memcpy'
+f_b_0/forw_back.c:314:14: warning: incompatible pointer types passing 'float [30][30]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+  Conv2d1(28,mnist_data,conv_kernel1,first_conv1);
+             ^~~~~~~~~~
+f_b_0/forw_back.c:31:33: note: passing argument to parameter 'input_matrix' here
+void Conv2d1(int ershiba,float *input_matrix,float *kernel,float *out_matrix){
+                                ^
+f_b_0/forw_back.c:314:25: warning: incompatible pointer types passing 'float [3][3]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+  Conv2d1(28,mnist_data,conv_kernel1,first_conv1);
+                        ^~~~~~~~~~~~
+f_b_0/forw_back.c:31:53: note: passing argument to parameter 'kernel' here
+void Conv2d1(int ershiba,float *input_matrix,float *kernel,float *out_matrix){
+                                                    ^
+f_b_0/forw_back.c:314:38: warning: incompatible pointer types passing 'float [28][28]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+  Conv2d1(28,mnist_data,conv_kernel1,first_conv1);
+                                     ^~~~~~~~~~~
+f_b_0/forw_back.c:31:67: note: passing argument to parameter 'out_matrix' here
+void Conv2d1(int ershiba,float *input_matrix,float *kernel,float *out_matrix){
+                                                                  ^
+f_b_0/forw_back.c:315:11: warning: incompatible pointer types passing 'float [28][28]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+  Conv2d2(first_conv1,conv_kernel2,sencond_conv1);
+          ^~~~~~~~~~~
+f_b_0/forw_back.c:41:21: note: passing argument to parameter 'input_matrix' here
+void Conv2d2(float *input_matrix,float *kernel,float *out_matrix){
+                    ^
+f_b_0/forw_back.c:315:23: warning: incompatible pointer types passing 'float [3][3]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+  Conv2d2(first_conv1,conv_kernel2,sencond_conv1);
+                      ^~~~~~~~~~~~
+f_b_0/forw_back.c:41:41: note: passing argument to parameter 'kernel' here
+void Conv2d2(float *input_matrix,float *kernel,float *out_matrix){
+                                        ^
+f_b_0/forw_back.c:315:36: warning: incompatible pointer types passing 'float [26][26]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+  Conv2d2(first_conv1,conv_kernel2,sencond_conv1);
+                                   ^~~~~~~~~~~~~
+f_b_0/forw_back.c:41:55: note: passing argument to parameter 'out_matrix' here
+void Conv2d2(float *input_matrix,float *kernel,float *out_matrix){
+                                                      ^
+f_b_0/forw_back.c:51:21: note: passing argument to parameter 'input_matrix' here
+void Conv2d3(float *input_matrix,float *kernel,float *out_matrix){
+                    ^
+f_b_0/forw_back.c:51:41: note: passing argument to parameter 'kernel' here
+void Conv2d3(float *input_matrix,float *kernel,float *out_matrix){
+                                        ^
+f_b_0/forw_back.c:51:55: note: passing argument to parameter 'out_matrix' here
+void Conv2d3(float *input_matrix,float *kernel,float *out_matrix){
+                                                      ^
+f_b_0/forw_back.c:71:37: note: passing argument to parameter 'input_matrix1' here
+void MatrixExtensionImproved(float *input_matrix1,float *output_matrix){
+                                    ^
+f_b_0/forw_back.c:71:58: note: passing argument to parameter 'output_matrix' here
+void MatrixExtensionImproved(float *input_matrix1,float *output_matrix){
+                                                         ^
+f_b_0/forw_back.c:78:29: note: passing argument to parameter 'input_matrix' here
+void MatrixMultiply1(float *input_matrix,float *para_layer,float*output_matrix){
+                            ^
+f_b_0/forw_back.c:78:49: note: passing argument to parameter 'para_layer' here
+void MatrixMultiply1(float *input_matrix,float *para_layer,float*output_matrix){
+                                                ^
+f_b_0/forw_back.c:78:66: note: passing argument to parameter 'output_matrix' here
+void MatrixMultiply1(float *input_matrix,float *para_layer,float*output_matrix){
+                                                                 ^
+f_b_0/forw_back.c:61:19: note: passing argument to parameter 'input_matrix' here
+void Relu1(float *input_matrix,float *output_matrix){
+                  ^
+f_b_0/forw_back.c:61:39: note: passing argument to parameter 'output_matrix' here
+void Relu1(float *input_matrix,float *output_matrix){
+                                      ^
+f_b_0/forw_back.c:86:29: note: passing argument to parameter 'input_matrix' here
+void MatrixMultiply2(float *input_matrix,float *para_layer,float*output_matrix){
+                            ^
+f_b_0/forw_back.c:86:49: note: passing argument to parameter 'para_layer' here
+void MatrixMultiply2(float *input_matrix,float *para_layer,float*output_matrix){
+                                                ^
+f_b_0/forw_back.c:86:66: note: passing argument to parameter 'output_matrix' here
+void MatrixMultiply2(float *input_matrix,float *para_layer,float*output_matrix){
+                                                                 ^
+f_b_0/forw_back.c:66:19: note: passing argument to parameter 'input_matrix' here
+void Relu2(float *input_matrix,float *output_matrix){
+                  ^
+f_b_0/forw_back.c:66:39: note: passing argument to parameter 'output_matrix' here
+void Relu2(float *input_matrix,float *output_matrix){
+                                      ^
+f_b_0/forw_back.c:94:29: note: passing argument to parameter 'input_matrix' here
+void MatrixMultiply3(float *input_matrix,float *para_layer,float*output_matrix){
+                            ^
+f_b_0/forw_back.c:94:49: note: passing argument to parameter 'para_layer' here
+void MatrixMultiply3(float *input_matrix,float *para_layer,float*output_matrix){
+                                                ^
+f_b_0/forw_back.c:94:66: note: passing argument to parameter 'output_matrix' here
+void MatrixMultiply3(float *input_matrix,float *para_layer,float*output_matrix){
+                                                                 ^
+20 warnings generated.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 186.195 ; gain = 94.652
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 186.195 ; gain = 94.652
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 186.195 ; gain = 94.652
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'max' into 'Relu1' (f_b_0/forw_back.c:63) automatically.
+INFO: [XFORM 203-602] Inlining function 'max' into 'Relu2' (f_b_0/forw_back.c:68) automatically.
+INFO: [XFORM 203-602] Inlining function 'MatrixExtensionImproved' into 'forward' (f_b_0/forw_back.c:322) automatically.
+INFO: [XFORM 203-602] Inlining function 'Relu1' into 'forward' (f_b_0/forw_back.c:325) automatically.
+INFO: [XFORM 203-602] Inlining function 'Relu2' into 'forward' (f_b_0/forw_back.c:327) automatically.
+INFO: [XFORM 203-602] Inlining function 'MatrixBackPropagationMultiply1' into 'backward' (f_b_0/forw_back.c:236) automatically.
+INFO: [XFORM 203-602] Inlining function 'CalculateMatrixGrad1' into 'backward' (f_b_0/forw_back.c:239) automatically.
+INFO: [XFORM 203-602] Inlining function 'ReluBackPropagation1' into 'backward' (f_b_0/forw_back.c:241) automatically.
+INFO: [XFORM 203-602] Inlining function 'MatrixBackPropagationMultiply2' into 'backward' (f_b_0/forw_back.c:243) automatically.
+INFO: [XFORM 203-602] Inlining function 'CalculateMatrixGrad2' into 'backward' (f_b_0/forw_back.c:247) automatically.
+INFO: [XFORM 203-602] Inlining function 'ReluBackPropagation2' into 'backward' (f_b_0/forw_back.c:249) automatically.
+INFO: [XFORM 203-602] Inlining function 'MatrixBackPropagationMultiply3' into 'backward' (f_b_0/forw_back.c:251) automatically.
+INFO: [XFORM 203-602] Inlining function 'CalculateMatrixGrad3' into 'backward' (f_b_0/forw_back.c:253) automatically.
+INFO: [XFORM 203-602] Inlining function 'Padding1' into 'backward' (f_b_0/forw_back.c:261) automatically.
+INFO: [XFORM 203-602] Inlining function 'Padding2' into 'backward' (f_b_0/forw_back.c:269) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:03 ; elapsed = 00:00:10 . Memory (MB): peak = 186.195 ; gain = 94.652
+WARNING: [XFORM 203-505] Ignore pipeline pragma in Loop whose tripcount is only 1 (f_b_0/forw_back.c:275) in function 'backward'.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'memcpy.lr.gep.lr_in' (f_b_0/forw_back.c:275) in function 'backward' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Conv2d_b4_label7' (f_b_0/forw_back.c:133) in function 'Conv2d_b4' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Conv2d_b2_label5' (f_b_0/forw_back.c:115) in function 'Conv2d_b2' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Conv2d_b5_label8' (f_b_0/forw_back.c:142) in function 'Conv2d_b5' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Conv2d_b3_label6' (f_b_0/forw_back.c:124) in function 'Conv2d_b3' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Conv2d_b1_label4' (f_b_0/forw_back.c:106) in function 'Conv2d_b1' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Conv2d3_label2' (f_b_0/forw_back.c:56) in function 'Conv2d3' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Conv2d2_label1' (f_b_0/forw_back.c:46) in function 'Conv2d2' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Conv2d1_label0' (f_b_0/forw_back.c:36) in function 'Conv2d1' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'memcpy.lr.gep.lr_in' (f_b_0/forw_back.c:275) in function 'backward' completely with a factor of 1.
+WARNING: [XFORM 203-503] Cannot unroll loop 'Loop-1.1.1.1' (f_b_0/forw_back.c:133) in function 'Conv2d_b4' completely: variable loop bound.
+WARNING: [XFORM 203-503] Cannot unroll loop 'Loop-1.1.1.1' (f_b_0/forw_back.c:115) in function 'Conv2d_b2' completely: variable loop bound.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1.1' (f_b_0/forw_back.c:142) in function 'Conv2d_b5' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1.1' (f_b_0/forw_back.c:124) in function 'Conv2d_b3' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1.1' (f_b_0/forw_back.c:106) in function 'Conv2d_b1' completely with a factor of 3.
+WARNING: [XFORM 203-503] Cannot unroll loop 'Loop-1.1.1.1' (f_b_0/forw_back.c:56) in function 'Conv2d3' completely: variable loop bound.
+WARNING: [XFORM 203-503] Cannot unroll loop 'Loop-1.1.1.1' (f_b_0/forw_back.c:46) in function 'Conv2d2' completely: variable loop bound.
+WARNING: [XFORM 203-503] Cannot unroll loop 'Loop-1.1.1.1' (f_b_0/forw_back.c:36) in function 'Conv2d1' completely: variable loop bound.
+INFO: [XFORM 203-102] Partitioning array 'lr' (f_b_0/forw_back.c:274) automatically.
+INFO: [XFORM 203-102] Partitioning array 'second_relu' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'second_fc' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'outmlp' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'flatten_conv' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'first_relu' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'first_fc' in dimension 1 automatically.
+INFO: [XFORM 203-602] Inlining function 'max' into 'Relu1' (f_b_0/forw_back.c:63) automatically.
+INFO: [XFORM 203-602] Inlining function 'max' into 'Relu2' (f_b_0/forw_back.c:68) automatically.
+INFO: [XFORM 203-602] Inlining function 'MatrixExtensionImproved' into 'forward' (f_b_0/forw_back.c:322) automatically.
+INFO: [XFORM 203-602] Inlining function 'MatrixMultiply1' into 'forward' (f_b_0/forw_back.c:324) automatically.
+INFO: [XFORM 203-602] Inlining function 'Relu1' into 'forward' (f_b_0/forw_back.c:325) automatically.
+INFO: [XFORM 203-602] Inlining function 'MatrixMultiply2' into 'forward' (f_b_0/forw_back.c:326) automatically.
+INFO: [XFORM 203-602] Inlining function 'Relu2' into 'forward' (f_b_0/forw_back.c:327) automatically.
+INFO: [XFORM 203-602] Inlining function 'MatrixMultiply3' into 'forward' (f_b_0/forw_back.c:328) automatically.
+INFO: [XFORM 203-602] Inlining function 'MatrixBackPropagationMultiply1' into 'backward' (f_b_0/forw_back.c:236) automatically.
+INFO: [XFORM 203-602] Inlining function 'CalculateMatrixGrad1' into 'backward' (f_b_0/forw_back.c:239) automatically.
+INFO: [XFORM 203-602] Inlining function 'ReluBackPropagation1' into 'backward' (f_b_0/forw_back.c:241) automatically.
+INFO: [XFORM 203-602] Inlining function 'MatrixBackPropagationMultiply2' into 'backward' (f_b_0/forw_back.c:243) automatically.
+INFO: [XFORM 203-602] Inlining function 'CalculateMatrixGrad2' into 'backward' (f_b_0/forw_back.c:247) automatically.
+INFO: [XFORM 203-602] Inlining function 'ReluBackPropagation2' into 'backward' (f_b_0/forw_back.c:249) automatically.
+INFO: [XFORM 203-602] Inlining function 'MatrixBackPropagationMultiply3' into 'backward' (f_b_0/forw_back.c:251) automatically.
+INFO: [XFORM 203-602] Inlining function 'CalculateMatrixGrad3' into 'backward' (f_b_0/forw_back.c:253) automatically.
+INFO: [XFORM 203-602] Inlining function 'Padding1' into 'backward' (f_b_0/forw_back.c:261) automatically.
+INFO: [XFORM 203-602] Inlining function 'Padding2' into 'backward' (f_b_0/forw_back.c:269) automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:06 ; elapsed = 00:00:14 . Memory (MB): peak = 186.195 ; gain = 94.652
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-1.1' (f_b_0/forw_back.c:139:20) in function 'Conv2d_b5' : 
+
+the outer loop is not a perfect loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (f_b_0/forw_back.c:138:16) in function 'Conv2d_b5'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Conv2d_b4_label7' (f_b_0/forw_back.c:133:18) in function 'Conv2d_b4'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-1.1' (f_b_0/forw_back.c:130:20) in function 'Conv2d_b4' : 
+
+the outer loop is not a perfect loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (f_b_0/forw_back.c:129:16) in function 'Conv2d_b4'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-1.1' (f_b_0/forw_back.c:121:20) in function 'Conv2d_b3' : 
+
+the outer loop is not a perfect loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (f_b_0/forw_back.c:120:16) in function 'Conv2d_b3'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Conv2d_b2_label5' (f_b_0/forw_back.c:115:18) in function 'Conv2d_b2'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-1.1' (f_b_0/forw_back.c:112:20) in function 'Conv2d_b2' : 
+
+the outer loop is not a perfect loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (f_b_0/forw_back.c:111:16) in function 'Conv2d_b2'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-1.1' (f_b_0/forw_back.c:103:20) in function 'Conv2d_b1' : 
+
+the outer loop is not a perfect loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (f_b_0/forw_back.c:102:16) in function 'Conv2d_b1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Conv2d3_label2' (f_b_0/forw_back.c:56:18) in function 'Conv2d3'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-1.1' (f_b_0/forw_back.c:53:20) in function 'Conv2d3' : 
+
+the outer loop is not a perfect loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (f_b_0/forw_back.c:52:16) in function 'Conv2d3'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Conv2d2_label1' (f_b_0/forw_back.c:46:18) in function 'Conv2d2'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-1.1' (f_b_0/forw_back.c:43:20) in function 'Conv2d2' : 
+
+the outer loop is not a perfect loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (f_b_0/forw_back.c:42:16) in function 'Conv2d2'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Conv2d1_label0' (f_b_0/forw_back.c:36:18) in function 'Conv2d1'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-1.1' (f_b_0/forw_back.c:33:20) in function 'Conv2d1' : 
+
+the outer loop is not a perfect loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (f_b_0/forw_back.c:32:16) in function 'Conv2d1'.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 10 on port 'data' (f_b_0/forw_back.c:356:9). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 10 on port 'data' (f_b_0/forw_back.c:367:6). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 103680 on port 'conv1' (f_b_0/forw_back.c:303:5). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 450 on port 'conv1' (f_b_0/forw_back.c:305:5). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 8100 on port 'conv1' (f_b_0/forw_back.c:304:5). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 9 on port 'conv1' (f_b_0/forw_back.c:300:5). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 9 on port 'conv1' (f_b_0/forw_back.c:301:5). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 9 on port 'conv1' (f_b_0/forw_back.c:302:5). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 103680 on port 'input_matrix' (f_b_0/forw_back.c:319:5). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 450 on port 'input_matrix' (f_b_0/forw_back.c:321:5). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 8100 on port 'input_matrix' (f_b_0/forw_back.c:320:5). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 9 on port 'input_matrix' (f_b_0/forw_back.c:310:5). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 9 on port 'input_matrix' (f_b_0/forw_back.c:311:5). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 9 on port 'input_matrix' (f_b_0/forw_back.c:312:5). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 900 on port 'input_matrix' (f_b_0/forw_back.c:309:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INTERNAL-INFO: never seen llvm instruction 'dexp'(522)
+INTERNAL-INFO: never seen llvm instruction 'dexp'(522)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:16 ; elapsed = 00:00:24 . Memory (MB): peak = 278.398 ; gain = 186.855
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'forw_back' ...
+WARNING: [SYN 201-303] Cannot apply memory assignment of 'RAM_2P_LUTRAM' (f_b_0/forw_back.c:32): 'fc_hidden_layer2' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply memory assignment of 'RAM_2P_LUTRAM' (f_b_0/forw_back.c:42): 'fc_hidden_layer2' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply memory assignment of 'RAM_2P_LUTRAM' (f_b_0/forw_back.c:52): 'fc_hidden_layer2' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply memory assignment of 'RAM_2P_LUTRAM' (f_b_0/forw_back.c:102): 'fc_hidden_layer2' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply memory assignment of 'RAM_2P_LUTRAM' (f_b_0/forw_back.c:218): 'fc_hidden_layer2' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply memory assignment of 'RAM_2P_LUTRAM' (f_b_0/forw_back.c:111): 'fc_hidden_layer2' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply memory assignment of 'RAM_2P_LUTRAM' (f_b_0/forw_back.c:120): 'fc_hidden_layer2' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply memory assignment of 'RAM_2P_LUTRAM' (f_b_0/forw_back.c:129): 'fc_hidden_layer2' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply memory assignment of 'RAM_2P_LUTRAM' (f_b_0/forw_back.c:138): 'fc_hidden_layer2' does not exist or is optimized away.
+WARNING: [SYN 201-107] Renaming port name 'forw_back/in' to 'forw_back/in_r' to avoid the conflict with HDL keywords or other object names.
+WARNING: [SYN 201-107] Renaming port name 'forw_back/out' to 'forw_back/out_r' to avoid the conflict with HDL keywords or other object names.
+WARNING: [SYN 201-107] Renaming port name 'forw_back/label' to 'forw_back/label_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Conv2d1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Conv2d1_label0_L'.
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 1)
+   between 'fadd' operation ('tmp_s', f_b_0/forw_back.c:37) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:37).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 2)
+   between 'fadd' operation ('tmp_s', f_b_0/forw_back.c:37) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:37).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 3)
+   between 'fadd' operation ('tmp_s', f_b_0/forw_back.c:37) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:37).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 4, Depth = 10.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 24.172 seconds; current allocated memory: 224.389 MB.
+INFO: [HLS 200-434] Only 1 loops out of a total 2 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.168 seconds; current allocated memory: 224.792 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Conv2d2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Conv2d2_label1_L'.
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 1)
+   between 'fadd' operation ('tmp_s', f_b_0/forw_back.c:47) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:47).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 2)
+   between 'fadd' operation ('tmp_s', f_b_0/forw_back.c:47) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:47).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 3)
+   between 'fadd' operation ('tmp_s', f_b_0/forw_back.c:47) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:47).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 4, Depth = 10.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.311 seconds; current allocated memory: 225.203 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.17 seconds; current allocated memory: 225.575 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Conv2d3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Conv2d3_label2_L'.
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 1)
+   between 'fadd' operation ('tmp_s', f_b_0/forw_back.c:57) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:57).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 2)
+   between 'fadd' operation ('tmp_s', f_b_0/forw_back.c:57) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:57).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 3)
+   between 'fadd' operation ('tmp_s', f_b_0/forw_back.c:57) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:57).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 4, Depth = 10.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.34 seconds; current allocated memory: 225.929 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.175 seconds; current allocated memory: 226.310 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'forward' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'memcpy.mnist_data.gep.input_matrix'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'memcpy.conv_kernel1.gep.conv1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'memcpy.conv_kernel2.gep.conv2'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'memcpy.conv_kernel3.gep.conv3'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'memcpy.fc_hidden_layer1.gep.fc1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'memcpy.fc_hidden_layer2.gep.fc2'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'memcpy.fc_hidden_layer3.gep.fc3'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.58 seconds; current allocated memory: 227.409 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.725 seconds; current allocated memory: 229.047 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Conv2d_b1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Conv2d_b1_label4'.
+WARNING: [SCHED 204-68] The II Violation in module 'Conv2d_b1' (Loop: Conv2d_b1_label4): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('tmp_2_131', f_b_0/forw_back.c:107) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:107).
+WARNING: [SCHED 204-68] The II Violation in module 'Conv2d_b1' (Loop: Conv2d_b1_label4): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('tmp_2_131', f_b_0/forw_back.c:107) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:107).
+WARNING: [SCHED 204-68] The II Violation in module 'Conv2d_b1' (Loop: Conv2d_b1_label4): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('tmp_2_131', f_b_0/forw_back.c:107) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:107).
+WARNING: [SCHED 204-68] The II Violation in module 'Conv2d_b1' (Loop: Conv2d_b1_label4): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('tmp_2_131', f_b_0/forw_back.c:107) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:107).
+WARNING: [SCHED 204-68] The II Violation in module 'Conv2d_b1' (Loop: Conv2d_b1_label4): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1)
+   between 'fadd' operation ('tmp_2_131', f_b_0/forw_back.c:107) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:107).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 12, Depth = 17.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.719 seconds; current allocated memory: 229.565 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.164 seconds; current allocated memory: 229.922 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'OverturnKernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.201 seconds; current allocated memory: 230.059 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.122 seconds; current allocated memory: 230.182 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Conv2d_b2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Conv2d_b2_label5_L'.
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 1)
+   between 'fadd' operation ('tmp_s', f_b_0/forw_back.c:116) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:116).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 2)
+   between 'fadd' operation ('tmp_s', f_b_0/forw_back.c:116) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:116).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 3)
+   between 'fadd' operation ('tmp_s', f_b_0/forw_back.c:116) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:116).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 4, Depth = 10.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.261 seconds; current allocated memory: 230.456 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.172 seconds; current allocated memory: 230.865 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Conv2d_b3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Conv2d_b3_label6'.
+WARNING: [SCHED 204-68] The II Violation in module 'Conv2d_b3' (Loop: Conv2d_b3_label6): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('tmp_2_125', f_b_0/forw_back.c:125) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:125).
+WARNING: [SCHED 204-68] The II Violation in module 'Conv2d_b3' (Loop: Conv2d_b3_label6): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('tmp_2_125', f_b_0/forw_back.c:125) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:125).
+WARNING: [SCHED 204-68] The II Violation in module 'Conv2d_b3' (Loop: Conv2d_b3_label6): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('tmp_2_125', f_b_0/forw_back.c:125) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:125).
+WARNING: [SCHED 204-68] The II Violation in module 'Conv2d_b3' (Loop: Conv2d_b3_label6): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('tmp_2_125', f_b_0/forw_back.c:125) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:125).
+WARNING: [SCHED 204-68] The II Violation in module 'Conv2d_b3' (Loop: Conv2d_b3_label6): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1)
+   between 'fadd' operation ('tmp_2_125', f_b_0/forw_back.c:125) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:125).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 12, Depth = 17.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.368 seconds; current allocated memory: 231.189 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.18 seconds; current allocated memory: 231.560 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Conv2d_b4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Conv2d_b4_label7_L'.
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 1)
+   between 'fadd' operation ('tmp_s', f_b_0/forw_back.c:134) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:134).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 2)
+   between 'fadd' operation ('tmp_s', f_b_0/forw_back.c:134) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:134).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 3)
+   between 'fadd' operation ('tmp_s', f_b_0/forw_back.c:134) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:134).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 4, Depth = 10.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.344 seconds; current allocated memory: 231.889 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.172 seconds; current allocated memory: 232.286 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Conv2d_b5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Conv2d_b5_label8'.
+WARNING: [SCHED 204-68] The II Violation in module 'Conv2d_b5' (Loop: Conv2d_b5_label8): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('tmp_2_119', f_b_0/forw_back.c:143) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:143).
+WARNING: [SCHED 204-68] The II Violation in module 'Conv2d_b5' (Loop: Conv2d_b5_label8): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('tmp_2_119', f_b_0/forw_back.c:143) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:143).
+WARNING: [SCHED 204-68] The II Violation in module 'Conv2d_b5' (Loop: Conv2d_b5_label8): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('tmp_2_119', f_b_0/forw_back.c:143) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:143).
+WARNING: [SCHED 204-68] The II Violation in module 'Conv2d_b5' (Loop: Conv2d_b5_label8): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('tmp_2_119', f_b_0/forw_back.c:143) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:143).
+WARNING: [SCHED 204-68] The II Violation in module 'Conv2d_b5' (Loop: Conv2d_b5_label8): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1)
+   between 'fadd' operation ('tmp_2_119', f_b_0/forw_back.c:143) and 'fadd' operation ('tmp_s', f_b_0/forw_back.c:143).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 12, Depth = 17.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.383 seconds; current allocated memory: 232.608 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.18 seconds; current allocated memory: 233.013 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'backward' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'memcpy.conv1.conv_kernel1.gep'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'memcpy.conv2.conv_kernel2.gep'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'memcpy.conv3.conv_kernel3.gep'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'memcpy.fc1.fc_hidden_layer1.gep'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'memcpy.fc2.fc_hidden_layer2.gep'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'memcpy.fc3.fc_hidden_layer3.gep'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.857 seconds; current allocated memory: 234.775 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.4 seconds; current allocated memory: 237.501 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'forw_back' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'memcpy.out.result.gep'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'memcpy.out.outmlp.gep'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.112 seconds; current allocated memory: 238.228 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.805 seconds; current allocated memory: 239.263 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Conv2d1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'forw_back_fadd_32ns_32ns_32_4_full_dsp_1' to 'forw_back_fadd_32bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'forw_back_fmul_32ns_32ns_32_3_max_dsp_1' to 'forw_back_fmul_32cud' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'forw_back_fadd_32bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'forw_back_fmul_32cud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Conv2d1'.
+INFO: [HLS 200-111]  Elapsed time: 1.285 seconds; current allocated memory: 240.586 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Conv2d2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'forw_back_mac_muladd_5ns_6ns_5ns_10_1_1' to 'forw_back_mac_muldEe' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'forw_back_fadd_32bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'forw_back_fmul_32cud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'forw_back_mac_muldEe': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Conv2d2'.
+INFO: [HLS 200-111]  Elapsed time: 0.63 seconds; current allocated memory: 241.690 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Conv2d3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'forw_back_fadd_32bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'forw_back_fmul_32cud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Conv2d3'.
+INFO: [HLS 200-111]  Elapsed time: 0.542 seconds; current allocated memory: 242.678 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'forward' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'forw_back_fptrunc_64ns_32_2_1' to 'forw_back_fptrunceOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'forw_back_fpext_32ns_64_2_1' to 'forw_back_fpext_3fYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'forw_back_fcmp_32ns_32ns_1_2_1' to 'forw_back_fcmp_32g8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'forw_back_dmul_64ns_64ns_64_5_max_dsp_1' to 'forw_back_dmul_64hbi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'forw_back_dmul_64hbi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'forw_back_fadd_32bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'forw_back_fcmp_32g8j': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'forw_back_fmul_32cud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'forw_back_fpext_3fYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'forw_back_fptrunceOg': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'forward'.
+INFO: [HLS 200-111]  Elapsed time: 0.765 seconds; current allocated memory: 245.672 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Conv2d_b1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'forw_back_fadd_32bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'forw_back_fmul_32cud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Conv2d_b1'.
+INFO: [HLS 200-111]  Elapsed time: 1.401 seconds; current allocated memory: 247.140 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'OverturnKernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'OverturnKernel'.
+INFO: [HLS 200-111]  Elapsed time: 0.486 seconds; current allocated memory: 247.451 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Conv2d_b2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'forw_back_fadd_32bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'forw_back_fmul_32cud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'forw_back_mac_muldEe': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Conv2d_b2'.
+INFO: [HLS 200-111]  Elapsed time: 0.338 seconds; current allocated memory: 248.268 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Conv2d_b3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'forw_back_fadd_32bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'forw_back_fmul_32cud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Conv2d_b3'.
+INFO: [HLS 200-111]  Elapsed time: 0.589 seconds; current allocated memory: 249.266 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Conv2d_b4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'forw_back_fadd_32bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'forw_back_fmul_32cud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Conv2d_b4'.
+INFO: [HLS 200-111]  Elapsed time: 0.572 seconds; current allocated memory: 250.169 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Conv2d_b5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'forw_back_fadd_32bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'forw_back_fmul_32cud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Conv2d_b5'.
+INFO: [HLS 200-111]  Elapsed time: 0.644 seconds; current allocated memory: 251.219 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'backward' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'backward_rgrad_assign' to 'backward_rgrad_asibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'backward_second_rgrad' to 'backward_second_rjbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'backward_second_grad' to 'backward_second_gkbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'backward_rgrad_assign_1' to 'backward_rgrad_aslbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'backward_first_rgrad' to 'backward_first_rgmb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'backward_first_wgrad' to 'backward_first_wgncg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'backward_third_conv_grad1' to 'backward_third_coocq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'backward_third_kernel_grad' to 'backward_third_kepcA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'backward_second_conv_grad1' to 'backward_second_cqcK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'backward_third_kernel_overtur' to 'backward_third_kercU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'backward_third_conv_grad_padd' to 'backward_third_cosc4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'backward_second_kernel_grad' to 'backward_second_ktde' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'backward_first_conv_grad' to 'backward_first_coudo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'backward_second_kernel_overtu' to 'backward_second_kvdy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'backward_second_conv_grad_pad' to 'backward_second_cwdI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'backward_first_kernel_grad' to 'backward_first_kexdS' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'forw_back_faddfsub_32ns_32ns_32_4_full_dsp_1' to 'forw_back_faddfsuyd2' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'forw_back_fsub_32ns_32ns_32_4_full_dsp_1' to 'forw_back_fsub_32zec' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'forw_back_dmul_64hbi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'forw_back_faddfsuyd2': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'forw_back_fcmp_32g8j': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'forw_back_fmul_32cud': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'forw_back_fpext_3fYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'forw_back_fptrunceOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'forw_back_fsub_32zec': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'backward'.
+INFO: [HLS 200-111]  Elapsed time: 1.15 seconds; current allocated memory: 256.029 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'forw_back' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'forw_back/data' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'forw_back/flag' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'forw_back/in_r' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'forw_back/conv1' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'forw_back/conv2' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'forw_back/conv3' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'forw_back/fc1' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'forw_back/fc2' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'forw_back/fc3' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'forw_back/out_r' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'forw_back/label_r' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'forw_back/lr' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'forw_back' to 's_axilite & ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'forw_back_mnist_data' to 'forw_back_mnist_dAem' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'forw_back_conv_kernel1' to 'forw_back_conv_keBew' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'forw_back_conv_kernel2' to 'forw_back_conv_keCeG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'forw_back_conv_kernel3' to 'forw_back_conv_keDeQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'forw_back_first_conv1' to 'forw_back_first_cEe0' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'forw_back_sencond_conv1' to 'forw_back_sencondFfa' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'forw_back_fc_hidden_layer1' to 'forw_back_fc_hiddGfk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'forw_back_fc_hidden_layer2' to 'forw_back_fc_hiddHfu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'forw_back_fc_hidden_layer3' to 'forw_back_fc_hiddIfE' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'forw_back_flatten_conv_0' to 'forw_back_flattenJfO' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'forw_back_first_fc_0' to 'forw_back_first_fKfY' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'forw_back_first_relu_0' to 'forw_back_first_rLf8' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'forw_back_second_fc_0' to 'forw_back_second_Mgi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'forw_back_second_relu_0' to 'forw_back_second_Ngs' due to the length limit 20
+INFO: [RTGEN 206-100] Bundling port 'return', 'flag', 'in_r', 'conv1', 'conv2', 'conv3', 'fc1', 'fc2', 'fc3', 'out_r', 'label_r' and 'lr' to AXI-Lite port ctrl.
+INFO: [SYN 201-210] Renamed object name 'forw_back_dadd_64ns_64ns_64_5_full_dsp_1' to 'forw_back_dadd_64OgC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'forw_back_ddiv_64ns_64ns_64_22_1' to 'forw_back_ddiv_64PgM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'forw_back_dexp_64ns_64ns_64_13_full_dsp_1' to 'forw_back_dexp_64QgW' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'forw_back_dadd_64OgC': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'forw_back_ddiv_64PgM': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'forw_back_dexp_64QgW': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'forw_back_fpext_3fYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'forw_back_fptrunceOg': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'forw_back'.
+INFO: [HLS 200-111]  Elapsed time: 3.068 seconds; current allocated memory: 259.666 MB.
+INFO: [RTMG 210-278] Implementing memory 'forward_third_conv1_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'backward_out_grad_ram (RAM)' using distributed RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'backward_rgrad_asibs_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'backward_second_rjbC_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'backward_second_gkbM_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'backward_rgrad_aslbW_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'backward_first_wgncg_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'backward_third_coocq_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'backward_third_kepcA_ram (RAM)' using distributed RAMs.
+INFO: [RTMG 210-278] Implementing memory 'backward_second_cqcK_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'backward_third_cosc4_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'backward_first_coudo_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'backward_second_cwdI_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'forw_back_mnist_dAem_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'forw_back_conv_keBew_ram (RAM)' using distributed RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'forw_back_first_cEe0_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'forw_back_sencondFfa_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'forw_back_fc_hiddGfk_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'forw_back_fc_hiddHfu_ram (RAM_2P_LUTRAM)' using distributed RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'forw_back_fc_hiddIfE_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'forw_back_first_fKfY_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'forw_back_second_Mgi_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:42 ; elapsed = 00:00:55 . Memory (MB): peak = 367.785 ; gain = 276.242
+INFO: [VHDL 208-304] Generating VHDL RTL for forw_back.
+INFO: [VLOG 209-307] Generating Verilog RTL for forw_back.
+INFO: [HLS 200-112] Total elapsed time: 54.848 seconds; peak allocated memory: 259.666 MB.

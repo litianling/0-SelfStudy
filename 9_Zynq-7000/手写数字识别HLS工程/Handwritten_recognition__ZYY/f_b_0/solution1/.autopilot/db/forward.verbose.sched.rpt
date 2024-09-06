@@ -1,0 +1,1608 @@
+
+
+================================================================
+== Vivado HLS Report for 'forward'
+================================================================
+* Date:           Wed Oct 26 23:36:07 2022
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        f_b_0
+* Solution:       solution1
+* Product family: zynquplus
+* Target device:  xczu3eg-sbva484-1-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.750|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------------------------------+--------+--------+----------+-----------+-----------+--------+----------+
+        |                                      |     Latency     | Iteration|  Initiation Interval  |  Trip  |          |
+        |               Loop Name              |   min  |   max  |  Latency |  achieved |   target  |  Count | Pipelined|
+        +--------------------------------------+--------+--------+----------+-----------+-----------+--------+----------+
+        |- memcpy.mnist_data.gep.input_matrix  |     901|     901|         3|          1|          1|     900|    yes   |
+        |- memcpy.conv_kernel1.gep.conv1       |      10|      10|         3|          1|          1|       9|    yes   |
+        |- memcpy.conv_kernel2.gep.conv2       |      10|      10|         3|          1|          1|       9|    yes   |
+        |- memcpy.conv_kernel3.gep.conv3       |      10|      10|         3|          1|          1|       9|    yes   |
+        |- memcpy.fc_hidden_layer1.gep.fc1     |  103681|  103681|         3|          1|          1|  103680|    yes   |
+        |- memcpy.fc_hidden_layer2.gep.fc2     |    8101|    8101|         3|          1|          1|    8100|    yes   |
+        |- memcpy.fc_hidden_layer3.gep.fc3     |     451|     451|         3|          1|          1|     450|    yes   |
+        |- Loop 8                              |    1200|    1200|        50|          -|          -|      24|    no    |
+        | + Loop 8.1                           |      48|      48|         2|          -|          -|      24|    no    |
+        |- Loop 9                              |  933480|  933480|      5186|          -|          -|     180|    no    |
+        | + Loop 9.1                           |    5184|    5184|         9|          -|          -|     576|    no    |
+        |- Relu1_label0                        |    1980|    1980|        11|          -|          -|     180|    no    |
+        |- Loop 11                             |   72990|   72990|      1622|          -|          -|      45|    no    |
+        | + Loop 11.1                          |    1620|    1620|         9|          -|          -|     180|    no    |
+        |- Relu2_label1                        |     495|     495|        11|          -|          -|      45|    no    |
+        |- Loop 13                             |    4070|    4070|       407|          -|          -|      10|    no    |
+        | + Loop 13.1                          |     405|     405|         9|          -|          -|      45|    no    |
+        +--------------------------------------+--------+--------+----------+-----------+-----------+--------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+  * Pipeline-1: initiation interval (II) = 1, depth = 3
+  * Pipeline-2: initiation interval (II) = 1, depth = 3
+  * Pipeline-3: initiation interval (II) = 1, depth = 3
+  * Pipeline-4: initiation interval (II) = 1, depth = 3
+  * Pipeline-5: initiation interval (II) = 1, depth = 3
+  * Pipeline-6: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 126
+* Pipeline : 7
+  Pipeline-0 : II = 1, D = 3, States = { 8 9 10 }
+  Pipeline-1 : II = 1, D = 3, States = { 18 19 20 }
+  Pipeline-2 : II = 1, D = 3, States = { 28 29 30 }
+  Pipeline-3 : II = 1, D = 3, States = { 38 39 40 }
+  Pipeline-4 : II = 1, D = 3, States = { 48 49 50 }
+  Pipeline-5 : II = 1, D = 3, States = { 58 59 60 }
+  Pipeline-6 : II = 1, D = 3, States = { 68 69 70 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 11 9 
+9 --> 10 
+10 --> 8 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 21 19 
+19 --> 20 
+20 --> 18 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 31 29 
+29 --> 30 
+30 --> 28 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 37 
+37 --> 38 
+38 --> 41 39 
+39 --> 40 
+40 --> 38 
+41 --> 42 
+42 --> 43 
+43 --> 44 
+44 --> 45 
+45 --> 46 
+46 --> 47 
+47 --> 48 
+48 --> 51 49 
+49 --> 50 
+50 --> 48 
+51 --> 52 
+52 --> 53 
+53 --> 54 
+54 --> 55 
+55 --> 56 
+56 --> 57 
+57 --> 58 
+58 --> 61 59 
+59 --> 60 
+60 --> 58 
+61 --> 62 
+62 --> 63 
+63 --> 64 
+64 --> 65 
+65 --> 66 
+66 --> 67 
+67 --> 68 
+68 --> 71 69 
+69 --> 70 
+70 --> 68 
+71 --> 72 
+72 --> 73 75 
+73 --> 74 72 
+74 --> 73 
+75 --> 76 85 
+76 --> 77 75 
+77 --> 78 
+78 --> 79 
+79 --> 80 
+80 --> 81 
+81 --> 82 
+82 --> 83 
+83 --> 84 
+84 --> 76 
+85 --> 86 96 
+86 --> 87 
+87 --> 88 
+88 --> 89 
+89 --> 90 
+90 --> 91 
+91 --> 92 
+92 --> 93 
+93 --> 94 
+94 --> 95 
+95 --> 85 
+96 --> 97 106 
+97 --> 98 96 
+98 --> 99 
+99 --> 100 
+100 --> 101 
+101 --> 102 
+102 --> 103 
+103 --> 104 
+104 --> 105 
+105 --> 97 
+106 --> 107 117 
+107 --> 108 
+108 --> 109 
+109 --> 110 
+110 --> 111 
+111 --> 112 
+112 --> 113 
+113 --> 114 
+114 --> 115 
+115 --> 116 
+116 --> 106 
+117 --> 118 
+118 --> 119 117 
+119 --> 120 
+120 --> 121 
+121 --> 122 
+122 --> 123 
+123 --> 124 
+124 --> 125 
+125 --> 126 
+126 --> 118 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 8.75>
+ST_1 : Operation 127 [1/1] (0.00ns)   --->   "%input_matrix_offset_s = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %input_matrix_offset)" [f_b_0/forw_back.c:308]   --->   Operation 127 'read' 'input_matrix_offset_s' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 128 [1/1] (0.00ns)   --->   "%zext_ln308_6 = zext i30 %input_matrix_offset_s to i64" [f_b_0/forw_back.c:308]   --->   Operation 128 'zext' 'zext_ln308_6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 129 [1/1] (0.00ns)   --->   "%input_matrix_addr_6 = getelementptr float* %input_matrix, i64 %zext_ln308_6" [f_b_0/forw_back.c:308]   --->   Operation 129 'getelementptr' 'input_matrix_addr_6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 130 [7/7] (8.75ns)   --->   "%input_matrix_addr_6_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_6, i32 900)" [f_b_0/forw_back.c:309]   --->   Operation 130 'readreq' 'input_matrix_addr_6_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 2 <SV = 1> <Delay = 8.75>
+ST_2 : Operation 131 [6/7] (8.75ns)   --->   "%input_matrix_addr_6_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_6, i32 900)" [f_b_0/forw_back.c:309]   --->   Operation 131 'readreq' 'input_matrix_addr_6_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 3 <SV = 2> <Delay = 8.75>
+ST_3 : Operation 132 [5/7] (8.75ns)   --->   "%input_matrix_addr_6_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_6, i32 900)" [f_b_0/forw_back.c:309]   --->   Operation 132 'readreq' 'input_matrix_addr_6_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 4 <SV = 3> <Delay = 8.75>
+ST_4 : Operation 133 [4/7] (8.75ns)   --->   "%input_matrix_addr_6_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_6, i32 900)" [f_b_0/forw_back.c:309]   --->   Operation 133 'readreq' 'input_matrix_addr_6_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 5 <SV = 4> <Delay = 8.75>
+ST_5 : Operation 134 [3/7] (8.75ns)   --->   "%input_matrix_addr_6_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_6, i32 900)" [f_b_0/forw_back.c:309]   --->   Operation 134 'readreq' 'input_matrix_addr_6_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 6 <SV = 5> <Delay = 8.75>
+ST_6 : Operation 135 [2/7] (8.75ns)   --->   "%input_matrix_addr_6_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_6, i32 900)" [f_b_0/forw_back.c:309]   --->   Operation 135 'readreq' 'input_matrix_addr_6_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 7 <SV = 6> <Delay = 8.75>
+ST_7 : Operation 136 [1/1] (0.00ns)   --->   "%fc3_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %fc3_offset)" [f_b_0/forw_back.c:308]   --->   Operation 136 'read' 'fc3_offset_read' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 137 [1/1] (0.00ns)   --->   "%fc2_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %fc2_offset)" [f_b_0/forw_back.c:308]   --->   Operation 137 'read' 'fc2_offset_read' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 138 [1/1] (0.00ns)   --->   "%fc1_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %fc1_offset)" [f_b_0/forw_back.c:308]   --->   Operation 138 'read' 'fc1_offset_read' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 139 [1/1] (0.00ns)   --->   "%conv3_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %conv3_offset)" [f_b_0/forw_back.c:308]   --->   Operation 139 'read' 'conv3_offset_read' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 140 [1/1] (0.00ns)   --->   "%conv2_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %conv2_offset)" [f_b_0/forw_back.c:308]   --->   Operation 140 'read' 'conv2_offset_read' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 141 [1/1] (0.00ns)   --->   "%conv1_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %conv1_offset)" [f_b_0/forw_back.c:308]   --->   Operation 141 'read' 'conv1_offset_read' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 142 [1/1] (0.00ns)   --->   "%zext_ln308 = zext i30 %fc3_offset_read to i64" [f_b_0/forw_back.c:308]   --->   Operation 142 'zext' 'zext_ln308' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 143 [1/1] (0.00ns)   --->   "%input_matrix_addr = getelementptr float* %input_matrix, i64 %zext_ln308" [f_b_0/forw_back.c:308]   --->   Operation 143 'getelementptr' 'input_matrix_addr' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 144 [1/1] (0.00ns)   --->   "%zext_ln308_1 = zext i30 %fc2_offset_read to i64" [f_b_0/forw_back.c:308]   --->   Operation 144 'zext' 'zext_ln308_1' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 145 [1/1] (0.00ns)   --->   "%input_matrix_addr_1 = getelementptr float* %input_matrix, i64 %zext_ln308_1" [f_b_0/forw_back.c:308]   --->   Operation 145 'getelementptr' 'input_matrix_addr_1' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 146 [1/1] (0.00ns)   --->   "%zext_ln308_2 = zext i30 %fc1_offset_read to i64" [f_b_0/forw_back.c:308]   --->   Operation 146 'zext' 'zext_ln308_2' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 147 [1/1] (0.00ns)   --->   "%input_matrix_addr_2 = getelementptr float* %input_matrix, i64 %zext_ln308_2" [f_b_0/forw_back.c:308]   --->   Operation 147 'getelementptr' 'input_matrix_addr_2' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 148 [1/1] (0.00ns)   --->   "%zext_ln308_3 = zext i30 %conv3_offset_read to i64" [f_b_0/forw_back.c:308]   --->   Operation 148 'zext' 'zext_ln308_3' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 149 [1/1] (0.00ns)   --->   "%input_matrix_addr_3 = getelementptr float* %input_matrix, i64 %zext_ln308_3" [f_b_0/forw_back.c:308]   --->   Operation 149 'getelementptr' 'input_matrix_addr_3' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 150 [1/1] (0.00ns)   --->   "%zext_ln308_4 = zext i30 %conv2_offset_read to i64" [f_b_0/forw_back.c:308]   --->   Operation 150 'zext' 'zext_ln308_4' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 151 [1/1] (0.00ns)   --->   "%input_matrix_addr_4 = getelementptr float* %input_matrix, i64 %zext_ln308_4" [f_b_0/forw_back.c:308]   --->   Operation 151 'getelementptr' 'input_matrix_addr_4' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 152 [1/1] (0.00ns)   --->   "%zext_ln308_5 = zext i30 %conv1_offset_read to i64" [f_b_0/forw_back.c:308]   --->   Operation 152 'zext' 'zext_ln308_5' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 153 [1/1] (0.00ns)   --->   "%input_matrix_addr_5 = getelementptr float* %input_matrix, i64 %zext_ln308_5" [f_b_0/forw_back.c:308]   --->   Operation 153 'getelementptr' 'input_matrix_addr_5' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 154 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(float* %input_matrix, [6 x i8]* @p_str14, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 32, [5 x i8]* @p_str15, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 154 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 155 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(float* %input_matrix, [6 x i8]* @p_str14, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 32, [5 x i8]* @p_str15, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 155 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 156 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(float* %input_matrix, [6 x i8]* @p_str14, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 32, [5 x i8]* @p_str15, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 156 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 157 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(float* %input_matrix, [6 x i8]* @p_str14, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 32, [5 x i8]* @p_str15, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 157 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 158 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(float* %input_matrix, [6 x i8]* @p_str14, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 32, [5 x i8]* @p_str15, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 158 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 159 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(float* %input_matrix, [6 x i8]* @p_str14, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 32, [5 x i8]* @p_str15, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 159 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 160 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(float* %input_matrix, [6 x i8]* @p_str14, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 32, [5 x i8]* @p_str15, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 160 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 161 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecMemCore([8100 x float]* @fc_hidden_layer2, [1 x i8]* @p_str, [14 x i8]* @p_str1, [1 x i8]* @p_str, i32 -1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_0/forw_back.c:309]   --->   Operation 161 'specmemcore' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 162 [1/7] (8.75ns)   --->   "%input_matrix_addr_6_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_6, i32 900)" [f_b_0/forw_back.c:309]   --->   Operation 162 'readreq' 'input_matrix_addr_6_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 163 [1/1] (0.75ns)   --->   "br label %burst.rd.header" [f_b_0/forw_back.c:309]   --->   Operation 163 'br' <Predicate = true> <Delay = 0.75>
+
+State 8 <SV = 7> <Delay = 0.93>
+ST_8 : Operation 164 [1/1] (0.00ns)   --->   "%phi_ln309 = phi i10 [ 0, %0 ], [ %add_ln309, %burstread.region ]" [f_b_0/forw_back.c:309]   --->   Operation 164 'phi' 'phi_ln309' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 165 [1/1] (0.85ns)   --->   "%icmp_ln309 = icmp eq i10 %phi_ln309, -124" [f_b_0/forw_back.c:309]   --->   Operation 165 'icmp' 'icmp_ln309' <Predicate = true> <Delay = 0.85> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 166 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 900, i64 900, i64 900) nounwind"   --->   Operation 166 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 167 [1/1] (0.93ns)   --->   "%add_ln309 = add i10 %phi_ln309, 1" [f_b_0/forw_back.c:309]   --->   Operation 167 'add' 'add_ln309' <Predicate = true> <Delay = 0.93> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 168 [1/1] (0.00ns)   --->   "br i1 %icmp_ln309, label %burst.rd.header7.preheader, label %burstread.region" [f_b_0/forw_back.c:309]   --->   Operation 168 'br' <Predicate = true> <Delay = 0.00>
+
+State 9 <SV = 8> <Delay = 8.75>
+ST_9 : Operation 169 [1/1] (8.75ns)   --->   "%input_matrix_addr_6_1 = call float @_ssdm_op_Read.m_axi.floatP(float* %input_matrix_addr_6)" [f_b_0/forw_back.c:309]   --->   Operation 169 'read' 'input_matrix_addr_6_1' <Predicate = (!icmp_ln309)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 10 <SV = 9> <Delay = 1.35>
+ST_10 : Operation 170 [1/1] (0.00ns)   --->   "%burstread_rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_s) nounwind" [f_b_0/forw_back.c:309]   --->   Operation 170 'specregionbegin' 'burstread_rbegin' <Predicate = (!icmp_ln309)> <Delay = 0.00>
+ST_10 : Operation 171 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str)" [f_b_0/forw_back.c:309]   --->   Operation 171 'specpipeline' <Predicate = (!icmp_ln309)> <Delay = 0.00>
+ST_10 : Operation 172 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([35 x i8]* @memcpy_OC_mnist_data)" [f_b_0/forw_back.c:309]   --->   Operation 172 'specloopname' <Predicate = (!icmp_ln309)> <Delay = 0.00>
+ST_10 : Operation 173 [1/1] (0.00ns)   --->   "%zext_ln309 = zext i10 %phi_ln309 to i64" [f_b_0/forw_back.c:309]   --->   Operation 173 'zext' 'zext_ln309' <Predicate = (!icmp_ln309)> <Delay = 0.00>
+ST_10 : Operation 174 [1/1] (0.00ns)   --->   "%mnist_data_addr = getelementptr [900 x float]* @mnist_data, i64 0, i64 %zext_ln309" [f_b_0/forw_back.c:309]   --->   Operation 174 'getelementptr' 'mnist_data_addr' <Predicate = (!icmp_ln309)> <Delay = 0.00>
+ST_10 : Operation 175 [1/1] (1.35ns)   --->   "store float %input_matrix_addr_6_1, float* %mnist_data_addr, align 4" [f_b_0/forw_back.c:309]   --->   Operation 175 'store' <Predicate = (!icmp_ln309)> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 450> <RAM>
+ST_10 : Operation 176 [1/1] (0.00ns)   --->   "%burstread_rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_s, i32 %burstread_rbegin) nounwind" [f_b_0/forw_back.c:309]   --->   Operation 176 'specregionend' 'burstread_rend' <Predicate = (!icmp_ln309)> <Delay = 0.00>
+ST_10 : Operation 177 [1/1] (0.00ns)   --->   "br label %burst.rd.header" [f_b_0/forw_back.c:309]   --->   Operation 177 'br' <Predicate = (!icmp_ln309)> <Delay = 0.00>
+
+State 11 <SV = 8> <Delay = 8.75>
+ST_11 : Operation 178 [7/7] (8.75ns)   --->   "%input_matrix_addr_5_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_5, i32 9)" [f_b_0/forw_back.c:310]   --->   Operation 178 'readreq' 'input_matrix_addr_5_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 12 <SV = 9> <Delay = 8.75>
+ST_12 : Operation 179 [6/7] (8.75ns)   --->   "%input_matrix_addr_5_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_5, i32 9)" [f_b_0/forw_back.c:310]   --->   Operation 179 'readreq' 'input_matrix_addr_5_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 13 <SV = 10> <Delay = 8.75>
+ST_13 : Operation 180 [5/7] (8.75ns)   --->   "%input_matrix_addr_5_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_5, i32 9)" [f_b_0/forw_back.c:310]   --->   Operation 180 'readreq' 'input_matrix_addr_5_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 14 <SV = 11> <Delay = 8.75>
+ST_14 : Operation 181 [4/7] (8.75ns)   --->   "%input_matrix_addr_5_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_5, i32 9)" [f_b_0/forw_back.c:310]   --->   Operation 181 'readreq' 'input_matrix_addr_5_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 15 <SV = 12> <Delay = 8.75>
+ST_15 : Operation 182 [3/7] (8.75ns)   --->   "%input_matrix_addr_5_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_5, i32 9)" [f_b_0/forw_back.c:310]   --->   Operation 182 'readreq' 'input_matrix_addr_5_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 16 <SV = 13> <Delay = 8.75>
+ST_16 : Operation 183 [2/7] (8.75ns)   --->   "%input_matrix_addr_5_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_5, i32 9)" [f_b_0/forw_back.c:310]   --->   Operation 183 'readreq' 'input_matrix_addr_5_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 17 <SV = 14> <Delay = 8.75>
+ST_17 : Operation 184 [1/7] (8.75ns)   --->   "%input_matrix_addr_5_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_5, i32 9)" [f_b_0/forw_back.c:310]   --->   Operation 184 'readreq' 'input_matrix_addr_5_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_17 : Operation 185 [1/1] (0.75ns)   --->   "br label %burst.rd.header7" [f_b_0/forw_back.c:310]   --->   Operation 185 'br' <Predicate = true> <Delay = 0.75>
+
+State 18 <SV = 15> <Delay = 0.88>
+ST_18 : Operation 186 [1/1] (0.00ns)   --->   "%phi_ln310 = phi i4 [ %add_ln310, %burstread.region1 ], [ 0, %burst.rd.header7.preheader ]" [f_b_0/forw_back.c:310]   --->   Operation 186 'phi' 'phi_ln310' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 187 [1/1] (0.88ns)   --->   "%icmp_ln310 = icmp eq i4 %phi_ln310, -7" [f_b_0/forw_back.c:310]   --->   Operation 187 'icmp' 'icmp_ln310' <Predicate = true> <Delay = 0.88> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 188 [1/1] (0.00ns)   --->   "%empty_7 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 9, i64 9, i64 9) nounwind"   --->   Operation 188 'speclooptripcount' 'empty_7' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 189 [1/1] (0.86ns)   --->   "%add_ln310 = add i4 %phi_ln310, 1" [f_b_0/forw_back.c:310]   --->   Operation 189 'add' 'add_ln310' <Predicate = true> <Delay = 0.86> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 190 [1/1] (0.00ns)   --->   "br i1 %icmp_ln310, label %burst.rd.header20.preheader, label %burstread.region1" [f_b_0/forw_back.c:310]   --->   Operation 190 'br' <Predicate = true> <Delay = 0.00>
+
+State 19 <SV = 16> <Delay = 8.75>
+ST_19 : Operation 191 [1/1] (8.75ns)   --->   "%input_matrix_addr_5_1 = call float @_ssdm_op_Read.m_axi.floatP(float* %input_matrix_addr_5)" [f_b_0/forw_back.c:310]   --->   Operation 191 'read' 'input_matrix_addr_5_1' <Predicate = (!icmp_ln310)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 20 <SV = 17> <Delay = 0.79>
+ST_20 : Operation 192 [1/1] (0.00ns)   --->   "%burstread_rbegin1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_s) nounwind" [f_b_0/forw_back.c:310]   --->   Operation 192 'specregionbegin' 'burstread_rbegin1' <Predicate = (!icmp_ln310)> <Delay = 0.00>
+ST_20 : Operation 193 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str)" [f_b_0/forw_back.c:310]   --->   Operation 193 'specpipeline' <Predicate = (!icmp_ln310)> <Delay = 0.00>
+ST_20 : Operation 194 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([30 x i8]* @memcpy_OC_conv_kerne_2)" [f_b_0/forw_back.c:310]   --->   Operation 194 'specloopname' <Predicate = (!icmp_ln310)> <Delay = 0.00>
+ST_20 : Operation 195 [1/1] (0.00ns)   --->   "%zext_ln310 = zext i4 %phi_ln310 to i64" [f_b_0/forw_back.c:310]   --->   Operation 195 'zext' 'zext_ln310' <Predicate = (!icmp_ln310)> <Delay = 0.00>
+ST_20 : Operation 196 [1/1] (0.00ns)   --->   "%conv_kernel1_addr = getelementptr [9 x float]* @conv_kernel1, i64 0, i64 %zext_ln310" [f_b_0/forw_back.c:310]   --->   Operation 196 'getelementptr' 'conv_kernel1_addr' <Predicate = (!icmp_ln310)> <Delay = 0.00>
+ST_20 : Operation 197 [1/1] (0.79ns)   --->   "store float %input_matrix_addr_5_1, float* %conv_kernel1_addr, align 4" [f_b_0/forw_back.c:310]   --->   Operation 197 'store' <Predicate = (!icmp_ln310)> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 450> <RAM>
+ST_20 : Operation 198 [1/1] (0.00ns)   --->   "%burstread_rend17 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_s, i32 %burstread_rbegin1) nounwind" [f_b_0/forw_back.c:310]   --->   Operation 198 'specregionend' 'burstread_rend17' <Predicate = (!icmp_ln310)> <Delay = 0.00>
+ST_20 : Operation 199 [1/1] (0.00ns)   --->   "br label %burst.rd.header7" [f_b_0/forw_back.c:310]   --->   Operation 199 'br' <Predicate = (!icmp_ln310)> <Delay = 0.00>
+
+State 21 <SV = 16> <Delay = 8.75>
+ST_21 : Operation 200 [7/7] (8.75ns)   --->   "%input_matrix_addr_4_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_4, i32 9)" [f_b_0/forw_back.c:311]   --->   Operation 200 'readreq' 'input_matrix_addr_4_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 22 <SV = 17> <Delay = 8.75>
+ST_22 : Operation 201 [6/7] (8.75ns)   --->   "%input_matrix_addr_4_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_4, i32 9)" [f_b_0/forw_back.c:311]   --->   Operation 201 'readreq' 'input_matrix_addr_4_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 23 <SV = 18> <Delay = 8.75>
+ST_23 : Operation 202 [5/7] (8.75ns)   --->   "%input_matrix_addr_4_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_4, i32 9)" [f_b_0/forw_back.c:311]   --->   Operation 202 'readreq' 'input_matrix_addr_4_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 24 <SV = 19> <Delay = 8.75>
+ST_24 : Operation 203 [4/7] (8.75ns)   --->   "%input_matrix_addr_4_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_4, i32 9)" [f_b_0/forw_back.c:311]   --->   Operation 203 'readreq' 'input_matrix_addr_4_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 25 <SV = 20> <Delay = 8.75>
+ST_25 : Operation 204 [3/7] (8.75ns)   --->   "%input_matrix_addr_4_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_4, i32 9)" [f_b_0/forw_back.c:311]   --->   Operation 204 'readreq' 'input_matrix_addr_4_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 26 <SV = 21> <Delay = 8.75>
+ST_26 : Operation 205 [2/7] (8.75ns)   --->   "%input_matrix_addr_4_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_4, i32 9)" [f_b_0/forw_back.c:311]   --->   Operation 205 'readreq' 'input_matrix_addr_4_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 27 <SV = 22> <Delay = 8.75>
+ST_27 : Operation 206 [1/7] (8.75ns)   --->   "%input_matrix_addr_4_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_4, i32 9)" [f_b_0/forw_back.c:311]   --->   Operation 206 'readreq' 'input_matrix_addr_4_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_27 : Operation 207 [1/1] (0.75ns)   --->   "br label %burst.rd.header20" [f_b_0/forw_back.c:311]   --->   Operation 207 'br' <Predicate = true> <Delay = 0.75>
+
+State 28 <SV = 23> <Delay = 0.88>
+ST_28 : Operation 208 [1/1] (0.00ns)   --->   "%phi_ln311 = phi i4 [ %add_ln311, %burstread.region2 ], [ 0, %burst.rd.header20.preheader ]" [f_b_0/forw_back.c:311]   --->   Operation 208 'phi' 'phi_ln311' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 209 [1/1] (0.88ns)   --->   "%icmp_ln311 = icmp eq i4 %phi_ln311, -7" [f_b_0/forw_back.c:311]   --->   Operation 209 'icmp' 'icmp_ln311' <Predicate = true> <Delay = 0.88> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 210 [1/1] (0.00ns)   --->   "%empty_8 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 9, i64 9, i64 9) nounwind"   --->   Operation 210 'speclooptripcount' 'empty_8' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 211 [1/1] (0.86ns)   --->   "%add_ln311 = add i4 %phi_ln311, 1" [f_b_0/forw_back.c:311]   --->   Operation 211 'add' 'add_ln311' <Predicate = true> <Delay = 0.86> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 212 [1/1] (0.00ns)   --->   "br i1 %icmp_ln311, label %burst.rd.header33.preheader, label %burstread.region2" [f_b_0/forw_back.c:311]   --->   Operation 212 'br' <Predicate = true> <Delay = 0.00>
+
+State 29 <SV = 24> <Delay = 8.75>
+ST_29 : Operation 213 [1/1] (8.75ns)   --->   "%input_matrix_addr_4_1 = call float @_ssdm_op_Read.m_axi.floatP(float* %input_matrix_addr_4)" [f_b_0/forw_back.c:311]   --->   Operation 213 'read' 'input_matrix_addr_4_1' <Predicate = (!icmp_ln311)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 30 <SV = 25> <Delay = 0.79>
+ST_30 : Operation 214 [1/1] (0.00ns)   --->   "%burstread_rbegin2 = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_s) nounwind" [f_b_0/forw_back.c:311]   --->   Operation 214 'specregionbegin' 'burstread_rbegin2' <Predicate = (!icmp_ln311)> <Delay = 0.00>
+ST_30 : Operation 215 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str)" [f_b_0/forw_back.c:311]   --->   Operation 215 'specpipeline' <Predicate = (!icmp_ln311)> <Delay = 0.00>
+ST_30 : Operation 216 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([30 x i8]* @memcpy_OC_conv_kerne_1)" [f_b_0/forw_back.c:311]   --->   Operation 216 'specloopname' <Predicate = (!icmp_ln311)> <Delay = 0.00>
+ST_30 : Operation 217 [1/1] (0.00ns)   --->   "%zext_ln311 = zext i4 %phi_ln311 to i64" [f_b_0/forw_back.c:311]   --->   Operation 217 'zext' 'zext_ln311' <Predicate = (!icmp_ln311)> <Delay = 0.00>
+ST_30 : Operation 218 [1/1] (0.00ns)   --->   "%conv_kernel2_addr = getelementptr [9 x float]* @conv_kernel2, i64 0, i64 %zext_ln311" [f_b_0/forw_back.c:311]   --->   Operation 218 'getelementptr' 'conv_kernel2_addr' <Predicate = (!icmp_ln311)> <Delay = 0.00>
+ST_30 : Operation 219 [1/1] (0.79ns)   --->   "store float %input_matrix_addr_4_1, float* %conv_kernel2_addr, align 4" [f_b_0/forw_back.c:311]   --->   Operation 219 'store' <Predicate = (!icmp_ln311)> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 450> <RAM>
+ST_30 : Operation 220 [1/1] (0.00ns)   --->   "%burstread_rend30 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_s, i32 %burstread_rbegin2) nounwind" [f_b_0/forw_back.c:311]   --->   Operation 220 'specregionend' 'burstread_rend30' <Predicate = (!icmp_ln311)> <Delay = 0.00>
+ST_30 : Operation 221 [1/1] (0.00ns)   --->   "br label %burst.rd.header20" [f_b_0/forw_back.c:311]   --->   Operation 221 'br' <Predicate = (!icmp_ln311)> <Delay = 0.00>
+
+State 31 <SV = 24> <Delay = 8.75>
+ST_31 : Operation 222 [7/7] (8.75ns)   --->   "%input_matrix_addr_3_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_3, i32 9)" [f_b_0/forw_back.c:312]   --->   Operation 222 'readreq' 'input_matrix_addr_3_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 32 <SV = 25> <Delay = 8.75>
+ST_32 : Operation 223 [6/7] (8.75ns)   --->   "%input_matrix_addr_3_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_3, i32 9)" [f_b_0/forw_back.c:312]   --->   Operation 223 'readreq' 'input_matrix_addr_3_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 33 <SV = 26> <Delay = 8.75>
+ST_33 : Operation 224 [5/7] (8.75ns)   --->   "%input_matrix_addr_3_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_3, i32 9)" [f_b_0/forw_back.c:312]   --->   Operation 224 'readreq' 'input_matrix_addr_3_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 34 <SV = 27> <Delay = 8.75>
+ST_34 : Operation 225 [4/7] (8.75ns)   --->   "%input_matrix_addr_3_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_3, i32 9)" [f_b_0/forw_back.c:312]   --->   Operation 225 'readreq' 'input_matrix_addr_3_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 35 <SV = 28> <Delay = 8.75>
+ST_35 : Operation 226 [3/7] (8.75ns)   --->   "%input_matrix_addr_3_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_3, i32 9)" [f_b_0/forw_back.c:312]   --->   Operation 226 'readreq' 'input_matrix_addr_3_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 36 <SV = 29> <Delay = 8.75>
+ST_36 : Operation 227 [2/7] (8.75ns)   --->   "%input_matrix_addr_3_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_3, i32 9)" [f_b_0/forw_back.c:312]   --->   Operation 227 'readreq' 'input_matrix_addr_3_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 37 <SV = 30> <Delay = 8.75>
+ST_37 : Operation 228 [1/7] (8.75ns)   --->   "%input_matrix_addr_3_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_3, i32 9)" [f_b_0/forw_back.c:312]   --->   Operation 228 'readreq' 'input_matrix_addr_3_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_37 : Operation 229 [1/1] (0.75ns)   --->   "br label %burst.rd.header33" [f_b_0/forw_back.c:312]   --->   Operation 229 'br' <Predicate = true> <Delay = 0.75>
+
+State 38 <SV = 31> <Delay = 0.88>
+ST_38 : Operation 230 [1/1] (0.00ns)   --->   "%phi_ln312 = phi i4 [ %add_ln312, %burstread.region3 ], [ 0, %burst.rd.header33.preheader ]" [f_b_0/forw_back.c:312]   --->   Operation 230 'phi' 'phi_ln312' <Predicate = true> <Delay = 0.00>
+ST_38 : Operation 231 [1/1] (0.88ns)   --->   "%icmp_ln312 = icmp eq i4 %phi_ln312, -7" [f_b_0/forw_back.c:312]   --->   Operation 231 'icmp' 'icmp_ln312' <Predicate = true> <Delay = 0.88> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 232 [1/1] (0.00ns)   --->   "%empty_9 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 9, i64 9, i64 9) nounwind"   --->   Operation 232 'speclooptripcount' 'empty_9' <Predicate = true> <Delay = 0.00>
+ST_38 : Operation 233 [1/1] (0.86ns)   --->   "%add_ln312 = add i4 %phi_ln312, 1" [f_b_0/forw_back.c:312]   --->   Operation 233 'add' 'add_ln312' <Predicate = true> <Delay = 0.86> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 234 [1/1] (0.00ns)   --->   "br i1 %icmp_ln312, label %burst.rd.end32, label %burstread.region3" [f_b_0/forw_back.c:312]   --->   Operation 234 'br' <Predicate = true> <Delay = 0.00>
+
+State 39 <SV = 32> <Delay = 8.75>
+ST_39 : Operation 235 [1/1] (8.75ns)   --->   "%input_matrix_addr_3_1 = call float @_ssdm_op_Read.m_axi.floatP(float* %input_matrix_addr_3)" [f_b_0/forw_back.c:312]   --->   Operation 235 'read' 'input_matrix_addr_3_1' <Predicate = (!icmp_ln312)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 40 <SV = 33> <Delay = 0.79>
+ST_40 : Operation 236 [1/1] (0.00ns)   --->   "%burstread_rbegin3 = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_s) nounwind" [f_b_0/forw_back.c:312]   --->   Operation 236 'specregionbegin' 'burstread_rbegin3' <Predicate = (!icmp_ln312)> <Delay = 0.00>
+ST_40 : Operation 237 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str)" [f_b_0/forw_back.c:312]   --->   Operation 237 'specpipeline' <Predicate = (!icmp_ln312)> <Delay = 0.00>
+ST_40 : Operation 238 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([30 x i8]* @memcpy_OC_conv_kerne)" [f_b_0/forw_back.c:312]   --->   Operation 238 'specloopname' <Predicate = (!icmp_ln312)> <Delay = 0.00>
+ST_40 : Operation 239 [1/1] (0.00ns)   --->   "%zext_ln312 = zext i4 %phi_ln312 to i64" [f_b_0/forw_back.c:312]   --->   Operation 239 'zext' 'zext_ln312' <Predicate = (!icmp_ln312)> <Delay = 0.00>
+ST_40 : Operation 240 [1/1] (0.00ns)   --->   "%conv_kernel3_addr = getelementptr [9 x float]* @conv_kernel3, i64 0, i64 %zext_ln312" [f_b_0/forw_back.c:312]   --->   Operation 240 'getelementptr' 'conv_kernel3_addr' <Predicate = (!icmp_ln312)> <Delay = 0.00>
+ST_40 : Operation 241 [1/1] (0.79ns)   --->   "store float %input_matrix_addr_3_1, float* %conv_kernel3_addr, align 4" [f_b_0/forw_back.c:312]   --->   Operation 241 'store' <Predicate = (!icmp_ln312)> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 450> <RAM>
+ST_40 : Operation 242 [1/1] (0.00ns)   --->   "%burstread_rend43 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_s, i32 %burstread_rbegin3) nounwind" [f_b_0/forw_back.c:312]   --->   Operation 242 'specregionend' 'burstread_rend43' <Predicate = (!icmp_ln312)> <Delay = 0.00>
+ST_40 : Operation 243 [1/1] (0.00ns)   --->   "br label %burst.rd.header33" [f_b_0/forw_back.c:312]   --->   Operation 243 'br' <Predicate = (!icmp_ln312)> <Delay = 0.00>
+
+State 41 <SV = 32> <Delay = 8.75>
+ST_41 : Operation 244 [7/7] (8.75ns)   --->   "%input_matrix_addr_2_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_2, i32 103680)" [f_b_0/forw_back.c:319]   --->   Operation 244 'readreq' 'input_matrix_addr_2_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 42 <SV = 33> <Delay = 8.75>
+ST_42 : Operation 245 [2/2] (0.00ns)   --->   "call fastcc void @Conv2d1([900 x float]* @mnist_data, [9 x float]* @conv_kernel1, [784 x float]* @first_conv1) nounwind" [f_b_0/forw_back.c:314]   --->   Operation 245 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_42 : Operation 246 [6/7] (8.75ns)   --->   "%input_matrix_addr_2_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_2, i32 103680)" [f_b_0/forw_back.c:319]   --->   Operation 246 'readreq' 'input_matrix_addr_2_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 43 <SV = 34> <Delay = 8.75>
+ST_43 : Operation 247 [1/2] (0.00ns)   --->   "call fastcc void @Conv2d1([900 x float]* @mnist_data, [9 x float]* @conv_kernel1, [784 x float]* @first_conv1) nounwind" [f_b_0/forw_back.c:314]   --->   Operation 247 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_43 : Operation 248 [5/7] (8.75ns)   --->   "%input_matrix_addr_2_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_2, i32 103680)" [f_b_0/forw_back.c:319]   --->   Operation 248 'readreq' 'input_matrix_addr_2_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 44 <SV = 35> <Delay = 8.75>
+ST_44 : Operation 249 [2/2] (0.00ns)   --->   "call fastcc void @Conv2d2([784 x float]* @first_conv1, [9 x float]* @conv_kernel2, [676 x float]* @sencond_conv1) nounwind" [f_b_0/forw_back.c:315]   --->   Operation 249 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_44 : Operation 250 [4/7] (8.75ns)   --->   "%input_matrix_addr_2_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_2, i32 103680)" [f_b_0/forw_back.c:319]   --->   Operation 250 'readreq' 'input_matrix_addr_2_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 45 <SV = 36> <Delay = 8.75>
+ST_45 : Operation 251 [1/2] (0.00ns)   --->   "call fastcc void @Conv2d2([784 x float]* @first_conv1, [9 x float]* @conv_kernel2, [676 x float]* @sencond_conv1) nounwind" [f_b_0/forw_back.c:315]   --->   Operation 251 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_45 : Operation 252 [3/7] (8.75ns)   --->   "%input_matrix_addr_2_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_2, i32 103680)" [f_b_0/forw_back.c:319]   --->   Operation 252 'readreq' 'input_matrix_addr_2_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 46 <SV = 37> <Delay = 8.75>
+ST_46 : Operation 253 [2/2] (0.00ns)   --->   "call fastcc void @Conv2d3([676 x float]* @sencond_conv1, [9 x float]* @conv_kernel3, [576 x float]* @third_conv1) nounwind" [f_b_0/forw_back.c:316]   --->   Operation 253 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_46 : Operation 254 [2/7] (8.75ns)   --->   "%input_matrix_addr_2_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_2, i32 103680)" [f_b_0/forw_back.c:319]   --->   Operation 254 'readreq' 'input_matrix_addr_2_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 47 <SV = 38> <Delay = 8.75>
+ST_47 : Operation 255 [1/2] (0.00ns)   --->   "call fastcc void @Conv2d3([676 x float]* @sencond_conv1, [9 x float]* @conv_kernel3, [576 x float]* @third_conv1) nounwind" [f_b_0/forw_back.c:316]   --->   Operation 255 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_47 : Operation 256 [1/7] (8.75ns)   --->   "%input_matrix_addr_2_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_2, i32 103680)" [f_b_0/forw_back.c:319]   --->   Operation 256 'readreq' 'input_matrix_addr_2_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_47 : Operation 257 [1/1] (0.75ns)   --->   "br label %burst.rd.header46" [f_b_0/forw_back.c:319]   --->   Operation 257 'br' <Predicate = true> <Delay = 0.75>
+
+State 48 <SV = 39> <Delay = 1.02>
+ST_48 : Operation 258 [1/1] (0.00ns)   --->   "%phi_ln319 = phi i17 [ 0, %burst.rd.end32 ], [ %add_ln319, %burstread.region4 ]" [f_b_0/forw_back.c:319]   --->   Operation 258 'phi' 'phi_ln319' <Predicate = true> <Delay = 0.00>
+ST_48 : Operation 259 [1/1] (0.88ns)   --->   "%icmp_ln319 = icmp eq i17 %phi_ln319, -27392" [f_b_0/forw_back.c:319]   --->   Operation 259 'icmp' 'icmp_ln319' <Predicate = true> <Delay = 0.88> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_48 : Operation 260 [1/1] (0.00ns)   --->   "%empty_10 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 103680, i64 103680, i64 103680) nounwind"   --->   Operation 260 'speclooptripcount' 'empty_10' <Predicate = true> <Delay = 0.00>
+ST_48 : Operation 261 [1/1] (1.02ns)   --->   "%add_ln319 = add i17 %phi_ln319, 1" [f_b_0/forw_back.c:319]   --->   Operation 261 'add' 'add_ln319' <Predicate = true> <Delay = 1.02> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_48 : Operation 262 [1/1] (0.00ns)   --->   "br i1 %icmp_ln319, label %burst.rd.header59.preheader, label %burstread.region4" [f_b_0/forw_back.c:319]   --->   Operation 262 'br' <Predicate = true> <Delay = 0.00>
+
+State 49 <SV = 40> <Delay = 8.75>
+ST_49 : Operation 263 [1/1] (8.75ns)   --->   "%input_matrix_addr_2_1 = call float @_ssdm_op_Read.m_axi.floatP(float* %input_matrix_addr_2)" [f_b_0/forw_back.c:319]   --->   Operation 263 'read' 'input_matrix_addr_2_1' <Predicate = (!icmp_ln319)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 50 <SV = 41> <Delay = 1.35>
+ST_50 : Operation 264 [1/1] (0.00ns)   --->   "%burstread_rbegin4 = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_s) nounwind" [f_b_0/forw_back.c:319]   --->   Operation 264 'specregionbegin' 'burstread_rbegin4' <Predicate = (!icmp_ln319)> <Delay = 0.00>
+ST_50 : Operation 265 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str)" [f_b_0/forw_back.c:319]   --->   Operation 265 'specpipeline' <Predicate = (!icmp_ln319)> <Delay = 0.00>
+ST_50 : Operation 266 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([32 x i8]* @memcpy_OC_fc_hidden_2)" [f_b_0/forw_back.c:319]   --->   Operation 266 'specloopname' <Predicate = (!icmp_ln319)> <Delay = 0.00>
+ST_50 : Operation 267 [1/1] (0.00ns)   --->   "%zext_ln319 = zext i17 %phi_ln319 to i64" [f_b_0/forw_back.c:319]   --->   Operation 267 'zext' 'zext_ln319' <Predicate = (!icmp_ln319)> <Delay = 0.00>
+ST_50 : Operation 268 [1/1] (0.00ns)   --->   "%fc_hidden_layer1_add = getelementptr [103680 x float]* @fc_hidden_layer1, i64 0, i64 %zext_ln319" [f_b_0/forw_back.c:319]   --->   Operation 268 'getelementptr' 'fc_hidden_layer1_add' <Predicate = (!icmp_ln319)> <Delay = 0.00>
+ST_50 : Operation 269 [1/1] (1.35ns)   --->   "store float %input_matrix_addr_2_1, float* %fc_hidden_layer1_add, align 4" [f_b_0/forw_back.c:319]   --->   Operation 269 'store' <Predicate = (!icmp_ln319)> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 450> <RAM>
+ST_50 : Operation 270 [1/1] (0.00ns)   --->   "%burstread_rend56 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_s, i32 %burstread_rbegin4) nounwind" [f_b_0/forw_back.c:319]   --->   Operation 270 'specregionend' 'burstread_rend56' <Predicate = (!icmp_ln319)> <Delay = 0.00>
+ST_50 : Operation 271 [1/1] (0.00ns)   --->   "br label %burst.rd.header46" [f_b_0/forw_back.c:319]   --->   Operation 271 'br' <Predicate = (!icmp_ln319)> <Delay = 0.00>
+
+State 51 <SV = 40> <Delay = 8.75>
+ST_51 : Operation 272 [7/7] (8.75ns)   --->   "%input_matrix_addr_1_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_1, i32 8100)" [f_b_0/forw_back.c:320]   --->   Operation 272 'readreq' 'input_matrix_addr_1_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 52 <SV = 41> <Delay = 8.75>
+ST_52 : Operation 273 [6/7] (8.75ns)   --->   "%input_matrix_addr_1_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_1, i32 8100)" [f_b_0/forw_back.c:320]   --->   Operation 273 'readreq' 'input_matrix_addr_1_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 53 <SV = 42> <Delay = 8.75>
+ST_53 : Operation 274 [5/7] (8.75ns)   --->   "%input_matrix_addr_1_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_1, i32 8100)" [f_b_0/forw_back.c:320]   --->   Operation 274 'readreq' 'input_matrix_addr_1_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 54 <SV = 43> <Delay = 8.75>
+ST_54 : Operation 275 [4/7] (8.75ns)   --->   "%input_matrix_addr_1_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_1, i32 8100)" [f_b_0/forw_back.c:320]   --->   Operation 275 'readreq' 'input_matrix_addr_1_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 55 <SV = 44> <Delay = 8.75>
+ST_55 : Operation 276 [3/7] (8.75ns)   --->   "%input_matrix_addr_1_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_1, i32 8100)" [f_b_0/forw_back.c:320]   --->   Operation 276 'readreq' 'input_matrix_addr_1_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 56 <SV = 45> <Delay = 8.75>
+ST_56 : Operation 277 [2/7] (8.75ns)   --->   "%input_matrix_addr_1_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_1, i32 8100)" [f_b_0/forw_back.c:320]   --->   Operation 277 'readreq' 'input_matrix_addr_1_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 57 <SV = 46> <Delay = 8.75>
+ST_57 : Operation 278 [1/7] (8.75ns)   --->   "%input_matrix_addr_1_s = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr_1, i32 8100)" [f_b_0/forw_back.c:320]   --->   Operation 278 'readreq' 'input_matrix_addr_1_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_57 : Operation 279 [1/1] (0.75ns)   --->   "br label %burst.rd.header59" [f_b_0/forw_back.c:320]   --->   Operation 279 'br' <Predicate = true> <Delay = 0.75>
+
+State 58 <SV = 47> <Delay = 0.97>
+ST_58 : Operation 280 [1/1] (0.00ns)   --->   "%phi_ln320 = phi i13 [ %add_ln320, %burstread.region5 ], [ 0, %burst.rd.header59.preheader ]" [f_b_0/forw_back.c:320]   --->   Operation 280 'phi' 'phi_ln320' <Predicate = true> <Delay = 0.00>
+ST_58 : Operation 281 [1/1] (0.86ns)   --->   "%icmp_ln320 = icmp eq i13 %phi_ln320, -92" [f_b_0/forw_back.c:320]   --->   Operation 281 'icmp' 'icmp_ln320' <Predicate = true> <Delay = 0.86> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_58 : Operation 282 [1/1] (0.00ns)   --->   "%empty_11 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8100, i64 8100, i64 8100) nounwind"   --->   Operation 282 'speclooptripcount' 'empty_11' <Predicate = true> <Delay = 0.00>
+ST_58 : Operation 283 [1/1] (0.97ns)   --->   "%add_ln320 = add i13 %phi_ln320, 1" [f_b_0/forw_back.c:320]   --->   Operation 283 'add' 'add_ln320' <Predicate = true> <Delay = 0.97> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_58 : Operation 284 [1/1] (0.00ns)   --->   "br i1 %icmp_ln320, label %burst.rd.header72.preheader, label %burstread.region5" [f_b_0/forw_back.c:320]   --->   Operation 284 'br' <Predicate = true> <Delay = 0.00>
+
+State 59 <SV = 48> <Delay = 8.75>
+ST_59 : Operation 285 [1/1] (8.75ns)   --->   "%input_matrix_addr_1_1 = call float @_ssdm_op_Read.m_axi.floatP(float* %input_matrix_addr_1)" [f_b_0/forw_back.c:320]   --->   Operation 285 'read' 'input_matrix_addr_1_1' <Predicate = (!icmp_ln320)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 60 <SV = 49> <Delay = 0.99>
+ST_60 : Operation 286 [1/1] (0.00ns)   --->   "%burstread_rbegin5 = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_s) nounwind" [f_b_0/forw_back.c:320]   --->   Operation 286 'specregionbegin' 'burstread_rbegin5' <Predicate = (!icmp_ln320)> <Delay = 0.00>
+ST_60 : Operation 287 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str)" [f_b_0/forw_back.c:320]   --->   Operation 287 'specpipeline' <Predicate = (!icmp_ln320)> <Delay = 0.00>
+ST_60 : Operation 288 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([32 x i8]* @memcpy_OC_fc_hidden_1)" [f_b_0/forw_back.c:320]   --->   Operation 288 'specloopname' <Predicate = (!icmp_ln320)> <Delay = 0.00>
+ST_60 : Operation 289 [1/1] (0.00ns)   --->   "%zext_ln320 = zext i13 %phi_ln320 to i64" [f_b_0/forw_back.c:320]   --->   Operation 289 'zext' 'zext_ln320' <Predicate = (!icmp_ln320)> <Delay = 0.00>
+ST_60 : Operation 290 [1/1] (0.00ns)   --->   "%fc_hidden_layer2_add = getelementptr [8100 x float]* @fc_hidden_layer2, i64 0, i64 %zext_ln320" [f_b_0/forw_back.c:320]   --->   Operation 290 'getelementptr' 'fc_hidden_layer2_add' <Predicate = (!icmp_ln320)> <Delay = 0.00>
+ST_60 : Operation 291 [1/1] (0.99ns)   --->   "store float %input_matrix_addr_1_1, float* %fc_hidden_layer2_add, align 4" [f_b_0/forw_back.c:320]   --->   Operation 291 'store' <Predicate = (!icmp_ln320)> <Delay = 0.99> <Core = "RAM_2P_LUTRAM">   --->   Core 41 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.99> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8100> <RAM>
+ST_60 : Operation 292 [1/1] (0.00ns)   --->   "%burstread_rend69 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_s, i32 %burstread_rbegin5) nounwind" [f_b_0/forw_back.c:320]   --->   Operation 292 'specregionend' 'burstread_rend69' <Predicate = (!icmp_ln320)> <Delay = 0.00>
+ST_60 : Operation 293 [1/1] (0.00ns)   --->   "br label %burst.rd.header59" [f_b_0/forw_back.c:320]   --->   Operation 293 'br' <Predicate = (!icmp_ln320)> <Delay = 0.00>
+
+State 61 <SV = 48> <Delay = 8.75>
+ST_61 : Operation 294 [7/7] (8.75ns)   --->   "%input_matrix_addr_rd = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr, i32 450)" [f_b_0/forw_back.c:321]   --->   Operation 294 'readreq' 'input_matrix_addr_rd' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 62 <SV = 49> <Delay = 8.75>
+ST_62 : Operation 295 [6/7] (8.75ns)   --->   "%input_matrix_addr_rd = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr, i32 450)" [f_b_0/forw_back.c:321]   --->   Operation 295 'readreq' 'input_matrix_addr_rd' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 63 <SV = 50> <Delay = 8.75>
+ST_63 : Operation 296 [5/7] (8.75ns)   --->   "%input_matrix_addr_rd = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr, i32 450)" [f_b_0/forw_back.c:321]   --->   Operation 296 'readreq' 'input_matrix_addr_rd' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 64 <SV = 51> <Delay = 8.75>
+ST_64 : Operation 297 [4/7] (8.75ns)   --->   "%input_matrix_addr_rd = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr, i32 450)" [f_b_0/forw_back.c:321]   --->   Operation 297 'readreq' 'input_matrix_addr_rd' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 65 <SV = 52> <Delay = 8.75>
+ST_65 : Operation 298 [3/7] (8.75ns)   --->   "%input_matrix_addr_rd = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr, i32 450)" [f_b_0/forw_back.c:321]   --->   Operation 298 'readreq' 'input_matrix_addr_rd' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 66 <SV = 53> <Delay = 8.75>
+ST_66 : Operation 299 [2/7] (8.75ns)   --->   "%input_matrix_addr_rd = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr, i32 450)" [f_b_0/forw_back.c:321]   --->   Operation 299 'readreq' 'input_matrix_addr_rd' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 67 <SV = 54> <Delay = 8.75>
+ST_67 : Operation 300 [1/7] (8.75ns)   --->   "%input_matrix_addr_rd = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %input_matrix_addr, i32 450)" [f_b_0/forw_back.c:321]   --->   Operation 300 'readreq' 'input_matrix_addr_rd' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_67 : Operation 301 [1/1] (0.75ns)   --->   "br label %burst.rd.header72" [f_b_0/forw_back.c:321]   --->   Operation 301 'br' <Predicate = true> <Delay = 0.75>
+
+State 68 <SV = 55> <Delay = 0.92>
+ST_68 : Operation 302 [1/1] (0.00ns)   --->   "%phi_ln321 = phi i9 [ %add_ln321, %burstread.region6 ], [ 0, %burst.rd.header72.preheader ]" [f_b_0/forw_back.c:321]   --->   Operation 302 'phi' 'phi_ln321' <Predicate = true> <Delay = 0.00>
+ST_68 : Operation 303 [1/1] (0.85ns)   --->   "%icmp_ln321 = icmp eq i9 %phi_ln321, -62" [f_b_0/forw_back.c:321]   --->   Operation 303 'icmp' 'icmp_ln321' <Predicate = true> <Delay = 0.85> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_68 : Operation 304 [1/1] (0.00ns)   --->   "%empty_12 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 450, i64 450, i64 450) nounwind"   --->   Operation 304 'speclooptripcount' 'empty_12' <Predicate = true> <Delay = 0.00>
+ST_68 : Operation 305 [1/1] (0.92ns)   --->   "%add_ln321 = add i9 %phi_ln321, 1" [f_b_0/forw_back.c:321]   --->   Operation 305 'add' 'add_ln321' <Predicate = true> <Delay = 0.92> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_68 : Operation 306 [1/1] (0.00ns)   --->   "br i1 %icmp_ln321, label %burst.rd.end71, label %burstread.region6" [f_b_0/forw_back.c:321]   --->   Operation 306 'br' <Predicate = true> <Delay = 0.00>
+
+State 69 <SV = 56> <Delay = 8.75>
+ST_69 : Operation 307 [1/1] (8.75ns)   --->   "%input_matrix_addr_re = call float @_ssdm_op_Read.m_axi.floatP(float* %input_matrix_addr)" [f_b_0/forw_back.c:321]   --->   Operation 307 'read' 'input_matrix_addr_re' <Predicate = (!icmp_ln321)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 70 <SV = 57> <Delay = 1.35>
+ST_70 : Operation 308 [1/1] (0.00ns)   --->   "%burstread_rbegin6 = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_s) nounwind" [f_b_0/forw_back.c:321]   --->   Operation 308 'specregionbegin' 'burstread_rbegin6' <Predicate = (!icmp_ln321)> <Delay = 0.00>
+ST_70 : Operation 309 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str)" [f_b_0/forw_back.c:321]   --->   Operation 309 'specpipeline' <Predicate = (!icmp_ln321)> <Delay = 0.00>
+ST_70 : Operation 310 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([32 x i8]* @memcpy_OC_fc_hidden_s)" [f_b_0/forw_back.c:321]   --->   Operation 310 'specloopname' <Predicate = (!icmp_ln321)> <Delay = 0.00>
+ST_70 : Operation 311 [1/1] (0.00ns)   --->   "%zext_ln321 = zext i9 %phi_ln321 to i64" [f_b_0/forw_back.c:321]   --->   Operation 311 'zext' 'zext_ln321' <Predicate = (!icmp_ln321)> <Delay = 0.00>
+ST_70 : Operation 312 [1/1] (0.00ns)   --->   "%fc_hidden_layer3_add = getelementptr [450 x float]* @fc_hidden_layer3, i64 0, i64 %zext_ln321" [f_b_0/forw_back.c:321]   --->   Operation 312 'getelementptr' 'fc_hidden_layer3_add' <Predicate = (!icmp_ln321)> <Delay = 0.00>
+ST_70 : Operation 313 [1/1] (1.35ns)   --->   "store float %input_matrix_addr_re, float* %fc_hidden_layer3_add, align 4" [f_b_0/forw_back.c:321]   --->   Operation 313 'store' <Predicate = (!icmp_ln321)> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 450> <RAM>
+ST_70 : Operation 314 [1/1] (0.00ns)   --->   "%burstread_rend82 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_s, i32 %burstread_rbegin6) nounwind" [f_b_0/forw_back.c:321]   --->   Operation 314 'specregionend' 'burstread_rend82' <Predicate = (!icmp_ln321)> <Delay = 0.00>
+ST_70 : Operation 315 [1/1] (0.00ns)   --->   "br label %burst.rd.header72" [f_b_0/forw_back.c:321]   --->   Operation 315 'br' <Predicate = (!icmp_ln321)> <Delay = 0.00>
+
+State 71 <SV = 56> <Delay = 0.75>
+ST_71 : Operation 316 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecMemCore([8100 x float]* @fc_hidden_layer2, [1 x i8]* @p_str, [14 x i8]* @p_str1, [1 x i8]* @p_str, i32 -1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_0/forw_back.c:72->f_b_0/forw_back.c:322]   --->   Operation 316 'specmemcore' <Predicate = true> <Delay = 0.00>
+ST_71 : Operation 317 [1/1] (0.75ns)   --->   "br label %.loopexit10" [f_b_0/forw_back.c:72->f_b_0/forw_back.c:322]   --->   Operation 317 'br' <Predicate = true> <Delay = 0.75>
+
+State 72 <SV = 57> <Delay = 1.20>
+ST_72 : Operation 318 [1/1] (0.00ns)   --->   "%i_0_i = phi i5 [ 0, %burst.rd.end71 ], [ %i, %.loopexit10.loopexit ]"   --->   Operation 318 'phi' 'i_0_i' <Predicate = true> <Delay = 0.00>
+ST_72 : Operation 319 [1/1] (0.87ns)   --->   "%icmp_ln72 = icmp eq i5 %i_0_i, -8" [f_b_0/forw_back.c:72->f_b_0/forw_back.c:322]   --->   Operation 319 'icmp' 'icmp_ln72' <Predicate = true> <Delay = 0.87> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_72 : Operation 320 [1/1] (0.00ns)   --->   "%empty_13 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 24, i64 24, i64 24) nounwind"   --->   Operation 320 'speclooptripcount' 'empty_13' <Predicate = true> <Delay = 0.00>
+ST_72 : Operation 321 [1/1] (0.87ns)   --->   "%i = add i5 %i_0_i, 1" [f_b_0/forw_back.c:72->f_b_0/forw_back.c:322]   --->   Operation 321 'add' 'i' <Predicate = true> <Delay = 0.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_72 : Operation 322 [1/1] (0.00ns)   --->   "br i1 %icmp_ln72, label %MatrixExtensionImproved.exit, label %.preheader.preheader.i" [f_b_0/forw_back.c:72->f_b_0/forw_back.c:322]   --->   Operation 322 'br' <Predicate = true> <Delay = 0.00>
+ST_72 : Operation 323 [1/1] (0.00ns)   --->   "%shl_ln = call i10 @_ssdm_op_BitConcatenate.i10.i5.i5(i5 %i_0_i, i5 0)" [f_b_0/forw_back.c:74->f_b_0/forw_back.c:322]   --->   Operation 323 'bitconcatenate' 'shl_ln' <Predicate = (!icmp_ln72)> <Delay = 0.00>
+ST_72 : Operation 324 [1/1] (0.00ns)   --->   "%zext_ln74_1 = zext i10 %shl_ln to i11" [f_b_0/forw_back.c:74->f_b_0/forw_back.c:322]   --->   Operation 324 'zext' 'zext_ln74_1' <Predicate = (!icmp_ln72)> <Delay = 0.00>
+ST_72 : Operation 325 [1/1] (0.00ns)   --->   "%shl_ln74_1 = call i8 @_ssdm_op_BitConcatenate.i8.i5.i3(i5 %i_0_i, i3 0)" [f_b_0/forw_back.c:74->f_b_0/forw_back.c:322]   --->   Operation 325 'bitconcatenate' 'shl_ln74_1' <Predicate = (!icmp_ln72)> <Delay = 0.00>
+ST_72 : Operation 326 [1/1] (0.00ns)   --->   "%zext_ln74_2 = zext i8 %shl_ln74_1 to i11" [f_b_0/forw_back.c:74->f_b_0/forw_back.c:322]   --->   Operation 326 'zext' 'zext_ln74_2' <Predicate = (!icmp_ln72)> <Delay = 0.00>
+ST_72 : Operation 327 [1/1] (0.93ns)   --->   "%sub_ln74 = sub i11 %zext_ln74_1, %zext_ln74_2" [f_b_0/forw_back.c:74->f_b_0/forw_back.c:322]   --->   Operation 327 'sub' 'sub_ln74' <Predicate = (!icmp_ln72)> <Delay = 0.93> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_72 : Operation 328 [1/1] (0.75ns)   --->   "br label %.preheader.i" [f_b_0/forw_back.c:73->f_b_0/forw_back.c:322]   --->   Operation 328 'br' <Predicate = (!icmp_ln72)> <Delay = 0.75>
+ST_72 : Operation 329 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecMemCore([8100 x float]* @fc_hidden_layer2, [1 x i8]* @p_str, [14 x i8]* @p_str1, [1 x i8]* @p_str, i32 -1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_0/forw_back.c:79->f_b_0/forw_back.c:324]   --->   Operation 329 'specmemcore' <Predicate = (icmp_ln72)> <Delay = 0.00>
+ST_72 : Operation 330 [1/1] (0.75ns)   --->   "br label %.loopexit9" [f_b_0/forw_back.c:79->f_b_0/forw_back.c:324]   --->   Operation 330 'br' <Predicate = (icmp_ln72)> <Delay = 0.75>
+
+State 73 <SV = 58> <Delay = 2.29>
+ST_73 : Operation 331 [1/1] (0.00ns)   --->   "%j_0_i = phi i5 [ %j, %1 ], [ 0, %.preheader.preheader.i ]"   --->   Operation 331 'phi' 'j_0_i' <Predicate = true> <Delay = 0.00>
+ST_73 : Operation 332 [1/1] (0.00ns)   --->   "%zext_ln73 = zext i5 %j_0_i to i11" [f_b_0/forw_back.c:73->f_b_0/forw_back.c:322]   --->   Operation 332 'zext' 'zext_ln73' <Predicate = true> <Delay = 0.00>
+ST_73 : Operation 333 [1/1] (0.87ns)   --->   "%icmp_ln73 = icmp eq i5 %j_0_i, -8" [f_b_0/forw_back.c:73->f_b_0/forw_back.c:322]   --->   Operation 333 'icmp' 'icmp_ln73' <Predicate = true> <Delay = 0.87> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_73 : Operation 334 [1/1] (0.00ns)   --->   "%empty_14 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 24, i64 24, i64 24) nounwind"   --->   Operation 334 'speclooptripcount' 'empty_14' <Predicate = true> <Delay = 0.00>
+ST_73 : Operation 335 [1/1] (0.87ns)   --->   "%j = add i5 %j_0_i, 1" [f_b_0/forw_back.c:73->f_b_0/forw_back.c:322]   --->   Operation 335 'add' 'j' <Predicate = true> <Delay = 0.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_73 : Operation 336 [1/1] (0.00ns)   --->   "br i1 %icmp_ln73, label %.loopexit10.loopexit, label %1" [f_b_0/forw_back.c:73->f_b_0/forw_back.c:322]   --->   Operation 336 'br' <Predicate = true> <Delay = 0.00>
+ST_73 : Operation 337 [1/1] (0.94ns)   --->   "%add_ln74 = add i11 %sub_ln74, %zext_ln73" [f_b_0/forw_back.c:74->f_b_0/forw_back.c:322]   --->   Operation 337 'add' 'add_ln74' <Predicate = (!icmp_ln73)> <Delay = 0.94> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_73 : Operation 338 [1/1] (0.00ns)   --->   "%sext_ln74 = sext i11 %add_ln74 to i32" [f_b_0/forw_back.c:74->f_b_0/forw_back.c:322]   --->   Operation 338 'sext' 'sext_ln74' <Predicate = (!icmp_ln73)> <Delay = 0.00>
+ST_73 : Operation 339 [1/1] (0.00ns)   --->   "%zext_ln74 = zext i32 %sext_ln74 to i64" [f_b_0/forw_back.c:74->f_b_0/forw_back.c:322]   --->   Operation 339 'zext' 'zext_ln74' <Predicate = (!icmp_ln73)> <Delay = 0.00>
+ST_73 : Operation 340 [1/1] (0.00ns)   --->   "%third_conv1_addr = getelementptr [576 x float]* @third_conv1, i64 0, i64 %zext_ln74" [f_b_0/forw_back.c:74->f_b_0/forw_back.c:322]   --->   Operation 340 'getelementptr' 'third_conv1_addr' <Predicate = (!icmp_ln73)> <Delay = 0.00>
+ST_73 : Operation 341 [2/2] (1.35ns)   --->   "%third_conv1_load = load float* %third_conv1_addr, align 4" [f_b_0/forw_back.c:74->f_b_0/forw_back.c:322]   --->   Operation 341 'load' 'third_conv1_load' <Predicate = (!icmp_ln73)> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 450> <RAM>
+ST_73 : Operation 342 [1/1] (0.00ns)   --->   "br label %.loopexit10"   --->   Operation 342 'br' <Predicate = (icmp_ln73)> <Delay = 0.00>
+
+State 74 <SV = 59> <Delay = 2.70>
+ST_74 : Operation 343 [1/2] (1.35ns)   --->   "%third_conv1_load = load float* %third_conv1_addr, align 4" [f_b_0/forw_back.c:74->f_b_0/forw_back.c:322]   --->   Operation 343 'load' 'third_conv1_load' <Predicate = true> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 450> <RAM>
+ST_74 : Operation 344 [1/1] (0.00ns)   --->   "%flatten_conv_0_addr = getelementptr [576 x float]* @flatten_conv_0, i64 0, i64 %zext_ln74" [f_b_0/forw_back.c:74->f_b_0/forw_back.c:322]   --->   Operation 344 'getelementptr' 'flatten_conv_0_addr' <Predicate = true> <Delay = 0.00>
+ST_74 : Operation 345 [1/1] (1.35ns)   --->   "store float %third_conv1_load, float* %flatten_conv_0_addr, align 4" [f_b_0/forw_back.c:74->f_b_0/forw_back.c:322]   --->   Operation 345 'store' <Predicate = true> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 450> <RAM>
+ST_74 : Operation 346 [1/1] (0.00ns)   --->   "br label %.preheader.i" [f_b_0/forw_back.c:73->f_b_0/forw_back.c:322]   --->   Operation 346 'br' <Predicate = true> <Delay = 0.00>
+
+State 75 <SV = 58> <Delay = 1.18>
+ST_75 : Operation 347 [1/1] (0.00ns)   --->   "%j_0_i89 = phi i8 [ 0, %MatrixExtensionImproved.exit ], [ %j_2, %.loopexit9.loopexit ]"   --->   Operation 347 'phi' 'j_0_i89' <Predicate = true> <Delay = 0.00>
+ST_75 : Operation 348 [1/1] (0.00ns)   --->   "%zext_ln79 = zext i8 %j_0_i89 to i17" [f_b_0/forw_back.c:79->f_b_0/forw_back.c:324]   --->   Operation 348 'zext' 'zext_ln79' <Predicate = true> <Delay = 0.00>
+ST_75 : Operation 349 [1/1] (0.85ns)   --->   "%icmp_ln79 = icmp eq i8 %j_0_i89, -76" [f_b_0/forw_back.c:79->f_b_0/forw_back.c:324]   --->   Operation 349 'icmp' 'icmp_ln79' <Predicate = true> <Delay = 0.85> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_75 : Operation 350 [1/1] (0.00ns)   --->   "%empty_15 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 180, i64 180, i64 180) nounwind"   --->   Operation 350 'speclooptripcount' 'empty_15' <Predicate = true> <Delay = 0.00>
+ST_75 : Operation 351 [1/1] (0.90ns)   --->   "%j_2 = add i8 %j_0_i89, 1" [f_b_0/forw_back.c:79->f_b_0/forw_back.c:324]   --->   Operation 351 'add' 'j_2' <Predicate = true> <Delay = 0.90> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_75 : Operation 352 [1/1] (0.00ns)   --->   "br i1 %icmp_ln79, label %MatrixMultiply1.exit, label %2" [f_b_0/forw_back.c:79->f_b_0/forw_back.c:324]   --->   Operation 352 'br' <Predicate = true> <Delay = 0.00>
+ST_75 : Operation 353 [1/1] (0.00ns)   --->   "%zext_ln80 = zext i8 %j_0_i89 to i64" [f_b_0/forw_back.c:80->f_b_0/forw_back.c:324]   --->   Operation 353 'zext' 'zext_ln80' <Predicate = (!icmp_ln79)> <Delay = 0.00>
+ST_75 : Operation 354 [1/1] (0.00ns)   --->   "%first_fc_0_addr = getelementptr [180 x float]* @first_fc_0, i64 0, i64 %zext_ln80" [f_b_0/forw_back.c:80->f_b_0/forw_back.c:324]   --->   Operation 354 'getelementptr' 'first_fc_0_addr' <Predicate = (!icmp_ln79)> <Delay = 0.00>
+ST_75 : Operation 355 [1/1] (0.75ns)   --->   "br label %3" [f_b_0/forw_back.c:81->f_b_0/forw_back.c:324]   --->   Operation 355 'br' <Predicate = (!icmp_ln79)> <Delay = 0.75>
+ST_75 : Operation 356 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecMemCore([8100 x float]* @fc_hidden_layer2, [1 x i8]* @p_str, [14 x i8]* @p_str1, [1 x i8]* @p_str, i32 -1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_0/forw_back.c:62->f_b_0/forw_back.c:325]   --->   Operation 356 'specmemcore' <Predicate = (icmp_ln79)> <Delay = 0.00>
+ST_75 : Operation 357 [1/1] (0.75ns)   --->   "br label %5" [f_b_0/forw_back.c:62->f_b_0/forw_back.c:325]   --->   Operation 357 'br' <Predicate = (icmp_ln79)> <Delay = 0.75>
+
+State 76 <SV = 59> <Delay = 2.37>
+ST_76 : Operation 358 [1/1] (0.00ns)   --->   "%storemerge = phi float [ 0.000000e+00, %2 ], [ %tmp_i_17, %4 ]" [f_b_0/forw_back.c:82->f_b_0/forw_back.c:324]   --->   Operation 358 'phi' 'storemerge' <Predicate = true> <Delay = 0.00>
+ST_76 : Operation 359 [1/1] (0.00ns)   --->   "%k_0_i = phi i10 [ 0, %2 ], [ %k, %4 ]"   --->   Operation 359 'phi' 'k_0_i' <Predicate = true> <Delay = 0.00>
+ST_76 : Operation 360 [1/1] (0.00ns)   --->   "%phi_mul = phi i17 [ 0, %2 ], [ %add_ln82_1, %4 ]" [f_b_0/forw_back.c:82->f_b_0/forw_back.c:324]   --->   Operation 360 'phi' 'phi_mul' <Predicate = true> <Delay = 0.00>
+ST_76 : Operation 361 [1/1] (1.35ns)   --->   "store float %storemerge, float* %first_fc_0_addr, align 4" [f_b_0/forw_back.c:82->f_b_0/forw_back.c:324]   --->   Operation 361 'store' <Predicate = true> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 450> <RAM>
+ST_76 : Operation 362 [1/1] (0.85ns)   --->   "%icmp_ln81 = icmp eq i10 %k_0_i, -448" [f_b_0/forw_back.c:81->f_b_0/forw_back.c:324]   --->   Operation 362 'icmp' 'icmp_ln81' <Predicate = true> <Delay = 0.85> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_76 : Operation 363 [1/1] (0.00ns)   --->   "%empty_16 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 576, i64 576, i64 576) nounwind"   --->   Operation 363 'speclooptripcount' 'empty_16' <Predicate = true> <Delay = 0.00>
+ST_76 : Operation 364 [1/1] (0.93ns)   --->   "%k = add i10 %k_0_i, 1" [f_b_0/forw_back.c:81->f_b_0/forw_back.c:324]   --->   Operation 364 'add' 'k' <Predicate = true> <Delay = 0.93> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_76 : Operation 365 [1/1] (0.00ns)   --->   "br i1 %icmp_ln81, label %.loopexit9.loopexit, label %4" [f_b_0/forw_back.c:81->f_b_0/forw_back.c:324]   --->   Operation 365 'br' <Predicate = true> <Delay = 0.00>
+ST_76 : Operation 366 [1/1] (0.00ns)   --->   "%zext_ln82 = zext i10 %k_0_i to i64" [f_b_0/forw_back.c:82->f_b_0/forw_back.c:324]   --->   Operation 366 'zext' 'zext_ln82' <Predicate = (!icmp_ln81)> <Delay = 0.00>
+ST_76 : Operation 367 [1/1] (0.00ns)   --->   "%flatten_conv_0_addr_1 = getelementptr [576 x float]* @flatten_conv_0, i64 0, i64 %zext_ln82" [f_b_0/forw_back.c:82->f_b_0/forw_back.c:324]   --->   Operation 367 'getelementptr' 'flatten_conv_0_addr_1' <Predicate = (!icmp_ln81)> <Delay = 0.00>
+ST_76 : Operation 368 [2/2] (1.35ns)   --->   "%flatten_conv_0_load = load float* %flatten_conv_0_addr_1, align 4" [f_b_0/forw_back.c:82->f_b_0/forw_back.c:324]   --->   Operation 368 'load' 'flatten_conv_0_load' <Predicate = (!icmp_ln81)> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 450> <RAM>
+ST_76 : Operation 369 [1/1] (1.02ns)   --->   "%add_ln82_1 = add i17 %phi_mul, 180" [f_b_0/forw_back.c:82->f_b_0/forw_back.c:324]   --->   Operation 369 'add' 'add_ln82_1' <Predicate = (!icmp_ln81)> <Delay = 1.02> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_76 : Operation 370 [1/1] (1.02ns)   --->   "%add_ln82 = add i17 %zext_ln79, %phi_mul" [f_b_0/forw_back.c:82->f_b_0/forw_back.c:324]   --->   Operation 370 'add' 'add_ln82' <Predicate = (!icmp_ln81)> <Delay = 1.02> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_76 : Operation 371 [1/1] (0.00ns)   --->   "%zext_ln82_1 = zext i17 %add_ln82 to i64" [f_b_0/forw_back.c:82->f_b_0/forw_back.c:324]   --->   Operation 371 'zext' 'zext_ln82_1' <Predicate = (!icmp_ln81)> <Delay = 0.00>
+ST_76 : Operation 372 [1/1] (0.00ns)   --->   "%fc_hidden_layer1_add_1 = getelementptr [103680 x float]* @fc_hidden_layer1, i64 0, i64 %zext_ln82_1" [f_b_0/forw_back.c:82->f_b_0/forw_back.c:324]   --->   Operation 372 'getelementptr' 'fc_hidden_layer1_add_1' <Predicate = (!icmp_ln81)> <Delay = 0.00>
+ST_76 : Operation 373 [2/2] (1.35ns)   --->   "%fc_hidden_layer1_loa = load float* %fc_hidden_layer1_add_1, align 4" [f_b_0/forw_back.c:82->f_b_0/forw_back.c:324]   --->   Operation 373 'load' 'fc_hidden_layer1_loa' <Predicate = (!icmp_ln81)> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 450> <RAM>
+ST_76 : Operation 374 [1/1] (0.00ns)   --->   "br label %.loopexit9"   --->   Operation 374 'br' <Predicate = (icmp_ln81)> <Delay = 0.00>
+
+State 77 <SV = 60> <Delay = 1.35>
+ST_77 : Operation 375 [1/2] (1.35ns)   --->   "%flatten_conv_0_load = load float* %flatten_conv_0_addr_1, align 4" [f_b_0/forw_back.c:82->f_b_0/forw_back.c:324]   --->   Operation 375 'load' 'flatten_conv_0_load' <Predicate = true> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 450> <RAM>
+ST_77 : Operation 376 [1/2] (1.35ns)   --->   "%fc_hidden_layer1_loa = load float* %fc_hidden_layer1_add_1, align 4" [f_b_0/forw_back.c:82->f_b_0/forw_back.c:324]   --->   Operation 376 'load' 'fc_hidden_layer1_loa' <Predicate = true> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 450> <RAM>
+
+State 78 <SV = 61> <Delay = 8.28>
+ST_78 : Operation 377 [3/3] (8.28ns)   --->   "%tmp_i = fmul float %flatten_conv_0_load, %fc_hidden_layer1_loa" [f_b_0/forw_back.c:82->f_b_0/forw_back.c:324]   --->   Operation 377 'fmul' 'tmp_i' <Predicate = true> <Delay = 8.28> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.28> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 79 <SV = 62> <Delay = 8.28>
+ST_79 : Operation 378 [2/3] (8.28ns)   --->   "%tmp_i = fmul float %flatten_conv_0_load, %fc_hidden_layer1_loa" [f_b_0/forw_back.c:82->f_b_0/forw_back.c:324]   --->   Operation 378 'fmul' 'tmp_i' <Predicate = true> <Delay = 8.28> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.28> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 80 <SV = 63> <Delay = 8.28>
+ST_80 : Operation 379 [1/3] (8.28ns)   --->   "%tmp_i = fmul float %flatten_conv_0_load, %fc_hidden_layer1_loa" [f_b_0/forw_back.c:82->f_b_0/forw_back.c:324]   --->   Operation 379 'fmul' 'tmp_i' <Predicate = true> <Delay = 8.28> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.28> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 81 <SV = 64> <Delay = 7.71>
+ST_81 : Operation 380 [4/4] (7.71ns)   --->   "%tmp_i_17 = fadd float %storemerge, %tmp_i" [f_b_0/forw_back.c:82->f_b_0/forw_back.c:324]   --->   Operation 380 'fadd' 'tmp_i_17' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 82 <SV = 65> <Delay = 7.71>
+ST_82 : Operation 381 [3/4] (7.71ns)   --->   "%tmp_i_17 = fadd float %storemerge, %tmp_i" [f_b_0/forw_back.c:82->f_b_0/forw_back.c:324]   --->   Operation 381 'fadd' 'tmp_i_17' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 83 <SV = 66> <Delay = 7.71>
+ST_83 : Operation 382 [2/4] (7.71ns)   --->   "%tmp_i_17 = fadd float %storemerge, %tmp_i" [f_b_0/forw_back.c:82->f_b_0/forw_back.c:324]   --->   Operation 382 'fadd' 'tmp_i_17' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 84 <SV = 67> <Delay = 7.71>
+ST_84 : Operation 383 [1/4] (7.71ns)   --->   "%tmp_i_17 = fadd float %storemerge, %tmp_i" [f_b_0/forw_back.c:82->f_b_0/forw_back.c:324]   --->   Operation 383 'fadd' 'tmp_i_17' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_84 : Operation 384 [1/1] (0.00ns)   --->   "br label %3" [f_b_0/forw_back.c:81->f_b_0/forw_back.c:324]   --->   Operation 384 'br' <Predicate = true> <Delay = 0.00>
+
+State 85 <SV = 59> <Delay = 1.35>
+ST_85 : Operation 385 [1/1] (0.00ns)   --->   "%j_0_i92 = phi i8 [ 0, %MatrixMultiply1.exit ], [ %j_6, %6 ]"   --->   Operation 385 'phi' 'j_0_i92' <Predicate = true> <Delay = 0.00>
+ST_85 : Operation 386 [1/1] (0.85ns)   --->   "%icmp_ln62 = icmp eq i8 %j_0_i92, -76" [f_b_0/forw_back.c:62->f_b_0/forw_back.c:325]   --->   Operation 386 'icmp' 'icmp_ln62' <Predicate = true> <Delay = 0.85> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_85 : Operation 387 [1/1] (0.00ns)   --->   "%empty_18 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 180, i64 180, i64 180) nounwind"   --->   Operation 387 'speclooptripcount' 'empty_18' <Predicate = true> <Delay = 0.00>
+ST_85 : Operation 388 [1/1] (0.90ns)   --->   "%j_6 = add i8 %j_0_i92, 1" [f_b_0/forw_back.c:62->f_b_0/forw_back.c:325]   --->   Operation 388 'add' 'j_6' <Predicate = true> <Delay = 0.90> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_85 : Operation 389 [1/1] (0.00ns)   --->   "br i1 %icmp_ln62, label %Relu1.exit, label %6" [f_b_0/forw_back.c:62->f_b_0/forw_back.c:325]   --->   Operation 389 'br' <Predicate = true> <Delay = 0.00>
+ST_85 : Operation 390 [1/1] (0.00ns)   --->   "%zext_ln63 = zext i8 %j_0_i92 to i64" [f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 390 'zext' 'zext_ln63' <Predicate = (!icmp_ln62)> <Delay = 0.00>
+ST_85 : Operation 391 [1/1] (0.00ns)   --->   "%first_fc_0_addr_1 = getelementptr [180 x float]* @first_fc_0, i64 0, i64 %zext_ln63" [f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 391 'getelementptr' 'first_fc_0_addr_1' <Predicate = (!icmp_ln62)> <Delay = 0.00>
+ST_85 : Operation 392 [2/2] (1.35ns)   --->   "%first_fc_0_load = load float* %first_fc_0_addr_1, align 4" [f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 392 'load' 'first_fc_0_load' <Predicate = (!icmp_ln62)> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 450> <RAM>
+ST_85 : Operation 393 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecMemCore([8100 x float]* @fc_hidden_layer2, [1 x i8]* @p_str, [14 x i8]* @p_str1, [1 x i8]* @p_str, i32 -1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_0/forw_back.c:87->f_b_0/forw_back.c:326]   --->   Operation 393 'specmemcore' <Predicate = (icmp_ln62)> <Delay = 0.00>
+ST_85 : Operation 394 [1/1] (0.75ns)   --->   "br label %.loopexit8" [f_b_0/forw_back.c:87->f_b_0/forw_back.c:326]   --->   Operation 394 'br' <Predicate = (icmp_ln62)> <Delay = 0.75>
+
+State 86 <SV = 60> <Delay = 4.14>
+ST_86 : Operation 395 [1/2] (1.35ns)   --->   "%first_fc_0_load = load float* %first_fc_0_addr_1, align 4" [f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 395 'load' 'first_fc_0_load' <Predicate = true> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 450> <RAM>
+ST_86 : Operation 396 [2/2] (2.78ns)   --->   "%tmp_i1 = fpext float %first_fc_0_load to double" [f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 396 'fpext' 'tmp_i1' <Predicate = true> <Delay = 2.78> <Core = "Float2Double">   --->   Core 114 'Float2Double' <Latency = 1> <II = 1> <Delay = 2.78> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+
+State 87 <SV = 61> <Delay = 2.78>
+ST_87 : Operation 397 [1/2] (2.78ns)   --->   "%tmp_i1 = fpext float %first_fc_0_load to double" [f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 397 'fpext' 'tmp_i1' <Predicate = true> <Delay = 2.78> <Core = "Float2Double">   --->   Core 114 'Float2Double' <Latency = 1> <II = 1> <Delay = 2.78> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+
+State 88 <SV = 62> <Delay = 8.33>
+ST_88 : Operation 398 [5/5] (8.33ns)   --->   "%tmp_i1_19 = fmul double %tmp_i1, 5.000000e-02" [f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 398 'dmul' 'tmp_i1_19' <Predicate = true> <Delay = 8.33> <Core = "DMul">   --->   Core 116 'DMul' <Latency = 4> <II = 1> <Delay = 8.33> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 89 <SV = 63> <Delay = 8.33>
+ST_89 : Operation 399 [4/5] (8.33ns)   --->   "%tmp_i1_19 = fmul double %tmp_i1, 5.000000e-02" [f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 399 'dmul' 'tmp_i1_19' <Predicate = true> <Delay = 8.33> <Core = "DMul">   --->   Core 116 'DMul' <Latency = 4> <II = 1> <Delay = 8.33> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 90 <SV = 64> <Delay = 8.33>
+ST_90 : Operation 400 [3/5] (8.33ns)   --->   "%tmp_i1_19 = fmul double %tmp_i1, 5.000000e-02" [f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 400 'dmul' 'tmp_i1_19' <Predicate = true> <Delay = 8.33> <Core = "DMul">   --->   Core 116 'DMul' <Latency = 4> <II = 1> <Delay = 8.33> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 91 <SV = 65> <Delay = 8.33>
+ST_91 : Operation 401 [2/5] (8.33ns)   --->   "%tmp_i1_19 = fmul double %tmp_i1, 5.000000e-02" [f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 401 'dmul' 'tmp_i1_19' <Predicate = true> <Delay = 8.33> <Core = "DMul">   --->   Core 116 'DMul' <Latency = 4> <II = 1> <Delay = 8.33> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 92 <SV = 66> <Delay = 8.33>
+ST_92 : Operation 402 [1/5] (8.33ns)   --->   "%tmp_i1_19 = fmul double %tmp_i1, 5.000000e-02" [f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 402 'dmul' 'tmp_i1_19' <Predicate = true> <Delay = 8.33> <Core = "DMul">   --->   Core 116 'DMul' <Latency = 4> <II = 1> <Delay = 8.33> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 93 <SV = 67> <Delay = 3.32>
+ST_93 : Operation 403 [2/2] (3.32ns)   --->   "%b_assign = fptrunc double %tmp_i1_19 to float" [f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 403 'fptrunc' 'b_assign' <Predicate = true> <Delay = 3.32> <Core = "Double2Float">   --->   Core 123 'Double2Float' <Latency = 1> <II = 1> <Delay = 3.32> <FuncUnit> <Opcode : 'fptrunc'> <InPorts = 1> <OutPorts = 1>
+
+State 94 <SV = 68> <Delay = 6.67>
+ST_94 : Operation 404 [1/2] (3.32ns)   --->   "%b_assign = fptrunc double %tmp_i1_19 to float" [f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 404 'fptrunc' 'b_assign' <Predicate = true> <Delay = 3.32> <Core = "Double2Float">   --->   Core 123 'Double2Float' <Latency = 1> <II = 1> <Delay = 3.32> <FuncUnit> <Opcode : 'fptrunc'> <InPorts = 1> <OutPorts = 1>
+ST_94 : Operation 405 [2/2] (3.34ns)   --->   "%tmp_3 = fcmp ogt float %first_fc_0_load, %b_assign" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 405 'fcmp' 'tmp_3' <Predicate = true> <Delay = 3.34> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 3.34> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 95 <SV = 69> <Delay = 5.55>
+ST_95 : Operation 406 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([13 x i8]* @p_str5) nounwind" [f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 406 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_95 : Operation 407 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecMemCore([8100 x float]* @fc_hidden_layer2, [1 x i8]* @p_str, [14 x i8]* @p_str1, [1 x i8]* @p_str, i32 -1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 407 'specmemcore' <Predicate = true> <Delay = 0.00>
+ST_95 : Operation 408 [1/1] (0.00ns)   --->   "%bitcast_ln28 = bitcast float %first_fc_0_load to i32" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 408 'bitcast' 'bitcast_ln28' <Predicate = true> <Delay = 0.00>
+ST_95 : Operation 409 [1/1] (0.00ns)   --->   "%tmp_1 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln28, i32 23, i32 30)" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 409 'partselect' 'tmp_1' <Predicate = true> <Delay = 0.00>
+ST_95 : Operation 410 [1/1] (0.00ns)   --->   "%trunc_ln28 = trunc i32 %bitcast_ln28 to i23" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 410 'trunc' 'trunc_ln28' <Predicate = true> <Delay = 0.00>
+ST_95 : Operation 411 [1/1] (0.00ns)   --->   "%bitcast_ln28_1 = bitcast float %b_assign to i32" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 411 'bitcast' 'bitcast_ln28_1' <Predicate = true> <Delay = 0.00>
+ST_95 : Operation 412 [1/1] (0.00ns)   --->   "%tmp_2 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln28_1, i32 23, i32 30)" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 412 'partselect' 'tmp_2' <Predicate = true> <Delay = 0.00>
+ST_95 : Operation 413 [1/1] (0.00ns)   --->   "%trunc_ln28_1 = trunc i32 %bitcast_ln28_1 to i23" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 413 'trunc' 'trunc_ln28_1' <Predicate = true> <Delay = 0.00>
+ST_95 : Operation 414 [1/1] (0.85ns)   --->   "%icmp_ln28 = icmp ne i8 %tmp_1, -1" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 414 'icmp' 'icmp_ln28' <Predicate = true> <Delay = 0.85> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_95 : Operation 415 [1/1] (0.97ns)   --->   "%icmp_ln28_1 = icmp eq i23 %trunc_ln28, 0" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 415 'icmp' 'icmp_ln28_1' <Predicate = true> <Delay = 0.97> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_95 : Operation 416 [1/1] (0.00ns) (grouped into LUT with out node and_ln28_1)   --->   "%or_ln28 = or i1 %icmp_ln28_1, %icmp_ln28" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 416 'or' 'or_ln28' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.33> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_95 : Operation 417 [1/1] (0.85ns)   --->   "%icmp_ln28_2 = icmp ne i8 %tmp_2, -1" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 417 'icmp' 'icmp_ln28_2' <Predicate = true> <Delay = 0.85> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_95 : Operation 418 [1/1] (0.97ns)   --->   "%icmp_ln28_3 = icmp eq i23 %trunc_ln28_1, 0" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 418 'icmp' 'icmp_ln28_3' <Predicate = true> <Delay = 0.97> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_95 : Operation 419 [1/1] (0.00ns) (grouped into LUT with out node and_ln28_1)   --->   "%or_ln28_1 = or i1 %icmp_ln28_3, %icmp_ln28_2" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 419 'or' 'or_ln28_1' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.33> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_95 : Operation 420 [1/1] (0.00ns) (grouped into LUT with out node and_ln28_1)   --->   "%and_ln28 = and i1 %or_ln28, %or_ln28_1" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 420 'and' 'and_ln28' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.33> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_95 : Operation 421 [1/2] (3.34ns)   --->   "%tmp_3 = fcmp ogt float %first_fc_0_load, %b_assign" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 421 'fcmp' 'tmp_3' <Predicate = true> <Delay = 3.34> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 3.34> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_95 : Operation 422 [1/1] (0.33ns) (out node of the LUT)   --->   "%and_ln28_1 = and i1 %and_ln28, %tmp_3" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 422 'and' 'and_ln28_1' <Predicate = true> <Delay = 0.33> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.33> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_95 : Operation 423 [1/1] (0.52ns) (out node of the LUT)   --->   "%select_ln28 = select i1 %and_ln28_1, float %first_fc_0_load, float %b_assign" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 423 'select' 'select_ln28' <Predicate = true> <Delay = 0.52> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.52> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_95 : Operation 424 [1/1] (0.00ns)   --->   "%first_relu_0_addr = getelementptr [180 x float]* @first_relu_0, i64 0, i64 %zext_ln63" [f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 424 'getelementptr' 'first_relu_0_addr' <Predicate = true> <Delay = 0.00>
+ST_95 : Operation 425 [1/1] (1.35ns)   --->   "store float %select_ln28, float* %first_relu_0_addr, align 4" [f_b_0/forw_back.c:63->f_b_0/forw_back.c:325]   --->   Operation 425 'store' <Predicate = true> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 450> <RAM>
+ST_95 : Operation 426 [1/1] (0.00ns)   --->   "br label %5" [f_b_0/forw_back.c:62->f_b_0/forw_back.c:325]   --->   Operation 426 'br' <Predicate = true> <Delay = 0.00>
+
+State 96 <SV = 60> <Delay = 1.20>
+ST_96 : Operation 427 [1/1] (0.00ns)   --->   "%j_0_i99 = phi i6 [ 0, %Relu1.exit ], [ %j_7, %.loopexit8.loopexit ]"   --->   Operation 427 'phi' 'j_0_i99' <Predicate = true> <Delay = 0.00>
+ST_96 : Operation 428 [1/1] (0.00ns)   --->   "%zext_ln87 = zext i6 %j_0_i99 to i13" [f_b_0/forw_back.c:87->f_b_0/forw_back.c:326]   --->   Operation 428 'zext' 'zext_ln87' <Predicate = true> <Delay = 0.00>
+ST_96 : Operation 429 [1/1] (0.87ns)   --->   "%icmp_ln87 = icmp eq i6 %j_0_i99, -19" [f_b_0/forw_back.c:87->f_b_0/forw_back.c:326]   --->   Operation 429 'icmp' 'icmp_ln87' <Predicate = true> <Delay = 0.87> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_96 : Operation 430 [1/1] (0.00ns)   --->   "%empty_20 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 45, i64 45, i64 45) nounwind"   --->   Operation 430 'speclooptripcount' 'empty_20' <Predicate = true> <Delay = 0.00>
+ST_96 : Operation 431 [1/1] (0.88ns)   --->   "%j_7 = add i6 %j_0_i99, 1" [f_b_0/forw_back.c:87->f_b_0/forw_back.c:326]   --->   Operation 431 'add' 'j_7' <Predicate = true> <Delay = 0.88> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_96 : Operation 432 [1/1] (0.00ns)   --->   "br i1 %icmp_ln87, label %MatrixMultiply2.exit, label %7" [f_b_0/forw_back.c:87->f_b_0/forw_back.c:326]   --->   Operation 432 'br' <Predicate = true> <Delay = 0.00>
+ST_96 : Operation 433 [1/1] (0.00ns)   --->   "%zext_ln88 = zext i6 %j_0_i99 to i64" [f_b_0/forw_back.c:88->f_b_0/forw_back.c:326]   --->   Operation 433 'zext' 'zext_ln88' <Predicate = (!icmp_ln87)> <Delay = 0.00>
+ST_96 : Operation 434 [1/1] (0.00ns)   --->   "%second_fc_0_addr = getelementptr [45 x float]* @second_fc_0, i64 0, i64 %zext_ln88" [f_b_0/forw_back.c:88->f_b_0/forw_back.c:326]   --->   Operation 434 'getelementptr' 'second_fc_0_addr' <Predicate = (!icmp_ln87)> <Delay = 0.00>
+ST_96 : Operation 435 [1/1] (0.75ns)   --->   "br label %8" [f_b_0/forw_back.c:89->f_b_0/forw_back.c:326]   --->   Operation 435 'br' <Predicate = (!icmp_ln87)> <Delay = 0.75>
+ST_96 : Operation 436 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecMemCore([8100 x float]* @fc_hidden_layer2, [1 x i8]* @p_str, [14 x i8]* @p_str1, [1 x i8]* @p_str, i32 -1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_0/forw_back.c:67->f_b_0/forw_back.c:327]   --->   Operation 436 'specmemcore' <Predicate = (icmp_ln87)> <Delay = 0.00>
+ST_96 : Operation 437 [1/1] (0.75ns)   --->   "br label %10" [f_b_0/forw_back.c:67->f_b_0/forw_back.c:327]   --->   Operation 437 'br' <Predicate = (icmp_ln87)> <Delay = 0.75>
+
+State 97 <SV = 61> <Delay = 1.96>
+ST_97 : Operation 438 [1/1] (0.00ns)   --->   "%storemerge198 = phi float [ 0.000000e+00, %7 ], [ %tmp_i3_22, %9 ]" [f_b_0/forw_back.c:90->f_b_0/forw_back.c:326]   --->   Operation 438 'phi' 'storemerge198' <Predicate = true> <Delay = 0.00>
+ST_97 : Operation 439 [1/1] (0.00ns)   --->   "%k_0_i101 = phi i8 [ 0, %7 ], [ %k_1, %9 ]"   --->   Operation 439 'phi' 'k_0_i101' <Predicate = true> <Delay = 0.00>
+ST_97 : Operation 440 [1/1] (0.00ns)   --->   "%phi_mul196 = phi i13 [ 0, %7 ], [ %add_ln90_1, %9 ]" [f_b_0/forw_back.c:90->f_b_0/forw_back.c:326]   --->   Operation 440 'phi' 'phi_mul196' <Predicate = true> <Delay = 0.00>
+ST_97 : Operation 441 [1/1] (1.35ns)   --->   "store float %storemerge198, float* %second_fc_0_addr, align 4" [f_b_0/forw_back.c:90->f_b_0/forw_back.c:326]   --->   Operation 441 'store' <Predicate = true> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 450> <RAM>
+ST_97 : Operation 442 [1/1] (0.85ns)   --->   "%icmp_ln89 = icmp eq i8 %k_0_i101, -76" [f_b_0/forw_back.c:89->f_b_0/forw_back.c:326]   --->   Operation 442 'icmp' 'icmp_ln89' <Predicate = true> <Delay = 0.85> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_97 : Operation 443 [1/1] (0.00ns)   --->   "%empty_21 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 180, i64 180, i64 180) nounwind"   --->   Operation 443 'speclooptripcount' 'empty_21' <Predicate = true> <Delay = 0.00>
+ST_97 : Operation 444 [1/1] (0.90ns)   --->   "%k_1 = add i8 %k_0_i101, 1" [f_b_0/forw_back.c:89->f_b_0/forw_back.c:326]   --->   Operation 444 'add' 'k_1' <Predicate = true> <Delay = 0.90> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_97 : Operation 445 [1/1] (0.00ns)   --->   "br i1 %icmp_ln89, label %.loopexit8.loopexit, label %9" [f_b_0/forw_back.c:89->f_b_0/forw_back.c:326]   --->   Operation 445 'br' <Predicate = true> <Delay = 0.00>
+ST_97 : Operation 446 [1/1] (0.00ns)   --->   "%zext_ln90 = zext i8 %k_0_i101 to i64" [f_b_0/forw_back.c:90->f_b_0/forw_back.c:326]   --->   Operation 446 'zext' 'zext_ln90' <Predicate = (!icmp_ln89)> <Delay = 0.00>
+ST_97 : Operation 447 [1/1] (0.00ns)   --->   "%first_relu_0_addr_1 = getelementptr [180 x float]* @first_relu_0, i64 0, i64 %zext_ln90" [f_b_0/forw_back.c:90->f_b_0/forw_back.c:326]   --->   Operation 447 'getelementptr' 'first_relu_0_addr_1' <Predicate = (!icmp_ln89)> <Delay = 0.00>
+ST_97 : Operation 448 [2/2] (1.35ns)   --->   "%first_relu_0_load = load float* %first_relu_0_addr_1, align 4" [f_b_0/forw_back.c:90->f_b_0/forw_back.c:326]   --->   Operation 448 'load' 'first_relu_0_load' <Predicate = (!icmp_ln89)> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 450> <RAM>
+ST_97 : Operation 449 [1/1] (0.97ns)   --->   "%add_ln90_1 = add i13 %phi_mul196, 45" [f_b_0/forw_back.c:90->f_b_0/forw_back.c:326]   --->   Operation 449 'add' 'add_ln90_1' <Predicate = (!icmp_ln89)> <Delay = 0.97> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_97 : Operation 450 [1/1] (0.97ns)   --->   "%add_ln90 = add i13 %zext_ln87, %phi_mul196" [f_b_0/forw_back.c:90->f_b_0/forw_back.c:326]   --->   Operation 450 'add' 'add_ln90' <Predicate = (!icmp_ln89)> <Delay = 0.97> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_97 : Operation 451 [1/1] (0.00ns)   --->   "%zext_ln90_1 = zext i13 %add_ln90 to i64" [f_b_0/forw_back.c:90->f_b_0/forw_back.c:326]   --->   Operation 451 'zext' 'zext_ln90_1' <Predicate = (!icmp_ln89)> <Delay = 0.00>
+ST_97 : Operation 452 [1/1] (0.00ns)   --->   "%fc_hidden_layer2_add_1 = getelementptr [8100 x float]* @fc_hidden_layer2, i64 0, i64 %zext_ln90_1" [f_b_0/forw_back.c:90->f_b_0/forw_back.c:326]   --->   Operation 452 'getelementptr' 'fc_hidden_layer2_add_1' <Predicate = (!icmp_ln89)> <Delay = 0.00>
+ST_97 : Operation 453 [2/2] (0.99ns)   --->   "%fc_hidden_layer2_loa = load float* %fc_hidden_layer2_add_1, align 4" [f_b_0/forw_back.c:90->f_b_0/forw_back.c:326]   --->   Operation 453 'load' 'fc_hidden_layer2_loa' <Predicate = (!icmp_ln89)> <Delay = 0.99> <Core = "RAM_2P_LUTRAM">   --->   Core 41 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.99> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8100> <RAM>
+ST_97 : Operation 454 [1/1] (0.00ns)   --->   "br label %.loopexit8"   --->   Operation 454 'br' <Predicate = (icmp_ln89)> <Delay = 0.00>
+
+State 98 <SV = 62> <Delay = 1.35>
+ST_98 : Operation 455 [1/2] (1.35ns)   --->   "%first_relu_0_load = load float* %first_relu_0_addr_1, align 4" [f_b_0/forw_back.c:90->f_b_0/forw_back.c:326]   --->   Operation 455 'load' 'first_relu_0_load' <Predicate = true> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 450> <RAM>
+ST_98 : Operation 456 [1/2] (0.99ns)   --->   "%fc_hidden_layer2_loa = load float* %fc_hidden_layer2_add_1, align 4" [f_b_0/forw_back.c:90->f_b_0/forw_back.c:326]   --->   Operation 456 'load' 'fc_hidden_layer2_loa' <Predicate = true> <Delay = 0.99> <Core = "RAM_2P_LUTRAM">   --->   Core 41 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.99> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8100> <RAM>
+
+State 99 <SV = 63> <Delay = 8.28>
+ST_99 : Operation 457 [3/3] (8.28ns)   --->   "%tmp_i3 = fmul float %first_relu_0_load, %fc_hidden_layer2_loa" [f_b_0/forw_back.c:90->f_b_0/forw_back.c:326]   --->   Operation 457 'fmul' 'tmp_i3' <Predicate = true> <Delay = 8.28> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.28> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 100 <SV = 64> <Delay = 8.28>
+ST_100 : Operation 458 [2/3] (8.28ns)   --->   "%tmp_i3 = fmul float %first_relu_0_load, %fc_hidden_layer2_loa" [f_b_0/forw_back.c:90->f_b_0/forw_back.c:326]   --->   Operation 458 'fmul' 'tmp_i3' <Predicate = true> <Delay = 8.28> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.28> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 101 <SV = 65> <Delay = 8.28>
+ST_101 : Operation 459 [1/3] (8.28ns)   --->   "%tmp_i3 = fmul float %first_relu_0_load, %fc_hidden_layer2_loa" [f_b_0/forw_back.c:90->f_b_0/forw_back.c:326]   --->   Operation 459 'fmul' 'tmp_i3' <Predicate = true> <Delay = 8.28> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.28> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 102 <SV = 66> <Delay = 7.71>
+ST_102 : Operation 460 [4/4] (7.71ns)   --->   "%tmp_i3_22 = fadd float %storemerge198, %tmp_i3" [f_b_0/forw_back.c:90->f_b_0/forw_back.c:326]   --->   Operation 460 'fadd' 'tmp_i3_22' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 103 <SV = 67> <Delay = 7.71>
+ST_103 : Operation 461 [3/4] (7.71ns)   --->   "%tmp_i3_22 = fadd float %storemerge198, %tmp_i3" [f_b_0/forw_back.c:90->f_b_0/forw_back.c:326]   --->   Operation 461 'fadd' 'tmp_i3_22' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 104 <SV = 68> <Delay = 7.71>
+ST_104 : Operation 462 [2/4] (7.71ns)   --->   "%tmp_i3_22 = fadd float %storemerge198, %tmp_i3" [f_b_0/forw_back.c:90->f_b_0/forw_back.c:326]   --->   Operation 462 'fadd' 'tmp_i3_22' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 105 <SV = 69> <Delay = 7.71>
+ST_105 : Operation 463 [1/4] (7.71ns)   --->   "%tmp_i3_22 = fadd float %storemerge198, %tmp_i3" [f_b_0/forw_back.c:90->f_b_0/forw_back.c:326]   --->   Operation 463 'fadd' 'tmp_i3_22' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_105 : Operation 464 [1/1] (0.00ns)   --->   "br label %8" [f_b_0/forw_back.c:89->f_b_0/forw_back.c:326]   --->   Operation 464 'br' <Predicate = true> <Delay = 0.00>
+
+State 106 <SV = 61> <Delay = 1.35>
+ST_106 : Operation 465 [1/1] (0.00ns)   --->   "%j_0_i110 = phi i6 [ 0, %MatrixMultiply2.exit ], [ %j_8, %11 ]"   --->   Operation 465 'phi' 'j_0_i110' <Predicate = true> <Delay = 0.00>
+ST_106 : Operation 466 [1/1] (0.87ns)   --->   "%icmp_ln67 = icmp eq i6 %j_0_i110, -19" [f_b_0/forw_back.c:67->f_b_0/forw_back.c:327]   --->   Operation 466 'icmp' 'icmp_ln67' <Predicate = true> <Delay = 0.87> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_106 : Operation 467 [1/1] (0.00ns)   --->   "%empty_23 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 45, i64 45, i64 45) nounwind"   --->   Operation 467 'speclooptripcount' 'empty_23' <Predicate = true> <Delay = 0.00>
+ST_106 : Operation 468 [1/1] (0.88ns)   --->   "%j_8 = add i6 %j_0_i110, 1" [f_b_0/forw_back.c:67->f_b_0/forw_back.c:327]   --->   Operation 468 'add' 'j_8' <Predicate = true> <Delay = 0.88> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_106 : Operation 469 [1/1] (0.00ns)   --->   "br i1 %icmp_ln67, label %Relu2.exit, label %11" [f_b_0/forw_back.c:67->f_b_0/forw_back.c:327]   --->   Operation 469 'br' <Predicate = true> <Delay = 0.00>
+ST_106 : Operation 470 [1/1] (0.00ns)   --->   "%zext_ln68 = zext i6 %j_0_i110 to i64" [f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 470 'zext' 'zext_ln68' <Predicate = (!icmp_ln67)> <Delay = 0.00>
+ST_106 : Operation 471 [1/1] (0.00ns)   --->   "%second_fc_0_addr_1 = getelementptr [45 x float]* @second_fc_0, i64 0, i64 %zext_ln68" [f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 471 'getelementptr' 'second_fc_0_addr_1' <Predicate = (!icmp_ln67)> <Delay = 0.00>
+ST_106 : Operation 472 [2/2] (1.35ns)   --->   "%second_fc_0_load = load float* %second_fc_0_addr_1, align 4" [f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 472 'load' 'second_fc_0_load' <Predicate = (!icmp_ln67)> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 450> <RAM>
+ST_106 : Operation 473 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecMemCore([8100 x float]* @fc_hidden_layer2, [1 x i8]* @p_str, [14 x i8]* @p_str1, [1 x i8]* @p_str, i32 -1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_0/forw_back.c:95->f_b_0/forw_back.c:328]   --->   Operation 473 'specmemcore' <Predicate = (icmp_ln67)> <Delay = 0.00>
+ST_106 : Operation 474 [1/1] (0.75ns)   --->   "br label %.loopexit" [f_b_0/forw_back.c:95->f_b_0/forw_back.c:328]   --->   Operation 474 'br' <Predicate = (icmp_ln67)> <Delay = 0.75>
+
+State 107 <SV = 62> <Delay = 4.14>
+ST_107 : Operation 475 [1/2] (1.35ns)   --->   "%second_fc_0_load = load float* %second_fc_0_addr_1, align 4" [f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 475 'load' 'second_fc_0_load' <Predicate = true> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 450> <RAM>
+ST_107 : Operation 476 [2/2] (2.78ns)   --->   "%tmp_i2 = fpext float %second_fc_0_load to double" [f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 476 'fpext' 'tmp_i2' <Predicate = true> <Delay = 2.78> <Core = "Float2Double">   --->   Core 114 'Float2Double' <Latency = 1> <II = 1> <Delay = 2.78> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+
+State 108 <SV = 63> <Delay = 2.78>
+ST_108 : Operation 477 [1/2] (2.78ns)   --->   "%tmp_i2 = fpext float %second_fc_0_load to double" [f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 477 'fpext' 'tmp_i2' <Predicate = true> <Delay = 2.78> <Core = "Float2Double">   --->   Core 114 'Float2Double' <Latency = 1> <II = 1> <Delay = 2.78> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+
+State 109 <SV = 64> <Delay = 8.33>
+ST_109 : Operation 478 [5/5] (8.33ns)   --->   "%tmp_i2_24 = fmul double %tmp_i2, 5.000000e-02" [f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 478 'dmul' 'tmp_i2_24' <Predicate = true> <Delay = 8.33> <Core = "DMul">   --->   Core 116 'DMul' <Latency = 4> <II = 1> <Delay = 8.33> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 110 <SV = 65> <Delay = 8.33>
+ST_110 : Operation 479 [4/5] (8.33ns)   --->   "%tmp_i2_24 = fmul double %tmp_i2, 5.000000e-02" [f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 479 'dmul' 'tmp_i2_24' <Predicate = true> <Delay = 8.33> <Core = "DMul">   --->   Core 116 'DMul' <Latency = 4> <II = 1> <Delay = 8.33> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 111 <SV = 66> <Delay = 8.33>
+ST_111 : Operation 480 [3/5] (8.33ns)   --->   "%tmp_i2_24 = fmul double %tmp_i2, 5.000000e-02" [f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 480 'dmul' 'tmp_i2_24' <Predicate = true> <Delay = 8.33> <Core = "DMul">   --->   Core 116 'DMul' <Latency = 4> <II = 1> <Delay = 8.33> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 112 <SV = 67> <Delay = 8.33>
+ST_112 : Operation 481 [2/5] (8.33ns)   --->   "%tmp_i2_24 = fmul double %tmp_i2, 5.000000e-02" [f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 481 'dmul' 'tmp_i2_24' <Predicate = true> <Delay = 8.33> <Core = "DMul">   --->   Core 116 'DMul' <Latency = 4> <II = 1> <Delay = 8.33> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 113 <SV = 68> <Delay = 8.33>
+ST_113 : Operation 482 [1/5] (8.33ns)   --->   "%tmp_i2_24 = fmul double %tmp_i2, 5.000000e-02" [f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 482 'dmul' 'tmp_i2_24' <Predicate = true> <Delay = 8.33> <Core = "DMul">   --->   Core 116 'DMul' <Latency = 4> <II = 1> <Delay = 8.33> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 114 <SV = 69> <Delay = 3.32>
+ST_114 : Operation 483 [2/2] (3.32ns)   --->   "%b_assign_1 = fptrunc double %tmp_i2_24 to float" [f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 483 'fptrunc' 'b_assign_1' <Predicate = true> <Delay = 3.32> <Core = "Double2Float">   --->   Core 123 'Double2Float' <Latency = 1> <II = 1> <Delay = 3.32> <FuncUnit> <Opcode : 'fptrunc'> <InPorts = 1> <OutPorts = 1>
+
+State 115 <SV = 70> <Delay = 6.67>
+ST_115 : Operation 484 [1/2] (3.32ns)   --->   "%b_assign_1 = fptrunc double %tmp_i2_24 to float" [f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 484 'fptrunc' 'b_assign_1' <Predicate = true> <Delay = 3.32> <Core = "Double2Float">   --->   Core 123 'Double2Float' <Latency = 1> <II = 1> <Delay = 3.32> <FuncUnit> <Opcode : 'fptrunc'> <InPorts = 1> <OutPorts = 1>
+ST_115 : Operation 485 [2/2] (3.34ns)   --->   "%tmp_6 = fcmp ogt float %second_fc_0_load, %b_assign_1" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 485 'fcmp' 'tmp_6' <Predicate = true> <Delay = 3.34> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 3.34> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 116 <SV = 71> <Delay = 5.55>
+ST_116 : Operation 486 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([13 x i8]* @p_str6) nounwind" [f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 486 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_116 : Operation 487 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecMemCore([8100 x float]* @fc_hidden_layer2, [1 x i8]* @p_str, [14 x i8]* @p_str1, [1 x i8]* @p_str, i32 -1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 487 'specmemcore' <Predicate = true> <Delay = 0.00>
+ST_116 : Operation 488 [1/1] (0.00ns)   --->   "%bitcast_ln28_2 = bitcast float %second_fc_0_load to i32" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 488 'bitcast' 'bitcast_ln28_2' <Predicate = true> <Delay = 0.00>
+ST_116 : Operation 489 [1/1] (0.00ns)   --->   "%tmp_4 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln28_2, i32 23, i32 30)" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 489 'partselect' 'tmp_4' <Predicate = true> <Delay = 0.00>
+ST_116 : Operation 490 [1/1] (0.00ns)   --->   "%trunc_ln28_2 = trunc i32 %bitcast_ln28_2 to i23" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 490 'trunc' 'trunc_ln28_2' <Predicate = true> <Delay = 0.00>
+ST_116 : Operation 491 [1/1] (0.00ns)   --->   "%bitcast_ln28_3 = bitcast float %b_assign_1 to i32" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 491 'bitcast' 'bitcast_ln28_3' <Predicate = true> <Delay = 0.00>
+ST_116 : Operation 492 [1/1] (0.00ns)   --->   "%tmp_5 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln28_3, i32 23, i32 30)" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 492 'partselect' 'tmp_5' <Predicate = true> <Delay = 0.00>
+ST_116 : Operation 493 [1/1] (0.00ns)   --->   "%trunc_ln28_3 = trunc i32 %bitcast_ln28_3 to i23" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 493 'trunc' 'trunc_ln28_3' <Predicate = true> <Delay = 0.00>
+ST_116 : Operation 494 [1/1] (0.85ns)   --->   "%icmp_ln28_4 = icmp ne i8 %tmp_4, -1" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 494 'icmp' 'icmp_ln28_4' <Predicate = true> <Delay = 0.85> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_116 : Operation 495 [1/1] (0.97ns)   --->   "%icmp_ln28_5 = icmp eq i23 %trunc_ln28_2, 0" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 495 'icmp' 'icmp_ln28_5' <Predicate = true> <Delay = 0.97> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_116 : Operation 496 [1/1] (0.00ns) (grouped into LUT with out node and_ln28_3)   --->   "%or_ln28_2 = or i1 %icmp_ln28_5, %icmp_ln28_4" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 496 'or' 'or_ln28_2' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.33> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_116 : Operation 497 [1/1] (0.85ns)   --->   "%icmp_ln28_6 = icmp ne i8 %tmp_5, -1" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 497 'icmp' 'icmp_ln28_6' <Predicate = true> <Delay = 0.85> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_116 : Operation 498 [1/1] (0.97ns)   --->   "%icmp_ln28_7 = icmp eq i23 %trunc_ln28_3, 0" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 498 'icmp' 'icmp_ln28_7' <Predicate = true> <Delay = 0.97> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_116 : Operation 499 [1/1] (0.00ns) (grouped into LUT with out node and_ln28_3)   --->   "%or_ln28_3 = or i1 %icmp_ln28_7, %icmp_ln28_6" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 499 'or' 'or_ln28_3' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.33> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_116 : Operation 500 [1/1] (0.00ns) (grouped into LUT with out node and_ln28_3)   --->   "%and_ln28_2 = and i1 %or_ln28_2, %or_ln28_3" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 500 'and' 'and_ln28_2' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.33> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_116 : Operation 501 [1/2] (3.34ns)   --->   "%tmp_6 = fcmp ogt float %second_fc_0_load, %b_assign_1" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 501 'fcmp' 'tmp_6' <Predicate = true> <Delay = 3.34> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 3.34> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_116 : Operation 502 [1/1] (0.33ns) (out node of the LUT)   --->   "%and_ln28_3 = and i1 %and_ln28_2, %tmp_6" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 502 'and' 'and_ln28_3' <Predicate = true> <Delay = 0.33> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.33> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_116 : Operation 503 [1/1] (0.52ns) (out node of the LUT)   --->   "%select_ln28_1 = select i1 %and_ln28_3, float %second_fc_0_load, float %b_assign_1" [f_b_0/forw_back.c:28->f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 503 'select' 'select_ln28_1' <Predicate = true> <Delay = 0.52> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.52> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_116 : Operation 504 [1/1] (0.00ns)   --->   "%second_relu_0_addr = getelementptr [45 x float]* @second_relu_0, i64 0, i64 %zext_ln68" [f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 504 'getelementptr' 'second_relu_0_addr' <Predicate = true> <Delay = 0.00>
+ST_116 : Operation 505 [1/1] (1.35ns)   --->   "store float %select_ln28_1, float* %second_relu_0_addr, align 4" [f_b_0/forw_back.c:68->f_b_0/forw_back.c:327]   --->   Operation 505 'store' <Predicate = true> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 450> <RAM>
+ST_116 : Operation 506 [1/1] (0.00ns)   --->   "br label %10" [f_b_0/forw_back.c:67->f_b_0/forw_back.c:327]   --->   Operation 506 'br' <Predicate = true> <Delay = 0.00>
+
+State 117 <SV = 62> <Delay = 1.21>
+ST_117 : Operation 507 [1/1] (0.00ns)   --->   "%j_0_i119 = phi i4 [ 0, %Relu2.exit ], [ %j_9, %.loopexit.loopexit ]"   --->   Operation 507 'phi' 'j_0_i119' <Predicate = true> <Delay = 0.00>
+ST_117 : Operation 508 [1/1] (0.00ns)   --->   "%zext_ln95 = zext i4 %j_0_i119 to i7" [f_b_0/forw_back.c:95->f_b_0/forw_back.c:328]   --->   Operation 508 'zext' 'zext_ln95' <Predicate = true> <Delay = 0.00>
+ST_117 : Operation 509 [1/1] (0.88ns)   --->   "%icmp_ln95 = icmp eq i4 %j_0_i119, -6" [f_b_0/forw_back.c:95->f_b_0/forw_back.c:328]   --->   Operation 509 'icmp' 'icmp_ln95' <Predicate = true> <Delay = 0.88> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_117 : Operation 510 [1/1] (0.00ns)   --->   "%empty_25 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10) nounwind"   --->   Operation 510 'speclooptripcount' 'empty_25' <Predicate = true> <Delay = 0.00>
+ST_117 : Operation 511 [1/1] (0.86ns)   --->   "%j_9 = add i4 %j_0_i119, 1" [f_b_0/forw_back.c:95->f_b_0/forw_back.c:328]   --->   Operation 511 'add' 'j_9' <Predicate = true> <Delay = 0.86> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_117 : Operation 512 [1/1] (0.00ns)   --->   "br i1 %icmp_ln95, label %MatrixMultiply3.exit, label %12" [f_b_0/forw_back.c:95->f_b_0/forw_back.c:328]   --->   Operation 512 'br' <Predicate = true> <Delay = 0.00>
+ST_117 : Operation 513 [1/1] (0.00ns)   --->   "%zext_ln96 = zext i4 %j_0_i119 to i64" [f_b_0/forw_back.c:96->f_b_0/forw_back.c:328]   --->   Operation 513 'zext' 'zext_ln96' <Predicate = (!icmp_ln95)> <Delay = 0.00>
+ST_117 : Operation 514 [1/1] (0.00ns)   --->   "%outmlp_0_addr = getelementptr [10 x float]* @outmlp_0, i64 0, i64 %zext_ln96" [f_b_0/forw_back.c:96->f_b_0/forw_back.c:328]   --->   Operation 514 'getelementptr' 'outmlp_0_addr' <Predicate = (!icmp_ln95)> <Delay = 0.00>
+ST_117 : Operation 515 [1/1] (0.75ns)   --->   "br label %13" [f_b_0/forw_back.c:97->f_b_0/forw_back.c:328]   --->   Operation 515 'br' <Predicate = (!icmp_ln95)> <Delay = 0.75>
+ST_117 : Operation 516 [1/1] (0.00ns)   --->   "ret void" [f_b_0/forw_back.c:330]   --->   Operation 516 'ret' <Predicate = (icmp_ln95)> <Delay = 0.00>
+
+State 118 <SV = 63> <Delay = 3.16>
+ST_118 : Operation 517 [1/1] (0.00ns)   --->   "%storemerge199 = phi float [ 0.000000e+00, %12 ], [ %tmp_i4_27, %14 ]" [f_b_0/forw_back.c:98->f_b_0/forw_back.c:328]   --->   Operation 517 'phi' 'storemerge199' <Predicate = true> <Delay = 0.00>
+ST_118 : Operation 518 [1/1] (0.00ns)   --->   "%k_0_i121 = phi i6 [ 0, %12 ], [ %k_2, %14 ]"   --->   Operation 518 'phi' 'k_0_i121' <Predicate = true> <Delay = 0.00>
+ST_118 : Operation 519 [1/1] (0.79ns)   --->   "store float %storemerge199, float* %outmlp_0_addr, align 4" [f_b_0/forw_back.c:98->f_b_0/forw_back.c:328]   --->   Operation 519 'store' <Predicate = true> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 450> <RAM>
+ST_118 : Operation 520 [1/1] (0.87ns)   --->   "%icmp_ln97 = icmp eq i6 %k_0_i121, -19" [f_b_0/forw_back.c:97->f_b_0/forw_back.c:328]   --->   Operation 520 'icmp' 'icmp_ln97' <Predicate = true> <Delay = 0.87> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_118 : Operation 521 [1/1] (0.00ns)   --->   "%empty_26 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 45, i64 45, i64 45) nounwind"   --->   Operation 521 'speclooptripcount' 'empty_26' <Predicate = true> <Delay = 0.00>
+ST_118 : Operation 522 [1/1] (0.88ns)   --->   "%k_2 = add i6 %k_0_i121, 1" [f_b_0/forw_back.c:97->f_b_0/forw_back.c:328]   --->   Operation 522 'add' 'k_2' <Predicate = true> <Delay = 0.88> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_118 : Operation 523 [1/1] (0.00ns)   --->   "br i1 %icmp_ln97, label %.loopexit.loopexit, label %14" [f_b_0/forw_back.c:97->f_b_0/forw_back.c:328]   --->   Operation 523 'br' <Predicate = true> <Delay = 0.00>
+ST_118 : Operation 524 [1/1] (0.00ns)   --->   "%zext_ln98 = zext i6 %k_0_i121 to i64" [f_b_0/forw_back.c:98->f_b_0/forw_back.c:328]   --->   Operation 524 'zext' 'zext_ln98' <Predicate = (!icmp_ln97)> <Delay = 0.00>
+ST_118 : Operation 525 [1/1] (0.00ns)   --->   "%second_relu_0_addr_1 = getelementptr [45 x float]* @second_relu_0, i64 0, i64 %zext_ln98" [f_b_0/forw_back.c:98->f_b_0/forw_back.c:328]   --->   Operation 525 'getelementptr' 'second_relu_0_addr_1' <Predicate = (!icmp_ln97)> <Delay = 0.00>
+ST_118 : Operation 526 [2/2] (1.35ns)   --->   "%second_relu_0_load = load float* %second_relu_0_addr_1, align 4" [f_b_0/forw_back.c:98->f_b_0/forw_back.c:328]   --->   Operation 526 'load' 'second_relu_0_load' <Predicate = (!icmp_ln97)> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 450> <RAM>
+ST_118 : Operation 527 [1/1] (0.00ns)   --->   "%shl_ln1 = call i9 @_ssdm_op_BitConcatenate.i9.i6.i3(i6 %k_0_i121, i3 0)" [f_b_0/forw_back.c:98->f_b_0/forw_back.c:328]   --->   Operation 527 'bitconcatenate' 'shl_ln1' <Predicate = (!icmp_ln97)> <Delay = 0.00>
+ST_118 : Operation 528 [1/1] (0.00ns)   --->   "%shl_ln98_1 = call i7 @_ssdm_op_BitConcatenate.i7.i6.i1(i6 %k_0_i121, i1 false)" [f_b_0/forw_back.c:98->f_b_0/forw_back.c:328]   --->   Operation 528 'bitconcatenate' 'shl_ln98_1' <Predicate = (!icmp_ln97)> <Delay = 0.00>
+ST_118 : Operation 529 [1/1] (0.89ns)   --->   "%add_ln98 = add i7 %zext_ln95, %shl_ln98_1" [f_b_0/forw_back.c:98->f_b_0/forw_back.c:328]   --->   Operation 529 'add' 'add_ln98' <Predicate = (!icmp_ln97)> <Delay = 0.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_118 : Operation 530 [1/1] (0.00ns)   --->   "%zext_ln98_2 = zext i7 %add_ln98 to i9" [f_b_0/forw_back.c:98->f_b_0/forw_back.c:328]   --->   Operation 530 'zext' 'zext_ln98_2' <Predicate = (!icmp_ln97)> <Delay = 0.00>
+ST_118 : Operation 531 [1/1] (0.92ns)   --->   "%add_ln98_1 = add i9 %shl_ln1, %zext_ln98_2" [f_b_0/forw_back.c:98->f_b_0/forw_back.c:328]   --->   Operation 531 'add' 'add_ln98_1' <Predicate = (!icmp_ln97)> <Delay = 0.92> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_118 : Operation 532 [1/1] (0.00ns)   --->   "%zext_ln98_1 = zext i9 %add_ln98_1 to i64" [f_b_0/forw_back.c:98->f_b_0/forw_back.c:328]   --->   Operation 532 'zext' 'zext_ln98_1' <Predicate = (!icmp_ln97)> <Delay = 0.00>
+ST_118 : Operation 533 [1/1] (0.00ns)   --->   "%fc_hidden_layer3_add_1 = getelementptr [450 x float]* @fc_hidden_layer3, i64 0, i64 %zext_ln98_1" [f_b_0/forw_back.c:98->f_b_0/forw_back.c:328]   --->   Operation 533 'getelementptr' 'fc_hidden_layer3_add_1' <Predicate = (!icmp_ln97)> <Delay = 0.00>
+ST_118 : Operation 534 [2/2] (1.35ns)   --->   "%fc_hidden_layer3_loa = load float* %fc_hidden_layer3_add_1, align 4" [f_b_0/forw_back.c:98->f_b_0/forw_back.c:328]   --->   Operation 534 'load' 'fc_hidden_layer3_loa' <Predicate = (!icmp_ln97)> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 450> <RAM>
+ST_118 : Operation 535 [1/1] (0.00ns)   --->   "br label %.loopexit"   --->   Operation 535 'br' <Predicate = (icmp_ln97)> <Delay = 0.00>
+
+State 119 <SV = 64> <Delay = 1.35>
+ST_119 : Operation 536 [1/2] (1.35ns)   --->   "%second_relu_0_load = load float* %second_relu_0_addr_1, align 4" [f_b_0/forw_back.c:98->f_b_0/forw_back.c:328]   --->   Operation 536 'load' 'second_relu_0_load' <Predicate = true> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 450> <RAM>
+ST_119 : Operation 537 [1/2] (1.35ns)   --->   "%fc_hidden_layer3_loa = load float* %fc_hidden_layer3_add_1, align 4" [f_b_0/forw_back.c:98->f_b_0/forw_back.c:328]   --->   Operation 537 'load' 'fc_hidden_layer3_loa' <Predicate = true> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 450> <RAM>
+
+State 120 <SV = 65> <Delay = 8.28>
+ST_120 : Operation 538 [3/3] (8.28ns)   --->   "%tmp_i4 = fmul float %second_relu_0_load, %fc_hidden_layer3_loa" [f_b_0/forw_back.c:98->f_b_0/forw_back.c:328]   --->   Operation 538 'fmul' 'tmp_i4' <Predicate = true> <Delay = 8.28> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.28> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 121 <SV = 66> <Delay = 8.28>
+ST_121 : Operation 539 [2/3] (8.28ns)   --->   "%tmp_i4 = fmul float %second_relu_0_load, %fc_hidden_layer3_loa" [f_b_0/forw_back.c:98->f_b_0/forw_back.c:328]   --->   Operation 539 'fmul' 'tmp_i4' <Predicate = true> <Delay = 8.28> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.28> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 122 <SV = 67> <Delay = 8.28>
+ST_122 : Operation 540 [1/3] (8.28ns)   --->   "%tmp_i4 = fmul float %second_relu_0_load, %fc_hidden_layer3_loa" [f_b_0/forw_back.c:98->f_b_0/forw_back.c:328]   --->   Operation 540 'fmul' 'tmp_i4' <Predicate = true> <Delay = 8.28> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.28> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 123 <SV = 68> <Delay = 7.71>
+ST_123 : Operation 541 [4/4] (7.71ns)   --->   "%tmp_i4_27 = fadd float %storemerge199, %tmp_i4" [f_b_0/forw_back.c:98->f_b_0/forw_back.c:328]   --->   Operation 541 'fadd' 'tmp_i4_27' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 124 <SV = 69> <Delay = 7.71>
+ST_124 : Operation 542 [3/4] (7.71ns)   --->   "%tmp_i4_27 = fadd float %storemerge199, %tmp_i4" [f_b_0/forw_back.c:98->f_b_0/forw_back.c:328]   --->   Operation 542 'fadd' 'tmp_i4_27' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 125 <SV = 70> <Delay = 7.71>
+ST_125 : Operation 543 [2/4] (7.71ns)   --->   "%tmp_i4_27 = fadd float %storemerge199, %tmp_i4" [f_b_0/forw_back.c:98->f_b_0/forw_back.c:328]   --->   Operation 543 'fadd' 'tmp_i4_27' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 126 <SV = 71> <Delay = 7.71>
+ST_126 : Operation 544 [1/4] (7.71ns)   --->   "%tmp_i4_27 = fadd float %storemerge199, %tmp_i4" [f_b_0/forw_back.c:98->f_b_0/forw_back.c:328]   --->   Operation 544 'fadd' 'tmp_i4_27' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_126 : Operation 545 [1/1] (0.00ns)   --->   "br label %13" [f_b_0/forw_back.c:97->f_b_0/forw_back.c:328]   --->   Operation 545 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 8.75ns
+The critical path consists of the following:
+	wire read on port 'input_matrix_offset' (f_b_0/forw_back.c:308) [31]  (0 ns)
+	'getelementptr' operation ('input_matrix_addr_6', f_b_0/forw_back.c:308) [45]  (0 ns)
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:309) [54]  (8.75 ns)
+
+ <State 2>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:309) [54]  (8.75 ns)
+
+ <State 3>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:309) [54]  (8.75 ns)
+
+ <State 4>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:309) [54]  (8.75 ns)
+
+ <State 5>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:309) [54]  (8.75 ns)
+
+ <State 6>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:309) [54]  (8.75 ns)
+
+ <State 7>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:309) [54]  (8.75 ns)
+
+ <State 8>: 0.934ns
+The critical path consists of the following:
+	'phi' operation ('phi_ln309', f_b_0/forw_back.c:309) with incoming values : ('add_ln309', f_b_0/forw_back.c:309) [57]  (0 ns)
+	'add' operation ('add_ln309', f_b_0/forw_back.c:309) [60]  (0.934 ns)
+
+ <State 9>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'input_matrix' (f_b_0/forw_back.c:309) [67]  (8.75 ns)
+
+ <State 10>: 1.35ns
+The critical path consists of the following:
+	'getelementptr' operation ('mnist_data_addr', f_b_0/forw_back.c:309) [68]  (0 ns)
+	'store' operation ('store_ln309', f_b_0/forw_back.c:309) of variable 'input_matrix_addr_6_1', f_b_0/forw_back.c:309 on array 'mnist_data' [69]  (1.35 ns)
+
+ <State 11>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:310) [73]  (8.75 ns)
+
+ <State 12>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:310) [73]  (8.75 ns)
+
+ <State 13>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:310) [73]  (8.75 ns)
+
+ <State 14>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:310) [73]  (8.75 ns)
+
+ <State 15>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:310) [73]  (8.75 ns)
+
+ <State 16>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:310) [73]  (8.75 ns)
+
+ <State 17>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:310) [73]  (8.75 ns)
+
+ <State 18>: 0.884ns
+The critical path consists of the following:
+	'phi' operation ('phi_ln310', f_b_0/forw_back.c:310) with incoming values : ('add_ln310', f_b_0/forw_back.c:310) [76]  (0 ns)
+	'icmp' operation ('icmp_ln310', f_b_0/forw_back.c:310) [77]  (0.884 ns)
+
+ <State 19>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'input_matrix' (f_b_0/forw_back.c:310) [86]  (8.75 ns)
+
+ <State 20>: 0.79ns
+The critical path consists of the following:
+	'getelementptr' operation ('conv_kernel1_addr', f_b_0/forw_back.c:310) [87]  (0 ns)
+	'store' operation ('store_ln310', f_b_0/forw_back.c:310) of variable 'input_matrix_addr_5_1', f_b_0/forw_back.c:310 on array 'conv_kernel1' [88]  (0.79 ns)
+
+ <State 21>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:311) [92]  (8.75 ns)
+
+ <State 22>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:311) [92]  (8.75 ns)
+
+ <State 23>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:311) [92]  (8.75 ns)
+
+ <State 24>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:311) [92]  (8.75 ns)
+
+ <State 25>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:311) [92]  (8.75 ns)
+
+ <State 26>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:311) [92]  (8.75 ns)
+
+ <State 27>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:311) [92]  (8.75 ns)
+
+ <State 28>: 0.884ns
+The critical path consists of the following:
+	'phi' operation ('phi_ln311', f_b_0/forw_back.c:311) with incoming values : ('add_ln311', f_b_0/forw_back.c:311) [95]  (0 ns)
+	'icmp' operation ('icmp_ln311', f_b_0/forw_back.c:311) [96]  (0.884 ns)
+
+ <State 29>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'input_matrix' (f_b_0/forw_back.c:311) [105]  (8.75 ns)
+
+ <State 30>: 0.79ns
+The critical path consists of the following:
+	'getelementptr' operation ('conv_kernel2_addr', f_b_0/forw_back.c:311) [106]  (0 ns)
+	'store' operation ('store_ln311', f_b_0/forw_back.c:311) of variable 'input_matrix_addr_4_1', f_b_0/forw_back.c:311 on array 'conv_kernel2' [107]  (0.79 ns)
+
+ <State 31>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:312) [111]  (8.75 ns)
+
+ <State 32>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:312) [111]  (8.75 ns)
+
+ <State 33>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:312) [111]  (8.75 ns)
+
+ <State 34>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:312) [111]  (8.75 ns)
+
+ <State 35>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:312) [111]  (8.75 ns)
+
+ <State 36>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:312) [111]  (8.75 ns)
+
+ <State 37>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:312) [111]  (8.75 ns)
+
+ <State 38>: 0.884ns
+The critical path consists of the following:
+	'phi' operation ('phi_ln312', f_b_0/forw_back.c:312) with incoming values : ('add_ln312', f_b_0/forw_back.c:312) [114]  (0 ns)
+	'icmp' operation ('icmp_ln312', f_b_0/forw_back.c:312) [115]  (0.884 ns)
+
+ <State 39>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'input_matrix' (f_b_0/forw_back.c:312) [124]  (8.75 ns)
+
+ <State 40>: 0.79ns
+The critical path consists of the following:
+	'getelementptr' operation ('conv_kernel3_addr', f_b_0/forw_back.c:312) [125]  (0 ns)
+	'store' operation ('store_ln312', f_b_0/forw_back.c:312) of variable 'input_matrix_addr_3_1', f_b_0/forw_back.c:312 on array 'conv_kernel3' [126]  (0.79 ns)
+
+ <State 41>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:319) [133]  (8.75 ns)
+
+ <State 42>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:319) [133]  (8.75 ns)
+
+ <State 43>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:319) [133]  (8.75 ns)
+
+ <State 44>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:319) [133]  (8.75 ns)
+
+ <State 45>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:319) [133]  (8.75 ns)
+
+ <State 46>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:319) [133]  (8.75 ns)
+
+ <State 47>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:319) [133]  (8.75 ns)
+
+ <State 48>: 1.03ns
+The critical path consists of the following:
+	'phi' operation ('phi_ln319', f_b_0/forw_back.c:319) with incoming values : ('add_ln319', f_b_0/forw_back.c:319) [136]  (0 ns)
+	'add' operation ('add_ln319', f_b_0/forw_back.c:319) [139]  (1.03 ns)
+
+ <State 49>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'input_matrix' (f_b_0/forw_back.c:319) [146]  (8.75 ns)
+
+ <State 50>: 1.35ns
+The critical path consists of the following:
+	'getelementptr' operation ('fc_hidden_layer1_add', f_b_0/forw_back.c:319) [147]  (0 ns)
+	'store' operation ('store_ln319', f_b_0/forw_back.c:319) of variable 'input_matrix_addr_2_1', f_b_0/forw_back.c:319 on array 'fc_hidden_layer1' [148]  (1.35 ns)
+
+ <State 51>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:320) [152]  (8.75 ns)
+
+ <State 52>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:320) [152]  (8.75 ns)
+
+ <State 53>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:320) [152]  (8.75 ns)
+
+ <State 54>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:320) [152]  (8.75 ns)
+
+ <State 55>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:320) [152]  (8.75 ns)
+
+ <State 56>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:320) [152]  (8.75 ns)
+
+ <State 57>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:320) [152]  (8.75 ns)
+
+ <State 58>: 0.975ns
+The critical path consists of the following:
+	'phi' operation ('phi_ln320', f_b_0/forw_back.c:320) with incoming values : ('add_ln320', f_b_0/forw_back.c:320) [155]  (0 ns)
+	'add' operation ('add_ln320', f_b_0/forw_back.c:320) [158]  (0.975 ns)
+
+ <State 59>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'input_matrix' (f_b_0/forw_back.c:320) [165]  (8.75 ns)
+
+ <State 60>: 0.99ns
+The critical path consists of the following:
+	'getelementptr' operation ('fc_hidden_layer2_add', f_b_0/forw_back.c:320) [166]  (0 ns)
+	'store' operation ('store_ln320', f_b_0/forw_back.c:320) of variable 'input_matrix_addr_1_1', f_b_0/forw_back.c:320 on array 'fc_hidden_layer2' [167]  (0.99 ns)
+
+ <State 61>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:321) [171]  (8.75 ns)
+
+ <State 62>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:321) [171]  (8.75 ns)
+
+ <State 63>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:321) [171]  (8.75 ns)
+
+ <State 64>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:321) [171]  (8.75 ns)
+
+ <State 65>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:321) [171]  (8.75 ns)
+
+ <State 66>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:321) [171]  (8.75 ns)
+
+ <State 67>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'input_matrix' (f_b_0/forw_back.c:321) [171]  (8.75 ns)
+
+ <State 68>: 0.921ns
+The critical path consists of the following:
+	'phi' operation ('phi_ln321', f_b_0/forw_back.c:321) with incoming values : ('add_ln321', f_b_0/forw_back.c:321) [174]  (0 ns)
+	'add' operation ('add_ln321', f_b_0/forw_back.c:321) [177]  (0.921 ns)
+
+ <State 69>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'input_matrix' (f_b_0/forw_back.c:321) [184]  (8.75 ns)
+
+ <State 70>: 1.35ns
+The critical path consists of the following:
+	'getelementptr' operation ('fc_hidden_layer3_add', f_b_0/forw_back.c:321) [185]  (0 ns)
+	'store' operation ('store_ln321', f_b_0/forw_back.c:321) of variable 'input_matrix_addr_re', f_b_0/forw_back.c:321 on array 'fc_hidden_layer3' [186]  (1.35 ns)
+
+ <State 71>: 0.755ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', f_b_0/forw_back.c:72->f_b_0/forw_back.c:322) [193]  (0.755 ns)
+
+ <State 72>: 1.21ns
+The critical path consists of the following:
+	'icmp' operation ('icmp_ln72', f_b_0/forw_back.c:72->f_b_0/forw_back.c:322) [194]  (0.877 ns)
+	blocking operation 0.331 ns on control path)
+
+ <State 73>: 2.3ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', f_b_0/forw_back.c:73->f_b_0/forw_back.c:322) [206]  (0 ns)
+	'add' operation ('add_ln74', f_b_0/forw_back.c:74->f_b_0/forw_back.c:322) [213]  (0.948 ns)
+	'getelementptr' operation ('third_conv1_addr', f_b_0/forw_back.c:74->f_b_0/forw_back.c:322) [216]  (0 ns)
+	'load' operation ('third_conv1_load', f_b_0/forw_back.c:74->f_b_0/forw_back.c:322) on array 'third_conv1' [217]  (1.35 ns)
+
+ <State 74>: 2.7ns
+The critical path consists of the following:
+	'load' operation ('third_conv1_load', f_b_0/forw_back.c:74->f_b_0/forw_back.c:322) on array 'third_conv1' [217]  (1.35 ns)
+	'store' operation ('store_ln74', f_b_0/forw_back.c:74->f_b_0/forw_back.c:322) of variable 'third_conv1_load', f_b_0/forw_back.c:74->f_b_0/forw_back.c:322 on array 'flatten_conv_0' [219]  (1.35 ns)
+
+ <State 75>: 1.19ns
+The critical path consists of the following:
+	'icmp' operation ('icmp_ln79', f_b_0/forw_back.c:79->f_b_0/forw_back.c:324) [229]  (0.856 ns)
+	blocking operation 0.331 ns on control path)
+
+ <State 76>: 2.38ns
+The critical path consists of the following:
+	'phi' operation ('phi_mul', f_b_0/forw_back.c:82->f_b_0/forw_back.c:324) with incoming values : ('add_ln82_1', f_b_0/forw_back.c:82->f_b_0/forw_back.c:324) [240]  (0 ns)
+	'add' operation ('add_ln82', f_b_0/forw_back.c:82->f_b_0/forw_back.c:324) [251]  (1.03 ns)
+	'getelementptr' operation ('fc_hidden_layer1_add_1', f_b_0/forw_back.c:82->f_b_0/forw_back.c:324) [253]  (0 ns)
+	'load' operation ('fc_hidden_layer1_loa', f_b_0/forw_back.c:82->f_b_0/forw_back.c:324) on array 'fc_hidden_layer1' [254]  (1.35 ns)
+
+ <State 77>: 1.35ns
+The critical path consists of the following:
+	'load' operation ('flatten_conv_0_load', f_b_0/forw_back.c:82->f_b_0/forw_back.c:324) on array 'flatten_conv_0' [249]  (1.35 ns)
+
+ <State 78>: 8.29ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i', f_b_0/forw_back.c:82->f_b_0/forw_back.c:324) [255]  (8.29 ns)
+
+ <State 79>: 8.29ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i', f_b_0/forw_back.c:82->f_b_0/forw_back.c:324) [255]  (8.29 ns)
+
+ <State 80>: 8.29ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i', f_b_0/forw_back.c:82->f_b_0/forw_back.c:324) [255]  (8.29 ns)
+
+ <State 81>: 7.72ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i_17', f_b_0/forw_back.c:82->f_b_0/forw_back.c:324) [256]  (7.72 ns)
+
+ <State 82>: 7.72ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i_17', f_b_0/forw_back.c:82->f_b_0/forw_back.c:324) [256]  (7.72 ns)
+
+ <State 83>: 7.72ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i_17', f_b_0/forw_back.c:82->f_b_0/forw_back.c:324) [256]  (7.72 ns)
+
+ <State 84>: 7.72ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i_17', f_b_0/forw_back.c:82->f_b_0/forw_back.c:324) [256]  (7.72 ns)
+
+ <State 85>: 1.35ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', f_b_0/forw_back.c:62->f_b_0/forw_back.c:325) [264]  (0 ns)
+	'getelementptr' operation ('first_fc_0_addr_1', f_b_0/forw_back.c:63->f_b_0/forw_back.c:325) [272]  (0 ns)
+	'load' operation ('a', f_b_0/forw_back.c:63->f_b_0/forw_back.c:325) on array 'first_fc_0' [273]  (1.35 ns)
+
+ <State 86>: 4.14ns
+The critical path consists of the following:
+	'load' operation ('a', f_b_0/forw_back.c:63->f_b_0/forw_back.c:325) on array 'first_fc_0' [273]  (1.35 ns)
+	'fpext' operation ('tmp_i1', f_b_0/forw_back.c:63->f_b_0/forw_back.c:325) [274]  (2.79 ns)
+
+ <State 87>: 2.79ns
+The critical path consists of the following:
+	'fpext' operation ('tmp_i1', f_b_0/forw_back.c:63->f_b_0/forw_back.c:325) [274]  (2.79 ns)
+
+ <State 88>: 8.33ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_i1_19', f_b_0/forw_back.c:63->f_b_0/forw_back.c:325) [275]  (8.33 ns)
+
+ <State 89>: 8.33ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_i1_19', f_b_0/forw_back.c:63->f_b_0/forw_back.c:325) [275]  (8.33 ns)
+
+ <State 90>: 8.33ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_i1_19', f_b_0/forw_back.c:63->f_b_0/forw_back.c:325) [275]  (8.33 ns)
+
+ <State 91>: 8.33ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_i1_19', f_b_0/forw_back.c:63->f_b_0/forw_back.c:325) [275]  (8.33 ns)
+
+ <State 92>: 8.33ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_i1_19', f_b_0/forw_back.c:63->f_b_0/forw_back.c:325) [275]  (8.33 ns)
+
+ <State 93>: 3.32ns
+The critical path consists of the following:
+	'fptrunc' operation ('b', f_b_0/forw_back.c:63->f_b_0/forw_back.c:325) [276]  (3.32 ns)
+
+ <State 94>: 6.67ns
+The critical path consists of the following:
+	'fptrunc' operation ('b', f_b_0/forw_back.c:63->f_b_0/forw_back.c:325) [276]  (3.32 ns)
+	'fcmp' operation ('tmp_3', f_b_0/forw_back.c:28->f_b_0/forw_back.c:63->f_b_0/forw_back.c:325) [291]  (3.35 ns)
+
+ <State 95>: 5.56ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_3', f_b_0/forw_back.c:28->f_b_0/forw_back.c:63->f_b_0/forw_back.c:325) [291]  (3.35 ns)
+	'and' operation ('and_ln28_1', f_b_0/forw_back.c:28->f_b_0/forw_back.c:63->f_b_0/forw_back.c:325) [292]  (0.331 ns)
+	'select' operation ('a', f_b_0/forw_back.c:28->f_b_0/forw_back.c:63->f_b_0/forw_back.c:325) [293]  (0.525 ns)
+	'store' operation ('store_ln63', f_b_0/forw_back.c:63->f_b_0/forw_back.c:325) of variable 'a', f_b_0/forw_back.c:28->f_b_0/forw_back.c:63->f_b_0/forw_back.c:325 on array 'first_relu_0' [295]  (1.35 ns)
+
+ <State 96>: 1.2ns
+The critical path consists of the following:
+	'icmp' operation ('icmp_ln87', f_b_0/forw_back.c:87->f_b_0/forw_back.c:326) [303]  (0.87 ns)
+	blocking operation 0.331 ns on control path)
+
+ <State 97>: 1.97ns
+The critical path consists of the following:
+	'phi' operation ('phi_mul196', f_b_0/forw_back.c:90->f_b_0/forw_back.c:326) with incoming values : ('add_ln90_1', f_b_0/forw_back.c:90->f_b_0/forw_back.c:326) [314]  (0 ns)
+	'add' operation ('add_ln90', f_b_0/forw_back.c:90->f_b_0/forw_back.c:326) [325]  (0.975 ns)
+	'getelementptr' operation ('fc_hidden_layer2_add_1', f_b_0/forw_back.c:90->f_b_0/forw_back.c:326) [327]  (0 ns)
+	'load' operation ('fc_hidden_layer2_loa', f_b_0/forw_back.c:90->f_b_0/forw_back.c:326) on array 'fc_hidden_layer2' [328]  (0.99 ns)
+
+ <State 98>: 1.35ns
+The critical path consists of the following:
+	'load' operation ('first_relu_0_load', f_b_0/forw_back.c:90->f_b_0/forw_back.c:326) on array 'first_relu_0' [323]  (1.35 ns)
+
+ <State 99>: 8.29ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i3', f_b_0/forw_back.c:90->f_b_0/forw_back.c:326) [329]  (8.29 ns)
+
+ <State 100>: 8.29ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i3', f_b_0/forw_back.c:90->f_b_0/forw_back.c:326) [329]  (8.29 ns)
+
+ <State 101>: 8.29ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i3', f_b_0/forw_back.c:90->f_b_0/forw_back.c:326) [329]  (8.29 ns)
+
+ <State 102>: 7.72ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i3_22', f_b_0/forw_back.c:90->f_b_0/forw_back.c:326) [330]  (7.72 ns)
+
+ <State 103>: 7.72ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i3_22', f_b_0/forw_back.c:90->f_b_0/forw_back.c:326) [330]  (7.72 ns)
+
+ <State 104>: 7.72ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i3_22', f_b_0/forw_back.c:90->f_b_0/forw_back.c:326) [330]  (7.72 ns)
+
+ <State 105>: 7.72ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i3_22', f_b_0/forw_back.c:90->f_b_0/forw_back.c:326) [330]  (7.72 ns)
+
+ <State 106>: 1.35ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', f_b_0/forw_back.c:67->f_b_0/forw_back.c:327) [338]  (0 ns)
+	'getelementptr' operation ('second_fc_0_addr_1', f_b_0/forw_back.c:68->f_b_0/forw_back.c:327) [346]  (0 ns)
+	'load' operation ('a', f_b_0/forw_back.c:68->f_b_0/forw_back.c:327) on array 'second_fc_0' [347]  (1.35 ns)
+
+ <State 107>: 4.14ns
+The critical path consists of the following:
+	'load' operation ('a', f_b_0/forw_back.c:68->f_b_0/forw_back.c:327) on array 'second_fc_0' [347]  (1.35 ns)
+	'fpext' operation ('tmp_i2', f_b_0/forw_back.c:68->f_b_0/forw_back.c:327) [348]  (2.79 ns)
+
+ <State 108>: 2.79ns
+The critical path consists of the following:
+	'fpext' operation ('tmp_i2', f_b_0/forw_back.c:68->f_b_0/forw_back.c:327) [348]  (2.79 ns)
+
+ <State 109>: 8.33ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_i2_24', f_b_0/forw_back.c:68->f_b_0/forw_back.c:327) [349]  (8.33 ns)
+
+ <State 110>: 8.33ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_i2_24', f_b_0/forw_back.c:68->f_b_0/forw_back.c:327) [349]  (8.33 ns)
+
+ <State 111>: 8.33ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_i2_24', f_b_0/forw_back.c:68->f_b_0/forw_back.c:327) [349]  (8.33 ns)
+
+ <State 112>: 8.33ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_i2_24', f_b_0/forw_back.c:68->f_b_0/forw_back.c:327) [349]  (8.33 ns)
+
+ <State 113>: 8.33ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_i2_24', f_b_0/forw_back.c:68->f_b_0/forw_back.c:327) [349]  (8.33 ns)
+
+ <State 114>: 3.32ns
+The critical path consists of the following:
+	'fptrunc' operation ('b', f_b_0/forw_back.c:68->f_b_0/forw_back.c:327) [350]  (3.32 ns)
+
+ <State 115>: 6.67ns
+The critical path consists of the following:
+	'fptrunc' operation ('b', f_b_0/forw_back.c:68->f_b_0/forw_back.c:327) [350]  (3.32 ns)
+	'fcmp' operation ('tmp_6', f_b_0/forw_back.c:28->f_b_0/forw_back.c:68->f_b_0/forw_back.c:327) [365]  (3.35 ns)
+
+ <State 116>: 5.56ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_6', f_b_0/forw_back.c:28->f_b_0/forw_back.c:68->f_b_0/forw_back.c:327) [365]  (3.35 ns)
+	'and' operation ('and_ln28_3', f_b_0/forw_back.c:28->f_b_0/forw_back.c:68->f_b_0/forw_back.c:327) [366]  (0.331 ns)
+	'select' operation ('a', f_b_0/forw_back.c:28->f_b_0/forw_back.c:68->f_b_0/forw_back.c:327) [367]  (0.525 ns)
+	'store' operation ('store_ln68', f_b_0/forw_back.c:68->f_b_0/forw_back.c:327) of variable 'a', f_b_0/forw_back.c:28->f_b_0/forw_back.c:68->f_b_0/forw_back.c:327 on array 'second_relu_0' [369]  (1.35 ns)
+
+ <State 117>: 1.22ns
+The critical path consists of the following:
+	'icmp' operation ('icmp_ln95', f_b_0/forw_back.c:95->f_b_0/forw_back.c:328) [377]  (0.884 ns)
+	blocking operation 0.331 ns on control path)
+
+ <State 118>: 3.17ns
+The critical path consists of the following:
+	'phi' operation ('k') with incoming values : ('k', f_b_0/forw_back.c:97->f_b_0/forw_back.c:328) [387]  (0 ns)
+	'add' operation ('add_ln98', f_b_0/forw_back.c:98->f_b_0/forw_back.c:328) [399]  (0.897 ns)
+	'add' operation ('add_ln98_1', f_b_0/forw_back.c:98->f_b_0/forw_back.c:328) [401]  (0.921 ns)
+	'getelementptr' operation ('fc_hidden_layer3_add_1', f_b_0/forw_back.c:98->f_b_0/forw_back.c:328) [403]  (0 ns)
+	'load' operation ('fc_hidden_layer3_loa', f_b_0/forw_back.c:98->f_b_0/forw_back.c:328) on array 'fc_hidden_layer3' [404]  (1.35 ns)
+
+ <State 119>: 1.35ns
+The critical path consists of the following:
+	'load' operation ('second_relu_0_load', f_b_0/forw_back.c:98->f_b_0/forw_back.c:328) on array 'second_relu_0' [396]  (1.35 ns)
+
+ <State 120>: 8.29ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i4', f_b_0/forw_back.c:98->f_b_0/forw_back.c:328) [405]  (8.29 ns)
+
+ <State 121>: 8.29ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i4', f_b_0/forw_back.c:98->f_b_0/forw_back.c:328) [405]  (8.29 ns)
+
+ <State 122>: 8.29ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i4', f_b_0/forw_back.c:98->f_b_0/forw_back.c:328) [405]  (8.29 ns)
+
+ <State 123>: 7.72ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i4_27', f_b_0/forw_back.c:98->f_b_0/forw_back.c:328) [406]  (7.72 ns)
+
+ <State 124>: 7.72ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i4_27', f_b_0/forw_back.c:98->f_b_0/forw_back.c:328) [406]  (7.72 ns)
+
+ <State 125>: 7.72ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i4_27', f_b_0/forw_back.c:98->f_b_0/forw_back.c:328) [406]  (7.72 ns)
+
+ <State 126>: 7.72ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i4_27', f_b_0/forw_back.c:98->f_b_0/forw_back.c:328) [406]  (7.72 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+	State 64
+	State 65
+	State 66
+	State 67
+	State 68
+	State 69
+	State 70
+	State 71
+	State 72
+	State 73
+	State 74
+	State 75
+	State 76
+	State 77
+	State 78
+	State 79
+	State 80
+	State 81
+	State 82
+	State 83
+	State 84
+	State 85
+	State 86
+	State 87
+	State 88
+	State 89
+	State 90
+	State 91
+	State 92
+	State 93
+	State 94
+	State 95
+	State 96
+	State 97
+	State 98
+	State 99
+	State 100
+	State 101
+	State 102
+	State 103
+	State 104
+	State 105
+	State 106
+	State 107
+	State 108
+	State 109
+	State 110
+	State 111
+	State 112
+	State 113
+	State 114
+	State 115
+	State 116
+	State 117
+	State 118
+	State 119
+	State 120
+	State 121
+	State 122
+	State 123
+	State 124
+	State 125
+	State 126
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,215 @@
+INFO: [COSIM-47] Using XSIM for RTL simulation.
+INFO: [COSIM-14] Instrumenting C test bench ...
+WARNING: [COSIM-369] AXI_master port 'in' has a depth of '32'. Insufficient depth may result in simulation mismatch or freeze.
+WARNING: [COSIM-369] AXI_master port 'conv1' has a depth of '32'. Insufficient depth may result in simulation mismatch or freeze.
+WARNING: [COSIM-369] AXI_master port 'conv2' has a depth of '32'. Insufficient depth may result in simulation mismatch or freeze.
+WARNING: [COSIM-369] AXI_master port 'conv3' has a depth of '32'. Insufficient depth may result in simulation mismatch or freeze.
+WARNING: [COSIM-369] AXI_master port 'fc1' has a depth of '32'. Insufficient depth may result in simulation mismatch or freeze.
+WARNING: [COSIM-369] AXI_master port 'fc2' has a depth of '32'. Insufficient depth may result in simulation mismatch or freeze.
+WARNING: [COSIM-369] AXI_master port 'fc3' has a depth of '32'. Insufficient depth may result in simulation mismatch or freeze.
+WARNING: [COSIM-369] AXI_master port 'out' has a depth of '32'. Insufficient depth may result in simulation mismatch or freeze.
+WARNING: [COSIM-369] AXI_master port 'lr' has a depth of '32'. Insufficient depth may result in simulation mismatch or freeze.
+   Build using "D:/Xilinx/Vivado/2019.1/msys64/mingw64/bin/g++"
+   Compiling apatb_forw_back.cpp
+   Compiling (apcc) forw_back_LTL.c_pre.c.tb.c
+INFO: [HLS 200-10] Running 'D:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'LTL' on host 'zero' (Windows NT_amd64 version 6.2) on Thu Oct 27 22:40:30 +0800 2022
+INFO: [HLS 200-10] In directory 'C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/solution1/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+In file included from C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:1:
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:106:20: warning: incompatible pointer types passing 'float [30][30]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Conv2d(30,30,3,mnist_data,conv_kernel_1,conv_out_1);
+                   ^~~~~~~~~~
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:30:38: note: passing argument to parameter 'input_matrix' here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                     ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:106:31: warning: incompatible pointer types passing 'float [3][3]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Conv2d(30,30,3,mnist_data,conv_kernel_1,conv_out_1);
+                              ^~~~~~~~~~~~~
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:30:58: note: passing argument to parameter 'kernel' here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                                         ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:106:45: warning: incompatible pointer types passing 'float [28][28]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Conv2d(30,30,3,mnist_data,conv_kernel_1,conv_out_1);
+                                            ^~~~~~~~~~
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:30:72: note: passing argument to parameter 'out_matrix' here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                                                       ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:107:20: warning: incompatible pointer types passing 'float [28][28]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Conv2d(28,28,3,conv_out_1,conv_kernel_2,conv_out_2);
+                   ^~~~~~~~~~
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:30:38: note: passing argument to parameter 'input_matrix' here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                     ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:107:31: warning: incompatible pointer types passing 'float [3][3]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Conv2d(28,28,3,conv_out_1,conv_kernel_2,conv_out_2);
+                              ^~~~~~~~~~~~~
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:30:58: note: passing argument to parameter 'kernel' here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                                         ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:107:45: warning: incompatible pointer types passing 'float [26][26]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Conv2d(28,28,3,conv_out_1,conv_kernel_2,conv_out_2);
+                                            ^~~~~~~~~~
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:30:72: note: passing argument to parameter 'out_matrix' here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                                                       ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:108:20: warning: incompatible pointer types passing 'float [26][26]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Conv2d(26,26,3,conv_out_2,conv_kernel_3,conv_out_3);
+                   ^~~~~~~~~~
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:30:38: note: passing argument to parameter 'input_matrix' here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                     ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:108:31: warning: incompatible pointer types passing 'float [3][3]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Conv2d(26,26,3,conv_out_2,conv_kernel_3,conv_out_3);
+                              ^~~~~~~~~~~~~
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:30:58: note: passing argument to parameter 'kernel' here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                                         ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:108:45: warning: incompatible pointer types passing 'float [24][24]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Conv2d(26,26,3,conv_out_2,conv_kernel_3,conv_out_3);
+                                            ^~~~~~~~~~
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:30:72: note: passing argument to parameter 'out_matrix' here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                                                       ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:110:35: warning: incompatible pointer types passing 'float [24][24]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixExtensionImproved(24,24,conv_out_3,fc_in_1);
+                                  ^~~~~~~~~~
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:40:49: note: passing argument to parameter 'input_matrix1' here
+void MatrixExtensionImproved(int w,int h,float *input_matrix1,float *output_matrix){
+                                                ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:110:46: warning: incompatible pointer types passing 'float [1][576]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixExtensionImproved(24,24,conv_out_3,fc_in_1);
+                                             ^~~~~~~
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:40:70: note: passing argument to parameter 'output_matrix' here
+void MatrixExtensionImproved(int w,int h,float *input_matrix1,float *output_matrix){
+                                                                     ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:111:28: warning: incompatible pointer types passing 'float [1][576]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixMultiply(576,180,fc_in_1,fc_hidden_layer1,fc_out_1);
+                           ^~~~~~~
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:46:44: note: passing argument to parameter 'input_matrix' here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                           ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:111:36: warning: incompatible pointer types passing 'float [576][180]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixMultiply(576,180,fc_in_1,fc_hidden_layer1,fc_out_1);
+                                   ^~~~~~~~~~~~~~~~
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:46:64: note: passing argument to parameter 'para_layer' here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                                               ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:111:53: warning: incompatible pointer types passing 'float [1][180]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixMultiply(576,180,fc_in_1,fc_hidden_layer1,fc_out_1);
+                                                    ^~~~~~~~
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:46:81: note: passing argument to parameter 'output_matrix' here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                                                                ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:112:14: warning: incompatible pointer types passing 'float [1][180]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Relu(180,fc_out_1,fc_in_2_relu1);
+             ^~~~~~~~
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:54:24: note: passing argument to parameter 'input_matrix' here
+void Relu(int h,float *input_matrix,float *output_matrix){
+                       ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:112:23: warning: incompatible pointer types passing 'float [1][180]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Relu(180,fc_out_1,fc_in_2_relu1);
+                      ^~~~~~~~~~~~~
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:54:44: note: passing argument to parameter 'output_matrix' here
+void Relu(int h,float *input_matrix,float *output_matrix){
+                                           ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:113:27: warning: incompatible pointer types passing 'float [1][180]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixMultiply(180,45,fc_in_2_relu1,fc_hidden_layer2,fc_out_2);
+                          ^~~~~~~~~~~~~
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:46:44: note: passing argument to parameter 'input_matrix' here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                           ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:113:41: warning: incompatible pointer types passing 'float [180][45]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixMultiply(180,45,fc_in_2_relu1,fc_hidden_layer2,fc_out_2);
+                                        ^~~~~~~~~~~~~~~~
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:46:64: note: passing argument to parameter 'para_layer' here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                                               ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:113:58: warning: incompatible pointer types passing 'float [1][45]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixMultiply(180,45,fc_in_2_relu1,fc_hidden_layer2,fc_out_2);
+                                                         ^~~~~~~~
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:46:81: note: passing argument to parameter 'output_matrix' here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                                                                ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:114:13: warning: incompatible pointer types passing 'float [1][45]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Relu(45,fc_out_2,fc_in_3_relu2);
+            ^~~~~~~~
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:54:24: note: passing argument to parameter 'input_matrix' here
+void Relu(int h,float *input_matrix,float *output_matrix){
+                       ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:54:44: note: passing argument to parameter 'output_matrix' here
+void Relu(int h,float *input_matrix,float *output_matrix){
+                                           ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:46:44: note: passing argument to parameter 'input_matrix' here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                           ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:46:64: note: passing argument to parameter 'para_layer' here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                                               ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:46:81: note: passing argument to parameter 'output_matrix' here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                                                                ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:60:55: note: passing argument to parameter 'input_matrix' here
+void MatrixBackPropagationMultiply(int w,int h,float *input_matrix,float *grad,float *rgrad){
+                                                      ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:66:45: note: passing argument to parameter 'input_matrix' here
+void CalculateMatrixGrad(int w,int h,float *input_matrix,float *grad,float *output_matrix){
+                                            ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:74:39: note: passing argument to parameter 'input_matrix' here
+void ReluBackPropagation(int w,float *input_matrix,float *grad,float *output_matrix){
+                                      ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:60:55: note: passing argument to parameter 'input_matrix' here
+void MatrixBackPropagationMultiply(int w,int h,float *input_matrix,float *grad,float *rgrad){
+                                                      ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:66:45: note: passing argument to parameter 'input_matrix' here
+void CalculateMatrixGrad(int w,int h,float *input_matrix,float *grad,float *output_matrix){
+                                            ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:74:39: note: passing argument to parameter 'input_matrix' here
+void ReluBackPropagation(int w,float *input_matrix,float *grad,float *output_matrix){
+                                      ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:60:55: note: passing argument to parameter 'input_matrix' here
+void MatrixBackPropagationMultiply(int w,int h,float *input_matrix,float *grad,float *rgrad){
+                                                      ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:66:45: note: passing argument to parameter 'input_matrix' here
+void CalculateMatrixGrad(int w,int h,float *input_matrix,float *grad,float *output_matrix){
+                                            ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:30:38: note: passing argument to parameter 'input_matrix' here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                     ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:82:34: note: passing argument to parameter 'input_matrix' here
+void OverturnKernel(int k,float *input_matrix,float *output_matrix){
+                                 ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:30:38: note: passing argument to parameter 'input_matrix' here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                     ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:82:34: note: passing argument to parameter 'input_matrix' here
+void OverturnKernel(int k,float *input_matrix,float *output_matrix){
+                                 ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:30:38: note: passing argument to parameter 'input_matrix' here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                     ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:98:67: note: passing argument to parameter 'output_matrix' here
+void MatrixBackPropagation(int w,int h,float *input_matrix,float *output_matrix,float lr){
+                                                                  ^
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:98:67: note: passing argument to parameter 'output_matrix' here
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:98:67: note: passing argument to parameter 'output_matrix' here
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:98:67: note: passing argument to parameter 'output_matrix' here
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:98:67: note: passing argument to parameter 'output_matrix' here
+C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/forw_back_LTL.c:98:67: note: passing argument to parameter 'output_matrix' here
+20 warnings generated.
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) main.c_pre.c.tb.c
+INFO: [HLS 200-10] Running 'D:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'LTL' on host 'zero' (Windows NT_amd64 version 6.2) on Thu Oct 27 22:40:35 +0800 2022
+INFO: [HLS 200-10] In directory 'C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_1/solution1/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Generating cosim.tv.exe
+INFO: [COSIM-302] Starting C TB testing ... 
+ERROR: [COSIM-330] Aborting co-simulation: top function 'forw_back' is not invoked in the test bench.
+ERROR: [COSIM-5] *** C/RTL co-simulation file generation failed. ***
+ERROR: [COSIM-4] *** C/RTL co-simulation finished: FAIL ***

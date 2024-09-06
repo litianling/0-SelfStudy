@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog>
+        <logs message="ERROR: [HLS 200-70] Failed building synthesis data model.&#xD;&#xA;command 'ap_source' returned error code&#xD;&#xA;    while executing&#xD;&#xA;&quot;source C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_2/solution1/csynth.tcl&quot;&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls::main C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_2/solution1/csynth.tcl&quot;&#xD;&#xA;    (&quot;uplevel&quot; body line 1)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;uplevel 1 hls::main {*}$args&quot;&#xD;&#xA;    (procedure &quot;hls_proc&quot; line 5)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls_proc $argv&quot;&#xD;&#xA;" projectName="f_b_2" solutionName="solution1" date="2022-10-28T15:56:18.364+0800"/>
+      </synLog>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

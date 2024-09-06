@@ -1,0 +1,174 @@
+
+
+================================================================
+== Vivado HLS Report for 'MaxPooBackPropagatio_1'
+================================================================
+* Date:           Thu Nov  3 16:10:45 2022
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        f_b_4_new_network
+* Solution:       solution1
+* Product family: zynquplus
+* Target device:  xczu3eg-sbva484-1-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     7.251|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+------+------+---------+
+    |   Latency   |   Interval  | Pipeline|
+    |  min |  max |  min |  max |   Type  |
+    +------+------+------+------+---------+
+    |  1262|  1262|  1262|  1262|   none  |
+    +------+------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |             |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1     |  840|  840|        30|          -|          -|    28|    no    |
+        | + Loop 1.1  |   28|   28|         1|          -|          -|    28|    no    |
+        |- Loop 2     |  420|  420|        30|          -|          -|    14|    no    |
+        | + Loop 2.1  |   28|   28|         2|          -|          -|    14|    no    |
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      -|       -|      -|    -|
+|Expression       |        -|      -|       0|    621|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |        -|      -|       -|      -|    -|
+|Memory           |        -|      -|       -|      -|    -|
+|Multiplexer      |        -|      -|       -|    104|    -|
+|Register         |        -|      -|      54|      -|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |        0|      0|      54|    725|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      432|    360|  141120|  70560|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |        0|      0|   ~0   |      1|    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------+----------+-------+---+-----+------------+------------+
+    |     Variable Name    | Operation| DSP48E| FF| LUT | Bitwidth P0| Bitwidth P1|
+    +----------------------+----------+-------+---+-----+------------+------------+
+    |add_ln101_fu_305_p2   |     +    |      0|  0|   16|           9|           9|
+    |add_ln339_fu_364_p2   |     +    |      0|  0|   16|           8|           9|
+    |add_ln97_fu_233_p2    |     +    |      0|  0|   18|          11|          11|
+    |col_fu_181_p2         |     +    |      0|  0|   15|           5|           1|
+    |i_fu_253_p2           |     +    |      0|  0|   12|           4|           1|
+    |j_fu_299_p2           |     +    |      0|  0|   12|           4|           1|
+    |low_fu_227_p2         |     +    |      0|  0|   15|           5|           1|
+    |result_V_3_fu_450_p2  |     -    |      0|  0|   39|           1|          32|
+    |sub_ln101_fu_283_p2   |     -    |      0|  0|   16|           9|           9|
+    |sub_ln1311_fu_378_p2  |     -    |      0|  0|   15|           7|           8|
+    |sub_ln97_fu_211_p2    |     -    |      0|  0|   18|          11|          11|
+    |icmp_ln100_fu_293_p2  |   icmp   |      0|  0|    9|           4|           3|
+    |icmp_ln95_fu_175_p2   |   icmp   |      0|  0|   11|           5|           4|
+    |icmp_ln96_fu_221_p2   |   icmp   |      0|  0|   11|           5|           4|
+    |icmp_ln99_fu_247_p2   |   icmp   |      0|  0|    9|           4|           3|
+    |r_V_fu_408_p2         |   lshr   |      0|  0|   73|          25|          25|
+    |p_Val2_17_fu_442_p3   |  select  |      0|  0|   32|           1|          32|
+    |p_Val2_18_fu_456_p3   |  select  |      0|  0|   32|           1|          32|
+    |ush_fu_388_p3         |  select  |      0|  0|    9|           1|           9|
+    |r_V_3_fu_414_p2       |    shl   |      0|  0|  243|          79|          79|
+    +----------------------+----------+-------+---+-----+------------+------------+
+    |Total                 |          |      0|  0|  621|         199|         284|
+    +----------------------+----------+-------+---+-----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------+----+-----------+-----+-----------+
+    |          Name          | LUT| Input Size| Bits| Total Bits|
+    +------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm               |  38|          7|    1|          7|
+    |col_0_reg_131           |   9|          2|    5|         10|
+    |i_0_reg_153             |   9|          2|    4|          8|
+    |j_0_reg_164             |   9|          2|    4|          8|
+    |low_0_reg_142           |   9|          2|    5|         10|
+    |output_matrix_address0  |  15|          3|   10|         30|
+    |output_matrix_d0        |  15|          3|   32|         96|
+    +------------------------+----+-----------+-----+-----------+
+    |Total                   | 104|         21|   61|        169|
+    +------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------+---+----+-----+-----------+
+    |        Name       | FF| LUT| Bits| Const Bits|
+    +-------------------+---+----+-----+-----------+
+    |ap_CS_fsm          |  6|   0|    6|          0|
+    |col_0_reg_131      |  5|   0|    5|          0|
+    |col_reg_472        |  5|   0|    5|          0|
+    |i_0_reg_153        |  4|   0|    4|          0|
+    |i_reg_493          |  4|   0|    4|          0|
+    |j_0_reg_164        |  4|   0|    4|          0|
+    |j_reg_506          |  4|   0|    4|          0|
+    |low_0_reg_142      |  5|   0|    5|          0|
+    |sub_ln101_reg_498  |  8|   0|    9|          1|
+    |sub_ln97_reg_477   |  9|   0|   11|          2|
+    +-------------------+---+----+-----+-----------+
+    |Total              | 54|   0|   57|          3|
+    +-------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------------+-----+-----+------------+------------------------+--------------+
+|         RTL Ports         | Dir | Bits|  Protocol  |      Source Object     |    C Type    |
++---------------------------+-----+-----+------------+------------------------+--------------+
+|ap_clk                     |  in |    1| ap_ctrl_hs | MaxPooBackPropagatio.1 | return value |
+|ap_rst                     |  in |    1| ap_ctrl_hs | MaxPooBackPropagatio.1 | return value |
+|ap_start                   |  in |    1| ap_ctrl_hs | MaxPooBackPropagatio.1 | return value |
+|ap_done                    | out |    1| ap_ctrl_hs | MaxPooBackPropagatio.1 | return value |
+|ap_idle                    | out |    1| ap_ctrl_hs | MaxPooBackPropagatio.1 | return value |
+|ap_ready                   | out |    1| ap_ctrl_hs | MaxPooBackPropagatio.1 | return value |
+|input_matrix_address0      | out |    8|  ap_memory |      input_matrix      |     array    |
+|input_matrix_ce0           | out |    1|  ap_memory |      input_matrix      |     array    |
+|input_matrix_q0            |  in |   32|  ap_memory |      input_matrix      |     array    |
+|output_matrix_address0     | out |   10|  ap_memory |      output_matrix     |     array    |
+|output_matrix_ce0          | out |    1|  ap_memory |      output_matrix     |     array    |
+|output_matrix_we0          | out |    1|  ap_memory |      output_matrix     |     array    |
+|output_matrix_d0           | out |   32|  ap_memory |      output_matrix     |     array    |
+|max_poo_locate_1_address0  | out |    8|  ap_memory |    max_poo_locate_1    |     array    |
+|max_poo_locate_1_ce0       | out |    1|  ap_memory |    max_poo_locate_1    |     array    |
+|max_poo_locate_1_q0        |  in |   32|  ap_memory |    max_poo_locate_1    |     array    |
++---------------------------+-----+-----+------------+------------------------+--------------+
+

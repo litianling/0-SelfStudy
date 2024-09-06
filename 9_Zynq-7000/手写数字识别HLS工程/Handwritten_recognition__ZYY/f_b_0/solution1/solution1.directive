@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+  <sourceFile>
+    <directive functionName="max" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="Conv2d1" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="Conv2d2" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="Conv2d3" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="Relu1" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="Relu2" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="MatrixExtensionImproved" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="MatrixMultiply1" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="MatrixMultiply2" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="MatrixMultiply3" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="Conv2d_b1" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="Conv2d_b2" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="Conv2d_b3" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="Conv2d_b4" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="Conv2d_b5" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="MatrixBackPropagationMultiply1" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="MatrixBackPropagationMultiply2" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="MatrixBackPropagationMultiply3" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="CalculateMatrixGrad1" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="CalculateMatrixGrad2" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="CalculateMatrixGrad3" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="ReluBackPropagation1" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="ReluBackPropagation2" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="Padding1" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="Padding2" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="OverturnKernel" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="MatrixSplit" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="backward" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="forward" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="outWrite" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="forw_back" label="" functionLabel="">
+      <pragma name="RESOURCE">
+        <option name="variable" value="fc_hidden_layer2" positionalBoolean="4"/>
+        <option name="core" value="RAM_2P_LUTRAM"/>
+      </pragma>
+    </directive>
+    <directive functionName="forw_back" label="" functionLabel="">
+      <pragma name="INTERFACE">
+        <option name="s_axilite" value=" " positionalBoolean="mode"/>
+        <option name="port" value="lr" positionalBoolean="4"/>
+        <option name="bundle" value="ctrl"/>
+      </pragma>
+    </directive>
+    <directive functionName="Conv2d_b1" label="Conv2d_b1_label4" functionLabel="">
+      <pragma name="PIPELINE"/>
+    </directive>
+    <directive functionName="Conv2d_b2" label="Conv2d_b2_label5" functionLabel="">
+      <pragma name="PIPELINE"/>
+    </directive>
+    <directive functionName="Conv2d_b3" label="Conv2d_b3_label6" functionLabel="">
+      <pragma name="PIPELINE"/>
+    </directive>
+    <directive functionName="Conv2d_b4" label="Conv2d_b4_label7" functionLabel="">
+      <pragma name="PIPELINE"/>
+    </directive>
+    <directive functionName="Conv2d_b5" label="Conv2d_b5_label8" functionLabel="">
+      <pragma name="PIPELINE"/>
+    </directive>
+    <directive functionName="Conv2d1" label="Conv2d1_label0" functionLabel="">
+      <pragma name="PIPELINE"/>
+    </directive>
+    <directive functionName="Conv2d2" label="Conv2d2_label1" functionLabel="">
+      <pragma name="PIPELINE"/>
+    </directive>
+    <directive functionName="Conv2d3" label="Conv2d3_label2" functionLabel="">
+      <pragma name="PIPELINE"/>
+    </directive>
+    <directive functionName="forw_back" label="" functionLabel="">
+      <pragma name="INTERFACE">
+        <option name="m_axi" value="" positionalBoolean="mode"/>
+        <option name="depth" value="32"/>
+        <option name="port" value="lr" positionalBoolean="4"/>
+        <option name="bundle" value="data"/>
+      </pragma>
+    </directive>
+  </sourceFile>
+</AutoPilot:ProjectResources>

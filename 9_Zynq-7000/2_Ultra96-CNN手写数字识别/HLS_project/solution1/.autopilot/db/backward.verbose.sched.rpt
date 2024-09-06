@@ -1,0 +1,1315 @@
+
+
+================================================================
+== Vivado HLS Report for 'backward'
+================================================================
+* Date:           Thu Nov  3 16:10:33 2022
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        f_b_4_new_network
+* Solution:       solution1
+* Product family: zynquplus
+* Target device:  xczu3eg-sbva484-1-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.750|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+------+------+----------+-----------+-----------+------+----------+
+        |             |   Latency   | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+------+------+----------+-----------+-----------+------+----------+
+        |- Loop 1     |    20|    20|         2|          -|          -|    10|    no    |
+        |- Loop 2     |  1260|  1260|        63|          -|          -|    20|    no    |
+        | + Loop 2.1  |    60|    60|         6|          -|          -|    10|    no    |
+        |- Loop 3     |  1840|  1840|        92|          -|          -|    20|    no    |
+        | + Loop 3.1  |    90|    90|         9|          -|          -|    10|    no    |
+        |- Loop 4     |    80|   220|  4 ~ 11  |          -|          -|    20|    no    |
+        |- Loop 5     |  4428|  4428|       123|          -|          -|    36|    no    |
+        | + Loop 5.1  |   120|   120|         6|          -|          -|    20|    no    |
+        |- Loop 6     |  7272|  7272|       202|          -|          -|    36|    no    |
+        | + Loop 6.1  |   200|   200|        10|          -|          -|    20|    no    |
+        |- Loop 7     |    24|    24|         8|          -|          -|     3|    no    |
+        | + Loop 7.1  |     6|     6|         2|          -|          -|     3|    no    |
+        |- Loop 8     |  7272|  7272|       202|          -|          -|    36|    no    |
+        | + Loop 8.1  |   200|   200|        10|          -|          -|    20|    no    |
+        |- Loop 9     |  1840|  1840|        92|          -|          -|    20|    no    |
+        | + Loop 9.1  |    90|    90|         9|          -|          -|    10|    no    |
+        +-------------+------+------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 96
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 8 
+7 --> 6 
+8 --> 9 16 
+9 --> 10 
+10 --> 11 8 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 10 
+16 --> 17 26 
+17 --> 18 16 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 17 
+26 --> 27 37 
+27 --> 28 
+28 --> 29 36 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 26 
+37 --> 38 45 
+38 --> 39 
+39 --> 40 37 
+40 --> 41 
+41 --> 42 
+42 --> 43 
+43 --> 44 
+44 --> 39 
+45 --> 56 46 
+46 --> 47 45 
+47 --> 48 
+48 --> 49 
+49 --> 50 
+50 --> 51 
+51 --> 52 
+52 --> 53 
+53 --> 54 
+54 --> 55 
+55 --> 46 
+56 --> 57 
+57 --> 58 
+58 --> 59 
+59 --> 60 
+60 --> 61 
+61 --> 64 62 
+62 --> 63 61 
+63 --> 62 
+64 --> 65 
+65 --> 66 
+66 --> 67 
+67 --> 68 
+68 --> 69 
+69 --> 70 
+70 --> 71 
+71 --> 72 
+72 --> 73 
+73 --> 74 
+74 --> 75 
+75 --> 76 
+76 --> 77 87 
+77 --> 78 76 
+78 --> 79 
+79 --> 80 
+80 --> 81 
+81 --> 82 
+82 --> 83 
+83 --> 84 
+84 --> 85 
+85 --> 86 
+86 --> 77 
+87 --> 88 
+88 --> 89 87 
+89 --> 90 
+90 --> 91 
+91 --> 92 
+92 --> 93 
+93 --> 94 
+94 --> 95 
+95 --> 96 
+96 --> 88 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.79>
+ST_1 : Operation 97 [1/1] (0.00ns)   --->   "%label_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %label_r)" [f_b_4_new_network/forw_back_new_network.c:152]   --->   Operation 97 'read' 'label_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 98 [1/1] (0.00ns)   --->   "%grad_2 = alloca [10 x float], align 16" [f_b_4_new_network/forw_back_new_network.c:153]   --->   Operation 98 'alloca' 'grad_2' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_1 : Operation 99 [1/1] (0.00ns)   --->   "%wgrad_2 = alloca [300 x float], align 16" [f_b_4_new_network/forw_back_new_network.c:158]   --->   Operation 99 'alloca' 'wgrad_2' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_1 : Operation 100 [1/1] (0.00ns)   --->   "%rgrad_1 = alloca [20 x float], align 16" [f_b_4_new_network/forw_back_new_network.c:161]   --->   Operation 100 'alloca' 'rgrad_1' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_1 : Operation 101 [1/1] (0.00ns)   --->   "%grad_1 = alloca [20 x float], align 16" [f_b_4_new_network/forw_back_new_network.c:163]   --->   Operation 101 'alloca' 'grad_1' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_1 : Operation 102 [1/1] (0.00ns)   --->   "%wgrad_1 = alloca [720 x float], align 16" [f_b_4_new_network/forw_back_new_network.c:165]   --->   Operation 102 'alloca' 'wgrad_1' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_1 : Operation 103 [1/1] (0.00ns)   --->   "%grad_0 = alloca [36 x float], align 16" [f_b_4_new_network/forw_back_new_network.c:167]   --->   Operation 103 'alloca' 'grad_0' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_1 : Operation 104 [1/1] (0.00ns)   --->   "%conv_grad_2 = alloca [144 x float], align 16" [f_b_4_new_network/forw_back_new_network.c:172]   --->   Operation 104 'alloca' 'conv_grad_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 105 [1/1] (0.00ns)   --->   "%kernel_grad_2 = alloca [9 x float], align 16" [f_b_4_new_network/forw_back_new_network.c:175]   --->   Operation 105 'alloca' 'kernel_grad_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 106 [1/1] (0.00ns)   --->   "%conv_grad_2_padding = alloca [256 x float], align 16" [f_b_4_new_network/forw_back_new_network.c:177]   --->   Operation 106 'alloca' 'conv_grad_2_padding' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 107 [1/1] (0.00ns)   --->   "%kernel_grad_2_overtu = alloca [9 x float], align 16" [f_b_4_new_network/forw_back_new_network.c:179]   --->   Operation 107 'alloca' 'kernel_grad_2_overtu' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_1 : Operation 108 [1/1] (0.00ns)   --->   "%pool_grad_1 = alloca [196 x float], align 16" [f_b_4_new_network/forw_back_new_network.c:181]   --->   Operation 108 'alloca' 'pool_grad_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 109 [1/1] (0.00ns)   --->   "%conv_grad_1 = alloca [784 x float], align 16" [f_b_4_new_network/forw_back_new_network.c:184]   --->   Operation 109 'alloca' 'conv_grad_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 110 [1/1] (0.00ns)   --->   "%kernel_grad_1 = alloca [9 x float], align 16" [f_b_4_new_network/forw_back_new_network.c:186]   --->   Operation 110 'alloca' 'kernel_grad_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 111 [1/1] (0.00ns)   --->   "%zext_ln155 = zext i32 %label_read to i64" [f_b_4_new_network/forw_back_new_network.c:155]   --->   Operation 111 'zext' 'zext_ln155' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 112 [1/1] (0.00ns)   --->   "%probability_result_a = getelementptr inbounds [10 x float]* @probability_result, i64 0, i64 %zext_ln155" [f_b_4_new_network/forw_back_new_network.c:155]   --->   Operation 112 'getelementptr' 'probability_result_a' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 113 [2/2] (0.79ns)   --->   "%probability_result_l = load float* %probability_result_a, align 4" [f_b_4_new_network/forw_back_new_network.c:155]   --->   Operation 113 'load' 'probability_result_l' <Predicate = true> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_1 : Operation 114 [1/1] (0.00ns)   --->   "%grad_2_addr = getelementptr inbounds [10 x float]* %grad_2, i64 0, i64 %zext_ln155" [f_b_4_new_network/forw_back_new_network.c:155]   --->   Operation 114 'getelementptr' 'grad_2_addr' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 8.50>
+ST_2 : Operation 115 [1/2] (0.79ns)   --->   "%probability_result_l = load float* %probability_result_a, align 4" [f_b_4_new_network/forw_back_new_network.c:155]   --->   Operation 115 'load' 'probability_result_l' <Predicate = true> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_2 : Operation 116 [4/4] (7.71ns)   --->   "%tmp = fadd float %probability_result_l, -1.000000e+00" [f_b_4_new_network/forw_back_new_network.c:155]   --->   Operation 116 'fadd' 'tmp' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 7.71>
+ST_3 : Operation 117 [3/4] (7.71ns)   --->   "%tmp = fadd float %probability_result_l, -1.000000e+00" [f_b_4_new_network/forw_back_new_network.c:155]   --->   Operation 117 'fadd' 'tmp' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 7.71>
+ST_4 : Operation 118 [2/4] (7.71ns)   --->   "%tmp = fadd float %probability_result_l, -1.000000e+00" [f_b_4_new_network/forw_back_new_network.c:155]   --->   Operation 118 'fadd' 'tmp' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 5 <SV = 4> <Delay = 7.71>
+ST_5 : Operation 119 [1/1] (0.00ns)   --->   "%lr_in_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %lr_in_offset)" [f_b_4_new_network/forw_back_new_network.c:152]   --->   Operation 119 'read' 'lr_in_offset_read' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 120 [1/1] (0.00ns)   --->   "%zext_ln152 = zext i30 %lr_in_offset_read to i64" [f_b_4_new_network/forw_back_new_network.c:152]   --->   Operation 120 'zext' 'zext_ln152' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 121 [1/1] (0.00ns)   --->   "%lr_in_addr = getelementptr float* %lr_in, i64 %zext_ln152" [f_b_4_new_network/forw_back_new_network.c:152]   --->   Operation 121 'getelementptr' 'lr_in_addr' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 122 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(float* %lr_in, [6 x i8]* @p_str5, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 32, [5 x i8]* @p_str6, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 122 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 123 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecMemCore([200 x float]* @fc_hidden_layer2, [1 x i8]* @p_str, [14 x i8]* @p_str1, [1 x i8]* @p_str, i32 -1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_4_new_network/forw_back_new_network.c:153]   --->   Operation 123 'specmemcore' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 124 [1/4] (7.71ns)   --->   "%tmp = fadd float %probability_result_l, -1.000000e+00" [f_b_4_new_network/forw_back_new_network.c:155]   --->   Operation 124 'fadd' 'tmp' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 125 [1/1] (0.75ns)   --->   "br label %1" [f_b_4_new_network/forw_back_new_network.c:154]   --->   Operation 125 'br' <Predicate = true> <Delay = 0.75>
+
+State 6 <SV = 5> <Delay = 1.11>
+ST_6 : Operation 126 [1/1] (0.00ns)   --->   "%i_0 = phi i4 [ 0, %0 ], [ %i_4, %5 ]"   --->   Operation 126 'phi' 'i_0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 127 [1/1] (0.00ns)   --->   "%zext_ln154 = zext i4 %i_0 to i32" [f_b_4_new_network/forw_back_new_network.c:154]   --->   Operation 127 'zext' 'zext_ln154' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 128 [1/1] (0.88ns)   --->   "%icmp_ln154 = icmp eq i4 %i_0, -6" [f_b_4_new_network/forw_back_new_network.c:154]   --->   Operation 128 'icmp' 'icmp_ln154' <Predicate = true> <Delay = 0.88> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 129 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10) nounwind"   --->   Operation 129 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 130 [1/1] (0.86ns)   --->   "%i_4 = add i4 %i_0, 1" [f_b_4_new_network/forw_back_new_network.c:154]   --->   Operation 130 'add' 'i_4' <Predicate = true> <Delay = 0.86> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 131 [1/1] (0.00ns)   --->   "br i1 %icmp_ln154, label %6, label %2" [f_b_4_new_network/forw_back_new_network.c:154]   --->   Operation 131 'br' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 132 [1/1] (1.11ns)   --->   "%icmp_ln155 = icmp eq i32 %zext_ln154, %label_read" [f_b_4_new_network/forw_back_new_network.c:155]   --->   Operation 132 'icmp' 'icmp_ln155' <Predicate = (!icmp_ln154)> <Delay = 1.11> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 133 [1/1] (0.00ns)   --->   "br i1 %icmp_ln155, label %3, label %4" [f_b_4_new_network/forw_back_new_network.c:155]   --->   Operation 133 'br' <Predicate = (!icmp_ln154)> <Delay = 0.00>
+ST_6 : Operation 134 [1/1] (0.00ns)   --->   "%zext_ln156 = zext i4 %i_0 to i64" [f_b_4_new_network/forw_back_new_network.c:156]   --->   Operation 134 'zext' 'zext_ln156' <Predicate = (!icmp_ln154 & !icmp_ln155)> <Delay = 0.00>
+ST_6 : Operation 135 [1/1] (0.00ns)   --->   "%probability_result_a_1 = getelementptr inbounds [10 x float]* @probability_result, i64 0, i64 %zext_ln156" [f_b_4_new_network/forw_back_new_network.c:156]   --->   Operation 135 'getelementptr' 'probability_result_a_1' <Predicate = (!icmp_ln154 & !icmp_ln155)> <Delay = 0.00>
+ST_6 : Operation 136 [2/2] (0.79ns)   --->   "%probability_result_l_1 = load float* %probability_result_a_1, align 4" [f_b_4_new_network/forw_back_new_network.c:156]   --->   Operation 136 'load' 'probability_result_l_1' <Predicate = (!icmp_ln154 & !icmp_ln155)> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_6 : Operation 137 [1/1] (0.79ns)   --->   "store float %tmp, float* %grad_2_addr, align 4" [f_b_4_new_network/forw_back_new_network.c:155]   --->   Operation 137 'store' <Predicate = (!icmp_ln154 & icmp_ln155)> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_6 : Operation 138 [1/1] (0.00ns)   --->   "br label %5" [f_b_4_new_network/forw_back_new_network.c:155]   --->   Operation 138 'br' <Predicate = (!icmp_ln154 & icmp_ln155)> <Delay = 0.00>
+ST_6 : Operation 139 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecMemCore([200 x float]* @fc_hidden_layer2, [1 x i8]* @p_str, [14 x i8]* @p_str1, [1 x i8]* @p_str, i32 -1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_4_new_network/forw_back_new_network.c:73->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 139 'specmemcore' <Predicate = (icmp_ln154)> <Delay = 0.00>
+ST_6 : Operation 140 [1/1] (0.75ns)   --->   "br label %.loopexit8" [f_b_4_new_network/forw_back_new_network.c:73->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 140 'br' <Predicate = (icmp_ln154)> <Delay = 0.75>
+
+State 7 <SV = 6> <Delay = 1.58>
+ST_7 : Operation 141 [1/2] (0.79ns)   --->   "%probability_result_l_1 = load float* %probability_result_a_1, align 4" [f_b_4_new_network/forw_back_new_network.c:156]   --->   Operation 141 'load' 'probability_result_l_1' <Predicate = (!icmp_ln155)> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_7 : Operation 142 [1/1] (0.00ns)   --->   "%grad_2_addr_1 = getelementptr inbounds [10 x float]* %grad_2, i64 0, i64 %zext_ln156" [f_b_4_new_network/forw_back_new_network.c:156]   --->   Operation 142 'getelementptr' 'grad_2_addr_1' <Predicate = (!icmp_ln155)> <Delay = 0.00>
+ST_7 : Operation 143 [1/1] (0.79ns)   --->   "store float %probability_result_l_1, float* %grad_2_addr_1, align 4" [f_b_4_new_network/forw_back_new_network.c:156]   --->   Operation 143 'store' <Predicate = (!icmp_ln155)> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_7 : Operation 144 [1/1] (0.00ns)   --->   "br label %5"   --->   Operation 144 'br' <Predicate = (!icmp_ln155)> <Delay = 0.00>
+ST_7 : Operation 145 [1/1] (0.00ns)   --->   "br label %1" [f_b_4_new_network/forw_back_new_network.c:154]   --->   Operation 145 'br' <Predicate = true> <Delay = 0.00>
+
+State 8 <SV = 6> <Delay = 0.87>
+ST_8 : Operation 146 [1/1] (0.00ns)   --->   "%i_0_i = phi i5 [ 0, %6 ], [ %i, %.loopexit8.loopexit ]"   --->   Operation 146 'phi' 'i_0_i' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 147 [1/1] (0.00ns)   --->   "%empty_35 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 20, i64 20, i64 20) nounwind"   --->   Operation 147 'speclooptripcount' 'empty_35' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 148 [1/1] (0.87ns)   --->   "%icmp_ln73 = icmp eq i5 %i_0_i, -12" [f_b_4_new_network/forw_back_new_network.c:73->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 148 'icmp' 'icmp_ln73' <Predicate = true> <Delay = 0.87> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 149 [1/1] (0.87ns)   --->   "%i = add i5 %i_0_i, 1" [f_b_4_new_network/forw_back_new_network.c:73->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 149 'add' 'i' <Predicate = true> <Delay = 0.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 150 [1/1] (0.00ns)   --->   "br i1 %icmp_ln73, label %MatrixBackPropagationMultiply.1.exit, label %.preheader.preheader.i" [f_b_4_new_network/forw_back_new_network.c:73->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 150 'br' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 151 [1/1] (0.00ns)   --->   "%zext_ln75 = zext i5 %i_0_i to i64" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 151 'zext' 'zext_ln75' <Predicate = (!icmp_ln73)> <Delay = 0.00>
+ST_8 : Operation 152 [1/1] (0.00ns)   --->   "%fc_in_2_relu1_0_addr = getelementptr [20 x float]* @fc_in_2_relu1_0, i64 0, i64 %zext_ln75" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 152 'getelementptr' 'fc_in_2_relu1_0_addr' <Predicate = (!icmp_ln73)> <Delay = 0.00>
+ST_8 : Operation 153 [2/2] (0.79ns)   --->   "%fc_in_2_relu1_0_load = load float* %fc_in_2_relu1_0_addr, align 4" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 153 'load' 'fc_in_2_relu1_0_load' <Predicate = (!icmp_ln73)> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_8 : Operation 154 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecMemCore([200 x float]* @fc_hidden_layer2, [1 x i8]* @p_str, [14 x i8]* @p_str1, [1 x i8]* @p_str, i32 -1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_4_new_network/forw_back_new_network.c:79->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 154 'specmemcore' <Predicate = (icmp_ln73)> <Delay = 0.00>
+ST_8 : Operation 155 [1/1] (0.75ns)   --->   "br label %.loopexit7" [f_b_4_new_network/forw_back_new_network.c:79->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 155 'br' <Predicate = (icmp_ln73)> <Delay = 0.75>
+
+State 9 <SV = 7> <Delay = 0.79>
+ST_9 : Operation 156 [1/1] (0.00ns)   --->   "%shl_ln = call i8 @_ssdm_op_BitConcatenate.i8.i5.i3(i5 %i_0_i, i3 0)" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 156 'bitconcatenate' 'shl_ln' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 157 [1/1] (0.00ns)   --->   "%shl_ln75_1 = call i6 @_ssdm_op_BitConcatenate.i6.i5.i1(i5 %i_0_i, i1 false)" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 157 'bitconcatenate' 'shl_ln75_1' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 158 [1/2] (0.79ns)   --->   "%fc_in_2_relu1_0_load = load float* %fc_in_2_relu1_0_addr, align 4" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 158 'load' 'fc_in_2_relu1_0_load' <Predicate = true> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_9 : Operation 159 [1/1] (0.75ns)   --->   "br label %.preheader.i" [f_b_4_new_network/forw_back_new_network.c:74->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 159 'br' <Predicate = true> <Delay = 0.75>
+
+State 10 <SV = 8> <Delay = 1.79>
+ST_10 : Operation 160 [1/1] (0.00ns)   --->   "%j_0_i = phi i4 [ %j, %7 ], [ 0, %.preheader.preheader.i ]"   --->   Operation 160 'phi' 'j_0_i' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 161 [1/1] (0.00ns)   --->   "%j_0_i_cast20 = zext i4 %j_0_i to i6" [f_b_4_new_network/forw_back_new_network.c:74->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 161 'zext' 'j_0_i_cast20' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 162 [1/1] (0.00ns)   --->   "%empty_36 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10) nounwind"   --->   Operation 162 'speclooptripcount' 'empty_36' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 163 [1/1] (0.88ns)   --->   "%icmp_ln74 = icmp eq i4 %j_0_i, -6" [f_b_4_new_network/forw_back_new_network.c:74->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 163 'icmp' 'icmp_ln74' <Predicate = true> <Delay = 0.88> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 164 [1/1] (0.86ns)   --->   "%j = add i4 %j_0_i, 1" [f_b_4_new_network/forw_back_new_network.c:74->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 164 'add' 'j' <Predicate = true> <Delay = 0.86> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 165 [1/1] (0.00ns)   --->   "br i1 %icmp_ln74, label %.loopexit8.loopexit, label %7" [f_b_4_new_network/forw_back_new_network.c:74->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 165 'br' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 166 [1/1] (0.00ns)   --->   "%zext_ln75_1 = zext i4 %j_0_i to i64" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 166 'zext' 'zext_ln75_1' <Predicate = (!icmp_ln74)> <Delay = 0.00>
+ST_10 : Operation 167 [1/1] (0.00ns)   --->   "%grad_2_addr_2 = getelementptr [10 x float]* %grad_2, i64 0, i64 %zext_ln75_1" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 167 'getelementptr' 'grad_2_addr_2' <Predicate = (!icmp_ln74)> <Delay = 0.00>
+ST_10 : Operation 168 [2/2] (0.79ns)   --->   "%grad_2_load = load float* %grad_2_addr_2, align 4" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 168 'load' 'grad_2_load' <Predicate = (!icmp_ln74)> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_10 : Operation 169 [1/1] (0.88ns)   --->   "%add_ln75 = add i6 %shl_ln75_1, %j_0_i_cast20" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 169 'add' 'add_ln75' <Predicate = (!icmp_ln74)> <Delay = 0.88> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 170 [1/1] (0.00ns)   --->   "%zext_ln75_6 = zext i6 %add_ln75 to i8" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 170 'zext' 'zext_ln75_6' <Predicate = (!icmp_ln74)> <Delay = 0.00>
+ST_10 : Operation 171 [1/1] (0.90ns)   --->   "%add_ln75_1 = add i8 %zext_ln75_6, %shl_ln" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 171 'add' 'add_ln75_1' <Predicate = (!icmp_ln74)> <Delay = 0.90> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 172 [1/1] (0.00ns)   --->   "br label %.loopexit8"   --->   Operation 172 'br' <Predicate = (icmp_ln74)> <Delay = 0.00>
+
+State 11 <SV = 9> <Delay = 0.79>
+ST_11 : Operation 173 [1/2] (0.79ns)   --->   "%grad_2_load = load float* %grad_2_addr_2, align 4" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 173 'load' 'grad_2_load' <Predicate = true> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+
+State 12 <SV = 10> <Delay = 8.28>
+ST_12 : Operation 174 [3/3] (8.28ns)   --->   "%tmp_i = fmul float %fc_in_2_relu1_0_load, %grad_2_load" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 174 'fmul' 'tmp_i' <Predicate = true> <Delay = 8.28> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.28> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 11> <Delay = 8.28>
+ST_13 : Operation 175 [2/3] (8.28ns)   --->   "%tmp_i = fmul float %fc_in_2_relu1_0_load, %grad_2_load" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 175 'fmul' 'tmp_i' <Predicate = true> <Delay = 8.28> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.28> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 12> <Delay = 8.28>
+ST_14 : Operation 176 [1/3] (8.28ns)   --->   "%tmp_i = fmul float %fc_in_2_relu1_0_load, %grad_2_load" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 176 'fmul' 'tmp_i' <Predicate = true> <Delay = 8.28> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.28> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 13> <Delay = 1.35>
+ST_15 : Operation 177 [1/1] (0.00ns)   --->   "%zext_ln75_2 = zext i8 %add_ln75_1 to i64" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 177 'zext' 'zext_ln75_2' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 178 [1/1] (0.00ns)   --->   "%wgrad_2_addr = getelementptr [300 x float]* %wgrad_2, i64 0, i64 %zext_ln75_2" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 178 'getelementptr' 'wgrad_2_addr' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 179 [1/1] (1.35ns)   --->   "store float %tmp_i, float* %wgrad_2_addr, align 4" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 179 'store' <Predicate = true> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_15 : Operation 180 [1/1] (0.00ns)   --->   "br label %.preheader.i" [f_b_4_new_network/forw_back_new_network.c:74->f_b_4_new_network/forw_back_new_network.c:159]   --->   Operation 180 'br' <Predicate = true> <Delay = 0.00>
+
+State 16 <SV = 7> <Delay = 0.87>
+ST_16 : Operation 181 [1/1] (0.00ns)   --->   "%i_0_i1 = phi i5 [ 0, %MatrixBackPropagationMultiply.1.exit ], [ %i_5, %.loopexit7.loopexit ]"   --->   Operation 181 'phi' 'i_0_i1' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 182 [1/1] (0.00ns)   --->   "%empty_37 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 20, i64 20, i64 20) nounwind"   --->   Operation 182 'speclooptripcount' 'empty_37' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 183 [1/1] (0.87ns)   --->   "%icmp_ln79 = icmp eq i5 %i_0_i1, -12" [f_b_4_new_network/forw_back_new_network.c:79->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 183 'icmp' 'icmp_ln79' <Predicate = true> <Delay = 0.87> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 184 [1/1] (0.87ns)   --->   "%i_5 = add i5 %i_0_i1, 1" [f_b_4_new_network/forw_back_new_network.c:79->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 184 'add' 'i_5' <Predicate = true> <Delay = 0.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 185 [1/1] (0.00ns)   --->   "br i1 %icmp_ln79, label %CalculateMatrixGrad.1.exit, label %8" [f_b_4_new_network/forw_back_new_network.c:79->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 185 'br' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 186 [1/1] (0.00ns)   --->   "%zext_ln80 = zext i5 %i_0_i1 to i64" [f_b_4_new_network/forw_back_new_network.c:80->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 186 'zext' 'zext_ln80' <Predicate = (!icmp_ln79)> <Delay = 0.00>
+ST_16 : Operation 187 [1/1] (0.00ns)   --->   "%rgrad_1_addr = getelementptr [20 x float]* %rgrad_1, i64 0, i64 %zext_ln80" [f_b_4_new_network/forw_back_new_network.c:80->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 187 'getelementptr' 'rgrad_1_addr' <Predicate = (!icmp_ln79)> <Delay = 0.00>
+ST_16 : Operation 188 [1/1] (0.79ns)   --->   "store float 0.000000e+00, float* %rgrad_1_addr, align 4" [f_b_4_new_network/forw_back_new_network.c:80->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 188 'store' <Predicate = (!icmp_ln79)> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_16 : Operation 189 [1/1] (0.00ns)   --->   "%shl_ln2 = call i8 @_ssdm_op_BitConcatenate.i8.i5.i3(i5 %i_0_i1, i3 0)" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 189 'bitconcatenate' 'shl_ln2' <Predicate = (!icmp_ln79)> <Delay = 0.00>
+ST_16 : Operation 190 [1/1] (0.00ns)   --->   "%shl_ln82_1 = call i6 @_ssdm_op_BitConcatenate.i6.i5.i1(i5 %i_0_i1, i1 false)" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 190 'bitconcatenate' 'shl_ln82_1' <Predicate = (!icmp_ln79)> <Delay = 0.00>
+ST_16 : Operation 191 [1/1] (0.75ns)   --->   "br label %9" [f_b_4_new_network/forw_back_new_network.c:81->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 191 'br' <Predicate = (!icmp_ln79)> <Delay = 0.75>
+ST_16 : Operation 192 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecMemCore([200 x float]* @fc_hidden_layer2, [1 x i8]* @p_str, [14 x i8]* @p_str1, [1 x i8]* @p_str, i32 -1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_4_new_network/forw_back_new_network.c:87->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 192 'specmemcore' <Predicate = (icmp_ln79)> <Delay = 0.00>
+ST_16 : Operation 193 [1/1] (0.75ns)   --->   "br label %11" [f_b_4_new_network/forw_back_new_network.c:87->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 193 'br' <Predicate = (icmp_ln79)> <Delay = 0.75>
+
+State 17 <SV = 8> <Delay = 2.65>
+ST_17 : Operation 194 [1/1] (0.00ns)   --->   "%empty_38 = phi float [ 0.000000e+00, %8 ], [ %tmp_i_40, %10 ]" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 194 'phi' 'empty_38' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 195 [1/1] (0.00ns)   --->   "%j_0_i2 = phi i4 [ 0, %8 ], [ %j_10, %10 ]"   --->   Operation 195 'phi' 'j_0_i2' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 196 [1/1] (0.00ns)   --->   "%j_0_i2_cast17 = zext i4 %j_0_i2 to i6" [f_b_4_new_network/forw_back_new_network.c:81->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 196 'zext' 'j_0_i2_cast17' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 197 [1/1] (0.00ns)   --->   "%empty_39 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10) nounwind"   --->   Operation 197 'speclooptripcount' 'empty_39' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 198 [1/1] (0.88ns)   --->   "%icmp_ln81 = icmp eq i4 %j_0_i2, -6" [f_b_4_new_network/forw_back_new_network.c:81->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 198 'icmp' 'icmp_ln81' <Predicate = true> <Delay = 0.88> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 199 [1/1] (0.86ns)   --->   "%j_10 = add i4 %j_0_i2, 1" [f_b_4_new_network/forw_back_new_network.c:81->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 199 'add' 'j_10' <Predicate = true> <Delay = 0.86> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 200 [1/1] (0.00ns)   --->   "br i1 %icmp_ln81, label %.loopexit7.loopexit, label %10" [f_b_4_new_network/forw_back_new_network.c:81->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 200 'br' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 201 [1/1] (0.88ns)   --->   "%add_ln82 = add i6 %shl_ln82_1, %j_0_i2_cast17" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 201 'add' 'add_ln82' <Predicate = (!icmp_ln81)> <Delay = 0.88> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 202 [1/1] (0.00ns)   --->   "%zext_ln82_4 = zext i6 %add_ln82 to i8" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 202 'zext' 'zext_ln82_4' <Predicate = (!icmp_ln81)> <Delay = 0.00>
+ST_17 : Operation 203 [1/1] (0.90ns)   --->   "%add_ln82_1 = add i8 %zext_ln82_4, %shl_ln2" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 203 'add' 'add_ln82_1' <Predicate = (!icmp_ln81)> <Delay = 0.90> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 204 [1/1] (0.00ns)   --->   "%zext_ln82 = zext i8 %add_ln82_1 to i64" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 204 'zext' 'zext_ln82' <Predicate = (!icmp_ln81)> <Delay = 0.00>
+ST_17 : Operation 205 [1/1] (0.00ns)   --->   "%fc_hidden_layer2_add = getelementptr [200 x float]* @fc_hidden_layer2, i64 0, i64 %zext_ln82" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 205 'getelementptr' 'fc_hidden_layer2_add' <Predicate = (!icmp_ln81)> <Delay = 0.00>
+ST_17 : Operation 206 [2/2] (0.85ns)   --->   "%fc_hidden_layer2_loa = load float* %fc_hidden_layer2_add, align 4" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 206 'load' 'fc_hidden_layer2_loa' <Predicate = (!icmp_ln81)> <Delay = 0.85> <Core = "RAM_2P_LUTRAM">   --->   Core 41 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.85> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 200> <RAM>
+ST_17 : Operation 207 [1/1] (0.00ns)   --->   "%zext_ln82_1 = zext i4 %j_0_i2 to i64" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 207 'zext' 'zext_ln82_1' <Predicate = (!icmp_ln81)> <Delay = 0.00>
+ST_17 : Operation 208 [1/1] (0.00ns)   --->   "%grad_2_addr_3 = getelementptr [10 x float]* %grad_2, i64 0, i64 %zext_ln82_1" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 208 'getelementptr' 'grad_2_addr_3' <Predicate = (!icmp_ln81)> <Delay = 0.00>
+ST_17 : Operation 209 [2/2] (0.79ns)   --->   "%grad_2_load_1 = load float* %grad_2_addr_3, align 4" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 209 'load' 'grad_2_load_1' <Predicate = (!icmp_ln81)> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_17 : Operation 210 [1/1] (0.00ns)   --->   "br label %.loopexit7"   --->   Operation 210 'br' <Predicate = (icmp_ln81)> <Delay = 0.00>
+
+State 18 <SV = 9> <Delay = 0.85>
+ST_18 : Operation 211 [1/2] (0.85ns)   --->   "%fc_hidden_layer2_loa = load float* %fc_hidden_layer2_add, align 4" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 211 'load' 'fc_hidden_layer2_loa' <Predicate = true> <Delay = 0.85> <Core = "RAM_2P_LUTRAM">   --->   Core 41 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.85> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 200> <RAM>
+ST_18 : Operation 212 [1/2] (0.79ns)   --->   "%grad_2_load_1 = load float* %grad_2_addr_3, align 4" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 212 'load' 'grad_2_load_1' <Predicate = true> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+
+State 19 <SV = 10> <Delay = 8.28>
+ST_19 : Operation 213 [3/3] (8.28ns)   --->   "%tmp_i5 = fmul float %fc_hidden_layer2_loa, %grad_2_load_1" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 213 'fmul' 'tmp_i5' <Predicate = true> <Delay = 8.28> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.28> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 11> <Delay = 8.28>
+ST_20 : Operation 214 [2/3] (8.28ns)   --->   "%tmp_i5 = fmul float %fc_hidden_layer2_loa, %grad_2_load_1" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 214 'fmul' 'tmp_i5' <Predicate = true> <Delay = 8.28> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.28> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 21 <SV = 12> <Delay = 8.28>
+ST_21 : Operation 215 [1/3] (8.28ns)   --->   "%tmp_i5 = fmul float %fc_hidden_layer2_loa, %grad_2_load_1" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 215 'fmul' 'tmp_i5' <Predicate = true> <Delay = 8.28> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.28> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 22 <SV = 13> <Delay = 7.71>
+ST_22 : Operation 216 [4/4] (7.71ns)   --->   "%tmp_i_40 = fadd float %empty_38, %tmp_i5" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 216 'fadd' 'tmp_i_40' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 23 <SV = 14> <Delay = 7.71>
+ST_23 : Operation 217 [3/4] (7.71ns)   --->   "%tmp_i_40 = fadd float %empty_38, %tmp_i5" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 217 'fadd' 'tmp_i_40' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 24 <SV = 15> <Delay = 7.71>
+ST_24 : Operation 218 [2/4] (7.71ns)   --->   "%tmp_i_40 = fadd float %empty_38, %tmp_i5" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 218 'fadd' 'tmp_i_40' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 25 <SV = 16> <Delay = 8.50>
+ST_25 : Operation 219 [1/4] (7.71ns)   --->   "%tmp_i_40 = fadd float %empty_38, %tmp_i5" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 219 'fadd' 'tmp_i_40' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 220 [1/1] (0.79ns)   --->   "store float %tmp_i_40, float* %rgrad_1_addr, align 4" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 220 'store' <Predicate = true> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_25 : Operation 221 [1/1] (0.00ns)   --->   "br label %9" [f_b_4_new_network/forw_back_new_network.c:81->f_b_4_new_network/forw_back_new_network.c:162]   --->   Operation 221 'br' <Predicate = true> <Delay = 0.00>
+
+State 26 <SV = 8> <Delay = 0.87>
+ST_26 : Operation 222 [1/1] (0.00ns)   --->   "%i_0_i8 = phi i5 [ 0, %CalculateMatrixGrad.1.exit ], [ %i_7, %15 ]"   --->   Operation 222 'phi' 'i_0_i8' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 223 [1/1] (0.87ns)   --->   "%icmp_ln87 = icmp eq i5 %i_0_i8, -12" [f_b_4_new_network/forw_back_new_network.c:87->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 223 'icmp' 'icmp_ln87' <Predicate = true> <Delay = 0.87> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 224 [1/1] (0.00ns)   --->   "%empty_41 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 20, i64 20, i64 20) nounwind"   --->   Operation 224 'speclooptripcount' 'empty_41' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 225 [1/1] (0.87ns)   --->   "%i_7 = add i5 %i_0_i8, 1" [f_b_4_new_network/forw_back_new_network.c:87->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 225 'add' 'i_7' <Predicate = true> <Delay = 0.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 226 [1/1] (0.00ns)   --->   "br i1 %icmp_ln87, label %ReluBackPropagation.exit, label %12" [f_b_4_new_network/forw_back_new_network.c:87->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 226 'br' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 227 [1/1] (0.00ns)   --->   "%zext_ln88 = zext i5 %i_0_i8 to i64" [f_b_4_new_network/forw_back_new_network.c:88->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 227 'zext' 'zext_ln88' <Predicate = (!icmp_ln87)> <Delay = 0.00>
+ST_26 : Operation 228 [1/1] (0.00ns)   --->   "%fc_out_1_0_addr = getelementptr [20 x float]* @fc_out_1_0, i64 0, i64 %zext_ln88" [f_b_4_new_network/forw_back_new_network.c:88->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 228 'getelementptr' 'fc_out_1_0_addr' <Predicate = (!icmp_ln87)> <Delay = 0.00>
+ST_26 : Operation 229 [2/2] (0.79ns)   --->   "%fc_out_1_0_load = load float* %fc_out_1_0_addr, align 4" [f_b_4_new_network/forw_back_new_network.c:88->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 229 'load' 'fc_out_1_0_load' <Predicate = (!icmp_ln87)> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_26 : Operation 230 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecMemCore([200 x float]* @fc_hidden_layer2, [1 x i8]* @p_str, [14 x i8]* @p_str1, [1 x i8]* @p_str, i32 -1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_4_new_network/forw_back_new_network.c:73->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 230 'specmemcore' <Predicate = (icmp_ln87)> <Delay = 0.00>
+ST_26 : Operation 231 [1/1] (0.75ns)   --->   "br label %.loopexit6" [f_b_4_new_network/forw_back_new_network.c:73->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 231 'br' <Predicate = (icmp_ln87)> <Delay = 0.75>
+
+State 27 <SV = 9> <Delay = 4.13>
+ST_27 : Operation 232 [1/2] (0.79ns)   --->   "%fc_out_1_0_load = load float* %fc_out_1_0_addr, align 4" [f_b_4_new_network/forw_back_new_network.c:88->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 232 'load' 'fc_out_1_0_load' <Predicate = true> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_27 : Operation 233 [1/1] (0.00ns)   --->   "%bitcast_ln88 = bitcast float %fc_out_1_0_load to i32" [f_b_4_new_network/forw_back_new_network.c:88->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 233 'bitcast' 'bitcast_ln88' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 234 [1/1] (0.00ns)   --->   "%tmp_s = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln88, i32 23, i32 30)" [f_b_4_new_network/forw_back_new_network.c:88->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 234 'partselect' 'tmp_s' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 235 [1/1] (0.00ns)   --->   "%trunc_ln88 = trunc i32 %bitcast_ln88 to i23" [f_b_4_new_network/forw_back_new_network.c:88->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 235 'trunc' 'trunc_ln88' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 236 [1/1] (0.85ns)   --->   "%icmp_ln88 = icmp ne i8 %tmp_s, -1" [f_b_4_new_network/forw_back_new_network.c:88->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 236 'icmp' 'icmp_ln88' <Predicate = true> <Delay = 0.85> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 237 [1/1] (0.97ns)   --->   "%icmp_ln88_1 = icmp eq i23 %trunc_ln88, 0" [f_b_4_new_network/forw_back_new_network.c:88->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 237 'icmp' 'icmp_ln88_1' <Predicate = true> <Delay = 0.97> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 238 [2/2] (3.34ns)   --->   "%tmp_11 = fcmp ogt float %fc_out_1_0_load, 0.000000e+00" [f_b_4_new_network/forw_back_new_network.c:88->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 238 'fcmp' 'tmp_11' <Predicate = true> <Delay = 3.34> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 3.34> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 239 [1/1] (0.00ns)   --->   "%rgrad_1_addr_1 = getelementptr [20 x float]* %rgrad_1, i64 0, i64 %zext_ln88" [f_b_4_new_network/forw_back_new_network.c:89->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 239 'getelementptr' 'rgrad_1_addr_1' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 240 [2/2] (0.79ns)   --->   "%rgrad_1_load = load float* %rgrad_1_addr_1, align 4" [f_b_4_new_network/forw_back_new_network.c:89->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 240 'load' 'rgrad_1_load' <Predicate = true> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+
+State 28 <SV = 10> <Delay = 3.67>
+ST_28 : Operation 241 [1/1] (0.00ns) (grouped into LUT with out node and_ln88)   --->   "%or_ln88 = or i1 %icmp_ln88_1, %icmp_ln88" [f_b_4_new_network/forw_back_new_network.c:88->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 241 'or' 'or_ln88' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.33> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 242 [1/2] (3.34ns)   --->   "%tmp_11 = fcmp ogt float %fc_out_1_0_load, 0.000000e+00" [f_b_4_new_network/forw_back_new_network.c:88->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 242 'fcmp' 'tmp_11' <Predicate = true> <Delay = 3.34> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 3.34> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 243 [1/1] (0.33ns) (out node of the LUT)   --->   "%and_ln88 = and i1 %or_ln88, %tmp_11" [f_b_4_new_network/forw_back_new_network.c:88->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 243 'and' 'and_ln88' <Predicate = true> <Delay = 0.33> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.33> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 244 [1/2] (0.79ns)   --->   "%rgrad_1_load = load float* %rgrad_1_addr_1, align 4" [f_b_4_new_network/forw_back_new_network.c:89->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 244 'load' 'rgrad_1_load' <Predicate = true> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_28 : Operation 245 [1/1] (0.00ns)   --->   "br i1 %and_ln88, label %13, label %14" [f_b_4_new_network/forw_back_new_network.c:88->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 245 'br' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 246 [2/2] (2.78ns)   --->   "%tmp_i3 = fpext float %rgrad_1_load to double" [f_b_4_new_network/forw_back_new_network.c:91->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 246 'fpext' 'tmp_i3' <Predicate = (!and_ln88)> <Delay = 2.78> <Core = "Float2Double">   --->   Core 114 'Float2Double' <Latency = 1> <II = 1> <Delay = 2.78> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+ST_28 : Operation 247 [1/1] (0.00ns)   --->   "%grad_1_addr = getelementptr [20 x float]* %grad_1, i64 0, i64 %zext_ln88" [f_b_4_new_network/forw_back_new_network.c:89->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 247 'getelementptr' 'grad_1_addr' <Predicate = (and_ln88)> <Delay = 0.00>
+ST_28 : Operation 248 [1/1] (0.79ns)   --->   "store float %rgrad_1_load, float* %grad_1_addr, align 4" [f_b_4_new_network/forw_back_new_network.c:89->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 248 'store' <Predicate = (and_ln88)> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_28 : Operation 249 [1/1] (0.00ns)   --->   "br label %15" [f_b_4_new_network/forw_back_new_network.c:89->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 249 'br' <Predicate = (and_ln88)> <Delay = 0.00>
+
+State 29 <SV = 11> <Delay = 2.78>
+ST_29 : Operation 250 [1/2] (2.78ns)   --->   "%tmp_i3 = fpext float %rgrad_1_load to double" [f_b_4_new_network/forw_back_new_network.c:91->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 250 'fpext' 'tmp_i3' <Predicate = true> <Delay = 2.78> <Core = "Float2Double">   --->   Core 114 'Float2Double' <Latency = 1> <II = 1> <Delay = 2.78> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+
+State 30 <SV = 12> <Delay = 8.33>
+ST_30 : Operation 251 [5/5] (8.33ns)   --->   "%tmp_2_i = fmul double %tmp_i3, 5.000000e-02" [f_b_4_new_network/forw_back_new_network.c:91->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 251 'dmul' 'tmp_2_i' <Predicate = true> <Delay = 8.33> <Core = "DMul">   --->   Core 116 'DMul' <Latency = 4> <II = 1> <Delay = 8.33> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 31 <SV = 13> <Delay = 8.33>
+ST_31 : Operation 252 [4/5] (8.33ns)   --->   "%tmp_2_i = fmul double %tmp_i3, 5.000000e-02" [f_b_4_new_network/forw_back_new_network.c:91->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 252 'dmul' 'tmp_2_i' <Predicate = true> <Delay = 8.33> <Core = "DMul">   --->   Core 116 'DMul' <Latency = 4> <II = 1> <Delay = 8.33> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 32 <SV = 14> <Delay = 8.33>
+ST_32 : Operation 253 [3/5] (8.33ns)   --->   "%tmp_2_i = fmul double %tmp_i3, 5.000000e-02" [f_b_4_new_network/forw_back_new_network.c:91->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 253 'dmul' 'tmp_2_i' <Predicate = true> <Delay = 8.33> <Core = "DMul">   --->   Core 116 'DMul' <Latency = 4> <II = 1> <Delay = 8.33> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 33 <SV = 15> <Delay = 8.33>
+ST_33 : Operation 254 [2/5] (8.33ns)   --->   "%tmp_2_i = fmul double %tmp_i3, 5.000000e-02" [f_b_4_new_network/forw_back_new_network.c:91->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 254 'dmul' 'tmp_2_i' <Predicate = true> <Delay = 8.33> <Core = "DMul">   --->   Core 116 'DMul' <Latency = 4> <II = 1> <Delay = 8.33> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 34 <SV = 16> <Delay = 8.33>
+ST_34 : Operation 255 [1/5] (8.33ns)   --->   "%tmp_2_i = fmul double %tmp_i3, 5.000000e-02" [f_b_4_new_network/forw_back_new_network.c:91->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 255 'dmul' 'tmp_2_i' <Predicate = true> <Delay = 8.33> <Core = "DMul">   --->   Core 116 'DMul' <Latency = 4> <II = 1> <Delay = 8.33> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 35 <SV = 17> <Delay = 3.32>
+ST_35 : Operation 256 [2/2] (3.32ns)   --->   "%tmp_3_i = fptrunc double %tmp_2_i to float" [f_b_4_new_network/forw_back_new_network.c:91->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 256 'fptrunc' 'tmp_3_i' <Predicate = true> <Delay = 3.32> <Core = "Double2Float">   --->   Core 123 'Double2Float' <Latency = 1> <II = 1> <Delay = 3.32> <FuncUnit> <Opcode : 'fptrunc'> <InPorts = 1> <OutPorts = 1>
+
+State 36 <SV = 18> <Delay = 4.11>
+ST_36 : Operation 257 [1/2] (3.32ns)   --->   "%tmp_3_i = fptrunc double %tmp_2_i to float" [f_b_4_new_network/forw_back_new_network.c:91->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 257 'fptrunc' 'tmp_3_i' <Predicate = (!and_ln88)> <Delay = 3.32> <Core = "Double2Float">   --->   Core 123 'Double2Float' <Latency = 1> <II = 1> <Delay = 3.32> <FuncUnit> <Opcode : 'fptrunc'> <InPorts = 1> <OutPorts = 1>
+ST_36 : Operation 258 [1/1] (0.00ns)   --->   "%grad_1_addr_1 = getelementptr [20 x float]* %grad_1, i64 0, i64 %zext_ln88" [f_b_4_new_network/forw_back_new_network.c:91->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 258 'getelementptr' 'grad_1_addr_1' <Predicate = (!and_ln88)> <Delay = 0.00>
+ST_36 : Operation 259 [1/1] (0.79ns)   --->   "store float %tmp_3_i, float* %grad_1_addr_1, align 4" [f_b_4_new_network/forw_back_new_network.c:91->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 259 'store' <Predicate = (!and_ln88)> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_36 : Operation 260 [1/1] (0.00ns)   --->   "br label %15"   --->   Operation 260 'br' <Predicate = (!and_ln88)> <Delay = 0.00>
+ST_36 : Operation 261 [1/1] (0.00ns)   --->   "br label %11" [f_b_4_new_network/forw_back_new_network.c:87->f_b_4_new_network/forw_back_new_network.c:164]   --->   Operation 261 'br' <Predicate = true> <Delay = 0.00>
+
+State 37 <SV = 9> <Delay = 1.35>
+ST_37 : Operation 262 [1/1] (0.00ns)   --->   "%i_0_i15 = phi i6 [ 0, %ReluBackPropagation.exit ], [ %i_6, %.loopexit6.loopexit ]"   --->   Operation 262 'phi' 'i_0_i15' <Predicate = true> <Delay = 0.00>
+ST_37 : Operation 263 [1/1] (0.00ns)   --->   "%empty_42 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 36, i64 36, i64 36) nounwind"   --->   Operation 263 'speclooptripcount' 'empty_42' <Predicate = true> <Delay = 0.00>
+ST_37 : Operation 264 [1/1] (0.87ns)   --->   "%icmp_ln73_1 = icmp eq i6 %i_0_i15, -28" [f_b_4_new_network/forw_back_new_network.c:73->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 264 'icmp' 'icmp_ln73_1' <Predicate = true> <Delay = 0.87> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 265 [1/1] (0.88ns)   --->   "%i_6 = add i6 %i_0_i15, 1" [f_b_4_new_network/forw_back_new_network.c:73->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 265 'add' 'i_6' <Predicate = true> <Delay = 0.88> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 266 [1/1] (0.00ns)   --->   "br i1 %icmp_ln73_1, label %MatrixBackPropagationMultiply.exit, label %.preheader.preheader.i19" [f_b_4_new_network/forw_back_new_network.c:73->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 266 'br' <Predicate = true> <Delay = 0.00>
+ST_37 : Operation 267 [1/1] (0.00ns)   --->   "%zext_ln75_3 = zext i6 %i_0_i15 to i64" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 267 'zext' 'zext_ln75_3' <Predicate = (!icmp_ln73_1)> <Delay = 0.00>
+ST_37 : Operation 268 [1/1] (0.00ns)   --->   "%fc_in_1_0_addr = getelementptr [36 x float]* @fc_in_1_0, i64 0, i64 %zext_ln75_3" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 268 'getelementptr' 'fc_in_1_0_addr' <Predicate = (!icmp_ln73_1)> <Delay = 0.00>
+ST_37 : Operation 269 [2/2] (1.35ns)   --->   "%fc_in_1_0_load = load float* %fc_in_1_0_addr, align 4" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 269 'load' 'fc_in_1_0_load' <Predicate = (!icmp_ln73_1)> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_37 : Operation 270 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecMemCore([200 x float]* @fc_hidden_layer2, [1 x i8]* @p_str, [14 x i8]* @p_str1, [1 x i8]* @p_str, i32 -1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_4_new_network/forw_back_new_network.c:79->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 270 'specmemcore' <Predicate = (icmp_ln73_1)> <Delay = 0.00>
+ST_37 : Operation 271 [1/1] (0.75ns)   --->   "br label %.loopexit5" [f_b_4_new_network/forw_back_new_network.c:79->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 271 'br' <Predicate = (icmp_ln73_1)> <Delay = 0.75>
+
+State 38 <SV = 10> <Delay = 1.35>
+ST_38 : Operation 272 [1/1] (0.00ns)   --->   "%shl_ln75_2 = call i10 @_ssdm_op_BitConcatenate.i10.i6.i4(i6 %i_0_i15, i4 0)" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 272 'bitconcatenate' 'shl_ln75_2' <Predicate = true> <Delay = 0.00>
+ST_38 : Operation 273 [1/1] (0.00ns)   --->   "%shl_ln75_3 = call i8 @_ssdm_op_BitConcatenate.i8.i6.i2(i6 %i_0_i15, i2 0)" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 273 'bitconcatenate' 'shl_ln75_3' <Predicate = true> <Delay = 0.00>
+ST_38 : Operation 274 [1/2] (1.35ns)   --->   "%fc_in_1_0_load = load float* %fc_in_1_0_addr, align 4" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 274 'load' 'fc_in_1_0_load' <Predicate = true> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_38 : Operation 275 [1/1] (0.75ns)   --->   "br label %.preheader.i22" [f_b_4_new_network/forw_back_new_network.c:74->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 275 'br' <Predicate = true> <Delay = 0.75>
+
+State 39 <SV = 11> <Delay = 1.84>
+ST_39 : Operation 276 [1/1] (0.00ns)   --->   "%j_0_i20 = phi i5 [ %j_11, %16 ], [ 0, %.preheader.preheader.i19 ]"   --->   Operation 276 'phi' 'j_0_i20' <Predicate = true> <Delay = 0.00>
+ST_39 : Operation 277 [1/1] (0.00ns)   --->   "%j_0_i20_cast14 = zext i5 %j_0_i20 to i8" [f_b_4_new_network/forw_back_new_network.c:74->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 277 'zext' 'j_0_i20_cast14' <Predicate = true> <Delay = 0.00>
+ST_39 : Operation 278 [1/1] (0.00ns)   --->   "%empty_43 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 20, i64 20, i64 20) nounwind"   --->   Operation 278 'speclooptripcount' 'empty_43' <Predicate = true> <Delay = 0.00>
+ST_39 : Operation 279 [1/1] (0.87ns)   --->   "%icmp_ln74_1 = icmp eq i5 %j_0_i20, -12" [f_b_4_new_network/forw_back_new_network.c:74->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 279 'icmp' 'icmp_ln74_1' <Predicate = true> <Delay = 0.87> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 280 [1/1] (0.87ns)   --->   "%j_11 = add i5 %j_0_i20, 1" [f_b_4_new_network/forw_back_new_network.c:74->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 280 'add' 'j_11' <Predicate = true> <Delay = 0.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 281 [1/1] (0.00ns)   --->   "br i1 %icmp_ln74_1, label %.loopexit6.loopexit, label %16" [f_b_4_new_network/forw_back_new_network.c:74->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 281 'br' <Predicate = true> <Delay = 0.00>
+ST_39 : Operation 282 [1/1] (0.00ns)   --->   "%zext_ln75_4 = zext i5 %j_0_i20 to i64" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 282 'zext' 'zext_ln75_4' <Predicate = (!icmp_ln74_1)> <Delay = 0.00>
+ST_39 : Operation 283 [1/1] (0.00ns)   --->   "%grad_1_addr_2 = getelementptr [20 x float]* %grad_1, i64 0, i64 %zext_ln75_4" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 283 'getelementptr' 'grad_1_addr_2' <Predicate = (!icmp_ln74_1)> <Delay = 0.00>
+ST_39 : Operation 284 [2/2] (0.79ns)   --->   "%grad_1_load = load float* %grad_1_addr_2, align 4" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 284 'load' 'grad_1_load' <Predicate = (!icmp_ln74_1)> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_39 : Operation 285 [1/1] (0.90ns)   --->   "%add_ln75_2 = add i8 %shl_ln75_3, %j_0_i20_cast14" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 285 'add' 'add_ln75_2' <Predicate = (!icmp_ln74_1)> <Delay = 0.90> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 286 [1/1] (0.00ns)   --->   "%zext_ln75_7 = zext i8 %add_ln75_2 to i10" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 286 'zext' 'zext_ln75_7' <Predicate = (!icmp_ln74_1)> <Delay = 0.00>
+ST_39 : Operation 287 [1/1] (0.93ns)   --->   "%add_ln75_3 = add i10 %zext_ln75_7, %shl_ln75_2" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 287 'add' 'add_ln75_3' <Predicate = (!icmp_ln74_1)> <Delay = 0.93> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 288 [1/1] (0.00ns)   --->   "br label %.loopexit6"   --->   Operation 288 'br' <Predicate = (icmp_ln74_1)> <Delay = 0.00>
+
+State 40 <SV = 12> <Delay = 0.79>
+ST_40 : Operation 289 [1/2] (0.79ns)   --->   "%grad_1_load = load float* %grad_1_addr_2, align 4" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 289 'load' 'grad_1_load' <Predicate = true> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+
+State 41 <SV = 13> <Delay = 8.28>
+ST_41 : Operation 290 [3/3] (8.28ns)   --->   "%tmp_i3_44 = fmul float %fc_in_1_0_load, %grad_1_load" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 290 'fmul' 'tmp_i3_44' <Predicate = true> <Delay = 8.28> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.28> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 42 <SV = 14> <Delay = 8.28>
+ST_42 : Operation 291 [2/3] (8.28ns)   --->   "%tmp_i3_44 = fmul float %fc_in_1_0_load, %grad_1_load" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 291 'fmul' 'tmp_i3_44' <Predicate = true> <Delay = 8.28> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.28> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 43 <SV = 15> <Delay = 8.28>
+ST_43 : Operation 292 [1/3] (8.28ns)   --->   "%tmp_i3_44 = fmul float %fc_in_1_0_load, %grad_1_load" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 292 'fmul' 'tmp_i3_44' <Predicate = true> <Delay = 8.28> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.28> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 44 <SV = 16> <Delay = 1.35>
+ST_44 : Operation 293 [1/1] (0.00ns)   --->   "%zext_ln75_5 = zext i10 %add_ln75_3 to i64" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 293 'zext' 'zext_ln75_5' <Predicate = true> <Delay = 0.00>
+ST_44 : Operation 294 [1/1] (0.00ns)   --->   "%wgrad_1_addr = getelementptr [720 x float]* %wgrad_1, i64 0, i64 %zext_ln75_5" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 294 'getelementptr' 'wgrad_1_addr' <Predicate = true> <Delay = 0.00>
+ST_44 : Operation 295 [1/1] (1.35ns)   --->   "store float %tmp_i3_44, float* %wgrad_1_addr, align 4" [f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 295 'store' <Predicate = true> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_44 : Operation 296 [1/1] (0.00ns)   --->   "br label %.preheader.i22" [f_b_4_new_network/forw_back_new_network.c:74->f_b_4_new_network/forw_back_new_network.c:166]   --->   Operation 296 'br' <Predicate = true> <Delay = 0.00>
+
+State 45 <SV = 10> <Delay = 1.35>
+ST_45 : Operation 297 [1/1] (0.00ns)   --->   "%i_0_i31 = phi i6 [ 0, %MatrixBackPropagationMultiply.exit ], [ %i_8, %.loopexit5.loopexit ]"   --->   Operation 297 'phi' 'i_0_i31' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 298 [1/1] (0.00ns)   --->   "%empty_45 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 36, i64 36, i64 36) nounwind"   --->   Operation 298 'speclooptripcount' 'empty_45' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 299 [1/1] (0.87ns)   --->   "%icmp_ln79_1 = icmp eq i6 %i_0_i31, -28" [f_b_4_new_network/forw_back_new_network.c:79->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 299 'icmp' 'icmp_ln79_1' <Predicate = true> <Delay = 0.87> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 300 [1/1] (0.88ns)   --->   "%i_8 = add i6 %i_0_i31, 1" [f_b_4_new_network/forw_back_new_network.c:79->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 300 'add' 'i_8' <Predicate = true> <Delay = 0.88> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 301 [1/1] (0.00ns)   --->   "br i1 %icmp_ln79_1, label %CalculateMatrixGrad.exit, label %17" [f_b_4_new_network/forw_back_new_network.c:79->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 301 'br' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 302 [1/1] (0.00ns)   --->   "%zext_ln80_1 = zext i6 %i_0_i31 to i64" [f_b_4_new_network/forw_back_new_network.c:80->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 302 'zext' 'zext_ln80_1' <Predicate = (!icmp_ln79_1)> <Delay = 0.00>
+ST_45 : Operation 303 [1/1] (0.00ns)   --->   "%grad_0_addr = getelementptr [36 x float]* %grad_0, i64 0, i64 %zext_ln80_1" [f_b_4_new_network/forw_back_new_network.c:80->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 303 'getelementptr' 'grad_0_addr' <Predicate = (!icmp_ln79_1)> <Delay = 0.00>
+ST_45 : Operation 304 [1/1] (1.35ns)   --->   "store float 0.000000e+00, float* %grad_0_addr, align 4" [f_b_4_new_network/forw_back_new_network.c:80->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 304 'store' <Predicate = (!icmp_ln79_1)> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_45 : Operation 305 [1/1] (0.00ns)   --->   "%shl_ln82_2 = call i10 @_ssdm_op_BitConcatenate.i10.i6.i4(i6 %i_0_i31, i4 0)" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 305 'bitconcatenate' 'shl_ln82_2' <Predicate = (!icmp_ln79_1)> <Delay = 0.00>
+ST_45 : Operation 306 [1/1] (0.00ns)   --->   "%shl_ln82_3 = call i8 @_ssdm_op_BitConcatenate.i8.i6.i2(i6 %i_0_i31, i2 0)" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 306 'bitconcatenate' 'shl_ln82_3' <Predicate = (!icmp_ln79_1)> <Delay = 0.00>
+ST_45 : Operation 307 [1/1] (0.75ns)   --->   "br label %18" [f_b_4_new_network/forw_back_new_network.c:81->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 307 'br' <Predicate = (!icmp_ln79_1)> <Delay = 0.75>
+ST_45 : Operation 308 [2/2] (0.00ns)   --->   "call fastcc void @MaxPooBackPropagatio([36 x float]* %grad_0, [144 x float]* %conv_grad_2) nounwind" [f_b_4_new_network/forw_back_new_network.c:173]   --->   Operation 308 'call' <Predicate = (icmp_ln79_1)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 46 <SV = 11> <Delay = 3.19>
+ST_46 : Operation 309 [1/1] (0.00ns)   --->   "%empty_46 = phi float [ 0.000000e+00, %17 ], [ %tmp_i4_48, %19 ]" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 309 'phi' 'empty_46' <Predicate = true> <Delay = 0.00>
+ST_46 : Operation 310 [1/1] (0.00ns)   --->   "%j_0_i36 = phi i5 [ 0, %17 ], [ %j_12, %19 ]"   --->   Operation 310 'phi' 'j_0_i36' <Predicate = true> <Delay = 0.00>
+ST_46 : Operation 311 [1/1] (0.00ns)   --->   "%j_0_i36_cast11 = zext i5 %j_0_i36 to i8" [f_b_4_new_network/forw_back_new_network.c:81->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 311 'zext' 'j_0_i36_cast11' <Predicate = true> <Delay = 0.00>
+ST_46 : Operation 312 [1/1] (0.00ns)   --->   "%empty_47 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 20, i64 20, i64 20) nounwind"   --->   Operation 312 'speclooptripcount' 'empty_47' <Predicate = true> <Delay = 0.00>
+ST_46 : Operation 313 [1/1] (0.87ns)   --->   "%icmp_ln81_1 = icmp eq i5 %j_0_i36, -12" [f_b_4_new_network/forw_back_new_network.c:81->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 313 'icmp' 'icmp_ln81_1' <Predicate = true> <Delay = 0.87> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_46 : Operation 314 [1/1] (0.87ns)   --->   "%j_12 = add i5 %j_0_i36, 1" [f_b_4_new_network/forw_back_new_network.c:81->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 314 'add' 'j_12' <Predicate = true> <Delay = 0.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_46 : Operation 315 [1/1] (0.00ns)   --->   "br i1 %icmp_ln81_1, label %.loopexit5.loopexit, label %19" [f_b_4_new_network/forw_back_new_network.c:81->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 315 'br' <Predicate = true> <Delay = 0.00>
+ST_46 : Operation 316 [1/1] (0.90ns)   --->   "%add_ln82_2 = add i8 %shl_ln82_3, %j_0_i36_cast11" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 316 'add' 'add_ln82_2' <Predicate = (!icmp_ln81_1)> <Delay = 0.90> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_46 : Operation 317 [1/1] (0.00ns)   --->   "%zext_ln82_5 = zext i8 %add_ln82_2 to i10" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 317 'zext' 'zext_ln82_5' <Predicate = (!icmp_ln81_1)> <Delay = 0.00>
+ST_46 : Operation 318 [1/1] (0.93ns)   --->   "%add_ln82_3 = add i10 %zext_ln82_5, %shl_ln82_2" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 318 'add' 'add_ln82_3' <Predicate = (!icmp_ln81_1)> <Delay = 0.93> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_46 : Operation 319 [1/1] (0.00ns)   --->   "%zext_ln82_2 = zext i10 %add_ln82_3 to i64" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 319 'zext' 'zext_ln82_2' <Predicate = (!icmp_ln81_1)> <Delay = 0.00>
+ST_46 : Operation 320 [1/1] (0.00ns)   --->   "%fc_hidden_layer1_add = getelementptr [720 x float]* @fc_hidden_layer1, i64 0, i64 %zext_ln82_2" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 320 'getelementptr' 'fc_hidden_layer1_add' <Predicate = (!icmp_ln81_1)> <Delay = 0.00>
+ST_46 : Operation 321 [2/2] (1.35ns)   --->   "%fc_hidden_layer1_loa = load float* %fc_hidden_layer1_add, align 4" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 321 'load' 'fc_hidden_layer1_loa' <Predicate = (!icmp_ln81_1)> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_46 : Operation 322 [1/1] (0.00ns)   --->   "%zext_ln82_3 = zext i5 %j_0_i36 to i64" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 322 'zext' 'zext_ln82_3' <Predicate = (!icmp_ln81_1)> <Delay = 0.00>
+ST_46 : Operation 323 [1/1] (0.00ns)   --->   "%grad_1_addr_3 = getelementptr [20 x float]* %grad_1, i64 0, i64 %zext_ln82_3" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 323 'getelementptr' 'grad_1_addr_3' <Predicate = (!icmp_ln81_1)> <Delay = 0.00>
+ST_46 : Operation 324 [2/2] (0.79ns)   --->   "%grad_1_load_1 = load float* %grad_1_addr_3, align 4" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 324 'load' 'grad_1_load_1' <Predicate = (!icmp_ln81_1)> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_46 : Operation 325 [1/1] (0.00ns)   --->   "br label %.loopexit5"   --->   Operation 325 'br' <Predicate = (icmp_ln81_1)> <Delay = 0.00>
+
+State 47 <SV = 12> <Delay = 1.35>
+ST_47 : Operation 326 [1/2] (1.35ns)   --->   "%fc_hidden_layer1_loa = load float* %fc_hidden_layer1_add, align 4" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 326 'load' 'fc_hidden_layer1_loa' <Predicate = true> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_47 : Operation 327 [1/2] (0.79ns)   --->   "%grad_1_load_1 = load float* %grad_1_addr_3, align 4" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 327 'load' 'grad_1_load_1' <Predicate = true> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+
+State 48 <SV = 13> <Delay = 8.28>
+ST_48 : Operation 328 [3/3] (8.28ns)   --->   "%tmp_i4 = fmul float %fc_hidden_layer1_loa, %grad_1_load_1" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 328 'fmul' 'tmp_i4' <Predicate = true> <Delay = 8.28> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.28> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 49 <SV = 14> <Delay = 8.28>
+ST_49 : Operation 329 [2/3] (8.28ns)   --->   "%tmp_i4 = fmul float %fc_hidden_layer1_loa, %grad_1_load_1" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 329 'fmul' 'tmp_i4' <Predicate = true> <Delay = 8.28> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.28> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 50 <SV = 15> <Delay = 8.28>
+ST_50 : Operation 330 [1/3] (8.28ns)   --->   "%tmp_i4 = fmul float %fc_hidden_layer1_loa, %grad_1_load_1" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 330 'fmul' 'tmp_i4' <Predicate = true> <Delay = 8.28> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.28> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 51 <SV = 16> <Delay = 7.71>
+ST_51 : Operation 331 [4/4] (7.71ns)   --->   "%tmp_i4_48 = fadd float %empty_46, %tmp_i4" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 331 'fadd' 'tmp_i4_48' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 52 <SV = 17> <Delay = 7.71>
+ST_52 : Operation 332 [3/4] (7.71ns)   --->   "%tmp_i4_48 = fadd float %empty_46, %tmp_i4" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 332 'fadd' 'tmp_i4_48' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 53 <SV = 18> <Delay = 7.71>
+ST_53 : Operation 333 [2/4] (7.71ns)   --->   "%tmp_i4_48 = fadd float %empty_46, %tmp_i4" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 333 'fadd' 'tmp_i4_48' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 54 <SV = 19> <Delay = 7.71>
+ST_54 : Operation 334 [1/4] (7.71ns)   --->   "%tmp_i4_48 = fadd float %empty_46, %tmp_i4" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 334 'fadd' 'tmp_i4_48' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 55 <SV = 20> <Delay = 1.35>
+ST_55 : Operation 335 [1/1] (1.35ns)   --->   "store float %tmp_i4_48, float* %grad_0_addr, align 4" [f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 335 'store' <Predicate = true> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_55 : Operation 336 [1/1] (0.00ns)   --->   "br label %18" [f_b_4_new_network/forw_back_new_network.c:81->f_b_4_new_network/forw_back_new_network.c:168]   --->   Operation 336 'br' <Predicate = true> <Delay = 0.00>
+
+State 56 <SV = 11> <Delay = 0.00>
+ST_56 : Operation 337 [1/2] (0.00ns)   --->   "call fastcc void @MaxPooBackPropagatio([36 x float]* %grad_0, [144 x float]* %conv_grad_2) nounwind" [f_b_4_new_network/forw_back_new_network.c:173]   --->   Operation 337 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 57 <SV = 12> <Delay = 0.00>
+ST_57 : Operation 338 [2/2] (0.00ns)   --->   "call fastcc void @Conv2d.2([144 x float]* %conv_grad_2, [9 x float]* %kernel_grad_2) nounwind" [f_b_4_new_network/forw_back_new_network.c:176]   --->   Operation 338 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 58 <SV = 13> <Delay = 0.00>
+ST_58 : Operation 339 [1/2] (0.00ns)   --->   "call fastcc void @Conv2d.2([144 x float]* %conv_grad_2, [9 x float]* %kernel_grad_2) nounwind" [f_b_4_new_network/forw_back_new_network.c:176]   --->   Operation 339 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 59 <SV = 14> <Delay = 0.00>
+ST_59 : Operation 340 [2/2] (0.00ns)   --->   "call fastcc void @Padding([144 x float]* %conv_grad_2, [256 x float]* %conv_grad_2_padding) nounwind" [f_b_4_new_network/forw_back_new_network.c:178]   --->   Operation 340 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 60 <SV = 15> <Delay = 0.75>
+ST_60 : Operation 341 [1/2] (0.00ns)   --->   "call fastcc void @Padding([144 x float]* %conv_grad_2, [256 x float]* %conv_grad_2_padding) nounwind" [f_b_4_new_network/forw_back_new_network.c:178]   --->   Operation 341 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_60 : Operation 342 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecMemCore([200 x float]* @fc_hidden_layer2, [1 x i8]* @p_str, [14 x i8]* @p_str1, [1 x i8]* @p_str, i32 -1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_4_new_network/forw_back_new_network.c:107->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 342 'specmemcore' <Predicate = true> <Delay = 0.00>
+ST_60 : Operation 343 [1/1] (0.75ns)   --->   "br label %.loopexit4" [f_b_4_new_network/forw_back_new_network.c:107->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 343 'br' <Predicate = true> <Delay = 0.75>
+
+State 61 <SV = 16> <Delay = 8.75>
+ST_61 : Operation 344 [1/1] (0.00ns)   --->   "%i_0_i49 = phi i2 [ 0, %CalculateMatrixGrad.exit ], [ %i_9, %.loopexit4.loopexit ]"   --->   Operation 344 'phi' 'i_0_i49' <Predicate = true> <Delay = 0.00>
+ST_61 : Operation 345 [1/1] (0.00ns)   --->   "%zext_ln107 = zext i2 %i_0_i49 to i5" [f_b_4_new_network/forw_back_new_network.c:107->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 345 'zext' 'zext_ln107' <Predicate = true> <Delay = 0.00>
+ST_61 : Operation 346 [1/1] (0.51ns)   --->   "%icmp_ln107 = icmp eq i2 %i_0_i49, -1" [f_b_4_new_network/forw_back_new_network.c:107->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 346 'icmp' 'icmp_ln107' <Predicate = true> <Delay = 0.51> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_61 : Operation 347 [1/1] (0.00ns)   --->   "%empty_49 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 3, i64 3, i64 3) nounwind"   --->   Operation 347 'speclooptripcount' 'empty_49' <Predicate = true> <Delay = 0.00>
+ST_61 : Operation 348 [1/1] (0.62ns)   --->   "%i_9 = add i2 %i_0_i49, 1" [f_b_4_new_network/forw_back_new_network.c:107->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 348 'add' 'i_9' <Predicate = true> <Delay = 0.62> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_61 : Operation 349 [1/1] (0.00ns)   --->   "br i1 %icmp_ln107, label %OverturnKernel.exit, label %.preheader.preheader.i50" [f_b_4_new_network/forw_back_new_network.c:107->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 349 'br' <Predicate = true> <Delay = 0.00>
+ST_61 : Operation 350 [1/1] (0.00ns)   --->   "%shl_ln3 = call i4 @_ssdm_op_BitConcatenate.i4.i2.i2(i2 %i_0_i49, i2 0)" [f_b_4_new_network/forw_back_new_network.c:109->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 350 'bitconcatenate' 'shl_ln3' <Predicate = (!icmp_ln107)> <Delay = 0.00>
+ST_61 : Operation 351 [1/1] (0.00ns)   --->   "%zext_ln109_2 = zext i4 %shl_ln3 to i5" [f_b_4_new_network/forw_back_new_network.c:109->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 351 'zext' 'zext_ln109_2' <Predicate = (!icmp_ln107)> <Delay = 0.00>
+ST_61 : Operation 352 [1/1] (0.86ns)   --->   "%sub_ln109 = sub i5 %zext_ln109_2, %zext_ln107" [f_b_4_new_network/forw_back_new_network.c:109->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 352 'sub' 'sub_ln109' <Predicate = (!icmp_ln107)> <Delay = 0.86> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_61 : Operation 353 [1/1] (0.62ns)   --->   "%sub_ln109_1 = sub i2 -2, %i_0_i49" [f_b_4_new_network/forw_back_new_network.c:109->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 353 'sub' 'sub_ln109_1' <Predicate = (!icmp_ln107)> <Delay = 0.62> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_61 : Operation 354 [1/1] (0.00ns)   --->   "%zext_ln109_3 = zext i2 %sub_ln109_1 to i5" [f_b_4_new_network/forw_back_new_network.c:109->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 354 'zext' 'zext_ln109_3' <Predicate = (!icmp_ln107)> <Delay = 0.00>
+ST_61 : Operation 355 [1/1] (0.00ns)   --->   "%shl_ln109_1 = call i4 @_ssdm_op_BitConcatenate.i4.i2.i2(i2 %sub_ln109_1, i2 0)" [f_b_4_new_network/forw_back_new_network.c:109->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 355 'bitconcatenate' 'shl_ln109_1' <Predicate = (!icmp_ln107)> <Delay = 0.00>
+ST_61 : Operation 356 [1/1] (0.00ns)   --->   "%zext_ln109_4 = zext i4 %shl_ln109_1 to i5" [f_b_4_new_network/forw_back_new_network.c:109->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 356 'zext' 'zext_ln109_4' <Predicate = (!icmp_ln107)> <Delay = 0.00>
+ST_61 : Operation 357 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%sub_ln109_2 = sub i5 %zext_ln109_4, %zext_ln109_3" [f_b_4_new_network/forw_back_new_network.c:109->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 357 'sub' 'sub_ln109_2' <Predicate = (!icmp_ln107)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.35> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_61 : Operation 358 [1/1] (0.71ns) (root node of TernaryAdder)   --->   "%add_ln109 = add i5 %sub_ln109_2, 2" [f_b_4_new_network/forw_back_new_network.c:109->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 358 'add' 'add_ln109' <Predicate = (!icmp_ln107)> <Delay = 0.71> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.35> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_61 : Operation 359 [1/1] (0.75ns)   --->   "br label %.preheader.i52" [f_b_4_new_network/forw_back_new_network.c:108->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 359 'br' <Predicate = (!icmp_ln107)> <Delay = 0.75>
+ST_61 : Operation 360 [7/7] (8.75ns)   --->   "%lr_in_load_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %lr_in_addr, i32 1)" [f_b_4_new_network/forw_back_new_network.c:190]   --->   Operation 360 'readreq' 'lr_in_load_req' <Predicate = (icmp_ln107)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 62 <SV = 17> <Delay = 1.66>
+ST_62 : Operation 361 [1/1] (0.00ns)   --->   "%j_0_i51 = phi i2 [ %j_13, %20 ], [ 0, %.preheader.preheader.i50 ]"   --->   Operation 361 'phi' 'j_0_i51' <Predicate = true> <Delay = 0.00>
+ST_62 : Operation 362 [1/1] (0.00ns)   --->   "%zext_ln108 = zext i2 %j_0_i51 to i5" [f_b_4_new_network/forw_back_new_network.c:108->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 362 'zext' 'zext_ln108' <Predicate = true> <Delay = 0.00>
+ST_62 : Operation 363 [1/1] (0.51ns)   --->   "%icmp_ln108 = icmp eq i2 %j_0_i51, -1" [f_b_4_new_network/forw_back_new_network.c:108->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 363 'icmp' 'icmp_ln108' <Predicate = true> <Delay = 0.51> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_62 : Operation 364 [1/1] (0.00ns)   --->   "%empty_50 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 3, i64 3, i64 3) nounwind"   --->   Operation 364 'speclooptripcount' 'empty_50' <Predicate = true> <Delay = 0.00>
+ST_62 : Operation 365 [1/1] (0.62ns)   --->   "%j_13 = add i2 %j_0_i51, 1" [f_b_4_new_network/forw_back_new_network.c:108->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 365 'add' 'j_13' <Predicate = true> <Delay = 0.62> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_62 : Operation 366 [1/1] (0.00ns)   --->   "br i1 %icmp_ln108, label %.loopexit4.loopexit, label %20" [f_b_4_new_network/forw_back_new_network.c:108->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 366 'br' <Predicate = true> <Delay = 0.00>
+ST_62 : Operation 367 [1/1] (0.87ns)   --->   "%add_ln109_1 = add i5 %sub_ln109, %zext_ln108" [f_b_4_new_network/forw_back_new_network.c:109->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 367 'add' 'add_ln109_1' <Predicate = (!icmp_ln108)> <Delay = 0.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_62 : Operation 368 [1/1] (0.00ns)   --->   "%sext_ln109 = sext i5 %add_ln109_1 to i32" [f_b_4_new_network/forw_back_new_network.c:109->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 368 'sext' 'sext_ln109' <Predicate = (!icmp_ln108)> <Delay = 0.00>
+ST_62 : Operation 369 [1/1] (0.00ns)   --->   "%zext_ln109 = zext i32 %sext_ln109 to i64" [f_b_4_new_network/forw_back_new_network.c:109->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 369 'zext' 'zext_ln109' <Predicate = (!icmp_ln108)> <Delay = 0.00>
+ST_62 : Operation 370 [1/1] (0.00ns)   --->   "%conv_kernel_2_addr = getelementptr [9 x float]* @conv_kernel_2, i64 0, i64 %zext_ln109" [f_b_4_new_network/forw_back_new_network.c:109->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 370 'getelementptr' 'conv_kernel_2_addr' <Predicate = (!icmp_ln108)> <Delay = 0.00>
+ST_62 : Operation 371 [2/2] (0.79ns)   --->   "%conv_kernel_2_load = load float* %conv_kernel_2_addr, align 4" [f_b_4_new_network/forw_back_new_network.c:109->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 371 'load' 'conv_kernel_2_load' <Predicate = (!icmp_ln108)> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_62 : Operation 372 [1/1] (0.87ns)   --->   "%sub_ln109_3 = sub i5 %add_ln109, %zext_ln108" [f_b_4_new_network/forw_back_new_network.c:109->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 372 'sub' 'sub_ln109_3' <Predicate = (!icmp_ln108)> <Delay = 0.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_62 : Operation 373 [1/1] (0.00ns)   --->   "br label %.loopexit4"   --->   Operation 373 'br' <Predicate = (icmp_ln108)> <Delay = 0.00>
+
+State 63 <SV = 18> <Delay = 1.58>
+ST_63 : Operation 374 [1/2] (0.79ns)   --->   "%conv_kernel_2_load = load float* %conv_kernel_2_addr, align 4" [f_b_4_new_network/forw_back_new_network.c:109->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 374 'load' 'conv_kernel_2_load' <Predicate = true> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_63 : Operation 375 [1/1] (0.00ns)   --->   "%sext_ln109_1 = sext i5 %sub_ln109_3 to i32" [f_b_4_new_network/forw_back_new_network.c:109->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 375 'sext' 'sext_ln109_1' <Predicate = true> <Delay = 0.00>
+ST_63 : Operation 376 [1/1] (0.00ns)   --->   "%zext_ln109_1 = zext i32 %sext_ln109_1 to i64" [f_b_4_new_network/forw_back_new_network.c:109->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 376 'zext' 'zext_ln109_1' <Predicate = true> <Delay = 0.00>
+ST_63 : Operation 377 [1/1] (0.00ns)   --->   "%kernel_grad_2_overtu_1 = getelementptr [9 x float]* %kernel_grad_2_overtu, i64 0, i64 %zext_ln109_1" [f_b_4_new_network/forw_back_new_network.c:109->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 377 'getelementptr' 'kernel_grad_2_overtu_1' <Predicate = true> <Delay = 0.00>
+ST_63 : Operation 378 [1/1] (0.79ns)   --->   "store float %conv_kernel_2_load, float* %kernel_grad_2_overtu_1, align 4" [f_b_4_new_network/forw_back_new_network.c:109->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 378 'store' <Predicate = true> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_63 : Operation 379 [1/1] (0.00ns)   --->   "br label %.preheader.i52" [f_b_4_new_network/forw_back_new_network.c:108->f_b_4_new_network/forw_back_new_network.c:180]   --->   Operation 379 'br' <Predicate = true> <Delay = 0.00>
+
+State 64 <SV = 17> <Delay = 8.75>
+ST_64 : Operation 380 [6/7] (8.75ns)   --->   "%lr_in_load_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %lr_in_addr, i32 1)" [f_b_4_new_network/forw_back_new_network.c:190]   --->   Operation 380 'readreq' 'lr_in_load_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_64 : Operation 381 [7/7] (8.75ns)   --->   "%lr_in_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %lr_in_addr, i32 1)" [f_b_4_new_network/forw_back_new_network.c:191]   --->   Operation 381 'readreq' 'lr_in_load_1_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 65 <SV = 18> <Delay = 8.75>
+ST_65 : Operation 382 [5/7] (8.75ns)   --->   "%lr_in_load_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %lr_in_addr, i32 1)" [f_b_4_new_network/forw_back_new_network.c:190]   --->   Operation 382 'readreq' 'lr_in_load_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_65 : Operation 383 [6/7] (8.75ns)   --->   "%lr_in_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %lr_in_addr, i32 1)" [f_b_4_new_network/forw_back_new_network.c:191]   --->   Operation 383 'readreq' 'lr_in_load_1_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 66 <SV = 19> <Delay = 8.75>
+ST_66 : Operation 384 [4/7] (8.75ns)   --->   "%lr_in_load_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %lr_in_addr, i32 1)" [f_b_4_new_network/forw_back_new_network.c:190]   --->   Operation 384 'readreq' 'lr_in_load_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_66 : Operation 385 [5/7] (8.75ns)   --->   "%lr_in_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %lr_in_addr, i32 1)" [f_b_4_new_network/forw_back_new_network.c:191]   --->   Operation 385 'readreq' 'lr_in_load_1_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 67 <SV = 20> <Delay = 8.75>
+ST_67 : Operation 386 [3/7] (8.75ns)   --->   "%lr_in_load_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %lr_in_addr, i32 1)" [f_b_4_new_network/forw_back_new_network.c:190]   --->   Operation 386 'readreq' 'lr_in_load_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_67 : Operation 387 [4/7] (8.75ns)   --->   "%lr_in_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %lr_in_addr, i32 1)" [f_b_4_new_network/forw_back_new_network.c:191]   --->   Operation 387 'readreq' 'lr_in_load_1_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 68 <SV = 21> <Delay = 8.75>
+ST_68 : Operation 388 [2/2] (0.00ns)   --->   "call fastcc void @Conv2d.1([256 x float]* %conv_grad_2_padding, [9 x float]* %kernel_grad_2_overtu, [196 x float]* %pool_grad_1) nounwind" [f_b_4_new_network/forw_back_new_network.c:182]   --->   Operation 388 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_68 : Operation 389 [2/7] (8.75ns)   --->   "%lr_in_load_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %lr_in_addr, i32 1)" [f_b_4_new_network/forw_back_new_network.c:190]   --->   Operation 389 'readreq' 'lr_in_load_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_68 : Operation 390 [3/7] (8.75ns)   --->   "%lr_in_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %lr_in_addr, i32 1)" [f_b_4_new_network/forw_back_new_network.c:191]   --->   Operation 390 'readreq' 'lr_in_load_1_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_68 : Operation 391 [7/7] (8.75ns)   --->   "%lr_in_load_2_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %lr_in_addr, i32 1)" [f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 391 'readreq' 'lr_in_load_2_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 69 <SV = 22> <Delay = 8.75>
+ST_69 : Operation 392 [1/2] (0.00ns)   --->   "call fastcc void @Conv2d.1([256 x float]* %conv_grad_2_padding, [9 x float]* %kernel_grad_2_overtu, [196 x float]* %pool_grad_1) nounwind" [f_b_4_new_network/forw_back_new_network.c:182]   --->   Operation 392 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_69 : Operation 393 [1/7] (8.75ns)   --->   "%lr_in_load_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %lr_in_addr, i32 1)" [f_b_4_new_network/forw_back_new_network.c:190]   --->   Operation 393 'readreq' 'lr_in_load_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_69 : Operation 394 [2/7] (8.75ns)   --->   "%lr_in_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %lr_in_addr, i32 1)" [f_b_4_new_network/forw_back_new_network.c:191]   --->   Operation 394 'readreq' 'lr_in_load_1_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_69 : Operation 395 [6/7] (8.75ns)   --->   "%lr_in_load_2_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %lr_in_addr, i32 1)" [f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 395 'readreq' 'lr_in_load_2_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 70 <SV = 23> <Delay = 8.75>
+ST_70 : Operation 396 [2/2] (0.00ns)   --->   "call fastcc void @MaxPooBackPropagatio.1([196 x float]* %pool_grad_1, [784 x float]* %conv_grad_1) nounwind" [f_b_4_new_network/forw_back_new_network.c:185]   --->   Operation 396 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_70 : Operation 397 [1/1] (8.75ns)   --->   "%lr_in_addr_read = call float @_ssdm_op_Read.m_axi.floatP(float* %lr_in_addr)" [f_b_4_new_network/forw_back_new_network.c:190]   --->   Operation 397 'read' 'lr_in_addr_read' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_70 : Operation 398 [1/7] (8.75ns)   --->   "%lr_in_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %lr_in_addr, i32 1)" [f_b_4_new_network/forw_back_new_network.c:191]   --->   Operation 398 'readreq' 'lr_in_load_1_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_70 : Operation 399 [5/7] (8.75ns)   --->   "%lr_in_load_2_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %lr_in_addr, i32 1)" [f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 399 'readreq' 'lr_in_load_2_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 71 <SV = 24> <Delay = 8.75>
+ST_71 : Operation 400 [1/2] (0.00ns)   --->   "call fastcc void @MaxPooBackPropagatio.1([196 x float]* %pool_grad_1, [784 x float]* %conv_grad_1) nounwind" [f_b_4_new_network/forw_back_new_network.c:185]   --->   Operation 400 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_71 : Operation 401 [1/1] (8.75ns)   --->   "%lr_in_addr_read_1 = call float @_ssdm_op_Read.m_axi.floatP(float* %lr_in_addr)" [f_b_4_new_network/forw_back_new_network.c:191]   --->   Operation 401 'read' 'lr_in_addr_read_1' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_71 : Operation 402 [4/7] (8.75ns)   --->   "%lr_in_load_2_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %lr_in_addr, i32 1)" [f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 402 'readreq' 'lr_in_load_2_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 72 <SV = 25> <Delay = 8.75>
+ST_72 : Operation 403 [2/2] (0.00ns)   --->   "call fastcc void @Conv2d([900 x float]* @mnist_data, [784 x float]* %conv_grad_1, [9 x float]* %kernel_grad_1) nounwind" [f_b_4_new_network/forw_back_new_network.c:187]   --->   Operation 403 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_72 : Operation 404 [2/2] (0.75ns)   --->   "call fastcc void @MatrixBackPropagatio([9 x float]* %kernel_grad_2, [9 x float]* @conv_kernel_2, float %lr_in_addr_read_1) nounwind" [f_b_4_new_network/forw_back_new_network.c:191]   --->   Operation 404 'call' <Predicate = true> <Delay = 0.75> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_72 : Operation 405 [3/7] (8.75ns)   --->   "%lr_in_load_2_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %lr_in_addr, i32 1)" [f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 405 'readreq' 'lr_in_load_2_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 73 <SV = 26> <Delay = 8.75>
+ST_73 : Operation 406 [1/2] (0.00ns)   --->   "call fastcc void @Conv2d([900 x float]* @mnist_data, [784 x float]* %conv_grad_1, [9 x float]* %kernel_grad_1) nounwind" [f_b_4_new_network/forw_back_new_network.c:187]   --->   Operation 406 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_73 : Operation 407 [1/2] (0.00ns)   --->   "call fastcc void @MatrixBackPropagatio([9 x float]* %kernel_grad_2, [9 x float]* @conv_kernel_2, float %lr_in_addr_read_1) nounwind" [f_b_4_new_network/forw_back_new_network.c:191]   --->   Operation 407 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_73 : Operation 408 [2/7] (8.75ns)   --->   "%lr_in_load_2_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %lr_in_addr, i32 1)" [f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 408 'readreq' 'lr_in_load_2_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 74 <SV = 27> <Delay = 8.75>
+ST_74 : Operation 409 [2/2] (0.75ns)   --->   "call fastcc void @MatrixBackPropagatio([9 x float]* %kernel_grad_1, [9 x float]* @conv_kernel_1, float %lr_in_addr_read) nounwind" [f_b_4_new_network/forw_back_new_network.c:190]   --->   Operation 409 'call' <Predicate = true> <Delay = 0.75> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_74 : Operation 410 [1/7] (8.75ns)   --->   "%lr_in_load_2_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %lr_in_addr, i32 1)" [f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 410 'readreq' 'lr_in_load_2_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 75 <SV = 28> <Delay = 8.75>
+ST_75 : Operation 411 [1/2] (0.00ns)   --->   "call fastcc void @MatrixBackPropagatio([9 x float]* %kernel_grad_1, [9 x float]* @conv_kernel_1, float %lr_in_addr_read) nounwind" [f_b_4_new_network/forw_back_new_network.c:190]   --->   Operation 411 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_75 : Operation 412 [1/1] (8.75ns)   --->   "%lr_in_addr_read_2 = call float @_ssdm_op_Read.m_axi.floatP(float* %lr_in_addr)" [f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 412 'read' 'lr_in_addr_read_2' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_75 : Operation 413 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecMemCore([200 x float]* @fc_hidden_layer2, [1 x i8]* @p_str, [14 x i8]* @p_str1, [1 x i8]* @p_str, i32 -1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_4_new_network/forw_back_new_network.c:123->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 413 'specmemcore' <Predicate = true> <Delay = 0.00>
+ST_75 : Operation 414 [1/1] (0.75ns)   --->   "br label %.loopexit3" [f_b_4_new_network/forw_back_new_network.c:123->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 414 'br' <Predicate = true> <Delay = 0.75>
+
+State 76 <SV = 29> <Delay = 0.88>
+ST_76 : Operation 415 [1/1] (0.00ns)   --->   "%i_0_i58 = phi i6 [ 0, %OverturnKernel.exit ], [ %i_10, %.loopexit3.loopexit ]"   --->   Operation 415 'phi' 'i_0_i58' <Predicate = true> <Delay = 0.00>
+ST_76 : Operation 416 [1/1] (0.00ns)   --->   "%empty_51 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 36, i64 36, i64 36) nounwind"   --->   Operation 416 'speclooptripcount' 'empty_51' <Predicate = true> <Delay = 0.00>
+ST_76 : Operation 417 [1/1] (0.87ns)   --->   "%icmp_ln123 = icmp eq i6 %i_0_i58, -28" [f_b_4_new_network/forw_back_new_network.c:123->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 417 'icmp' 'icmp_ln123' <Predicate = true> <Delay = 0.87> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_76 : Operation 418 [1/1] (0.88ns)   --->   "%i_10 = add i6 %i_0_i58, 1" [f_b_4_new_network/forw_back_new_network.c:123->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 418 'add' 'i_10' <Predicate = true> <Delay = 0.88> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_76 : Operation 419 [1/1] (0.00ns)   --->   "br i1 %icmp_ln123, label %MatrixBackPropagation.1.exit, label %.preheader.preheader.i59" [f_b_4_new_network/forw_back_new_network.c:123->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 419 'br' <Predicate = true> <Delay = 0.00>
+ST_76 : Operation 420 [1/1] (0.00ns)   --->   "%shl_ln4 = call i10 @_ssdm_op_BitConcatenate.i10.i6.i4(i6 %i_0_i58, i4 0)" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 420 'bitconcatenate' 'shl_ln4' <Predicate = (!icmp_ln123)> <Delay = 0.00>
+ST_76 : Operation 421 [1/1] (0.00ns)   --->   "%shl_ln125_1 = call i8 @_ssdm_op_BitConcatenate.i8.i6.i2(i6 %i_0_i58, i2 0)" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 421 'bitconcatenate' 'shl_ln125_1' <Predicate = (!icmp_ln123)> <Delay = 0.00>
+ST_76 : Operation 422 [1/1] (0.75ns)   --->   "br label %.preheader.i61" [f_b_4_new_network/forw_back_new_network.c:124->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 422 'br' <Predicate = (!icmp_ln123)> <Delay = 0.75>
+ST_76 : Operation 423 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecMemCore([200 x float]* @fc_hidden_layer2, [1 x i8]* @p_str, [14 x i8]* @p_str1, [1 x i8]* @p_str, i32 -1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_4_new_network/forw_back_new_network.c:123->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 423 'specmemcore' <Predicate = (icmp_ln123)> <Delay = 0.00>
+ST_76 : Operation 424 [1/1] (0.75ns)   --->   "br label %.loopexit" [f_b_4_new_network/forw_back_new_network.c:123->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 424 'br' <Predicate = (icmp_ln123)> <Delay = 0.75>
+
+State 77 <SV = 30> <Delay = 3.19>
+ST_77 : Operation 425 [1/1] (0.00ns)   --->   "%j_0_i60 = phi i5 [ %j_14, %21 ], [ 0, %.preheader.preheader.i59 ]"   --->   Operation 425 'phi' 'j_0_i60' <Predicate = true> <Delay = 0.00>
+ST_77 : Operation 426 [1/1] (0.00ns)   --->   "%j_0_i60_cast = zext i5 %j_0_i60 to i8" [f_b_4_new_network/forw_back_new_network.c:124->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 426 'zext' 'j_0_i60_cast' <Predicate = true> <Delay = 0.00>
+ST_77 : Operation 427 [1/1] (0.00ns)   --->   "%empty_52 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 20, i64 20, i64 20) nounwind"   --->   Operation 427 'speclooptripcount' 'empty_52' <Predicate = true> <Delay = 0.00>
+ST_77 : Operation 428 [1/1] (0.87ns)   --->   "%icmp_ln124 = icmp eq i5 %j_0_i60, -12" [f_b_4_new_network/forw_back_new_network.c:124->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 428 'icmp' 'icmp_ln124' <Predicate = true> <Delay = 0.87> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_77 : Operation 429 [1/1] (0.87ns)   --->   "%j_14 = add i5 %j_0_i60, 1" [f_b_4_new_network/forw_back_new_network.c:124->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 429 'add' 'j_14' <Predicate = true> <Delay = 0.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_77 : Operation 430 [1/1] (0.00ns)   --->   "br i1 %icmp_ln124, label %.loopexit3.loopexit, label %21" [f_b_4_new_network/forw_back_new_network.c:124->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 430 'br' <Predicate = true> <Delay = 0.00>
+ST_77 : Operation 431 [1/1] (0.90ns)   --->   "%add_ln125 = add i8 %shl_ln125_1, %j_0_i60_cast" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 431 'add' 'add_ln125' <Predicate = (!icmp_ln124)> <Delay = 0.90> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_77 : Operation 432 [1/1] (0.00ns)   --->   "%zext_ln125_2 = zext i8 %add_ln125 to i10" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 432 'zext' 'zext_ln125_2' <Predicate = (!icmp_ln124)> <Delay = 0.00>
+ST_77 : Operation 433 [1/1] (0.93ns)   --->   "%add_ln125_1 = add i10 %zext_ln125_2, %shl_ln4" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 433 'add' 'add_ln125_1' <Predicate = (!icmp_ln124)> <Delay = 0.93> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_77 : Operation 434 [1/1] (0.00ns)   --->   "%zext_ln125 = zext i10 %add_ln125_1 to i64" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 434 'zext' 'zext_ln125' <Predicate = (!icmp_ln124)> <Delay = 0.00>
+ST_77 : Operation 435 [1/1] (0.00ns)   --->   "%fc_hidden_layer1_add_2 = getelementptr [720 x float]* @fc_hidden_layer1, i64 0, i64 %zext_ln125" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 435 'getelementptr' 'fc_hidden_layer1_add_2' <Predicate = (!icmp_ln124)> <Delay = 0.00>
+ST_77 : Operation 436 [1/1] (0.00ns)   --->   "%wgrad_1_addr_1 = getelementptr [720 x float]* %wgrad_1, i64 0, i64 %zext_ln125" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 436 'getelementptr' 'wgrad_1_addr_1' <Predicate = (!icmp_ln124)> <Delay = 0.00>
+ST_77 : Operation 437 [2/2] (1.35ns)   --->   "%wgrad_1_load = load float* %wgrad_1_addr_1, align 4" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 437 'load' 'wgrad_1_load' <Predicate = (!icmp_ln124)> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_77 : Operation 438 [1/1] (0.00ns)   --->   "br label %.loopexit3"   --->   Operation 438 'br' <Predicate = (icmp_ln124)> <Delay = 0.00>
+
+State 78 <SV = 31> <Delay = 1.35>
+ST_78 : Operation 439 [1/2] (1.35ns)   --->   "%wgrad_1_load = load float* %wgrad_1_addr_1, align 4" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 439 'load' 'wgrad_1_load' <Predicate = true> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+
+State 79 <SV = 32> <Delay = 8.28>
+ST_79 : Operation 440 [3/3] (8.28ns)   --->   "%tmp_i6 = fmul float %wgrad_1_load, %lr_in_addr_read_2" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 440 'fmul' 'tmp_i6' <Predicate = true> <Delay = 8.28> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.28> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 80 <SV = 33> <Delay = 8.28>
+ST_80 : Operation 441 [2/3] (8.28ns)   --->   "%tmp_i6 = fmul float %wgrad_1_load, %lr_in_addr_read_2" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 441 'fmul' 'tmp_i6' <Predicate = true> <Delay = 8.28> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.28> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_80 : Operation 442 [2/2] (1.35ns)   --->   "%fc_hidden_layer1_loa_1 = load float* %fc_hidden_layer1_add_2, align 4" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 442 'load' 'fc_hidden_layer1_loa_1' <Predicate = true> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+
+State 81 <SV = 34> <Delay = 8.28>
+ST_81 : Operation 443 [1/3] (8.28ns)   --->   "%tmp_i6 = fmul float %wgrad_1_load, %lr_in_addr_read_2" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 443 'fmul' 'tmp_i6' <Predicate = true> <Delay = 8.28> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.28> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_81 : Operation 444 [1/2] (1.35ns)   --->   "%fc_hidden_layer1_loa_1 = load float* %fc_hidden_layer1_add_2, align 4" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 444 'load' 'fc_hidden_layer1_loa_1' <Predicate = true> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+
+State 82 <SV = 35> <Delay = 7.71>
+ST_82 : Operation 445 [4/4] (7.71ns)   --->   "%tmp_i5_53 = fsub float %fc_hidden_layer1_loa_1, %tmp_i6" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 445 'fsub' 'tmp_i5_53' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 83 <SV = 36> <Delay = 7.71>
+ST_83 : Operation 446 [3/4] (7.71ns)   --->   "%tmp_i5_53 = fsub float %fc_hidden_layer1_loa_1, %tmp_i6" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 446 'fsub' 'tmp_i5_53' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 84 <SV = 37> <Delay = 7.71>
+ST_84 : Operation 447 [2/4] (7.71ns)   --->   "%tmp_i5_53 = fsub float %fc_hidden_layer1_loa_1, %tmp_i6" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 447 'fsub' 'tmp_i5_53' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 85 <SV = 38> <Delay = 7.71>
+ST_85 : Operation 448 [1/4] (7.71ns)   --->   "%tmp_i5_53 = fsub float %fc_hidden_layer1_loa_1, %tmp_i6" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 448 'fsub' 'tmp_i5_53' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 86 <SV = 39> <Delay = 1.35>
+ST_86 : Operation 449 [1/1] (1.35ns)   --->   "store float %tmp_i5_53, float* %fc_hidden_layer1_add_2, align 4" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 449 'store' <Predicate = true> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_86 : Operation 450 [1/1] (0.00ns)   --->   "br label %.preheader.i61" [f_b_4_new_network/forw_back_new_network.c:124->f_b_4_new_network/forw_back_new_network.c:192]   --->   Operation 450 'br' <Predicate = true> <Delay = 0.00>
+
+State 87 <SV = 30> <Delay = 0.87>
+ST_87 : Operation 451 [1/1] (0.00ns)   --->   "%i_0_i69 = phi i5 [ 0, %MatrixBackPropagation.1.exit ], [ %i_11, %.loopexit.loopexit ]"   --->   Operation 451 'phi' 'i_0_i69' <Predicate = true> <Delay = 0.00>
+ST_87 : Operation 452 [1/1] (0.00ns)   --->   "%empty_54 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 20, i64 20, i64 20) nounwind"   --->   Operation 452 'speclooptripcount' 'empty_54' <Predicate = true> <Delay = 0.00>
+ST_87 : Operation 453 [1/1] (0.87ns)   --->   "%icmp_ln123_1 = icmp eq i5 %i_0_i69, -12" [f_b_4_new_network/forw_back_new_network.c:123->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 453 'icmp' 'icmp_ln123_1' <Predicate = true> <Delay = 0.87> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_87 : Operation 454 [1/1] (0.87ns)   --->   "%i_11 = add i5 %i_0_i69, 1" [f_b_4_new_network/forw_back_new_network.c:123->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 454 'add' 'i_11' <Predicate = true> <Delay = 0.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_87 : Operation 455 [1/1] (0.00ns)   --->   "br i1 %icmp_ln123_1, label %MatrixBackPropagation.exit, label %.preheader.preheader.i72" [f_b_4_new_network/forw_back_new_network.c:123->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 455 'br' <Predicate = true> <Delay = 0.00>
+ST_87 : Operation 456 [1/1] (0.00ns)   --->   "%shl_ln125_2 = call i8 @_ssdm_op_BitConcatenate.i8.i5.i3(i5 %i_0_i69, i3 0)" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 456 'bitconcatenate' 'shl_ln125_2' <Predicate = (!icmp_ln123_1)> <Delay = 0.00>
+ST_87 : Operation 457 [1/1] (0.00ns)   --->   "%shl_ln125_3 = call i6 @_ssdm_op_BitConcatenate.i6.i5.i1(i5 %i_0_i69, i1 false)" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 457 'bitconcatenate' 'shl_ln125_3' <Predicate = (!icmp_ln123_1)> <Delay = 0.00>
+ST_87 : Operation 458 [1/1] (0.75ns)   --->   "br label %.preheader.i75" [f_b_4_new_network/forw_back_new_network.c:124->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 458 'br' <Predicate = (!icmp_ln123_1)> <Delay = 0.75>
+ST_87 : Operation 459 [1/1] (0.00ns)   --->   "ret void" [f_b_4_new_network/forw_back_new_network.c:194]   --->   Operation 459 'ret' <Predicate = (icmp_ln123_1)> <Delay = 0.00>
+
+State 88 <SV = 31> <Delay = 3.14>
+ST_88 : Operation 460 [1/1] (0.00ns)   --->   "%j_0_i73 = phi i4 [ %j_15, %22 ], [ 0, %.preheader.preheader.i72 ]"   --->   Operation 460 'phi' 'j_0_i73' <Predicate = true> <Delay = 0.00>
+ST_88 : Operation 461 [1/1] (0.00ns)   --->   "%j_0_i73_cast = zext i4 %j_0_i73 to i6" [f_b_4_new_network/forw_back_new_network.c:124->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 461 'zext' 'j_0_i73_cast' <Predicate = true> <Delay = 0.00>
+ST_88 : Operation 462 [1/1] (0.00ns)   --->   "%empty_55 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10) nounwind"   --->   Operation 462 'speclooptripcount' 'empty_55' <Predicate = true> <Delay = 0.00>
+ST_88 : Operation 463 [1/1] (0.88ns)   --->   "%icmp_ln124_1 = icmp eq i4 %j_0_i73, -6" [f_b_4_new_network/forw_back_new_network.c:124->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 463 'icmp' 'icmp_ln124_1' <Predicate = true> <Delay = 0.88> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_88 : Operation 464 [1/1] (0.86ns)   --->   "%j_15 = add i4 %j_0_i73, 1" [f_b_4_new_network/forw_back_new_network.c:124->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 464 'add' 'j_15' <Predicate = true> <Delay = 0.86> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_88 : Operation 465 [1/1] (0.00ns)   --->   "br i1 %icmp_ln124_1, label %.loopexit.loopexit, label %22" [f_b_4_new_network/forw_back_new_network.c:124->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 465 'br' <Predicate = true> <Delay = 0.00>
+ST_88 : Operation 466 [1/1] (0.88ns)   --->   "%add_ln125_2 = add i6 %shl_ln125_3, %j_0_i73_cast" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 466 'add' 'add_ln125_2' <Predicate = (!icmp_ln124_1)> <Delay = 0.88> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_88 : Operation 467 [1/1] (0.00ns)   --->   "%zext_ln125_3 = zext i6 %add_ln125_2 to i8" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 467 'zext' 'zext_ln125_3' <Predicate = (!icmp_ln124_1)> <Delay = 0.00>
+ST_88 : Operation 468 [1/1] (0.90ns)   --->   "%add_ln125_3 = add i8 %zext_ln125_3, %shl_ln125_2" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 468 'add' 'add_ln125_3' <Predicate = (!icmp_ln124_1)> <Delay = 0.90> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_88 : Operation 469 [1/1] (0.00ns)   --->   "%zext_ln125_1 = zext i8 %add_ln125_3 to i64" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 469 'zext' 'zext_ln125_1' <Predicate = (!icmp_ln124_1)> <Delay = 0.00>
+ST_88 : Operation 470 [1/1] (0.00ns)   --->   "%fc_hidden_layer2_add_2 = getelementptr [200 x float]* @fc_hidden_layer2, i64 0, i64 %zext_ln125_1" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 470 'getelementptr' 'fc_hidden_layer2_add_2' <Predicate = (!icmp_ln124_1)> <Delay = 0.00>
+ST_88 : Operation 471 [1/1] (0.00ns)   --->   "%wgrad_2_addr_1 = getelementptr [300 x float]* %wgrad_2, i64 0, i64 %zext_ln125_1" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 471 'getelementptr' 'wgrad_2_addr_1' <Predicate = (!icmp_ln124_1)> <Delay = 0.00>
+ST_88 : Operation 472 [2/2] (1.35ns)   --->   "%wgrad_2_load = load float* %wgrad_2_addr_1, align 4" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 472 'load' 'wgrad_2_load' <Predicate = (!icmp_ln124_1)> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+ST_88 : Operation 473 [1/1] (0.00ns)   --->   "br label %.loopexit"   --->   Operation 473 'br' <Predicate = (icmp_ln124_1)> <Delay = 0.00>
+
+State 89 <SV = 32> <Delay = 1.35>
+ST_89 : Operation 474 [1/2] (1.35ns)   --->   "%wgrad_2_load = load float* %wgrad_2_addr_1, align 4" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 474 'load' 'wgrad_2_load' <Predicate = true> <Delay = 1.35> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 300> <RAM>
+
+State 90 <SV = 33> <Delay = 8.28>
+ST_90 : Operation 475 [3/3] (8.28ns)   --->   "%tmp_i7 = fmul float %wgrad_2_load, %lr_in_addr_read_2" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 475 'fmul' 'tmp_i7' <Predicate = true> <Delay = 8.28> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.28> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 91 <SV = 34> <Delay = 8.28>
+ST_91 : Operation 476 [2/3] (8.28ns)   --->   "%tmp_i7 = fmul float %wgrad_2_load, %lr_in_addr_read_2" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 476 'fmul' 'tmp_i7' <Predicate = true> <Delay = 8.28> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.28> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 92 <SV = 35> <Delay = 8.28>
+ST_92 : Operation 477 [1/3] (8.28ns)   --->   "%tmp_i7 = fmul float %wgrad_2_load, %lr_in_addr_read_2" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 477 'fmul' 'tmp_i7' <Predicate = true> <Delay = 8.28> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.28> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_92 : Operation 478 [2/2] (0.85ns)   --->   "%fc_hidden_layer2_loa_1 = load float* %fc_hidden_layer2_add_2, align 4" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 478 'load' 'fc_hidden_layer2_loa_1' <Predicate = true> <Delay = 0.85> <Core = "RAM_2P_LUTRAM">   --->   Core 41 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.85> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 200> <RAM>
+
+State 93 <SV = 36> <Delay = 8.57>
+ST_93 : Operation 479 [1/2] (0.85ns)   --->   "%fc_hidden_layer2_loa_1 = load float* %fc_hidden_layer2_add_2, align 4" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 479 'load' 'fc_hidden_layer2_loa_1' <Predicate = true> <Delay = 0.85> <Core = "RAM_2P_LUTRAM">   --->   Core 41 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.85> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 200> <RAM>
+ST_93 : Operation 480 [4/4] (7.71ns)   --->   "%tmp_i6_56 = fsub float %fc_hidden_layer2_loa_1, %tmp_i7" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 480 'fsub' 'tmp_i6_56' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 94 <SV = 37> <Delay = 7.71>
+ST_94 : Operation 481 [3/4] (7.71ns)   --->   "%tmp_i6_56 = fsub float %fc_hidden_layer2_loa_1, %tmp_i7" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 481 'fsub' 'tmp_i6_56' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 95 <SV = 38> <Delay = 7.71>
+ST_95 : Operation 482 [2/4] (7.71ns)   --->   "%tmp_i6_56 = fsub float %fc_hidden_layer2_loa_1, %tmp_i7" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 482 'fsub' 'tmp_i6_56' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 96 <SV = 39> <Delay = 8.57>
+ST_96 : Operation 483 [1/4] (7.71ns)   --->   "%tmp_i6_56 = fsub float %fc_hidden_layer2_loa_1, %tmp_i7" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 483 'fsub' 'tmp_i6_56' <Predicate = true> <Delay = 7.71> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_96 : Operation 484 [1/1] (0.85ns)   --->   "store float %tmp_i6_56, float* %fc_hidden_layer2_add_2, align 4" [f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 484 'store' <Predicate = true> <Delay = 0.85> <Core = "RAM_2P_LUTRAM">   --->   Core 41 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.85> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 200> <RAM>
+ST_96 : Operation 485 [1/1] (0.00ns)   --->   "br label %.preheader.i75" [f_b_4_new_network/forw_back_new_network.c:124->f_b_4_new_network/forw_back_new_network.c:193]   --->   Operation 485 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 0.79ns
+The critical path consists of the following:
+	wire read on port 'label_r' (f_b_4_new_network/forw_back_new_network.c:152) [17]  (0 ns)
+	'getelementptr' operation ('probability_result_a', f_b_4_new_network/forw_back_new_network.c:155) [36]  (0 ns)
+	'load' operation ('probability_result_l', f_b_4_new_network/forw_back_new_network.c:155) on array 'probability_result' [37]  (0.79 ns)
+
+ <State 2>: 8.51ns
+The critical path consists of the following:
+	'load' operation ('probability_result_l', f_b_4_new_network/forw_back_new_network.c:155) on array 'probability_result' [37]  (0.79 ns)
+	'fadd' operation ('tmp', f_b_4_new_network/forw_back_new_network.c:155) [38]  (7.72 ns)
+
+ <State 3>: 7.72ns
+The critical path consists of the following:
+	'fadd' operation ('tmp', f_b_4_new_network/forw_back_new_network.c:155) [38]  (7.72 ns)
+
+ <State 4>: 7.72ns
+The critical path consists of the following:
+	'fadd' operation ('tmp', f_b_4_new_network/forw_back_new_network.c:155) [38]  (7.72 ns)
+
+ <State 5>: 7.72ns
+The critical path consists of the following:
+	'fadd' operation ('tmp', f_b_4_new_network/forw_back_new_network.c:155) [38]  (7.72 ns)
+
+ <State 6>: 1.11ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', f_b_4_new_network/forw_back_new_network.c:154) [42]  (0 ns)
+	'icmp' operation ('icmp_ln155', f_b_4_new_network/forw_back_new_network.c:155) [49]  (1.11 ns)
+
+ <State 7>: 1.58ns
+The critical path consists of the following:
+	'load' operation ('probability_result_l_1', f_b_4_new_network/forw_back_new_network.c:156) on array 'probability_result' [54]  (0.79 ns)
+	'store' operation ('store_ln156', f_b_4_new_network/forw_back_new_network.c:156) of variable 'probability_result_l_1', f_b_4_new_network/forw_back_new_network.c:156 on array 'grad_2', f_b_4_new_network/forw_back_new_network.c:153 [56]  (0.79 ns)
+
+ <State 8>: 0.878ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', f_b_4_new_network/forw_back_new_network.c:73->f_b_4_new_network/forw_back_new_network.c:159) [67]  (0 ns)
+	'add' operation ('i', f_b_4_new_network/forw_back_new_network.c:73->f_b_4_new_network/forw_back_new_network.c:159) [70]  (0.878 ns)
+
+ <State 9>: 0.79ns
+The critical path consists of the following:
+	'load' operation ('fc_in_2_relu1_0_load', f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159) on array 'fc_in_2_relu1_0' [77]  (0.79 ns)
+
+ <State 10>: 1.79ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', f_b_4_new_network/forw_back_new_network.c:74->f_b_4_new_network/forw_back_new_network.c:159) [80]  (0 ns)
+	'add' operation ('add_ln75', f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159) [91]  (0.887 ns)
+	'add' operation ('add_ln75_1', f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159) [93]  (0.907 ns)
+
+ <State 11>: 0.79ns
+The critical path consists of the following:
+	'load' operation ('grad_2_load', f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159) on array 'grad_2', f_b_4_new_network/forw_back_new_network.c:153 [89]  (0.79 ns)
+
+ <State 12>: 8.29ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i', f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159) [90]  (8.29 ns)
+
+ <State 13>: 8.29ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i', f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159) [90]  (8.29 ns)
+
+ <State 14>: 8.29ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i', f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159) [90]  (8.29 ns)
+
+ <State 15>: 1.35ns
+The critical path consists of the following:
+	'getelementptr' operation ('wgrad_2_addr', f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159) [95]  (0 ns)
+	'store' operation ('store_ln75', f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159) of variable 'tmp_i', f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:159 on array 'wgrad_2', f_b_4_new_network/forw_back_new_network.c:158 [96]  (1.35 ns)
+
+ <State 16>: 0.878ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', f_b_4_new_network/forw_back_new_network.c:79->f_b_4_new_network/forw_back_new_network.c:162) [104]  (0 ns)
+	'add' operation ('i', f_b_4_new_network/forw_back_new_network.c:79->f_b_4_new_network/forw_back_new_network.c:162) [107]  (0.878 ns)
+
+ <State 17>: 2.65ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', f_b_4_new_network/forw_back_new_network.c:81->f_b_4_new_network/forw_back_new_network.c:162) [118]  (0 ns)
+	'add' operation ('add_ln82', f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162) [125]  (0.887 ns)
+	'add' operation ('add_ln82_1', f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162) [127]  (0.907 ns)
+	'getelementptr' operation ('fc_hidden_layer2_add', f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162) [129]  (0 ns)
+	'load' operation ('fc_hidden_layer2_loa', f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162) on array 'fc_hidden_layer2' [130]  (0.859 ns)
+
+ <State 18>: 0.859ns
+The critical path consists of the following:
+	'load' operation ('fc_hidden_layer2_loa', f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162) on array 'fc_hidden_layer2' [130]  (0.859 ns)
+
+ <State 19>: 8.29ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i5', f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162) [134]  (8.29 ns)
+
+ <State 20>: 8.29ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i5', f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162) [134]  (8.29 ns)
+
+ <State 21>: 8.29ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i5', f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162) [134]  (8.29 ns)
+
+ <State 22>: 7.72ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i_40', f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162) [135]  (7.72 ns)
+
+ <State 23>: 7.72ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i_40', f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162) [135]  (7.72 ns)
+
+ <State 24>: 7.72ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i_40', f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162) [135]  (7.72 ns)
+
+ <State 25>: 8.51ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i_40', f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162) [135]  (7.72 ns)
+	'store' operation ('store_ln82', f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162) of variable 'tmp_i_40', f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:162 on array 'rgrad_1', f_b_4_new_network/forw_back_new_network.c:161 [136]  (0.79 ns)
+
+ <State 26>: 0.878ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', f_b_4_new_network/forw_back_new_network.c:87->f_b_4_new_network/forw_back_new_network.c:164) [144]  (0 ns)
+	'add' operation ('i', f_b_4_new_network/forw_back_new_network.c:87->f_b_4_new_network/forw_back_new_network.c:164) [147]  (0.878 ns)
+
+ <State 27>: 4.14ns
+The critical path consists of the following:
+	'load' operation ('fc_out_1_0_load', f_b_4_new_network/forw_back_new_network.c:88->f_b_4_new_network/forw_back_new_network.c:164) on array 'fc_out_1_0' [152]  (0.79 ns)
+	'fcmp' operation ('tmp_11', f_b_4_new_network/forw_back_new_network.c:88->f_b_4_new_network/forw_back_new_network.c:164) [159]  (3.35 ns)
+
+ <State 28>: 3.68ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_11', f_b_4_new_network/forw_back_new_network.c:88->f_b_4_new_network/forw_back_new_network.c:164) [159]  (3.35 ns)
+	'and' operation ('and_ln88', f_b_4_new_network/forw_back_new_network.c:88->f_b_4_new_network/forw_back_new_network.c:164) [160]  (0.331 ns)
+
+ <State 29>: 2.79ns
+The critical path consists of the following:
+	'fpext' operation ('tmp_i3', f_b_4_new_network/forw_back_new_network.c:91->f_b_4_new_network/forw_back_new_network.c:164) [165]  (2.79 ns)
+
+ <State 30>: 8.33ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_2_i', f_b_4_new_network/forw_back_new_network.c:91->f_b_4_new_network/forw_back_new_network.c:164) [166]  (8.33 ns)
+
+ <State 31>: 8.33ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_2_i', f_b_4_new_network/forw_back_new_network.c:91->f_b_4_new_network/forw_back_new_network.c:164) [166]  (8.33 ns)
+
+ <State 32>: 8.33ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_2_i', f_b_4_new_network/forw_back_new_network.c:91->f_b_4_new_network/forw_back_new_network.c:164) [166]  (8.33 ns)
+
+ <State 33>: 8.33ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_2_i', f_b_4_new_network/forw_back_new_network.c:91->f_b_4_new_network/forw_back_new_network.c:164) [166]  (8.33 ns)
+
+ <State 34>: 8.33ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_2_i', f_b_4_new_network/forw_back_new_network.c:91->f_b_4_new_network/forw_back_new_network.c:164) [166]  (8.33 ns)
+
+ <State 35>: 3.32ns
+The critical path consists of the following:
+	'fptrunc' operation ('tmp_3_i', f_b_4_new_network/forw_back_new_network.c:91->f_b_4_new_network/forw_back_new_network.c:164) [167]  (3.32 ns)
+
+ <State 36>: 4.11ns
+The critical path consists of the following:
+	'fptrunc' operation ('tmp_3_i', f_b_4_new_network/forw_back_new_network.c:91->f_b_4_new_network/forw_back_new_network.c:164) [167]  (3.32 ns)
+	'store' operation ('store_ln91', f_b_4_new_network/forw_back_new_network.c:91->f_b_4_new_network/forw_back_new_network.c:164) of variable 'tmp_3_i', f_b_4_new_network/forw_back_new_network.c:91->f_b_4_new_network/forw_back_new_network.c:164 on array 'grad_1', f_b_4_new_network/forw_back_new_network.c:163 [169]  (0.79 ns)
+
+ <State 37>: 1.35ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', f_b_4_new_network/forw_back_new_network.c:73->f_b_4_new_network/forw_back_new_network.c:166) [181]  (0 ns)
+	'getelementptr' operation ('fc_in_1_0_addr', f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166) [188]  (0 ns)
+	'load' operation ('fc_in_1_0_load', f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166) on array 'fc_in_1_0' [191]  (1.35 ns)
+
+ <State 38>: 1.35ns
+The critical path consists of the following:
+	'load' operation ('fc_in_1_0_load', f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166) on array 'fc_in_1_0' [191]  (1.35 ns)
+
+ <State 39>: 1.84ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', f_b_4_new_network/forw_back_new_network.c:74->f_b_4_new_network/forw_back_new_network.c:166) [194]  (0 ns)
+	'add' operation ('add_ln75_2', f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166) [205]  (0.907 ns)
+	'add' operation ('add_ln75_3', f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166) [207]  (0.934 ns)
+
+ <State 40>: 0.79ns
+The critical path consists of the following:
+	'load' operation ('grad_1_load', f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166) on array 'grad_1', f_b_4_new_network/forw_back_new_network.c:163 [203]  (0.79 ns)
+
+ <State 41>: 8.29ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i3_44', f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166) [204]  (8.29 ns)
+
+ <State 42>: 8.29ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i3_44', f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166) [204]  (8.29 ns)
+
+ <State 43>: 8.29ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i3_44', f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166) [204]  (8.29 ns)
+
+ <State 44>: 1.35ns
+The critical path consists of the following:
+	'getelementptr' operation ('wgrad_1_addr', f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166) [209]  (0 ns)
+	'store' operation ('store_ln75', f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166) of variable 'tmp_i3_44', f_b_4_new_network/forw_back_new_network.c:75->f_b_4_new_network/forw_back_new_network.c:166 on array 'wgrad_1', f_b_4_new_network/forw_back_new_network.c:165 [210]  (1.35 ns)
+
+ <State 45>: 1.35ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', f_b_4_new_network/forw_back_new_network.c:79->f_b_4_new_network/forw_back_new_network.c:168) [218]  (0 ns)
+	'getelementptr' operation ('grad_0_addr', f_b_4_new_network/forw_back_new_network.c:80->f_b_4_new_network/forw_back_new_network.c:168) [225]  (0 ns)
+	'store' operation ('store_ln80', f_b_4_new_network/forw_back_new_network.c:80->f_b_4_new_network/forw_back_new_network.c:168) of constant 0 on array 'grad_0', f_b_4_new_network/forw_back_new_network.c:167 [226]  (1.35 ns)
+
+ <State 46>: 3.19ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', f_b_4_new_network/forw_back_new_network.c:81->f_b_4_new_network/forw_back_new_network.c:168) [232]  (0 ns)
+	'add' operation ('add_ln82_2', f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168) [239]  (0.907 ns)
+	'add' operation ('add_ln82_3', f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168) [241]  (0.934 ns)
+	'getelementptr' operation ('fc_hidden_layer1_add', f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168) [243]  (0 ns)
+	'load' operation ('fc_hidden_layer1_loa', f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168) on array 'fc_hidden_layer1' [244]  (1.35 ns)
+
+ <State 47>: 1.35ns
+The critical path consists of the following:
+	'load' operation ('fc_hidden_layer1_loa', f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168) on array 'fc_hidden_layer1' [244]  (1.35 ns)
+
+ <State 48>: 8.29ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i4', f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168) [248]  (8.29 ns)
+
+ <State 49>: 8.29ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i4', f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168) [248]  (8.29 ns)
+
+ <State 50>: 8.29ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i4', f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168) [248]  (8.29 ns)
+
+ <State 51>: 7.72ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i4_48', f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168) [249]  (7.72 ns)
+
+ <State 52>: 7.72ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i4_48', f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168) [249]  (7.72 ns)
+
+ <State 53>: 7.72ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i4_48', f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168) [249]  (7.72 ns)
+
+ <State 54>: 7.72ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_i4_48', f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168) [249]  (7.72 ns)
+
+ <State 55>: 1.35ns
+The critical path consists of the following:
+	'store' operation ('store_ln82', f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168) of variable 'tmp_i4_48', f_b_4_new_network/forw_back_new_network.c:82->f_b_4_new_network/forw_back_new_network.c:168 on array 'grad_0', f_b_4_new_network/forw_back_new_network.c:167 [250]  (1.35 ns)
+
+ <State 56>: 0ns
+The critical path consists of the following:
+
+ <State 57>: 0ns
+The critical path consists of the following:
+
+ <State 58>: 0ns
+The critical path consists of the following:
+
+ <State 59>: 0ns
+The critical path consists of the following:
+
+ <State 60>: 0.755ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', f_b_4_new_network/forw_back_new_network.c:107->f_b_4_new_network/forw_back_new_network.c:180) [261]  (0.755 ns)
+
+ <State 61>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'lr_in' (f_b_4_new_network/forw_back_new_network.c:190) [303]  (8.75 ns)
+
+ <State 62>: 1.67ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', f_b_4_new_network/forw_back_new_network.c:108->f_b_4_new_network/forw_back_new_network.c:180) [279]  (0 ns)
+	'add' operation ('add_ln109_1', f_b_4_new_network/forw_back_new_network.c:109->f_b_4_new_network/forw_back_new_network.c:180) [286]  (0.878 ns)
+	'getelementptr' operation ('conv_kernel_2_addr', f_b_4_new_network/forw_back_new_network.c:109->f_b_4_new_network/forw_back_new_network.c:180) [289]  (0 ns)
+	'load' operation ('conv_kernel_2_load', f_b_4_new_network/forw_back_new_network.c:109->f_b_4_new_network/forw_back_new_network.c:180) on array 'conv_kernel_2' [290]  (0.79 ns)
+
+ <State 63>: 1.58ns
+The critical path consists of the following:
+	'load' operation ('conv_kernel_2_load', f_b_4_new_network/forw_back_new_network.c:109->f_b_4_new_network/forw_back_new_network.c:180) on array 'conv_kernel_2' [290]  (0.79 ns)
+	'store' operation ('store_ln109', f_b_4_new_network/forw_back_new_network.c:109->f_b_4_new_network/forw_back_new_network.c:180) of variable 'conv_kernel_2_load', f_b_4_new_network/forw_back_new_network.c:109->f_b_4_new_network/forw_back_new_network.c:180 on array 'kernel_grad_2_overturn', f_b_4_new_network/forw_back_new_network.c:179 [295]  (0.79 ns)
+
+ <State 64>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'lr_in' (f_b_4_new_network/forw_back_new_network.c:190) [303]  (8.75 ns)
+
+ <State 65>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'lr_in' (f_b_4_new_network/forw_back_new_network.c:190) [303]  (8.75 ns)
+
+ <State 66>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'lr_in' (f_b_4_new_network/forw_back_new_network.c:190) [303]  (8.75 ns)
+
+ <State 67>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'lr_in' (f_b_4_new_network/forw_back_new_network.c:190) [303]  (8.75 ns)
+
+ <State 68>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'lr_in' (f_b_4_new_network/forw_back_new_network.c:190) [303]  (8.75 ns)
+
+ <State 69>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'lr_in' (f_b_4_new_network/forw_back_new_network.c:190) [303]  (8.75 ns)
+
+ <State 70>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'lr_in' (f_b_4_new_network/forw_back_new_network.c:190) [304]  (8.75 ns)
+
+ <State 71>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'lr_in' (f_b_4_new_network/forw_back_new_network.c:191) [307]  (8.75 ns)
+
+ <State 72>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'lr_in' (f_b_4_new_network/forw_back_new_network.c:192) [309]  (8.75 ns)
+
+ <State 73>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'lr_in' (f_b_4_new_network/forw_back_new_network.c:192) [309]  (8.75 ns)
+
+ <State 74>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'lr_in' (f_b_4_new_network/forw_back_new_network.c:192) [309]  (8.75 ns)
+
+ <State 75>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'lr_in' (f_b_4_new_network/forw_back_new_network.c:192) [310]  (8.75 ns)
+
+ <State 76>: 0.887ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', f_b_4_new_network/forw_back_new_network.c:123->f_b_4_new_network/forw_back_new_network.c:192) [314]  (0 ns)
+	'add' operation ('i', f_b_4_new_network/forw_back_new_network.c:123->f_b_4_new_network/forw_back_new_network.c:192) [317]  (0.887 ns)
+
+ <State 77>: 3.19ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', f_b_4_new_network/forw_back_new_network.c:124->f_b_4_new_network/forw_back_new_network.c:192) [324]  (0 ns)
+	'add' operation ('add_ln125', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192) [331]  (0.907 ns)
+	'add' operation ('add_ln125_1', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192) [333]  (0.934 ns)
+	'getelementptr' operation ('wgrad_1_addr_1', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192) [336]  (0 ns)
+	'load' operation ('wgrad_1_load', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192) on array 'wgrad_1', f_b_4_new_network/forw_back_new_network.c:165 [337]  (1.35 ns)
+
+ <State 78>: 1.35ns
+The critical path consists of the following:
+	'load' operation ('wgrad_1_load', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192) on array 'wgrad_1', f_b_4_new_network/forw_back_new_network.c:165 [337]  (1.35 ns)
+
+ <State 79>: 8.29ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i6', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192) [338]  (8.29 ns)
+
+ <State 80>: 8.29ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i6', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192) [338]  (8.29 ns)
+
+ <State 81>: 8.29ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i6', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192) [338]  (8.29 ns)
+
+ <State 82>: 7.72ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_i5_53', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192) [340]  (7.72 ns)
+
+ <State 83>: 7.72ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_i5_53', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192) [340]  (7.72 ns)
+
+ <State 84>: 7.72ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_i5_53', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192) [340]  (7.72 ns)
+
+ <State 85>: 7.72ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_i5_53', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192) [340]  (7.72 ns)
+
+ <State 86>: 1.35ns
+The critical path consists of the following:
+	'store' operation ('store_ln125', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192) of variable 'tmp_i5_53', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:192 on array 'fc_hidden_layer1' [341]  (1.35 ns)
+
+ <State 87>: 0.878ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', f_b_4_new_network/forw_back_new_network.c:123->f_b_4_new_network/forw_back_new_network.c:193) [349]  (0 ns)
+	'add' operation ('i', f_b_4_new_network/forw_back_new_network.c:123->f_b_4_new_network/forw_back_new_network.c:193) [352]  (0.878 ns)
+
+ <State 88>: 3.15ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', f_b_4_new_network/forw_back_new_network.c:124->f_b_4_new_network/forw_back_new_network.c:193) [359]  (0 ns)
+	'add' operation ('add_ln125_2', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193) [366]  (0.887 ns)
+	'add' operation ('add_ln125_3', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193) [368]  (0.907 ns)
+	'getelementptr' operation ('wgrad_2_addr_1', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193) [371]  (0 ns)
+	'load' operation ('wgrad_2_load', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193) on array 'wgrad_2', f_b_4_new_network/forw_back_new_network.c:158 [372]  (1.35 ns)
+
+ <State 89>: 1.35ns
+The critical path consists of the following:
+	'load' operation ('wgrad_2_load', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193) on array 'wgrad_2', f_b_4_new_network/forw_back_new_network.c:158 [372]  (1.35 ns)
+
+ <State 90>: 8.29ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i7', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193) [373]  (8.29 ns)
+
+ <State 91>: 8.29ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i7', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193) [373]  (8.29 ns)
+
+ <State 92>: 8.29ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i7', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193) [373]  (8.29 ns)
+
+ <State 93>: 8.58ns
+The critical path consists of the following:
+	'load' operation ('fc_hidden_layer2_loa_1', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193) on array 'fc_hidden_layer2' [374]  (0.859 ns)
+	'fsub' operation ('tmp_i6_56', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193) [375]  (7.72 ns)
+
+ <State 94>: 7.72ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_i6_56', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193) [375]  (7.72 ns)
+
+ <State 95>: 7.72ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_i6_56', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193) [375]  (7.72 ns)
+
+ <State 96>: 8.58ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_i6_56', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193) [375]  (7.72 ns)
+	'store' operation ('store_ln125', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193) of variable 'tmp_i6_56', f_b_4_new_network/forw_back_new_network.c:125->f_b_4_new_network/forw_back_new_network.c:193 on array 'fc_hidden_layer2' [376]  (0.859 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+	State 64
+	State 65
+	State 66
+	State 67
+	State 68
+	State 69
+	State 70
+	State 71
+	State 72
+	State 73
+	State 74
+	State 75
+	State 76
+	State 77
+	State 78
+	State 79
+	State 80
+	State 81
+	State 82
+	State 83
+	State 84
+	State 85
+	State 86
+	State 87
+	State 88
+	State 89
+	State 90
+	State 91
+	State 92
+	State 93
+	State 94
+	State 95
+	State 96
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,78 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'backward'" level="0">
+<item name = "Date">Wed Oct 26 23:36:12 2022
+</item>
+<item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
+<item name = "Project">f_b_0</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xczu3eg-sbva484-1-e</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 8.750, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop 1">20, 20, 2, -, -, 10, no</column>
+<column name="- Loop 2">2835, 2835, 63, -, -, 45, no</column>
+<column name=" + Loop 2.1">60, 60, 6, -, -, 10, no</column>
+<column name="- Loop 3">4590, 4590, 102, -, -, 45, no</column>
+<column name=" + Loop 3.1">100, 100, 10, -, -, 10, no</column>
+<column name="- Loop 4">180, 495, 4 ~ 11, -, -, 45, no</column>
+<column name="- Loop 5">49140, 49140, 273, -, -, 180, no</column>
+<column name=" + Loop 5.1">270, 270, 6, -, -, 45, no</column>
+<column name="- Loop 6">73260, 73260, 407, -, -, 180, no</column>
+<column name=" + Loop 6.1">405, 405, 9, -, -, 45, no</column>
+<column name="- Loop 7">720, 1980, 4 ~ 11, -, -, 180, no</column>
+<column name="- Loop 8">623808, 623808, 1083, -, -, 576, no</column>
+<column name=" + Loop 8.1">1080, 1080, 6, -, -, 180, no</column>
+<column name="- Loop 9">934272, 934272, 1622, -, -, 576, no</column>
+<column name=" + Loop 9.1">1620, 1620, 9, -, -, 180, no</column>
+<column name="- Loop 10">840, 840, 30, -, -, 28, no</column>
+<column name=" + Loop 10.1">28, 28, 1, -, -, 28, no</column>
+<column name="- Loop 11">728, 728, 28, -, -, 26, no</column>
+<column name=" + Loop 11.1">26, 26, 1, -, -, 26, no</column>
+<column name="- Loop 12">87, 87, 29, -, -, 3, no</column>
+<column name=" + Loop 12.1">27, 27, 9, -, -, 3, no</column>
+<column name="- Loop 13">1037952, 1037952, 1802, -, -, 576, no</column>
+<column name=" + Loop 13.1">1800, 1800, 10, -, -, 180, no</column>
+<column name="- Loop 14">73260, 73260, 407, -, -, 180, no</column>
+<column name=" + Loop 14.1">405, 405, 9, -, -, 45, no</column>
+<column name="- Loop 15">4590, 4590, 102, -, -, 45, no</column>
+<column name=" + Loop 15.1">100, 100, 10, -, -, 10, no</column>
+<column name="- memcpy.conv1.conv_kernel1.gep">10, 10, 3, 1, 1, 9, yes</column>
+<column name="- memcpy.conv2.conv_kernel2.gep">10, 10, 3, 1, 1, 9, yes</column>
+<column name="- memcpy.conv3.conv_kernel3.gep">10, 10, 3, 1, 1, 9, yes</column>
+<column name="- memcpy.fc1.fc_hidden_layer1.gep">103681, 103681, 3, 1, 1, 103680, yes</column>
+<column name="- memcpy.fc2.fc_hidden_layer2.gep">8101, 8101, 3, 1, 1, 8100, yes</column>
+<column name="- memcpy.fc3.fc_hidden_layer3.gep">451, 451, 3, 1, 1, 450, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

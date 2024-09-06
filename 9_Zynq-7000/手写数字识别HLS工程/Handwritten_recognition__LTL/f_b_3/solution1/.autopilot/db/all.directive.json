@@ -1,0 +1,341 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [
+        {
+          "functionName": "max",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "RESOURCE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "fc_hidden_layer2",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "core",
+                "value": "RAM_2P_LUTRAM"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "Conv2d",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "RESOURCE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "fc_hidden_layer2",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "core",
+                "value": "RAM_2P_LUTRAM"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "Relu",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "RESOURCE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "fc_hidden_layer2",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "core",
+                "value": "RAM_2P_LUTRAM"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "MatrixExtensionImproved",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "RESOURCE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "fc_hidden_layer2",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "core",
+                "value": "RAM_2P_LUTRAM"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "MatrixMultiply",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "RESOURCE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "fc_hidden_layer2",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "core",
+                "value": "RAM_2P_LUTRAM"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "MatrixBackPropagationMultiply",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "RESOURCE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "fc_hidden_layer2",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "core",
+                "value": "RAM_2P_LUTRAM"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "CalculateMatrixGrad",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "RESOURCE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "fc_hidden_layer2",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "core",
+                "value": "RAM_2P_LUTRAM"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "ReluBackPropagation",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "RESOURCE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "fc_hidden_layer2",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "core",
+                "value": "RAM_2P_LUTRAM"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "OverturnKernel",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "RESOURCE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "fc_hidden_layer2",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "core",
+                "value": "RAM_2P_LUTRAM"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "Padding",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "RESOURCE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "fc_hidden_layer2",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "core",
+                "value": "RAM_2P_LUTRAM"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "MatrixBackPropagation",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "RESOURCE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "fc_hidden_layer2",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "core",
+                "value": "RAM_2P_LUTRAM"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "forward",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "RESOURCE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "fc_hidden_layer2",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "core",
+                "value": "RAM_2P_LUTRAM"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "backward",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "RESOURCE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "fc_hidden_layer2",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "core",
+                "value": "RAM_2P_LUTRAM"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "forw_back",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "RESOURCE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "return",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "core",
+                "value": "RAM_2P_LUTRAM"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "forw_back",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "INTERFACE",
+            "option": [
+              {
+                "name": "m_axi",
+                "value": "",
+                "positionalBoolean": "mode"
+              },
+              {
+                "name": "depth",
+                "value": "32"
+              },
+              {
+                "name": "port",
+                "value": "lr",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "bundle",
+                "value": "data"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "forw_back",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "INTERFACE",
+            "option": [
+              {
+                "name": "s_axilite",
+                "value": "",
+                "positionalBoolean": "mode"
+              },
+              {
+                "name": "port",
+                "value": "lr",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "bundle",
+                "value": "ctrl"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "MatrixBackPropagationMultiply",
+          "label": "MatrixBackPropagationMultiply_label2",
+          "functionLabel": "",
+          "pragma": {"name": "PIPELINE"}
+        },
+        {
+          "functionName": "Padding",
+          "label": "Padding_label5",
+          "functionLabel": "",
+          "pragma": {"name": "PIPELINE"}
+        },
+        {
+          "functionName": "Conv2d",
+          "label": "Conv2d_label0",
+          "functionLabel": "",
+          "pragma": {"name": "PIPELINE"}
+        }
+      ]
+    }]}

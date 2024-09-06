@@ -1,0 +1,18 @@
+vhdl xil_defaultlib  \
+"../../../../forw_back.srcs/sources_1/bd/forw_back/ip/forw_back_axi_smc_7/bd_0/ip/ip_1/sim/bd_698c_psr_aclk_0.vhd" \
+"../../../../forw_back.srcs/sources_1/bd/forw_back/ip/forw_back_rst_ps8_0_100M_7/sim/forw_back_rst_ps8_0_100M_7.vhd" \
+"../../../../forw_back.srcs/sources_1/bd/forw_back/ipshared/03fb/hdl/ip/forw_back_ap_dadd_3_full_dsp_64.vhd" \
+"../../../../forw_back.srcs/sources_1/bd/forw_back/ipshared/03fb/hdl/ip/forw_back_ap_ddiv_20_no_dsp_64.vhd" \
+"../../../../forw_back.srcs/sources_1/bd/forw_back/ipshared/03fb/hdl/ip/forw_back_ap_dexp_11_full_dsp_64.vhd" \
+"../../../../forw_back.srcs/sources_1/bd/forw_back/ipshared/03fb/hdl/ip/forw_back_ap_dmul_3_max_dsp_64.vhd" \
+"../../../../forw_back.srcs/sources_1/bd/forw_back/ipshared/03fb/hdl/ip/forw_back_ap_faddfsub_2_full_dsp_32.vhd" \
+"../../../../forw_back.srcs/sources_1/bd/forw_back/ipshared/03fb/hdl/ip/forw_back_ap_fadd_2_full_dsp_32.vhd" \
+"../../../../forw_back.srcs/sources_1/bd/forw_back/ipshared/03fb/hdl/ip/forw_back_ap_fcmp_0_no_dsp_32.vhd" \
+"../../../../forw_back.srcs/sources_1/bd/forw_back/ipshared/03fb/hdl/ip/forw_back_ap_fmul_1_max_dsp_32.vhd" \
+"../../../../forw_back.srcs/sources_1/bd/forw_back/ipshared/03fb/hdl/ip/forw_back_ap_fpext_0_no_dsp_32.vhd" \
+"../../../../forw_back.srcs/sources_1/bd/forw_back/ipshared/03fb/hdl/ip/forw_back_ap_fptrunc_0_no_dsp_64.vhd" \
+"../../../../forw_back.srcs/sources_1/bd/forw_back/ipshared/03fb/hdl/ip/forw_back_ap_fsub_2_full_dsp_32.vhd" \
+"../../../../forw_back.srcs/sources_1/bd/forw_back/ipshared/03fb/hdl/ip/forw_back_ap_sitofp_2_no_dsp_32.vhd" \
+"../../../../forw_back.srcs/sources_1/bd/forw_back/ip/forw_back_forw_back_0_15/sim/forw_back_forw_back_0_15.vhd" \
+
+nosort

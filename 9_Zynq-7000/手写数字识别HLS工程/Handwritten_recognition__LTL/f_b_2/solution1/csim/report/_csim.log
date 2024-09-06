@@ -1,0 +1,281 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling(apcc) ../../../main.c in debug mode
+INFO: [HLS 200-10] Running 'D:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'LTL' on host 'zero' (Windows NT_amd64 version 6.2) on Fri Oct 28 14:35:47 +0800 2022
+INFO: [HLS 200-10] In directory 'C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_2/solution1/csim/build'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Compiling(apcc) ../../../forw_back_LTL_new.c in debug mode
+INFO: [HLS 200-10] Running 'D:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'LTL' on host 'zero' (Windows NT_amd64 version 6.2) on Fri Oct 28 14:35:53 +0800 2022
+INFO: [HLS 200-10] In directory 'C:/Users/LTL/Desktop/Handwritten_digit_recognition__LTL_FPGA/f_b_2/solution1/csim/build'
+../../../forw_back_LTL_new.c:93:45: warning: incompatible pointer types passing 'float [28][28]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Conv2d(30,30,3,mnist_data,conv_kernel_1,conv_out_1);
+                                            ^~~~~~~~~~
+../../../forw_back_LTL_new.c:19:72: note: passing argument to parameter 'out_matrix' here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                                                       ^
+../../../forw_back_LTL_new.c:94:20: warning: incompatible pointer types passing 'float [28][28]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Conv2d(28,28,3,conv_out_1,conv_kernel_2,conv_out_2);
+                   ^~~~~~~~~~
+../../../forw_back_LTL_new.c:19:38: note: passing argument to parameter 'input_matrix' here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                     ^
+../../../forw_back_LTL_new.c:94:45: warning: incompatible pointer types passing 'float [26][26]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Conv2d(28,28,3,conv_out_1,conv_kernel_2,conv_out_2);
+                                            ^~~~~~~~~~
+../../../forw_back_LTL_new.c:19:72: note: passing argument to parameter 'out_matrix' here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                                                       ^
+../../../forw_back_LTL_new.c:95:20: warning: incompatible pointer types passing 'float [26][26]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Conv2d(26,26,3,conv_out_2,conv_kernel_3,conv_out_3);
+                   ^~~~~~~~~~
+../../../forw_back_LTL_new.c:19:38: note: passing argument to parameter 'input_matrix' here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                     ^
+../../../forw_back_LTL_new.c:95:45: warning: incompatible pointer types passing 'float [24][24]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Conv2d(26,26,3,conv_out_2,conv_kernel_3,conv_out_3);
+                                            ^~~~~~~~~~
+../../../forw_back_LTL_new.c:19:72: note: passing argument to parameter 'out_matrix' here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                                                       ^
+../../../forw_back_LTL_new.c:97:35: warning: incompatible pointer types passing 'float [24][24]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixExtensionImproved(24,24,conv_out_3,fc_in_1);
+                                  ^~~~~~~~~~
+../../../forw_back_LTL_new.c:29:49: note: passing argument to parameter 'input_matrix1' here
+void MatrixExtensionImproved(int w,int h,float *input_matrix1,float *output_matrix){
+                                                ^
+../../../forw_back_LTL_new.c:97:46: warning: incompatible pointer types passing 'float [1][576]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixExtensionImproved(24,24,conv_out_3,fc_in_1);
+                                             ^~~~~~~
+../../../forw_back_LTL_new.c:29:70: note: passing argument to parameter 'output_matrix' here
+void MatrixExtensionImproved(int w,int h,float *input_matrix1,float *output_matrix){
+                                                                     ^
+../../../forw_back_LTL_new.c:98:28: warning: incompatible pointer types passing 'float [1][576]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixMultiply(576,180,fc_in_1,fc_hidden_layer1,fc_out_1);
+                           ^~~~~~~
+../../../forw_back_LTL_new.c:35:44: note: passing argument to parameter 'input_matrix' here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                           ^
+../../../forw_back_LTL_new.c:98:53: warning: incompatible pointer types passing 'float [1][180]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixMultiply(576,180,fc_in_1,fc_hidden_layer1,fc_out_1);
+                                                    ^~~~~~~~
+../../../forw_back_LTL_new.c:35:81: note: passing argument to parameter 'output_matrix' here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                                                                ^
+../../../forw_back_LTL_new.c:99:14: warning: incompatible pointer types passing 'float [1][180]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Relu(180,fc_out_1,fc_in_2_relu1);
+             ^~~~~~~~
+../../../forw_back_LTL_new.c:43:24: note: passing argument to parameter 'input_matrix' here
+void Relu(int h,float *input_matrix,float *output_matrix){
+                       ^
+../../../forw_back_LTL_new.c:99:23: warning: incompatible pointer types passing 'float [1][180]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Relu(180,fc_out_1,fc_in_2_relu1);
+                      ^~~~~~~~~~~~~
+../../../forw_back_LTL_new.c:43:44: note: passing argument to parameter 'output_matrix' here
+void Relu(int h,float *input_matrix,float *output_matrix){
+                                           ^
+../../../forw_back_LTL_new.c:100:27: warning: incompatible pointer types passing 'float [1][180]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixMultiply(180,45,fc_in_2_relu1,fc_hidden_layer2,fc_out_2);
+                          ^~~~~~~~~~~~~
+../../../forw_back_LTL_new.c:35:44: note: passing argument to parameter 'input_matrix' here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                           ^
+../../../forw_back_LTL_new.c:100:58: warning: incompatible pointer types passing 'float [1][45]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixMultiply(180,45,fc_in_2_relu1,fc_hidden_layer2,fc_out_2);
+                                                         ^~~~~~~~
+../../../forw_back_LTL_new.c:35:81: note: passing argument to parameter 'output_matrix' here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                                                                ^
+../../../forw_back_LTL_new.c:101:13: warning: incompatible pointer types passing 'float [1][45]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Relu(45,fc_out_2,fc_in_3_relu2);
+            ^~~~~~~~
+../../../forw_back_LTL_new.c:43:24: note: passing argument to parameter 'input_matrix' here
+void Relu(int h,float *input_matrix,float *output_matrix){
+                       ^
+../../../forw_back_LTL_new.c:101:22: warning: incompatible pointer types passing 'float [1][45]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Relu(45,fc_out_2,fc_in_3_relu2);
+                     ^~~~~~~~~~~~~
+../../../forw_back_LTL_new.c:43:44: note: passing argument to parameter 'output_matrix' here
+void Relu(int h,float *input_matrix,float *output_matrix){
+                                           ^
+../../../forw_back_LTL_new.c:102:26: warning: incompatible pointer types passing 'float [1][45]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixMultiply(45,10,fc_in_3_relu2,fc_hidden_layer3,fc_out_3);
+                         ^~~~~~~~~~~~~
+../../../forw_back_LTL_new.c:35:44: note: passing argument to parameter 'input_matrix' here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                           ^
+../../../forw_back_LTL_new.c:102:57: warning: incompatible pointer types passing 'float [1][10]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixMultiply(45,10,fc_in_3_relu2,fc_hidden_layer3,fc_out_3);
+                                                        ^~~~~~~~
+../../../forw_back_LTL_new.c:35:81: note: passing argument to parameter 'output_matrix' here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                                                                ^
+../../../forw_back_LTL_new.c:121:41: warning: incompatible pointer types passing 'float [1][45]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixBackPropagationMultiply(45,10,fc_in_3_relu2,grad_3,wgrad_3);
+                                        ^~~~~~~~~~~~~
+../../../forw_back_LTL_new.c:48:55: note: passing argument to parameter 'input_matrix' here
+void MatrixBackPropagationMultiply(int w,int h,float *input_matrix,float *grad,float *rgrad){
+                                                      ^
+../../../forw_back_LTL_new.c:126:28: warning: incompatible pointer types passing 'float [1][45]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    ReluBackPropagation(45,fc_out_2,rgrad_2,grad_2);
+                           ^~~~~~~~
+../../../forw_back_LTL_new.c:62:39: note: passing argument to parameter 'input_matrix' here
+void ReluBackPropagation(int w,float *input_matrix,float *grad,float *output_matrix){
+                                      ^
+../../../forw_back_LTL_new.c:128:42: warning: incompatible pointer types passing 'float [1][180]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixBackPropagationMultiply(180,45,fc_in_2_relu1,grad_2,wgrad_2);
+                                         ^~~~~~~~~~~~~
+../../../forw_back_LTL_new.c:48:55: note: passing argument to parameter 'input_matrix' here
+void MatrixBackPropagationMultiply(int w,int h,float *input_matrix,float *grad,float *rgrad){
+                                                      ^
+../../../forw_back_LTL_new.c:62:39: note: passing argument to parameter 'input_matrix' here
+void ReluBackPropagation(int w,float *input_matrix,float *grad,float *output_matrix){
+                                      ^
+../../../forw_back_LTL_new.c:48:55: note: passing argument to parameter 'input_matrix' here
+void MatrixBackPropagationMultiply(int w,int h,float *input_matrix,float *grad,float *rgrad){
+                                                      ^
+../../../forw_back_LTL_new.c:19:38: note: passing argument to parameter 'input_matrix' here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                     ^
+../../../forw_back_LTL_new.c:19:38: note: passing argument to parameter 'input_matrix' here
+20 warnings generated.
+../../../forw_back_LTL_new.c:93:45: warning: incompatible pointer types passing 'float [28][28]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Conv2d(30,30,3,mnist_data,conv_kernel_1,conv_out_1);
+                                            ^~~~~~~~~~
+../../../forw_back_LTL_new.c:19:72: note: passing argument to parameter 'out_matrix' here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                                                       ^
+../../../forw_back_LTL_new.c:94:20: warning: incompatible pointer types passing 'float [28][28]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Conv2d(28,28,3,conv_out_1,conv_kernel_2,conv_out_2);
+                   ^~~~~~~~~~
+../../../forw_back_LTL_new.c:19:38: note: passing argument to parameter 'input_matrix' here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                     ^
+../../../forw_back_LTL_new.c:94:45: warning: incompatible pointer types passing 'float [26][26]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Conv2d(28,28,3,conv_out_1,conv_kernel_2,conv_out_2);
+                                            ^~~~~~~~~~
+../../../forw_back_LTL_new.c:19:72: note: passing argument to parameter 'out_matrix' here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                                                       ^
+../../../forw_back_LTL_new.c:95:20: warning: incompatible pointer types passing 'float [26][26]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Conv2d(26,26,3,conv_out_2,conv_kernel_3,conv_out_3);
+                   ^~~~~~~~~~
+../../../forw_back_LTL_new.c:19:38: note: passing argument to parameter 'input_matrix' here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                     ^
+../../../forw_back_LTL_new.c:95:45: warning: incompatible pointer types passing 'float [24][24]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Conv2d(26,26,3,conv_out_2,conv_kernel_3,conv_out_3);
+                                            ^~~~~~~~~~
+../../../forw_back_LTL_new.c:19:72: note: passing argument to parameter 'out_matrix' here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                                                       ^
+../../../forw_back_LTL_new.c:97:35: warning: incompatible pointer types passing 'float [24][24]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixExtensionImproved(24,24,conv_out_3,fc_in_1);
+                                  ^~~~~~~~~~
+../../../forw_back_LTL_new.c:29:49: note: passing argument to parameter 'input_matrix1' here
+void MatrixExtensionImproved(int w,int h,float *input_matrix1,float *output_matrix){
+                                                ^
+../../../forw_back_LTL_new.c:97:46: warning: incompatible pointer types passing 'float [1][576]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixExtensionImproved(24,24,conv_out_3,fc_in_1);
+                                             ^~~~~~~
+../../../forw_back_LTL_new.c:29:70: note: passing argument to parameter 'output_matrix' here
+void MatrixExtensionImproved(int w,int h,float *input_matrix1,float *output_matrix){
+                                                                     ^
+../../../forw_back_LTL_new.c:98:28: warning: incompatible pointer types passing 'float [1][576]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixMultiply(576,180,fc_in_1,fc_hidden_layer1,fc_out_1);
+                           ^~~~~~~
+../../../forw_back_LTL_new.c:35:44: note: passing argument to parameter 'input_matrix' here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                           ^
+../../../forw_back_LTL_new.c:98:53: warning: incompatible pointer types passing 'float [1][180]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixMultiply(576,180,fc_in_1,fc_hidden_layer1,fc_out_1);
+                                                    ^~~~~~~~
+../../../forw_back_LTL_new.c:35:81: note: passing argument to parameter 'output_matrix' here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                                                                ^
+../../../forw_back_LTL_new.c:99:14: warning: incompatible pointer types passing 'float [1][180]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Relu(180,fc_out_1,fc_in_2_relu1);
+             ^~~~~~~~
+../../../forw_back_LTL_new.c:43:24: note: passing argument to parameter 'input_matrix' here
+void Relu(int h,float *input_matrix,float *output_matrix){
+                       ^
+../../../forw_back_LTL_new.c:99:23: warning: incompatible pointer types passing 'float [1][180]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Relu(180,fc_out_1,fc_in_2_relu1);
+                      ^~~~~~~~~~~~~
+../../../forw_back_LTL_new.c:43:44: note: passing argument to parameter 'output_matrix' here
+void Relu(int h,float *input_matrix,float *output_matrix){
+                                           ^
+../../../forw_back_LTL_new.c:100:27: warning: incompatible pointer types passing 'float [1][180]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixMultiply(180,45,fc_in_2_relu1,fc_hidden_layer2,fc_out_2);
+                          ^~~~~~~~~~~~~
+../../../forw_back_LTL_new.c:35:44: note: passing argument to parameter 'input_matrix' here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                           ^
+../../../forw_back_LTL_new.c:100:58: warning: incompatible pointer types passing 'float [1][45]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixMultiply(180,45,fc_in_2_relu1,fc_hidden_layer2,fc_out_2);
+                                                         ^~~~~~~~
+../../../forw_back_LTL_new.c:35:81: note: passing argument to parameter 'output_matrix' here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                                                                ^
+../../../forw_back_LTL_new.c:101:13: warning: incompatible pointer types passing 'float [1][45]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Relu(45,fc_out_2,fc_in_3_relu2);
+            ^~~~~~~~
+../../../forw_back_LTL_new.c:43:24: note: passing argument to parameter 'input_matrix' here
+void Relu(int h,float *input_matrix,float *output_matrix){
+                       ^
+../../../forw_back_LTL_new.c:101:22: warning: incompatible pointer types passing 'float [1][45]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    Relu(45,fc_out_2,fc_in_3_relu2);
+                     ^~~~~~~~~~~~~
+../../../forw_back_LTL_new.c:43:44: note: passing argument to parameter 'output_matrix' here
+void Relu(int h,float *input_matrix,float *output_matrix){
+                                           ^
+../../../forw_back_LTL_new.c:102:26: warning: incompatible pointer types passing 'float [1][45]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixMultiply(45,10,fc_in_3_relu2,fc_hidden_layer3,fc_out_3);
+                         ^~~~~~~~~~~~~
+../../../forw_back_LTL_new.c:35:44: note: passing argument to parameter 'input_matrix' here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                           ^
+../../../forw_back_LTL_new.c:102:57: warning: incompatible pointer types passing 'float [1][10]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixMultiply(45,10,fc_in_3_relu2,fc_hidden_layer3,fc_out_3);
+                                                        ^~~~~~~~
+../../../forw_back_LTL_new.c:35:81: note: passing argument to parameter 'output_matrix' here
+void MatrixMultiply(int h,int h_out,float *input_matrix,float *para_layer,float*output_matrix){
+                                                                                ^
+../../../forw_back_LTL_new.c:121:41: warning: incompatible pointer types passing 'float [1][45]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixBackPropagationMultiply(45,10,fc_in_3_relu2,grad_3,wgrad_3);
+                                        ^~~~~~~~~~~~~
+../../../forw_back_LTL_new.c:48:55: note: passing argument to parameter 'input_matrix' here
+void MatrixBackPropagationMultiply(int w,int h,float *input_matrix,float *grad,float *rgrad){
+                                                      ^
+../../../forw_back_LTL_new.c:126:28: warning: incompatible pointer types passing 'float [1][45]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    ReluBackPropagation(45,fc_out_2,rgrad_2,grad_2);
+                           ^~~~~~~~
+../../../forw_back_LTL_new.c:62:39: note: passing argument to parameter 'input_matrix' here
+void ReluBackPropagation(int w,float *input_matrix,float *grad,float *output_matrix){
+                                      ^
+../../../forw_back_LTL_new.c:128:42: warning: incompatible pointer types passing 'float [1][180]' to parameter of type 'float *' [-Wincompatible-pointer-types]
+    MatrixBackPropagationMultiply(180,45,fc_in_2_relu1,grad_2,wgrad_2);
+                                         ^~~~~~~~~~~~~
+../../../forw_back_LTL_new.c:48:55: note: passing argument to parameter 'input_matrix' here
+void MatrixBackPropagationMultiply(int w,int h,float *input_matrix,float *grad,float *rgrad){
+                                                      ^
+../../../forw_back_LTL_new.c:62:39: note: passing argument to parameter 'input_matrix' here
+void ReluBackPropagation(int w,float *input_matrix,float *grad,float *output_matrix){
+                                      ^
+../../../forw_back_LTL_new.c:48:55: note: passing argument to parameter 'input_matrix' here
+void MatrixBackPropagationMultiply(int w,int h,float *input_matrix,float *grad,float *rgrad){
+                                                      ^
+../../../forw_back_LTL_new.c:19:38: note: passing argument to parameter 'input_matrix' here
+void Conv2d(int w,int h,int k,float *input_matrix,float *kernel,float *out_matrix){
+                                     ^
+../../../forw_back_LTL_new.c:19:38: note: passing argument to parameter 'input_matrix' here
+20 warnings generated.
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Generating csim.exe
+start
+148.413162
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

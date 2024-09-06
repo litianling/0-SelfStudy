@@ -1,0 +1,62 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'forw_back'" level="0">
+<item name = "Date">Fri Oct 28 14:10:06 2022
+</item>
+<item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
+<item name = "Project">f_b_1</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xczu3eg-sbva484-1-e</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 10.117, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_forward_fu_786">forward, ?, ?, ?, ?, none</column>
+<column name="grp_backward_fu_824">backward, ?, ?, ?, ?, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- memcpy.mnist_data.in">901, 901, 3, 1, 1, 900, yes</column>
+<column name="- memcpy.conv_kernel_1.conv1">10, 10, 3, 1, 1, 9, yes</column>
+<column name="- memcpy.conv_kernel_2.conv2">10, 10, 3, 1, 1, 9, yes</column>
+<column name="- memcpy.conv_kernel_3.conv3">10, 10, 3, 1, 1, 9, yes</column>
+<column name="- memcpy.fc_hidden_layer1.fc1">103681, 103681, 3, 1, 1, 103680, yes</column>
+<column name="- memcpy.fc_hidden_layer2.fc2">8101, 8101, 3, 1, 1, 8100, yes</column>
+<column name="- memcpy.fc_hidden_layer3.fc3">451, 451, 3, 1, 1, 450, yes</column>
+<column name="- memcpy.out.probability_result.gep1">11, 11, 3, 1, 1, 10, yes</column>
+<column name="- memcpy.out.probability_result.gep">11, 11, 3, 1, 1, 10, yes</column>
+<column name="- memcpy.conv1.conv_kernel_1.gep">10, 10, 3, 1, 1, 9, yes</column>
+<column name="- memcpy.conv2.conv_kernel_2.gep">10, 10, 3, 1, 1, 9, yes</column>
+<column name="- memcpy.conv3.conv_kernel_3.gep">10, 10, 3, 1, 1, 9, yes</column>
+<column name="- memcpy.fc1.fc_hidden_layer1.gep">103681, 103681, 3, 1, 1, 103680, yes</column>
+<column name="- memcpy.fc2.fc_hidden_layer2.gep">8101, 8101, 3, 1, 1, 8100, yes</column>
+<column name="- memcpy.fc3.fc_hidden_layer3.gep">451, 451, 3, 1, 1, 450, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

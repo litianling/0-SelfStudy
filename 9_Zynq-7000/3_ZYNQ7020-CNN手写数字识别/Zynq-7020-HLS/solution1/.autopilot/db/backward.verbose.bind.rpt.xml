@@ -1,0 +1,68 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'backward'" level="0">
+<item name = "Date">Thu May 11 11:34:52 2023
+</item>
+<item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
+<item name = "Project">Zynq-7020-HLS</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 9.195, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_Conv2d_1_fu_685">Conv2d_1, ?, ?, ?, ?, none</column>
+<column name="grp_Conv2d_fu_692">Conv2d, 1051, 1051, 1051, 1051, none</column>
+<column name="grp_Conv2d_2_fu_700">Conv2d_2, 1051, 1051, 1051, 1051, none</column>
+<column name="grp_MatrixBackPropagatio_fu_708">MatrixBackPropagatio, 106, 106, 106, 106, none</column>
+<column name="grp_MaxPooBackPropagatio_1_fu_717">MaxPooBackPropagatio_1, 1654, 1654, 1654, 1654, none</column>
+<column name="grp_MaxPooBackPropagatio_fu_725">MaxPooBackPropagatio, 326, 326, 326, 326, none</column>
+<column name="grp_Padding_fu_733">Padding, 545, 545, 545, 545, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop 1">20, 20, 2, -, -, 10, no</column>
+<column name="- Loop 2">1260, 1260, 63, -, -, 20, no</column>
+<column name=" + Loop 2.1">60, 60, 6, -, -, 10, no</column>
+<column name="- Loop 3">2440, 2440, 122, -, -, 20, no</column>
+<column name=" + Loop 3.1">120, 120, 12, -, -, 10, no</column>
+<column name="- Loop 4">80, 240, 4 ~ 12, -, -, 20, no</column>
+<column name="- Loop 5">4428, 4428, 123, -, -, 36, no</column>
+<column name=" + Loop 5.1">120, 120, 6, -, -, 20, no</column>
+<column name="- Loop 6">8712, 8712, 242, -, -, 36, no</column>
+<column name=" + Loop 6.1">240, 240, 12, -, -, 20, no</column>
+<column name="- Loop 7">24, 24, 8, -, -, 3, no</column>
+<column name=" + Loop 7.1">6, 6, 2, -, -, 3, no</column>
+<column name="- Loop 8">8712, 8712, 242, -, -, 36, no</column>
+<column name=" + Loop 8.1">240, 240, 12, -, -, 20, no</column>
+<column name="- Loop 9">2440, 2440, 122, -, -, 20, no</column>
+<column name=" + Loop 9.1">120, 120, 12, -, -, 10, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

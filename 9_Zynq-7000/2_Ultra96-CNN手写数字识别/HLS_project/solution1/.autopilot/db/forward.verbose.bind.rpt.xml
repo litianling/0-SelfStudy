@@ -1,0 +1,57 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'forward'" level="0">
+<item name = "Date">Thu Nov  3 16:10:28 2022
+</item>
+<item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
+<item name = "Project">f_b_4_new_network</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xczu3eg-sbva484-1-e</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 8.334, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_Conv2d_4_fu_496">Conv2d_4, ?, ?, ?, ?, none</column>
+<column name="grp_Conv2d_3_fu_506">Conv2d_3, ?, ?, ?, ?, none</column>
+<column name="grp_MaxPool2d_1_fu_516">MaxPool2d_1, ?, ?, ?, ?, none</column>
+<column name="grp_MaxPool2d_fu_526">MaxPool2d, ?, ?, ?, ?, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- MatrixExtensionImproved_label1">18, 18, 4, 3, 1, 6, yes</column>
+<column name="- Loop 2">6520, 6520, 326, -, -, 20, no</column>
+<column name=" + Loop 2.1">324, 324, 9, -, -, 36, no</column>
+<column name="- Loop 3">220, 220, 11, -, -, 20, no</column>
+<column name="- Loop 4">1820, 1820, 182, -, -, 10, no</column>
+<column name=" + Loop 4.1">180, 180, 9, -, -, 20, no</column>
+<column name="- Loop 5">230, 230, 23, -, -, 10, no</column>
+<column name="- Loop 6">400, 400, 40, -, -, 10, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

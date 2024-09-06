@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="forw_back.c" path="C:\Users\LTL\Desktop\Handwritten_digit_recognition__ZYY_FPGA\f_b_0\forw_back.c"/>
+  </source>
+  <testbench>
+    <originFiles name="main.c" path="C:\Users\LTL\Desktop\Handwritten_digit_recognition__ZYY_FPGA\f_b_0\main.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

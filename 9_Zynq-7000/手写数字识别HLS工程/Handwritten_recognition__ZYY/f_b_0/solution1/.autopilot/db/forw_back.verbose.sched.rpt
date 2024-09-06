@@ -1,0 +1,965 @@
+
+
+================================================================
+== Vivado HLS Report for 'forw_back'
+================================================================
+* Date:           Wed Oct 26 23:36:14 2022
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        f_b_0
+* Solution:       solution1
+* Product family: zynquplus
+* Target device:  xczu3eg-sbva484-1-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.750|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                         |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |        Loop Name        | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- memcpy.out.outmlp.gep  |   11|   11|         3|          1|          1|    10|    yes   |
+        |- Loop 2                 |  230|  230|        23|          -|          -|    10|    no    |
+        |- Loop 3                 |  400|  400|        40|          -|          -|    10|    no    |
+        |- memcpy.out.result.gep  |   11|   11|         3|          1|          1|    10|    yes   |
+        +-------------------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+  * Pipeline-1: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 83
+* Pipeline : 2
+  Pipeline-0 : II = 1, D = 3, States = { 68 69 70 }
+  Pipeline-1 : II = 1, D = 3, States = { 76 77 78 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 76 
+4 --> 5 27 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 4 
+27 --> 28 
+28 --> 29 68 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 37 
+37 --> 38 
+38 --> 39 
+39 --> 40 
+40 --> 41 
+41 --> 42 
+42 --> 43 
+43 --> 44 
+44 --> 45 
+45 --> 46 
+46 --> 47 
+47 --> 48 
+48 --> 49 
+49 --> 50 
+50 --> 51 
+51 --> 52 
+52 --> 53 
+53 --> 54 
+54 --> 55 
+55 --> 56 
+56 --> 57 
+57 --> 58 
+58 --> 59 
+59 --> 60 
+60 --> 61 
+61 --> 62 
+62 --> 63 
+63 --> 64 
+64 --> 65 
+65 --> 66 
+66 --> 67 
+67 --> 28 
+68 --> 71 69 
+69 --> 70 
+70 --> 68 
+71 --> 72 
+72 --> 73 
+73 --> 74 
+74 --> 75 
+75 --> 
+76 --> 79 77 
+77 --> 78 
+78 --> 76 
+79 --> 80 
+80 --> 81 
+81 --> 82 
+82 --> 83 
+83 --> 75 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.11>
+ST_1 : Operation 84 [1/1] (1.00ns)   --->   "%lr_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %lr)"   --->   Operation 84 'read' 'lr_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 85 [1/1] (1.00ns)   --->   "%label_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %label_r)"   --->   Operation 85 'read' 'label_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 86 [1/1] (1.00ns)   --->   "%out_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %out_r)"   --->   Operation 86 'read' 'out_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 87 [1/1] (1.00ns)   --->   "%fc3_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %fc3)"   --->   Operation 87 'read' 'fc3_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 88 [1/1] (1.00ns)   --->   "%fc2_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %fc2)"   --->   Operation 88 'read' 'fc2_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 89 [1/1] (1.00ns)   --->   "%fc1_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %fc1)"   --->   Operation 89 'read' 'fc1_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 90 [1/1] (1.00ns)   --->   "%conv3_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %conv3)"   --->   Operation 90 'read' 'conv3_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 91 [1/1] (1.00ns)   --->   "%conv2_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %conv2)"   --->   Operation 91 'read' 'conv2_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 92 [1/1] (1.00ns)   --->   "%conv1_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %conv1)"   --->   Operation 92 'read' 'conv1_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 93 [1/1] (1.00ns)   --->   "%in_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %in_r)"   --->   Operation 93 'read' 'in_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 94 [1/1] (1.00ns)   --->   "%flag_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %flag)"   --->   Operation 94 'read' 'flag_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 95 [1/1] (0.00ns)   --->   "%lr1 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %lr_read, i32 2, i32 31)"   --->   Operation 95 'partselect' 'lr1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 96 [1/1] (0.00ns)   --->   "%out1 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %out_read, i32 2, i32 31)"   --->   Operation 96 'partselect' 'out1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 97 [1/1] (0.00ns)   --->   "%fc = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %fc3_read, i32 2, i32 31)"   --->   Operation 97 'partselect' 'fc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 98 [1/1] (0.00ns)   --->   "%fc4 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %fc2_read, i32 2, i32 31)"   --->   Operation 98 'partselect' 'fc4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 99 [1/1] (0.00ns)   --->   "%fc5 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %fc1_read, i32 2, i32 31)"   --->   Operation 99 'partselect' 'fc5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 100 [1/1] (0.00ns)   --->   "%conv = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %conv3_read, i32 2, i32 31)"   --->   Operation 100 'partselect' 'conv' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 101 [1/1] (0.00ns)   --->   "%conv4 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %conv2_read, i32 2, i32 31)"   --->   Operation 101 'partselect' 'conv4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 102 [1/1] (0.00ns)   --->   "%conv5 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %conv1_read, i32 2, i32 31)"   --->   Operation 102 'partselect' 'conv5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 103 [1/1] (0.00ns)   --->   "%in1 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %in_read, i32 2, i32 31)"   --->   Operation 103 'partselect' 'in1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 104 [1/1] (1.11ns)   --->   "%icmp_ln354 = icmp eq i32 %flag_read, 0" [f_b_0/forw_back.c:354]   --->   Operation 104 'icmp' 'icmp_ln354' <Predicate = true> <Delay = 1.11> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+
+State 2 <SV = 1> <Delay = 8.75>
+ST_2 : Operation 105 [2/2] (8.75ns)   --->   "call fastcc void @forward(float* %data, i30 %in1, i30 %conv5, i30 %conv4, i30 %conv, i30 %fc5, i30 %fc4, i30 %fc)" [f_b_0/forw_back.c:355]   --->   Operation 105 'call' <Predicate = true> <Delay = 8.75> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 8.75>
+ST_3 : Operation 106 [1/1] (0.00ns)   --->   "%empty = zext i30 %out1 to i64"   --->   Operation 106 'zext' 'empty' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 107 [1/1] (0.00ns)   --->   "%data_addr = getelementptr float* %data, i64 %empty"   --->   Operation 107 'getelementptr' 'data_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 108 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %data), !map !61"   --->   Operation 108 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 109 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %flag) nounwind, !map !75"   --->   Operation 109 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 110 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %label_r) nounwind, !map !81"   --->   Operation 110 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 111 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([10 x i8]* @forw_back_str) nounwind"   --->   Operation 111 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 112 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %lr, [10 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [5 x i8]* @p_str17, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_0/forw_back.c:333]   --->   Operation 112 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 113 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecMemCore([8100 x float]* @fc_hidden_layer2, [1 x i8]* @p_str, [14 x i8]* @p_str1, [1 x i8]* @p_str, i32 -1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_0/forw_back.c:333]   --->   Operation 113 'specmemcore' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 114 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %flag, [10 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [5 x i8]* @p_str17, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_0/forw_back.c:334]   --->   Operation 114 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 115 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %label_r, [10 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [5 x i8]* @p_str17, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_0/forw_back.c:335]   --->   Operation 115 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 116 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %in_r, [10 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [5 x i8]* @p_str17, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_0/forw_back.c:336]   --->   Operation 116 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 117 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %conv1, [10 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [5 x i8]* @p_str17, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_0/forw_back.c:337]   --->   Operation 117 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 118 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %conv2, [10 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [5 x i8]* @p_str17, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_0/forw_back.c:338]   --->   Operation 118 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 119 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %conv3, [10 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [5 x i8]* @p_str17, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_0/forw_back.c:339]   --->   Operation 119 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 120 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %out_r, [10 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [5 x i8]* @p_str17, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_0/forw_back.c:340]   --->   Operation 120 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 121 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %fc1, [10 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [5 x i8]* @p_str17, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_0/forw_back.c:341]   --->   Operation 121 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 122 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %fc2, [10 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [5 x i8]* @p_str17, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_0/forw_back.c:342]   --->   Operation 122 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 123 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %fc3, [10 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [5 x i8]* @p_str17, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_0/forw_back.c:343]   --->   Operation 123 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 124 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(float* %data, [6 x i8]* @p_str14, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 32, [5 x i8]* @p_str15, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_0/forw_back.c:344]   --->   Operation 124 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 125 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [5 x i8]* @p_str17, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [f_b_0/forw_back.c:352]   --->   Operation 125 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 126 [1/2] (0.00ns)   --->   "call fastcc void @forward(float* %data, i30 %in1, i30 %conv5, i30 %conv4, i30 %conv, i30 %fc5, i30 %fc4, i30 %fc)" [f_b_0/forw_back.c:355]   --->   Operation 126 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 127 [1/1] (0.00ns)   --->   "br i1 %icmp_ln354, label %burst.wr.header.preheader, label %.preheader1.preheader" [f_b_0/forw_back.c:354]   --->   Operation 127 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 128 [1/1] (0.75ns)   --->   "br label %.preheader1" [f_b_0/forw_back.c:361]   --->   Operation 128 'br' <Predicate = (!icmp_ln354)> <Delay = 0.75>
+ST_3 : Operation 129 [1/1] (8.75ns)   --->   "%data_addr_wr_req = call i1 @_ssdm_op_WriteReq.m_axi.floatP(float* %data_addr, i32 10)" [f_b_0/forw_back.c:356]   --->   Operation 129 'writereq' 'data_addr_wr_req' <Predicate = (icmp_ln354)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_3 : Operation 130 [1/1] (0.75ns)   --->   "br label %burst.wr.header" [f_b_0/forw_back.c:356]   --->   Operation 130 'br' <Predicate = (icmp_ln354)> <Delay = 0.75>
+
+State 4 <SV = 3> <Delay = 2.78>
+ST_4 : Operation 131 [1/1] (0.00ns)   --->   "%probability_0 = phi float [ %probability, %1 ], [ 0.000000e+00, %.preheader1.preheader ]"   --->   Operation 131 'phi' 'probability_0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 132 [1/1] (0.00ns)   --->   "%j_0 = phi i4 [ %j, %1 ], [ 0, %.preheader1.preheader ]"   --->   Operation 132 'phi' 'j_0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 133 [1/1] (0.88ns)   --->   "%icmp_ln361 = icmp eq i4 %j_0, -6" [f_b_0/forw_back.c:361]   --->   Operation 133 'icmp' 'icmp_ln361' <Predicate = true> <Delay = 0.88> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 134 [1/1] (0.00ns)   --->   "%empty_29 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10) nounwind"   --->   Operation 134 'speclooptripcount' 'empty_29' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 135 [1/1] (0.86ns)   --->   "%j = add i4 %j_0, 1" [f_b_0/forw_back.c:361]   --->   Operation 135 'add' 'j' <Predicate = true> <Delay = 0.86> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.86> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 136 [1/1] (0.00ns)   --->   "br i1 %icmp_ln361, label %.preheader.preheader, label %1" [f_b_0/forw_back.c:361]   --->   Operation 136 'br' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 137 [1/1] (0.00ns)   --->   "%zext_ln362 = zext i4 %j_0 to i64" [f_b_0/forw_back.c:362]   --->   Operation 137 'zext' 'zext_ln362' <Predicate = (!icmp_ln361)> <Delay = 0.00>
+ST_4 : Operation 138 [1/1] (0.00ns)   --->   "%outmlp_0_addr_1 = getelementptr [10 x float]* @outmlp_0, i64 0, i64 %zext_ln362" [f_b_0/forw_back.c:362]   --->   Operation 138 'getelementptr' 'outmlp_0_addr_1' <Predicate = (!icmp_ln361)> <Delay = 0.00>
+ST_4 : Operation 139 [2/2] (0.79ns)   --->   "%outmlp_0_load_1 = load float* %outmlp_0_addr_1, align 4" [f_b_0/forw_back.c:362]   --->   Operation 139 'load' 'outmlp_0_load_1' <Predicate = (!icmp_ln361)> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.79> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_4 : Operation 140 [2/2] (2.78ns)   --->   "%tmp = fpext float %probability_0 to double" [f_b_0/forw_back.c:365]   --->   Operation 140 'fpext' 'tmp' <Predicate = (icmp_ln361)> <Delay = 2.78> <Core = "Float2Double">   --->   Core 114 'Float2Double' <Latency = 1> <II = 1> <Delay = 2.78> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+
+State 5 <SV = 4> <Delay = 3.57>
+ST_5 : Operation 141 [1/2] (0.79ns)   --->   "%outmlp_0_load_1 = load float* %outmlp_0_addr_1, align 4" [f_b_0/forw_back.c:362]   --->   Operation 141 'load' 'outmlp_0_load_1' <Predicate = true> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.79> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_5 : Operation 142 [2/2] (2.78ns)   --->   "%tmp_1 = fpext float %outmlp_0_load_1 to double" [f_b_0/forw_back.c:362]   --->   Operation 142 'fpext' 'tmp_1' <Predicate = true> <Delay = 2.78> <Core = "Float2Double">   --->   Core 114 'Float2Double' <Latency = 1> <II = 1> <Delay = 2.78> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+
+State 6 <SV = 5> <Delay = 2.78>
+ST_6 : Operation 143 [1/2] (2.78ns)   --->   "%tmp_1 = fpext float %outmlp_0_load_1 to double" [f_b_0/forw_back.c:362]   --->   Operation 143 'fpext' 'tmp_1' <Predicate = true> <Delay = 2.78> <Core = "Float2Double">   --->   Core 114 'Float2Double' <Latency = 1> <II = 1> <Delay = 2.78> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+
+State 7 <SV = 6> <Delay = 8.32>
+ST_7 : Operation 144 [13/13] (8.32ns)   --->   "%tmp_2 = call double @llvm.exp.f64(double %tmp_1)" [f_b_0/forw_back.c:362]   --->   Operation 144 'dexp' 'tmp_2' <Predicate = true> <Delay = 8.32> <Core = "DExp">   --->   Core 128 'DExp' <Latency = 12> <II = 1> <Delay = 8.32> <FuncUnit> <Opcode : 'dexp'> <InPorts = 1> <OutPorts = 1>
+
+State 8 <SV = 7> <Delay = 8.32>
+ST_8 : Operation 145 [12/13] (8.32ns)   --->   "%tmp_2 = call double @llvm.exp.f64(double %tmp_1)" [f_b_0/forw_back.c:362]   --->   Operation 145 'dexp' 'tmp_2' <Predicate = true> <Delay = 8.32> <Core = "DExp">   --->   Core 128 'DExp' <Latency = 12> <II = 1> <Delay = 8.32> <FuncUnit> <Opcode : 'dexp'> <InPorts = 1> <OutPorts = 1>
+
+State 9 <SV = 8> <Delay = 8.32>
+ST_9 : Operation 146 [11/13] (8.32ns)   --->   "%tmp_2 = call double @llvm.exp.f64(double %tmp_1)" [f_b_0/forw_back.c:362]   --->   Operation 146 'dexp' 'tmp_2' <Predicate = true> <Delay = 8.32> <Core = "DExp">   --->   Core 128 'DExp' <Latency = 12> <II = 1> <Delay = 8.32> <FuncUnit> <Opcode : 'dexp'> <InPorts = 1> <OutPorts = 1>
+
+State 10 <SV = 9> <Delay = 8.32>
+ST_10 : Operation 147 [10/13] (8.32ns)   --->   "%tmp_2 = call double @llvm.exp.f64(double %tmp_1)" [f_b_0/forw_back.c:362]   --->   Operation 147 'dexp' 'tmp_2' <Predicate = true> <Delay = 8.32> <Core = "DExp">   --->   Core 128 'DExp' <Latency = 12> <II = 1> <Delay = 8.32> <FuncUnit> <Opcode : 'dexp'> <InPorts = 1> <OutPorts = 1>
+
+State 11 <SV = 10> <Delay = 8.32>
+ST_11 : Operation 148 [9/13] (8.32ns)   --->   "%tmp_2 = call double @llvm.exp.f64(double %tmp_1)" [f_b_0/forw_back.c:362]   --->   Operation 148 'dexp' 'tmp_2' <Predicate = true> <Delay = 8.32> <Core = "DExp">   --->   Core 128 'DExp' <Latency = 12> <II = 1> <Delay = 8.32> <FuncUnit> <Opcode : 'dexp'> <InPorts = 1> <OutPorts = 1>
+
+State 12 <SV = 11> <Delay = 8.32>
+ST_12 : Operation 149 [8/13] (8.32ns)   --->   "%tmp_2 = call double @llvm.exp.f64(double %tmp_1)" [f_b_0/forw_back.c:362]   --->   Operation 149 'dexp' 'tmp_2' <Predicate = true> <Delay = 8.32> <Core = "DExp">   --->   Core 128 'DExp' <Latency = 12> <II = 1> <Delay = 8.32> <FuncUnit> <Opcode : 'dexp'> <InPorts = 1> <OutPorts = 1>
+
+State 13 <SV = 12> <Delay = 8.32>
+ST_13 : Operation 150 [7/13] (8.32ns)   --->   "%tmp_2 = call double @llvm.exp.f64(double %tmp_1)" [f_b_0/forw_back.c:362]   --->   Operation 150 'dexp' 'tmp_2' <Predicate = true> <Delay = 8.32> <Core = "DExp">   --->   Core 128 'DExp' <Latency = 12> <II = 1> <Delay = 8.32> <FuncUnit> <Opcode : 'dexp'> <InPorts = 1> <OutPorts = 1>
+
+State 14 <SV = 13> <Delay = 8.32>
+ST_14 : Operation 151 [6/13] (8.32ns)   --->   "%tmp_2 = call double @llvm.exp.f64(double %tmp_1)" [f_b_0/forw_back.c:362]   --->   Operation 151 'dexp' 'tmp_2' <Predicate = true> <Delay = 8.32> <Core = "DExp">   --->   Core 128 'DExp' <Latency = 12> <II = 1> <Delay = 8.32> <FuncUnit> <Opcode : 'dexp'> <InPorts = 1> <OutPorts = 1>
+
+State 15 <SV = 14> <Delay = 8.32>
+ST_15 : Operation 152 [5/13] (8.32ns)   --->   "%tmp_2 = call double @llvm.exp.f64(double %tmp_1)" [f_b_0/forw_back.c:362]   --->   Operation 152 'dexp' 'tmp_2' <Predicate = true> <Delay = 8.32> <Core = "DExp">   --->   Core 128 'DExp' <Latency = 12> <II = 1> <Delay = 8.32> <FuncUnit> <Opcode : 'dexp'> <InPorts = 1> <OutPorts = 1>
+
+State 16 <SV = 15> <Delay = 8.32>
+ST_16 : Operation 153 [4/13] (8.32ns)   --->   "%tmp_2 = call double @llvm.exp.f64(double %tmp_1)" [f_b_0/forw_back.c:362]   --->   Operation 153 'dexp' 'tmp_2' <Predicate = true> <Delay = 8.32> <Core = "DExp">   --->   Core 128 'DExp' <Latency = 12> <II = 1> <Delay = 8.32> <FuncUnit> <Opcode : 'dexp'> <InPorts = 1> <OutPorts = 1>
+
+State 17 <SV = 16> <Delay = 8.32>
+ST_17 : Operation 154 [3/13] (8.32ns)   --->   "%tmp_2 = call double @llvm.exp.f64(double %tmp_1)" [f_b_0/forw_back.c:362]   --->   Operation 154 'dexp' 'tmp_2' <Predicate = true> <Delay = 8.32> <Core = "DExp">   --->   Core 128 'DExp' <Latency = 12> <II = 1> <Delay = 8.32> <FuncUnit> <Opcode : 'dexp'> <InPorts = 1> <OutPorts = 1>
+
+State 18 <SV = 17> <Delay = 8.32>
+ST_18 : Operation 155 [2/13] (8.32ns)   --->   "%tmp_2 = call double @llvm.exp.f64(double %tmp_1)" [f_b_0/forw_back.c:362]   --->   Operation 155 'dexp' 'tmp_2' <Predicate = true> <Delay = 8.32> <Core = "DExp">   --->   Core 128 'DExp' <Latency = 12> <II = 1> <Delay = 8.32> <FuncUnit> <Opcode : 'dexp'> <InPorts = 1> <OutPorts = 1>
+ST_18 : Operation 156 [2/2] (2.78ns)   --->   "%tmp_3 = fpext float %probability_0 to double" [f_b_0/forw_back.c:362]   --->   Operation 156 'fpext' 'tmp_3' <Predicate = true> <Delay = 2.78> <Core = "Float2Double">   --->   Core 114 'Float2Double' <Latency = 1> <II = 1> <Delay = 2.78> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+
+State 19 <SV = 18> <Delay = 8.32>
+ST_19 : Operation 157 [1/13] (8.32ns)   --->   "%tmp_2 = call double @llvm.exp.f64(double %tmp_1)" [f_b_0/forw_back.c:362]   --->   Operation 157 'dexp' 'tmp_2' <Predicate = true> <Delay = 8.32> <Core = "DExp">   --->   Core 128 'DExp' <Latency = 12> <II = 1> <Delay = 8.32> <FuncUnit> <Opcode : 'dexp'> <InPorts = 1> <OutPorts = 1>
+ST_19 : Operation 158 [1/2] (2.78ns)   --->   "%tmp_3 = fpext float %probability_0 to double" [f_b_0/forw_back.c:362]   --->   Operation 158 'fpext' 'tmp_3' <Predicate = true> <Delay = 2.78> <Core = "Float2Double">   --->   Core 114 'Float2Double' <Latency = 1> <II = 1> <Delay = 2.78> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+
+State 20 <SV = 19> <Delay = 6.91>
+ST_20 : Operation 159 [5/5] (6.91ns)   --->   "%tmp_4 = fadd double %tmp_3, %tmp_2" [f_b_0/forw_back.c:362]   --->   Operation 159 'dadd' 'tmp_4' <Predicate = true> <Delay = 6.91> <Core = "DAddSub">   --->   Core 115 'DAddSub' <Latency = 4> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 21 <SV = 20> <Delay = 6.91>
+ST_21 : Operation 160 [4/5] (6.91ns)   --->   "%tmp_4 = fadd double %tmp_3, %tmp_2" [f_b_0/forw_back.c:362]   --->   Operation 160 'dadd' 'tmp_4' <Predicate = true> <Delay = 6.91> <Core = "DAddSub">   --->   Core 115 'DAddSub' <Latency = 4> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 22 <SV = 21> <Delay = 6.91>
+ST_22 : Operation 161 [3/5] (6.91ns)   --->   "%tmp_4 = fadd double %tmp_3, %tmp_2" [f_b_0/forw_back.c:362]   --->   Operation 161 'dadd' 'tmp_4' <Predicate = true> <Delay = 6.91> <Core = "DAddSub">   --->   Core 115 'DAddSub' <Latency = 4> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 23 <SV = 22> <Delay = 6.91>
+ST_23 : Operation 162 [2/5] (6.91ns)   --->   "%tmp_4 = fadd double %tmp_3, %tmp_2" [f_b_0/forw_back.c:362]   --->   Operation 162 'dadd' 'tmp_4' <Predicate = true> <Delay = 6.91> <Core = "DAddSub">   --->   Core 115 'DAddSub' <Latency = 4> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 24 <SV = 23> <Delay = 6.91>
+ST_24 : Operation 163 [1/5] (6.91ns)   --->   "%tmp_4 = fadd double %tmp_3, %tmp_2" [f_b_0/forw_back.c:362]   --->   Operation 163 'dadd' 'tmp_4' <Predicate = true> <Delay = 6.91> <Core = "DAddSub">   --->   Core 115 'DAddSub' <Latency = 4> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 25 <SV = 24> <Delay = 3.32>
+ST_25 : Operation 164 [2/2] (3.32ns)   --->   "%probability = fptrunc double %tmp_4 to float" [f_b_0/forw_back.c:362]   --->   Operation 164 'fptrunc' 'probability' <Predicate = true> <Delay = 3.32> <Core = "Double2Float">   --->   Core 123 'Double2Float' <Latency = 1> <II = 1> <Delay = 3.32> <FuncUnit> <Opcode : 'fptrunc'> <InPorts = 1> <OutPorts = 1>
+
+State 26 <SV = 25> <Delay = 3.32>
+ST_26 : Operation 165 [1/2] (3.32ns)   --->   "%probability = fptrunc double %tmp_4 to float" [f_b_0/forw_back.c:362]   --->   Operation 165 'fptrunc' 'probability' <Predicate = true> <Delay = 3.32> <Core = "Double2Float">   --->   Core 123 'Double2Float' <Latency = 1> <II = 1> <Delay = 3.32> <FuncUnit> <Opcode : 'fptrunc'> <InPorts = 1> <OutPorts = 1>
+ST_26 : Operation 166 [1/1] (0.00ns)   --->   "br label %.preheader1" [f_b_0/forw_back.c:361]   --->   Operation 166 'br' <Predicate = true> <Delay = 0.00>
+
+State 27 <SV = 4> <Delay = 2.78>
+ST_27 : Operation 167 [1/2] (2.78ns)   --->   "%tmp = fpext float %probability_0 to double" [f_b_0/forw_back.c:365]   --->   Operation 167 'fpext' 'tmp' <Predicate = true> <Delay = 2.78> <Core = "Float2Double">   --->   Core 114 'Float2Double' <Latency = 1> <II = 1> <Delay = 2.78> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+ST_27 : Operation 168 [1/1] (0.75ns)   --->   "br label %.preheader" [f_b_0/forw_back.c:364]   --->   Operation 168 'br' <Predicate = true> <Delay = 0.75>
+
+State 28 <SV = 5> <Delay = 8.75>
+ST_28 : Operation 169 [1/1] (0.00ns)   --->   "%i_0 = phi i4 [ %i, %2 ], [ 0, %.preheader.preheader ]"   --->   Operation 169 'phi' 'i_0' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 170 [1/1] (0.88ns)   --->   "%icmp_ln364 = icmp eq i4 %i_0, -6" [f_b_0/forw_back.c:364]   --->   Operation 170 'icmp' 'icmp_ln364' <Predicate = true> <Delay = 0.88> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 171 [1/1] (0.00ns)   --->   "%empty_30 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10) nounwind"   --->   Operation 171 'speclooptripcount' 'empty_30' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 172 [1/1] (0.86ns)   --->   "%i = add i4 %i_0, 1" [f_b_0/forw_back.c:364]   --->   Operation 172 'add' 'i' <Predicate = true> <Delay = 0.86> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.86> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 173 [1/1] (0.00ns)   --->   "br i1 %icmp_ln364, label %burst.wr.header13.preheader, label %2" [f_b_0/forw_back.c:364]   --->   Operation 173 'br' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 174 [1/1] (0.00ns)   --->   "%zext_ln365 = zext i4 %i_0 to i64" [f_b_0/forw_back.c:365]   --->   Operation 174 'zext' 'zext_ln365' <Predicate = (!icmp_ln364)> <Delay = 0.00>
+ST_28 : Operation 175 [1/1] (0.00ns)   --->   "%outmlp_0_addr_2 = getelementptr [10 x float]* @outmlp_0, i64 0, i64 %zext_ln365" [f_b_0/forw_back.c:365]   --->   Operation 175 'getelementptr' 'outmlp_0_addr_2' <Predicate = (!icmp_ln364)> <Delay = 0.00>
+ST_28 : Operation 176 [2/2] (0.79ns)   --->   "%outmlp_0_load_2 = load float* %outmlp_0_addr_2, align 4" [f_b_0/forw_back.c:365]   --->   Operation 176 'load' 'outmlp_0_load_2' <Predicate = (!icmp_ln364)> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.79> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_28 : Operation 177 [1/1] (8.75ns)   --->   "%data_addr_wr_req34 = call i1 @_ssdm_op_WriteReq.m_axi.floatP(float* %data_addr, i32 10)" [f_b_0/forw_back.c:367]   --->   Operation 177 'writereq' 'data_addr_wr_req34' <Predicate = (icmp_ln364)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_28 : Operation 178 [1/1] (0.75ns)   --->   "br label %burst.wr.header13" [f_b_0/forw_back.c:367]   --->   Operation 178 'br' <Predicate = (icmp_ln364)> <Delay = 0.75>
+
+State 29 <SV = 6> <Delay = 3.57>
+ST_29 : Operation 179 [1/2] (0.79ns)   --->   "%outmlp_0_load_2 = load float* %outmlp_0_addr_2, align 4" [f_b_0/forw_back.c:365]   --->   Operation 179 'load' 'outmlp_0_load_2' <Predicate = true> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.79> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_29 : Operation 180 [2/2] (2.78ns)   --->   "%tmp_6 = fpext float %outmlp_0_load_2 to double" [f_b_0/forw_back.c:365]   --->   Operation 180 'fpext' 'tmp_6' <Predicate = true> <Delay = 2.78> <Core = "Float2Double">   --->   Core 114 'Float2Double' <Latency = 1> <II = 1> <Delay = 2.78> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+
+State 30 <SV = 7> <Delay = 2.78>
+ST_30 : Operation 181 [1/2] (2.78ns)   --->   "%tmp_6 = fpext float %outmlp_0_load_2 to double" [f_b_0/forw_back.c:365]   --->   Operation 181 'fpext' 'tmp_6' <Predicate = true> <Delay = 2.78> <Core = "Float2Double">   --->   Core 114 'Float2Double' <Latency = 1> <II = 1> <Delay = 2.78> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+
+State 31 <SV = 8> <Delay = 8.32>
+ST_31 : Operation 182 [13/13] (8.32ns)   --->   "%tmp_7 = call double @llvm.exp.f64(double %tmp_6)" [f_b_0/forw_back.c:365]   --->   Operation 182 'dexp' 'tmp_7' <Predicate = true> <Delay = 8.32> <Core = "DExp">   --->   Core 128 'DExp' <Latency = 12> <II = 1> <Delay = 8.32> <FuncUnit> <Opcode : 'dexp'> <InPorts = 1> <OutPorts = 1>
+
+State 32 <SV = 9> <Delay = 8.32>
+ST_32 : Operation 183 [12/13] (8.32ns)   --->   "%tmp_7 = call double @llvm.exp.f64(double %tmp_6)" [f_b_0/forw_back.c:365]   --->   Operation 183 'dexp' 'tmp_7' <Predicate = true> <Delay = 8.32> <Core = "DExp">   --->   Core 128 'DExp' <Latency = 12> <II = 1> <Delay = 8.32> <FuncUnit> <Opcode : 'dexp'> <InPorts = 1> <OutPorts = 1>
+
+State 33 <SV = 10> <Delay = 8.32>
+ST_33 : Operation 184 [11/13] (8.32ns)   --->   "%tmp_7 = call double @llvm.exp.f64(double %tmp_6)" [f_b_0/forw_back.c:365]   --->   Operation 184 'dexp' 'tmp_7' <Predicate = true> <Delay = 8.32> <Core = "DExp">   --->   Core 128 'DExp' <Latency = 12> <II = 1> <Delay = 8.32> <FuncUnit> <Opcode : 'dexp'> <InPorts = 1> <OutPorts = 1>
+
+State 34 <SV = 11> <Delay = 8.32>
+ST_34 : Operation 185 [10/13] (8.32ns)   --->   "%tmp_7 = call double @llvm.exp.f64(double %tmp_6)" [f_b_0/forw_back.c:365]   --->   Operation 185 'dexp' 'tmp_7' <Predicate = true> <Delay = 8.32> <Core = "DExp">   --->   Core 128 'DExp' <Latency = 12> <II = 1> <Delay = 8.32> <FuncUnit> <Opcode : 'dexp'> <InPorts = 1> <OutPorts = 1>
+
+State 35 <SV = 12> <Delay = 8.32>
+ST_35 : Operation 186 [9/13] (8.32ns)   --->   "%tmp_7 = call double @llvm.exp.f64(double %tmp_6)" [f_b_0/forw_back.c:365]   --->   Operation 186 'dexp' 'tmp_7' <Predicate = true> <Delay = 8.32> <Core = "DExp">   --->   Core 128 'DExp' <Latency = 12> <II = 1> <Delay = 8.32> <FuncUnit> <Opcode : 'dexp'> <InPorts = 1> <OutPorts = 1>
+
+State 36 <SV = 13> <Delay = 8.32>
+ST_36 : Operation 187 [8/13] (8.32ns)   --->   "%tmp_7 = call double @llvm.exp.f64(double %tmp_6)" [f_b_0/forw_back.c:365]   --->   Operation 187 'dexp' 'tmp_7' <Predicate = true> <Delay = 8.32> <Core = "DExp">   --->   Core 128 'DExp' <Latency = 12> <II = 1> <Delay = 8.32> <FuncUnit> <Opcode : 'dexp'> <InPorts = 1> <OutPorts = 1>
+
+State 37 <SV = 14> <Delay = 8.32>
+ST_37 : Operation 188 [7/13] (8.32ns)   --->   "%tmp_7 = call double @llvm.exp.f64(double %tmp_6)" [f_b_0/forw_back.c:365]   --->   Operation 188 'dexp' 'tmp_7' <Predicate = true> <Delay = 8.32> <Core = "DExp">   --->   Core 128 'DExp' <Latency = 12> <II = 1> <Delay = 8.32> <FuncUnit> <Opcode : 'dexp'> <InPorts = 1> <OutPorts = 1>
+
+State 38 <SV = 15> <Delay = 8.32>
+ST_38 : Operation 189 [6/13] (8.32ns)   --->   "%tmp_7 = call double @llvm.exp.f64(double %tmp_6)" [f_b_0/forw_back.c:365]   --->   Operation 189 'dexp' 'tmp_7' <Predicate = true> <Delay = 8.32> <Core = "DExp">   --->   Core 128 'DExp' <Latency = 12> <II = 1> <Delay = 8.32> <FuncUnit> <Opcode : 'dexp'> <InPorts = 1> <OutPorts = 1>
+
+State 39 <SV = 16> <Delay = 8.32>
+ST_39 : Operation 190 [5/13] (8.32ns)   --->   "%tmp_7 = call double @llvm.exp.f64(double %tmp_6)" [f_b_0/forw_back.c:365]   --->   Operation 190 'dexp' 'tmp_7' <Predicate = true> <Delay = 8.32> <Core = "DExp">   --->   Core 128 'DExp' <Latency = 12> <II = 1> <Delay = 8.32> <FuncUnit> <Opcode : 'dexp'> <InPorts = 1> <OutPorts = 1>
+
+State 40 <SV = 17> <Delay = 8.32>
+ST_40 : Operation 191 [4/13] (8.32ns)   --->   "%tmp_7 = call double @llvm.exp.f64(double %tmp_6)" [f_b_0/forw_back.c:365]   --->   Operation 191 'dexp' 'tmp_7' <Predicate = true> <Delay = 8.32> <Core = "DExp">   --->   Core 128 'DExp' <Latency = 12> <II = 1> <Delay = 8.32> <FuncUnit> <Opcode : 'dexp'> <InPorts = 1> <OutPorts = 1>
+
+State 41 <SV = 18> <Delay = 8.32>
+ST_41 : Operation 192 [3/13] (8.32ns)   --->   "%tmp_7 = call double @llvm.exp.f64(double %tmp_6)" [f_b_0/forw_back.c:365]   --->   Operation 192 'dexp' 'tmp_7' <Predicate = true> <Delay = 8.32> <Core = "DExp">   --->   Core 128 'DExp' <Latency = 12> <II = 1> <Delay = 8.32> <FuncUnit> <Opcode : 'dexp'> <InPorts = 1> <OutPorts = 1>
+
+State 42 <SV = 19> <Delay = 8.32>
+ST_42 : Operation 193 [2/13] (8.32ns)   --->   "%tmp_7 = call double @llvm.exp.f64(double %tmp_6)" [f_b_0/forw_back.c:365]   --->   Operation 193 'dexp' 'tmp_7' <Predicate = true> <Delay = 8.32> <Core = "DExp">   --->   Core 128 'DExp' <Latency = 12> <II = 1> <Delay = 8.32> <FuncUnit> <Opcode : 'dexp'> <InPorts = 1> <OutPorts = 1>
+
+State 43 <SV = 20> <Delay = 8.32>
+ST_43 : Operation 194 [1/13] (8.32ns)   --->   "%tmp_7 = call double @llvm.exp.f64(double %tmp_6)" [f_b_0/forw_back.c:365]   --->   Operation 194 'dexp' 'tmp_7' <Predicate = true> <Delay = 8.32> <Core = "DExp">   --->   Core 128 'DExp' <Latency = 12> <II = 1> <Delay = 8.32> <FuncUnit> <Opcode : 'dexp'> <InPorts = 1> <OutPorts = 1>
+
+State 44 <SV = 21> <Delay = 7.28>
+ST_44 : Operation 195 [22/22] (7.28ns)   --->   "%tmp_8 = fdiv double %tmp_7, %tmp" [f_b_0/forw_back.c:365]   --->   Operation 195 'ddiv' 'tmp_8' <Predicate = true> <Delay = 7.28> <Core = "DDiv">   --->   Core 117 'DDiv' <Latency = 21> <II = 1> <Delay = 7.28> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 45 <SV = 22> <Delay = 7.28>
+ST_45 : Operation 196 [21/22] (7.28ns)   --->   "%tmp_8 = fdiv double %tmp_7, %tmp" [f_b_0/forw_back.c:365]   --->   Operation 196 'ddiv' 'tmp_8' <Predicate = true> <Delay = 7.28> <Core = "DDiv">   --->   Core 117 'DDiv' <Latency = 21> <II = 1> <Delay = 7.28> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 46 <SV = 23> <Delay = 7.28>
+ST_46 : Operation 197 [20/22] (7.28ns)   --->   "%tmp_8 = fdiv double %tmp_7, %tmp" [f_b_0/forw_back.c:365]   --->   Operation 197 'ddiv' 'tmp_8' <Predicate = true> <Delay = 7.28> <Core = "DDiv">   --->   Core 117 'DDiv' <Latency = 21> <II = 1> <Delay = 7.28> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 47 <SV = 24> <Delay = 7.28>
+ST_47 : Operation 198 [19/22] (7.28ns)   --->   "%tmp_8 = fdiv double %tmp_7, %tmp" [f_b_0/forw_back.c:365]   --->   Operation 198 'ddiv' 'tmp_8' <Predicate = true> <Delay = 7.28> <Core = "DDiv">   --->   Core 117 'DDiv' <Latency = 21> <II = 1> <Delay = 7.28> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 48 <SV = 25> <Delay = 7.28>
+ST_48 : Operation 199 [18/22] (7.28ns)   --->   "%tmp_8 = fdiv double %tmp_7, %tmp" [f_b_0/forw_back.c:365]   --->   Operation 199 'ddiv' 'tmp_8' <Predicate = true> <Delay = 7.28> <Core = "DDiv">   --->   Core 117 'DDiv' <Latency = 21> <II = 1> <Delay = 7.28> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 49 <SV = 26> <Delay = 7.28>
+ST_49 : Operation 200 [17/22] (7.28ns)   --->   "%tmp_8 = fdiv double %tmp_7, %tmp" [f_b_0/forw_back.c:365]   --->   Operation 200 'ddiv' 'tmp_8' <Predicate = true> <Delay = 7.28> <Core = "DDiv">   --->   Core 117 'DDiv' <Latency = 21> <II = 1> <Delay = 7.28> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 50 <SV = 27> <Delay = 7.28>
+ST_50 : Operation 201 [16/22] (7.28ns)   --->   "%tmp_8 = fdiv double %tmp_7, %tmp" [f_b_0/forw_back.c:365]   --->   Operation 201 'ddiv' 'tmp_8' <Predicate = true> <Delay = 7.28> <Core = "DDiv">   --->   Core 117 'DDiv' <Latency = 21> <II = 1> <Delay = 7.28> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 51 <SV = 28> <Delay = 7.28>
+ST_51 : Operation 202 [15/22] (7.28ns)   --->   "%tmp_8 = fdiv double %tmp_7, %tmp" [f_b_0/forw_back.c:365]   --->   Operation 202 'ddiv' 'tmp_8' <Predicate = true> <Delay = 7.28> <Core = "DDiv">   --->   Core 117 'DDiv' <Latency = 21> <II = 1> <Delay = 7.28> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 52 <SV = 29> <Delay = 7.28>
+ST_52 : Operation 203 [14/22] (7.28ns)   --->   "%tmp_8 = fdiv double %tmp_7, %tmp" [f_b_0/forw_back.c:365]   --->   Operation 203 'ddiv' 'tmp_8' <Predicate = true> <Delay = 7.28> <Core = "DDiv">   --->   Core 117 'DDiv' <Latency = 21> <II = 1> <Delay = 7.28> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 53 <SV = 30> <Delay = 7.28>
+ST_53 : Operation 204 [13/22] (7.28ns)   --->   "%tmp_8 = fdiv double %tmp_7, %tmp" [f_b_0/forw_back.c:365]   --->   Operation 204 'ddiv' 'tmp_8' <Predicate = true> <Delay = 7.28> <Core = "DDiv">   --->   Core 117 'DDiv' <Latency = 21> <II = 1> <Delay = 7.28> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 54 <SV = 31> <Delay = 7.28>
+ST_54 : Operation 205 [12/22] (7.28ns)   --->   "%tmp_8 = fdiv double %tmp_7, %tmp" [f_b_0/forw_back.c:365]   --->   Operation 205 'ddiv' 'tmp_8' <Predicate = true> <Delay = 7.28> <Core = "DDiv">   --->   Core 117 'DDiv' <Latency = 21> <II = 1> <Delay = 7.28> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 55 <SV = 32> <Delay = 7.28>
+ST_55 : Operation 206 [11/22] (7.28ns)   --->   "%tmp_8 = fdiv double %tmp_7, %tmp" [f_b_0/forw_back.c:365]   --->   Operation 206 'ddiv' 'tmp_8' <Predicate = true> <Delay = 7.28> <Core = "DDiv">   --->   Core 117 'DDiv' <Latency = 21> <II = 1> <Delay = 7.28> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 56 <SV = 33> <Delay = 7.28>
+ST_56 : Operation 207 [10/22] (7.28ns)   --->   "%tmp_8 = fdiv double %tmp_7, %tmp" [f_b_0/forw_back.c:365]   --->   Operation 207 'ddiv' 'tmp_8' <Predicate = true> <Delay = 7.28> <Core = "DDiv">   --->   Core 117 'DDiv' <Latency = 21> <II = 1> <Delay = 7.28> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 57 <SV = 34> <Delay = 7.28>
+ST_57 : Operation 208 [9/22] (7.28ns)   --->   "%tmp_8 = fdiv double %tmp_7, %tmp" [f_b_0/forw_back.c:365]   --->   Operation 208 'ddiv' 'tmp_8' <Predicate = true> <Delay = 7.28> <Core = "DDiv">   --->   Core 117 'DDiv' <Latency = 21> <II = 1> <Delay = 7.28> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 58 <SV = 35> <Delay = 7.28>
+ST_58 : Operation 209 [8/22] (7.28ns)   --->   "%tmp_8 = fdiv double %tmp_7, %tmp" [f_b_0/forw_back.c:365]   --->   Operation 209 'ddiv' 'tmp_8' <Predicate = true> <Delay = 7.28> <Core = "DDiv">   --->   Core 117 'DDiv' <Latency = 21> <II = 1> <Delay = 7.28> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 59 <SV = 36> <Delay = 7.28>
+ST_59 : Operation 210 [7/22] (7.28ns)   --->   "%tmp_8 = fdiv double %tmp_7, %tmp" [f_b_0/forw_back.c:365]   --->   Operation 210 'ddiv' 'tmp_8' <Predicate = true> <Delay = 7.28> <Core = "DDiv">   --->   Core 117 'DDiv' <Latency = 21> <II = 1> <Delay = 7.28> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 60 <SV = 37> <Delay = 7.28>
+ST_60 : Operation 211 [6/22] (7.28ns)   --->   "%tmp_8 = fdiv double %tmp_7, %tmp" [f_b_0/forw_back.c:365]   --->   Operation 211 'ddiv' 'tmp_8' <Predicate = true> <Delay = 7.28> <Core = "DDiv">   --->   Core 117 'DDiv' <Latency = 21> <II = 1> <Delay = 7.28> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 61 <SV = 38> <Delay = 7.28>
+ST_61 : Operation 212 [5/22] (7.28ns)   --->   "%tmp_8 = fdiv double %tmp_7, %tmp" [f_b_0/forw_back.c:365]   --->   Operation 212 'ddiv' 'tmp_8' <Predicate = true> <Delay = 7.28> <Core = "DDiv">   --->   Core 117 'DDiv' <Latency = 21> <II = 1> <Delay = 7.28> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 62 <SV = 39> <Delay = 7.28>
+ST_62 : Operation 213 [4/22] (7.28ns)   --->   "%tmp_8 = fdiv double %tmp_7, %tmp" [f_b_0/forw_back.c:365]   --->   Operation 213 'ddiv' 'tmp_8' <Predicate = true> <Delay = 7.28> <Core = "DDiv">   --->   Core 117 'DDiv' <Latency = 21> <II = 1> <Delay = 7.28> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 63 <SV = 40> <Delay = 7.28>
+ST_63 : Operation 214 [3/22] (7.28ns)   --->   "%tmp_8 = fdiv double %tmp_7, %tmp" [f_b_0/forw_back.c:365]   --->   Operation 214 'ddiv' 'tmp_8' <Predicate = true> <Delay = 7.28> <Core = "DDiv">   --->   Core 117 'DDiv' <Latency = 21> <II = 1> <Delay = 7.28> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 64 <SV = 41> <Delay = 7.28>
+ST_64 : Operation 215 [2/22] (7.28ns)   --->   "%tmp_8 = fdiv double %tmp_7, %tmp" [f_b_0/forw_back.c:365]   --->   Operation 215 'ddiv' 'tmp_8' <Predicate = true> <Delay = 7.28> <Core = "DDiv">   --->   Core 117 'DDiv' <Latency = 21> <II = 1> <Delay = 7.28> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 65 <SV = 42> <Delay = 7.28>
+ST_65 : Operation 216 [1/22] (7.28ns)   --->   "%tmp_8 = fdiv double %tmp_7, %tmp" [f_b_0/forw_back.c:365]   --->   Operation 216 'ddiv' 'tmp_8' <Predicate = true> <Delay = 7.28> <Core = "DDiv">   --->   Core 117 'DDiv' <Latency = 21> <II = 1> <Delay = 7.28> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 66 <SV = 43> <Delay = 3.32>
+ST_66 : Operation 217 [2/2] (3.32ns)   --->   "%tmp_9 = fptrunc double %tmp_8 to float" [f_b_0/forw_back.c:365]   --->   Operation 217 'fptrunc' 'tmp_9' <Predicate = true> <Delay = 3.32> <Core = "Double2Float">   --->   Core 123 'Double2Float' <Latency = 1> <II = 1> <Delay = 3.32> <FuncUnit> <Opcode : 'fptrunc'> <InPorts = 1> <OutPorts = 1>
+
+State 67 <SV = 44> <Delay = 4.11>
+ST_67 : Operation 218 [1/2] (3.32ns)   --->   "%tmp_9 = fptrunc double %tmp_8 to float" [f_b_0/forw_back.c:365]   --->   Operation 218 'fptrunc' 'tmp_9' <Predicate = true> <Delay = 3.32> <Core = "Double2Float">   --->   Core 123 'Double2Float' <Latency = 1> <II = 1> <Delay = 3.32> <FuncUnit> <Opcode : 'fptrunc'> <InPorts = 1> <OutPorts = 1>
+ST_67 : Operation 219 [1/1] (0.00ns)   --->   "%result_addr = getelementptr inbounds [10 x float]* @result, i64 0, i64 %zext_ln365" [f_b_0/forw_back.c:365]   --->   Operation 219 'getelementptr' 'result_addr' <Predicate = true> <Delay = 0.00>
+ST_67 : Operation 220 [1/1] (0.79ns)   --->   "store float %tmp_9, float* %result_addr, align 4" [f_b_0/forw_back.c:365]   --->   Operation 220 'store' <Predicate = true> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.79> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_67 : Operation 221 [1/1] (0.00ns)   --->   "br label %.preheader" [f_b_0/forw_back.c:364]   --->   Operation 221 'br' <Predicate = true> <Delay = 0.00>
+
+State 68 <SV = 6> <Delay = 1.21>
+ST_68 : Operation 222 [1/1] (0.00ns)   --->   "%phi_ln367 = phi i4 [ %add_ln367, %burstwrite.region1 ], [ 0, %burst.wr.header13.preheader ]" [f_b_0/forw_back.c:367]   --->   Operation 222 'phi' 'phi_ln367' <Predicate = true> <Delay = 0.00>
+ST_68 : Operation 223 [1/1] (0.88ns)   --->   "%icmp_ln367 = icmp eq i4 %phi_ln367, -6" [f_b_0/forw_back.c:367]   --->   Operation 223 'icmp' 'icmp_ln367' <Predicate = true> <Delay = 0.88> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_68 : Operation 224 [1/1] (0.00ns)   --->   "%empty_31 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10) nounwind"   --->   Operation 224 'speclooptripcount' 'empty_31' <Predicate = true> <Delay = 0.00>
+ST_68 : Operation 225 [1/1] (0.86ns)   --->   "%add_ln367 = add i4 %phi_ln367, 1" [f_b_0/forw_back.c:367]   --->   Operation 225 'add' 'add_ln367' <Predicate = true> <Delay = 0.86> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.86> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_68 : Operation 226 [1/1] (0.00ns)   --->   "br i1 %icmp_ln367, label %memcpy.tail26, label %burstwrite.region1" [f_b_0/forw_back.c:367]   --->   Operation 226 'br' <Predicate = true> <Delay = 0.00>
+ST_68 : Operation 227 [1/1] (0.00ns)   --->   "%zext_ln367 = zext i4 %phi_ln367 to i64" [f_b_0/forw_back.c:367]   --->   Operation 227 'zext' 'zext_ln367' <Predicate = (!icmp_ln367)> <Delay = 0.00>
+ST_68 : Operation 228 [1/1] (0.00ns)   --->   "%result_addr_1 = getelementptr [10 x float]* @result, i64 0, i64 %zext_ln367" [f_b_0/forw_back.c:367]   --->   Operation 228 'getelementptr' 'result_addr_1' <Predicate = (!icmp_ln367)> <Delay = 0.00>
+ST_68 : Operation 229 [2/2] (0.79ns)   --->   "%result_load = load float* %result_addr_1, align 4" [f_b_0/forw_back.c:367]   --->   Operation 229 'load' 'result_load' <Predicate = (!icmp_ln367)> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.79> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+
+State 69 <SV = 7> <Delay = 0.79>
+ST_69 : Operation 230 [1/2] (0.79ns)   --->   "%result_load = load float* %result_addr_1, align 4" [f_b_0/forw_back.c:367]   --->   Operation 230 'load' 'result_load' <Predicate = (!icmp_ln367)> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.79> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+
+State 70 <SV = 8> <Delay = 8.75>
+ST_70 : Operation 231 [1/1] (0.00ns)   --->   "%burstwrite_rbegin1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @burstwrite_OC_region) nounwind" [f_b_0/forw_back.c:367]   --->   Operation 231 'specregionbegin' 'burstwrite_rbegin1' <Predicate = (!icmp_ln367)> <Delay = 0.00>
+ST_70 : Operation 232 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str)" [f_b_0/forw_back.c:367]   --->   Operation 232 'specpipeline' <Predicate = (!icmp_ln367)> <Delay = 0.00>
+ST_70 : Operation 233 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([22 x i8]* @memcpy_OC_out_OC_res)" [f_b_0/forw_back.c:367]   --->   Operation 233 'specloopname' <Predicate = (!icmp_ln367)> <Delay = 0.00>
+ST_70 : Operation 234 [1/1] (8.75ns)   --->   "call void @_ssdm_op_Write.m_axi.floatP(float* %data_addr, float %result_load, i4 -1)" [f_b_0/forw_back.c:367]   --->   Operation 234 'write' <Predicate = (!icmp_ln367)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_70 : Operation 235 [1/1] (0.00ns)   --->   "%burstwrite_rend25 = call i32 (...)* @_ssdm_op_SpecRegionEnd([18 x i8]* @burstwrite_OC_region, i32 %burstwrite_rbegin1) nounwind" [f_b_0/forw_back.c:367]   --->   Operation 235 'specregionend' 'burstwrite_rend25' <Predicate = (!icmp_ln367)> <Delay = 0.00>
+ST_70 : Operation 236 [1/1] (0.00ns)   --->   "br label %burst.wr.header13" [f_b_0/forw_back.c:367]   --->   Operation 236 'br' <Predicate = (!icmp_ln367)> <Delay = 0.00>
+
+State 71 <SV = 7> <Delay = 8.75>
+ST_71 : Operation 237 [5/5] (8.75ns)   --->   "%data_addr_wr_resp35 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %data_addr)" [f_b_0/forw_back.c:367]   --->   Operation 237 'writeresp' 'data_addr_wr_resp35' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_71 : Operation 238 [2/2] (0.79ns)   --->   "call fastcc void @backward(i32 %label_read, float* %data, i30 %conv5, i30 %conv4, i30 %conv, i30 %fc5, i30 %fc4, i30 %fc, i30 %lr1)" [f_b_0/forw_back.c:368]   --->   Operation 238 'call' <Predicate = true> <Delay = 0.79> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 72 <SV = 8> <Delay = 8.75>
+ST_72 : Operation 239 [4/5] (8.75ns)   --->   "%data_addr_wr_resp35 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %data_addr)" [f_b_0/forw_back.c:367]   --->   Operation 239 'writeresp' 'data_addr_wr_resp35' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_72 : Operation 240 [1/2] (0.00ns)   --->   "call fastcc void @backward(i32 %label_read, float* %data, i30 %conv5, i30 %conv4, i30 %conv, i30 %fc5, i30 %fc4, i30 %fc, i30 %lr1)" [f_b_0/forw_back.c:368]   --->   Operation 240 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 73 <SV = 9> <Delay = 8.75>
+ST_73 : Operation 241 [3/5] (8.75ns)   --->   "%data_addr_wr_resp35 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %data_addr)" [f_b_0/forw_back.c:367]   --->   Operation 241 'writeresp' 'data_addr_wr_resp35' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 74 <SV = 10> <Delay = 8.75>
+ST_74 : Operation 242 [2/5] (8.75ns)   --->   "%data_addr_wr_resp35 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %data_addr)" [f_b_0/forw_back.c:367]   --->   Operation 242 'writeresp' 'data_addr_wr_resp35' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 75 <SV = 11> <Delay = 8.75>
+ST_75 : Operation 243 [1/5] (8.75ns)   --->   "%data_addr_wr_resp35 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %data_addr)" [f_b_0/forw_back.c:367]   --->   Operation 243 'writeresp' 'data_addr_wr_resp35' <Predicate = (!icmp_ln354)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_75 : Operation 244 [1/1] (0.00ns)   --->   "br label %memcpy.tail"   --->   Operation 244 'br' <Predicate = (!icmp_ln354)> <Delay = 0.00>
+ST_75 : Operation 245 [1/1] (0.00ns)   --->   "ret void" [f_b_0/forw_back.c:370]   --->   Operation 245 'ret' <Predicate = true> <Delay = 0.00>
+
+State 76 <SV = 3> <Delay = 1.21>
+ST_76 : Operation 246 [1/1] (0.00ns)   --->   "%phi_ln356 = phi i4 [ %add_ln356, %burstwrite.region ], [ 0, %burst.wr.header.preheader ]" [f_b_0/forw_back.c:356]   --->   Operation 246 'phi' 'phi_ln356' <Predicate = true> <Delay = 0.00>
+ST_76 : Operation 247 [1/1] (0.88ns)   --->   "%icmp_ln356 = icmp eq i4 %phi_ln356, -6" [f_b_0/forw_back.c:356]   --->   Operation 247 'icmp' 'icmp_ln356' <Predicate = true> <Delay = 0.88> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_76 : Operation 248 [1/1] (0.00ns)   --->   "%empty_28 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10) nounwind"   --->   Operation 248 'speclooptripcount' 'empty_28' <Predicate = true> <Delay = 0.00>
+ST_76 : Operation 249 [1/1] (0.86ns)   --->   "%add_ln356 = add i4 %phi_ln356, 1" [f_b_0/forw_back.c:356]   --->   Operation 249 'add' 'add_ln356' <Predicate = true> <Delay = 0.86> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.86> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_76 : Operation 250 [1/1] (0.00ns)   --->   "br i1 %icmp_ln356, label %memcpy.tail.loopexit, label %burstwrite.region" [f_b_0/forw_back.c:356]   --->   Operation 250 'br' <Predicate = true> <Delay = 0.00>
+ST_76 : Operation 251 [1/1] (0.00ns)   --->   "%zext_ln356 = zext i4 %phi_ln356 to i64" [f_b_0/forw_back.c:356]   --->   Operation 251 'zext' 'zext_ln356' <Predicate = (!icmp_ln356)> <Delay = 0.00>
+ST_76 : Operation 252 [1/1] (0.00ns)   --->   "%outmlp_0_addr = getelementptr [10 x float]* @outmlp_0, i64 0, i64 %zext_ln356" [f_b_0/forw_back.c:356]   --->   Operation 252 'getelementptr' 'outmlp_0_addr' <Predicate = (!icmp_ln356)> <Delay = 0.00>
+ST_76 : Operation 253 [2/2] (0.79ns)   --->   "%outmlp_0_load = load float* %outmlp_0_addr, align 4" [f_b_0/forw_back.c:356]   --->   Operation 253 'load' 'outmlp_0_load' <Predicate = (!icmp_ln356)> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.79> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+
+State 77 <SV = 4> <Delay = 0.79>
+ST_77 : Operation 254 [1/2] (0.79ns)   --->   "%outmlp_0_load = load float* %outmlp_0_addr, align 4" [f_b_0/forw_back.c:356]   --->   Operation 254 'load' 'outmlp_0_load' <Predicate = (!icmp_ln356)> <Delay = 0.79> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.79> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+
+State 78 <SV = 5> <Delay = 8.75>
+ST_78 : Operation 255 [1/1] (0.00ns)   --->   "%burstwrite_rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @burstwrite_OC_region) nounwind" [f_b_0/forw_back.c:356]   --->   Operation 255 'specregionbegin' 'burstwrite_rbegin' <Predicate = (!icmp_ln356)> <Delay = 0.00>
+ST_78 : Operation 256 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str)" [f_b_0/forw_back.c:356]   --->   Operation 256 'specpipeline' <Predicate = (!icmp_ln356)> <Delay = 0.00>
+ST_78 : Operation 257 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([22 x i8]* @memcpy_OC_out_OC_out)" [f_b_0/forw_back.c:356]   --->   Operation 257 'specloopname' <Predicate = (!icmp_ln356)> <Delay = 0.00>
+ST_78 : Operation 258 [1/1] (8.75ns)   --->   "call void @_ssdm_op_Write.m_axi.floatP(float* %data_addr, float %outmlp_0_load, i4 -1)" [f_b_0/forw_back.c:356]   --->   Operation 258 'write' <Predicate = (!icmp_ln356)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_78 : Operation 259 [1/1] (0.00ns)   --->   "%burstwrite_rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([18 x i8]* @burstwrite_OC_region, i32 %burstwrite_rbegin) nounwind" [f_b_0/forw_back.c:356]   --->   Operation 259 'specregionend' 'burstwrite_rend' <Predicate = (!icmp_ln356)> <Delay = 0.00>
+ST_78 : Operation 260 [1/1] (0.00ns)   --->   "br label %burst.wr.header" [f_b_0/forw_back.c:356]   --->   Operation 260 'br' <Predicate = (!icmp_ln356)> <Delay = 0.00>
+
+State 79 <SV = 4> <Delay = 8.75>
+ST_79 : Operation 261 [5/5] (8.75ns)   --->   "%data_addr_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %data_addr)" [f_b_0/forw_back.c:356]   --->   Operation 261 'writeresp' 'data_addr_wr_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 80 <SV = 5> <Delay = 8.75>
+ST_80 : Operation 262 [4/5] (8.75ns)   --->   "%data_addr_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %data_addr)" [f_b_0/forw_back.c:356]   --->   Operation 262 'writeresp' 'data_addr_wr_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 81 <SV = 6> <Delay = 8.75>
+ST_81 : Operation 263 [3/5] (8.75ns)   --->   "%data_addr_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %data_addr)" [f_b_0/forw_back.c:356]   --->   Operation 263 'writeresp' 'data_addr_wr_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 82 <SV = 7> <Delay = 8.75>
+ST_82 : Operation 264 [2/5] (8.75ns)   --->   "%data_addr_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %data_addr)" [f_b_0/forw_back.c:356]   --->   Operation 264 'writeresp' 'data_addr_wr_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 83 <SV = 8> <Delay = 8.75>
+ST_83 : Operation 265 [1/5] (8.75ns)   --->   "%data_addr_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %data_addr)" [f_b_0/forw_back.c:356]   --->   Operation 265 'writeresp' 'data_addr_wr_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_83 : Operation 266 [1/1] (0.00ns)   --->   "br label %memcpy.tail"   --->   Operation 266 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 2.11ns
+The critical path consists of the following:
+	s_axi read on port 'flag' [41]  (1 ns)
+	'icmp' operation ('icmp_ln354', f_b_0/forw_back.c:354) [71]  (1.11 ns)
+
+ <State 2>: 8.75ns
+The critical path consists of the following:
+	'call' operation ('call_ln355', f_b_0/forw_back.c:355) to 'forward' [72]  (8.75 ns)
+
+ <State 3>: 8.75ns
+The critical path consists of the following:
+	'getelementptr' operation ('data_addr') [45]  (0 ns)
+	bus request on port 'data' (f_b_0/forw_back.c:356) [137]  (8.75 ns)
+
+ <State 4>: 2.79ns
+The critical path consists of the following:
+	'phi' operation ('probability') with incoming values : ('probability', f_b_0/forw_back.c:362) [77]  (0 ns)
+	'fpext' operation ('tmp', f_b_0/forw_back.c:365) [94]  (2.79 ns)
+
+ <State 5>: 3.58ns
+The critical path consists of the following:
+	'load' operation ('outmlp_0_load_1', f_b_0/forw_back.c:362) on array 'outmlp_0' [86]  (0.79 ns)
+	'fpext' operation ('tmp_1', f_b_0/forw_back.c:362) [87]  (2.79 ns)
+
+ <State 6>: 2.79ns
+The critical path consists of the following:
+	'fpext' operation ('tmp_1', f_b_0/forw_back.c:362) [87]  (2.79 ns)
+
+ <State 7>: 8.33ns
+The critical path consists of the following:
+	'dexp' operation ('tmp_2', f_b_0/forw_back.c:362) [88]  (8.33 ns)
+
+ <State 8>: 8.33ns
+The critical path consists of the following:
+	'dexp' operation ('tmp_2', f_b_0/forw_back.c:362) [88]  (8.33 ns)
+
+ <State 9>: 8.33ns
+The critical path consists of the following:
+	'dexp' operation ('tmp_2', f_b_0/forw_back.c:362) [88]  (8.33 ns)
+
+ <State 10>: 8.33ns
+The critical path consists of the following:
+	'dexp' operation ('tmp_2', f_b_0/forw_back.c:362) [88]  (8.33 ns)
+
+ <State 11>: 8.33ns
+The critical path consists of the following:
+	'dexp' operation ('tmp_2', f_b_0/forw_back.c:362) [88]  (8.33 ns)
+
+ <State 12>: 8.33ns
+The critical path consists of the following:
+	'dexp' operation ('tmp_2', f_b_0/forw_back.c:362) [88]  (8.33 ns)
+
+ <State 13>: 8.33ns
+The critical path consists of the following:
+	'dexp' operation ('tmp_2', f_b_0/forw_back.c:362) [88]  (8.33 ns)
+
+ <State 14>: 8.33ns
+The critical path consists of the following:
+	'dexp' operation ('tmp_2', f_b_0/forw_back.c:362) [88]  (8.33 ns)
+
+ <State 15>: 8.33ns
+The critical path consists of the following:
+	'dexp' operation ('tmp_2', f_b_0/forw_back.c:362) [88]  (8.33 ns)
+
+ <State 16>: 8.33ns
+The critical path consists of the following:
+	'dexp' operation ('tmp_2', f_b_0/forw_back.c:362) [88]  (8.33 ns)
+
+ <State 17>: 8.33ns
+The critical path consists of the following:
+	'dexp' operation ('tmp_2', f_b_0/forw_back.c:362) [88]  (8.33 ns)
+
+ <State 18>: 8.33ns
+The critical path consists of the following:
+	'dexp' operation ('tmp_2', f_b_0/forw_back.c:362) [88]  (8.33 ns)
+
+ <State 19>: 8.33ns
+The critical path consists of the following:
+	'dexp' operation ('tmp_2', f_b_0/forw_back.c:362) [88]  (8.33 ns)
+
+ <State 20>: 6.92ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_4', f_b_0/forw_back.c:362) [90]  (6.92 ns)
+
+ <State 21>: 6.92ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_4', f_b_0/forw_back.c:362) [90]  (6.92 ns)
+
+ <State 22>: 6.92ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_4', f_b_0/forw_back.c:362) [90]  (6.92 ns)
+
+ <State 23>: 6.92ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_4', f_b_0/forw_back.c:362) [90]  (6.92 ns)
+
+ <State 24>: 6.92ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_4', f_b_0/forw_back.c:362) [90]  (6.92 ns)
+
+ <State 25>: 3.32ns
+The critical path consists of the following:
+	'fptrunc' operation ('probability', f_b_0/forw_back.c:362) [91]  (3.32 ns)
+
+ <State 26>: 3.32ns
+The critical path consists of the following:
+	'fptrunc' operation ('probability', f_b_0/forw_back.c:362) [91]  (3.32 ns)
+
+ <State 27>: 2.79ns
+The critical path consists of the following:
+	'fpext' operation ('tmp', f_b_0/forw_back.c:365) [94]  (2.79 ns)
+
+ <State 28>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'data' (f_b_0/forw_back.c:367) [114]  (8.75 ns)
+
+ <State 29>: 3.58ns
+The critical path consists of the following:
+	'load' operation ('outmlp_0_load_2', f_b_0/forw_back.c:365) on array 'outmlp_0' [105]  (0.79 ns)
+	'fpext' operation ('tmp_6', f_b_0/forw_back.c:365) [106]  (2.79 ns)
+
+ <State 30>: 2.79ns
+The critical path consists of the following:
+	'fpext' operation ('tmp_6', f_b_0/forw_back.c:365) [106]  (2.79 ns)
+
+ <State 31>: 8.33ns
+The critical path consists of the following:
+	'dexp' operation ('tmp_7', f_b_0/forw_back.c:365) [107]  (8.33 ns)
+
+ <State 32>: 8.33ns
+The critical path consists of the following:
+	'dexp' operation ('tmp_7', f_b_0/forw_back.c:365) [107]  (8.33 ns)
+
+ <State 33>: 8.33ns
+The critical path consists of the following:
+	'dexp' operation ('tmp_7', f_b_0/forw_back.c:365) [107]  (8.33 ns)
+
+ <State 34>: 8.33ns
+The critical path consists of the following:
+	'dexp' operation ('tmp_7', f_b_0/forw_back.c:365) [107]  (8.33 ns)
+
+ <State 35>: 8.33ns
+The critical path consists of the following:
+	'dexp' operation ('tmp_7', f_b_0/forw_back.c:365) [107]  (8.33 ns)
+
+ <State 36>: 8.33ns
+The critical path consists of the following:
+	'dexp' operation ('tmp_7', f_b_0/forw_back.c:365) [107]  (8.33 ns)
+
+ <State 37>: 8.33ns
+The critical path consists of the following:
+	'dexp' operation ('tmp_7', f_b_0/forw_back.c:365) [107]  (8.33 ns)
+
+ <State 38>: 8.33ns
+The critical path consists of the following:
+	'dexp' operation ('tmp_7', f_b_0/forw_back.c:365) [107]  (8.33 ns)
+
+ <State 39>: 8.33ns
+The critical path consists of the following:
+	'dexp' operation ('tmp_7', f_b_0/forw_back.c:365) [107]  (8.33 ns)
+
+ <State 40>: 8.33ns
+The critical path consists of the following:
+	'dexp' operation ('tmp_7', f_b_0/forw_back.c:365) [107]  (8.33 ns)
+
+ <State 41>: 8.33ns
+The critical path consists of the following:
+	'dexp' operation ('tmp_7', f_b_0/forw_back.c:365) [107]  (8.33 ns)
+
+ <State 42>: 8.33ns
+The critical path consists of the following:
+	'dexp' operation ('tmp_7', f_b_0/forw_back.c:365) [107]  (8.33 ns)
+
+ <State 43>: 8.33ns
+The critical path consists of the following:
+	'dexp' operation ('tmp_7', f_b_0/forw_back.c:365) [107]  (8.33 ns)
+
+ <State 44>: 7.29ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_8', f_b_0/forw_back.c:365) [108]  (7.29 ns)
+
+ <State 45>: 7.29ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_8', f_b_0/forw_back.c:365) [108]  (7.29 ns)
+
+ <State 46>: 7.29ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_8', f_b_0/forw_back.c:365) [108]  (7.29 ns)
+
+ <State 47>: 7.29ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_8', f_b_0/forw_back.c:365) [108]  (7.29 ns)
+
+ <State 48>: 7.29ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_8', f_b_0/forw_back.c:365) [108]  (7.29 ns)
+
+ <State 49>: 7.29ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_8', f_b_0/forw_back.c:365) [108]  (7.29 ns)
+
+ <State 50>: 7.29ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_8', f_b_0/forw_back.c:365) [108]  (7.29 ns)
+
+ <State 51>: 7.29ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_8', f_b_0/forw_back.c:365) [108]  (7.29 ns)
+
+ <State 52>: 7.29ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_8', f_b_0/forw_back.c:365) [108]  (7.29 ns)
+
+ <State 53>: 7.29ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_8', f_b_0/forw_back.c:365) [108]  (7.29 ns)
+
+ <State 54>: 7.29ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_8', f_b_0/forw_back.c:365) [108]  (7.29 ns)
+
+ <State 55>: 7.29ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_8', f_b_0/forw_back.c:365) [108]  (7.29 ns)
+
+ <State 56>: 7.29ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_8', f_b_0/forw_back.c:365) [108]  (7.29 ns)
+
+ <State 57>: 7.29ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_8', f_b_0/forw_back.c:365) [108]  (7.29 ns)
+
+ <State 58>: 7.29ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_8', f_b_0/forw_back.c:365) [108]  (7.29 ns)
+
+ <State 59>: 7.29ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_8', f_b_0/forw_back.c:365) [108]  (7.29 ns)
+
+ <State 60>: 7.29ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_8', f_b_0/forw_back.c:365) [108]  (7.29 ns)
+
+ <State 61>: 7.29ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_8', f_b_0/forw_back.c:365) [108]  (7.29 ns)
+
+ <State 62>: 7.29ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_8', f_b_0/forw_back.c:365) [108]  (7.29 ns)
+
+ <State 63>: 7.29ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_8', f_b_0/forw_back.c:365) [108]  (7.29 ns)
+
+ <State 64>: 7.29ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_8', f_b_0/forw_back.c:365) [108]  (7.29 ns)
+
+ <State 65>: 7.29ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_8', f_b_0/forw_back.c:365) [108]  (7.29 ns)
+
+ <State 66>: 3.32ns
+The critical path consists of the following:
+	'fptrunc' operation ('tmp_9', f_b_0/forw_back.c:365) [109]  (3.32 ns)
+
+ <State 67>: 4.11ns
+The critical path consists of the following:
+	'fptrunc' operation ('tmp_9', f_b_0/forw_back.c:365) [109]  (3.32 ns)
+	'store' operation ('store_ln365', f_b_0/forw_back.c:365) of variable 'tmp_9', f_b_0/forw_back.c:365 on array 'result' [111]  (0.79 ns)
+
+ <State 68>: 1.22ns
+The critical path consists of the following:
+	'icmp' operation ('icmp_ln367', f_b_0/forw_back.c:367) [118]  (0.884 ns)
+	blocking operation 0.331 ns on control path)
+
+ <State 69>: 0.79ns
+The critical path consists of the following:
+	'load' operation ('result_load', f_b_0/forw_back.c:367) on array 'result' [128]  (0.79 ns)
+
+ <State 70>: 8.75ns
+The critical path consists of the following:
+	bus write on port 'data' (f_b_0/forw_back.c:367) [129]  (8.75 ns)
+
+ <State 71>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'data' (f_b_0/forw_back.c:367) [133]  (8.75 ns)
+
+ <State 72>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'data' (f_b_0/forw_back.c:367) [133]  (8.75 ns)
+
+ <State 73>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'data' (f_b_0/forw_back.c:367) [133]  (8.75 ns)
+
+ <State 74>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'data' (f_b_0/forw_back.c:367) [133]  (8.75 ns)
+
+ <State 75>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'data' (f_b_0/forw_back.c:367) [133]  (8.75 ns)
+
+ <State 76>: 1.22ns
+The critical path consists of the following:
+	'icmp' operation ('icmp_ln356', f_b_0/forw_back.c:356) [141]  (0.884 ns)
+	blocking operation 0.331 ns on control path)
+
+ <State 77>: 0.79ns
+The critical path consists of the following:
+	'load' operation ('outmlp_0_load', f_b_0/forw_back.c:356) on array 'outmlp_0' [151]  (0.79 ns)
+
+ <State 78>: 8.75ns
+The critical path consists of the following:
+	bus write on port 'data' (f_b_0/forw_back.c:356) [152]  (8.75 ns)
+
+ <State 79>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'data' (f_b_0/forw_back.c:356) [156]  (8.75 ns)
+
+ <State 80>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'data' (f_b_0/forw_back.c:356) [156]  (8.75 ns)
+
+ <State 81>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'data' (f_b_0/forw_back.c:356) [156]  (8.75 ns)
+
+ <State 82>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'data' (f_b_0/forw_back.c:356) [156]  (8.75 ns)
+
+ <State 83>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'data' (f_b_0/forw_back.c:356) [156]  (8.75 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+	State 64
+	State 65
+	State 66
+	State 67
+	State 68
+	State 69
+	State 70
+	State 71
+	State 72
+	State 73
+	State 74
+	State 75
+	State 76
+	State 77
+	State 78
+	State 79
+	State 80
+	State 81
+	State 82
+	State 83
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

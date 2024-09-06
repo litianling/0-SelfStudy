@@ -1,0 +1,186 @@
+
+
+================================================================
+== Vivado HLS Report for 'Padding'
+================================================================
+* Date:           Thu Nov  3 16:10:43 2022
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        f_b_4_new_network
+* Solution:       solution1
+* Product family: zynquplus
+* Target device:  xczu3eg-sbva484-1-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     3.180|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  130|  130|  130|  130|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                  |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name    | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Padding_label3  |  128|  128|         8|          8|          1|    16|    yes   |
+        +------------------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      -|       -|      -|    -|
+|Expression       |        -|      -|       0|    376|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |        -|      -|       -|      -|    -|
+|Memory           |        -|      -|       -|      -|    -|
+|Multiplexer      |        -|      -|       -|    289|    -|
+|Register         |        -|      -|      33|      -|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |        0|      0|      33|    665|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      432|    360|  141120|  70560|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |        0|      0|   ~0   |   ~0  |    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +------------------------+----------+-------+---+----+------------+------------+
+    |      Variable Name     | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +------------------------+----------+-------+---+----+------------+------------+
+    |add_ln116_10_fu_855_p2  |     +    |      0|  0|  16|           9|           5|
+    |add_ln116_11_fu_869_p2  |     +    |      0|  0|  16|           9|           5|
+    |add_ln116_1_fu_628_p2   |     +    |      0|  0|  16|           9|           6|
+    |add_ln116_2_fu_663_p2   |     +    |      0|  0|  16|           9|           6|
+    |add_ln116_3_fu_677_p2   |     +    |      0|  0|  16|           9|           6|
+    |add_ln116_4_fu_711_p2   |     +    |      0|  0|  16|           9|           6|
+    |add_ln116_5_fu_725_p2   |     +    |      0|  0|  16|           9|           6|
+    |add_ln116_6_fu_759_p2   |     +    |      0|  0|  16|           9|           6|
+    |add_ln116_7_fu_773_p2   |     +    |      0|  0|  16|           9|           6|
+    |add_ln116_8_fu_807_p2   |     +    |      0|  0|  16|           9|           6|
+    |add_ln116_9_fu_821_p2   |     +    |      0|  0|  16|           9|           5|
+    |add_ln116_fu_613_p2     |     +    |      0|  0|  16|           9|           6|
+    |i_fu_529_p2             |     +    |      0|  0|  15|           5|           1|
+    |sub_ln116_fu_569_p2     |     -    |      0|  0|  16|           9|           9|
+    |and_ln115_fu_607_p2     |    and   |      0|  0|   2|           1|           1|
+    |icmp_ln113_fu_523_p2    |   icmp   |      0|  0|  11|           5|           6|
+    |icmp_ln115_1_fu_601_p2  |   icmp   |      0|  0|   9|           4|           1|
+    |icmp_ln115_fu_551_p2    |   icmp   |      0|  0|  11|           5|           4|
+    |grp_fu_463_p2           |    or    |      0|  0|   8|           8|           2|
+    |grp_fu_468_p2           |    or    |      0|  0|   8|           8|           2|
+    |grp_fu_473_p2           |    or    |      0|  0|   8|           8|           3|
+    |grp_fu_478_p2           |    or    |      0|  0|   8|           8|           3|
+    |grp_fu_483_p2           |    or    |      0|  0|   8|           8|           3|
+    |grp_fu_488_p2           |    or    |      0|  0|   8|           8|           3|
+    |grp_fu_493_p2           |    or    |      0|  0|   8|           8|           4|
+    |grp_fu_498_p2           |    or    |      0|  0|   8|           8|           4|
+    |grp_fu_503_p2           |    or    |      0|  0|   8|           8|           4|
+    |grp_fu_508_p2           |    or    |      0|  0|   8|           8|           4|
+    |grp_fu_513_p2           |    or    |      0|  0|   8|           8|           4|
+    |grp_fu_518_p2           |    or    |      0|  0|   8|           8|           4|
+    |or_ln118_13_fu_903_p2   |    or    |      0|  0|   8|           8|           4|
+    |or_ln118_14_fu_913_p2   |    or    |      0|  0|   8|           8|           4|
+    |or_ln118_fu_580_p2      |    or    |      0|  0|   8|           8|           1|
+    +------------------------+----------+-------+---+----+------------+------------+
+    |Total                   |          |      0|  0| 376|         257|         140|
+    +------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------+----+-----------+-----+-----------+
+    |          Name          | LUT| Input Size| Bits| Total Bits|
+    +------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm               |  50|         11|    1|         11|
+    |i_0_reg_452             |   9|          2|    5|         10|
+    |input_matrix_address0   |  38|          7|    8|         56|
+    |input_matrix_address1   |  38|          7|    8|         56|
+    |output_matrix_address0  |  62|         15|    8|        120|
+    |output_matrix_address1  |  62|         15|    8|        120|
+    |output_matrix_d0        |  15|          3|   32|         96|
+    |output_matrix_d1        |  15|          3|   32|         96|
+    +------------------------+----+-----------+-----+-----------+
+    |Total                   | 289|         63|  102|        565|
+    +------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------------+----+----+-----+-----------+
+    |        Name        | FF | LUT| Bits| Const Bits|
+    +--------------------+----+----+-----+-----------+
+    |and_ln115_reg_964   |   1|   0|    1|          0|
+    |ap_CS_fsm           |  10|   0|   10|          0|
+    |i_0_reg_452         |   5|   0|    5|          0|
+    |i_reg_927           |   5|   0|    5|          0|
+    |icmp_ln113_reg_923  |   1|   0|    1|          0|
+    |shl_ln_reg_932      |   4|   0|    8|          4|
+    |sub_ln116_reg_950   |   7|   0|    9|          2|
+    +--------------------+----+----+-----+-----------+
+    |Total               |  33|   0|   39|          6|
+    +--------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------+-----+-----+------------+---------------+--------------+
+|        RTL Ports       | Dir | Bits|  Protocol  | Source Object |    C Type    |
++------------------------+-----+-----+------------+---------------+--------------+
+|ap_clk                  |  in |    1| ap_ctrl_hs |    Padding    | return value |
+|ap_rst                  |  in |    1| ap_ctrl_hs |    Padding    | return value |
+|ap_start                |  in |    1| ap_ctrl_hs |    Padding    | return value |
+|ap_done                 | out |    1| ap_ctrl_hs |    Padding    | return value |
+|ap_idle                 | out |    1| ap_ctrl_hs |    Padding    | return value |
+|ap_ready                | out |    1| ap_ctrl_hs |    Padding    | return value |
+|input_matrix_address0   | out |    8|  ap_memory |  input_matrix |     array    |
+|input_matrix_ce0        | out |    1|  ap_memory |  input_matrix |     array    |
+|input_matrix_q0         |  in |   32|  ap_memory |  input_matrix |     array    |
+|input_matrix_address1   | out |    8|  ap_memory |  input_matrix |     array    |
+|input_matrix_ce1        | out |    1|  ap_memory |  input_matrix |     array    |
+|input_matrix_q1         |  in |   32|  ap_memory |  input_matrix |     array    |
+|output_matrix_address0  | out |    8|  ap_memory | output_matrix |     array    |
+|output_matrix_ce0       | out |    1|  ap_memory | output_matrix |     array    |
+|output_matrix_we0       | out |    1|  ap_memory | output_matrix |     array    |
+|output_matrix_d0        | out |   32|  ap_memory | output_matrix |     array    |
+|output_matrix_address1  | out |    8|  ap_memory | output_matrix |     array    |
+|output_matrix_ce1       | out |    1|  ap_memory | output_matrix |     array    |
+|output_matrix_we1       | out |    1|  ap_memory | output_matrix |     array    |
+|output_matrix_d1        | out |   32|  ap_memory | output_matrix |     array    |
++------------------------+-----+-----+------------+---------------+--------------+
+
